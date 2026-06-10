@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import AdSlot from '../../components/ads/AdSlot.astro';
+import SingleStyleConverter from '../../components/tool/SingleStyleConverter';
+import { STYLES, getRelatedStyles } from '../../lib/registry';
+import type { StyleDefinition } from '../../lib/registry';
+import { CATEGORIES_BY_ID } from '../../lib/categories';
+import { STYLE_CONTENT } from '../../lib/content';
+import { generateStyleMeta } from '../../lib/seo/meta';
+import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+
+export async function getStaticPaths() {
+  return STYLES.map((style) => ({
+    params: { style: style.id },
+    props: { style },
+  }));
+}
+
+interface Props {
+  style: StyleDefinition;
+}
+
+const { style } = Astro.props;
+
+function getDecoratorName(s: StyleDefinition): string | undefined {
+  if (s.id.includes('strikethrough') || s.tags.includes('strikethrough')) return 'strikethrough';
+  if (s.id.includes('double-underline')) return 'doubleUnderline';
+  if (s.id.includes('underline') && !s.id.includes('double')) return 'underline';
+  if (s.id.includes('zalgo-light')) return 'zalgoLight';
+  if (s.id.includes('zalgo-heavy')) return 'zalgoHeavy';
+  if (s.id.includes('zalgo')) return 'zalgoMedium';
+  if (s.id.includes('vaporwave')) return 'vaporwaveSpace';
+  if (s.id.includes('hearts') || s.tags.includes('hearts')) return 'hearts';
+  if (s.id.includes('stars') || s.tags.includes('stars')) return 'stars';
+  if (s.id.includes('sparkles') || s.tags.includes('sparkles')) return 'sparkles';
+  if (s.id.includes('flowers') || s.tags.includes('flowers')) return 'flowers';
+  if (s.id.includes('crown') || s.tags.includes('crown')) return 'crown';
+  return undefined;
+}
+
+const decoratorName = getDecoratorName(style);
+const meta = generateStyleMeta(style);
+const related = getRelatedStyles(style.id).slice(0, 6);
+const content = STYLE_CONTENT.find((c) => c.styleId === style.id);
+const faqs = content?.faqs ?? [];
+const longDescription = content?.longDescription ?? '';
+
+const category = CATEGORIES_BY_ID[
+  style.category === 'script' ? 'script-fonts'
+  : style.category === 'decorative' ? 'decorative-fonts'
+  : style.category === 'geometric' ? 'geometric-fonts'
+  : style.category === 'effect' ? 'effect-fonts'
+  : style.category === 'width' ? 'width-styles'
+  : style.category === 'transform' ? 'transform-styles'
+  : 'bold-styles'
+];
+
+const platformLabels: Record<string, string> = {
+  instagram: 'Instagram',
+  tiktok: 'TikTok',
+  discord: 'Discord',
+  twitter: 'Twitter / X',
+  facebook: 'Facebook',
+  whatsapp: 'WhatsApp',
+  youtube: 'YouTube',
+};
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  ...(category ? [{ label: category.name, href: `/category/${category.id}` }] : []),
+  { label: style.name },
+];
+
+const schemaList = [
+  webApplicationSchema({
+    name: `${style.name} Generator`,
+    description: meta.description,
+    url: meta.canonical,
+  }),
+  ...(faqs.length > 0 ? [faqPageSchema(faqs.map((f) => ({ question: f.question, answer: f.answer })))] : []),
+  breadcrumbSchema(
+    breadcrumbItems.map((b) => ({ name: b.label, url: b.href ? `https://fontoza.com${b.href}` : meta.canonical }))
+  ),
+];
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  ogImage={meta.ogImage}
+  schema={schemaList}
+>
+  <Header />
+
+  <main id="main-content" class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <h1 class="mb-2 text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl">
+      {style.name} Text Generator
+    </h1>
+    <p class="mb-8 text-base text-[var(--color-text-muted)]">
+      Copy &amp; paste {style.name.toLowerCase()} Unicode text — works on Instagram, TikTok, Discord
+    </p>
+
+    <!-- Main converter -->
+    <SingleStyleConverter
+      client:load
+      styleName={style.name}
+      map={style.map as Record<string, string>}
+      decorator={decoratorName}
+      example={style.example}
+    />
+
+    <!-- Platform support badges -->
+    {style.platforms.length > 0 && (
+      <section class="mt-10">
+        <h2 class="mb-3 text-lg font-semibold text-[var(--color-text)]">Works on These Platforms</h2>
+        <div class="flex flex-wrap gap-2">
+          {style.platforms.map((p) => (
+            <a
+              href={`/platform/${p}-font-generator`}
+              class="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-medium text-[var(--color-text-muted)] transition-colors hover:border-indigo-400 hover:text-[var(--color-accent)]"
+            >
+              {platformLabels[p] ?? p}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="mt-10">
+      <AdSlot slot="mid" />
+    </div>
+
+    <!-- Related Styles -->
+    {related.length > 0 && (
+      <section class="mt-10">
+        <h2 class="mb-4 text-xl font-bold text-[var(--color-text)]">Related Styles</h2>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((rel) => (
+            <a
+              href={`/fonts/${rel.id}`}
+              class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 transition-all hover:border-indigo-400 hover:shadow-md"
+            >
+              <div class="mb-1 font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)]">
+                {rel.name}
+              </div>
+              <div
+                class="mb-2 truncate text-lg text-[var(--color-text-muted)]"
+                style="font-family: system-ui, sans-serif;"
+              >
+                {rel.example}
+              </div>
+              <div class="text-xs text-[var(--color-text-muted)]">{rel.description}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="mt-10">
+      <AdSlot slot="mid" />
+    </div>
+
+    <!-- Long Description -->
+    {longDescription && (
+      <section class="mt-10 prose prose-neutral dark:prose-invert max-w-none">
+        <h2 class="text-xl font-bold text-[var(--color-text)] mb-4">About {style.name}</h2>
+        {longDescription.split('\n\n').filter(Boolean).map((para) => (
+          <p class="mb-4 text-sm leading-relaxed text-[var(--color-text-muted)]">{para}</p>
+        ))}
+      </section>
+    )}
+
+    <!-- FAQ -->
+    {faqs.length > 0 && (
+      <section class="mt-10">
+        <h2 class="mb-6 text-xl font-bold text-[var(--color-text)]">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+          {faqs.map((faq) => (
+            <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-[var(--color-text)]">
+                {faq.question}
+                <span class="ml-4 flex-shrink-0 text-[var(--color-text-muted)] transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="mt-10">
+      <AdSlot slot="bottom" />
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import AdSlot from '../components/ads/AdSlot.astro';
+import FontConverter from '../components/tool/FontConverter';
+import { STYLES } from '../lib/registry';
+import type { StyleDefinition } from '../lib/registry';
+import { CATEGORIES } from '../lib/categories';
+import { getHomeMeta } from '../lib/seo/meta';
+import { webSiteSchema, webApplicationSchema } from '../lib/seo/schema';
+
+const meta = getHomeMeta();
+
+const schema = [
+  webSiteSchema(),
+  webApplicationSchema({
+    name: 'Fontoza — Fancy Text Generator',
+    description: meta.description,
+    url: 'https://fontoza.com',
+  }),
+];
+
+function getDecoratorName(style: StyleDefinition): string | undefined {
+  if (style.id.includes('strikethrough') || style.tags.includes('strikethrough')) return 'strikethrough';
+  if (style.id.includes('double-underline')) return 'doubleUnderline';
+  if (style.id.includes('underline') && !style.id.includes('double')) return 'underline';
+  if (style.id.includes('zalgo-light')) return 'zalgoLight';
+  if (style.id.includes('zalgo-heavy')) return 'zalgoHeavy';
+  if (style.id.includes('zalgo')) return 'zalgoMedium';
+  if (style.id.includes('vaporwave')) return 'vaporwaveSpace';
+  if (style.id.includes('hearts') || style.tags.includes('hearts')) return 'hearts';
+  if (style.id.includes('stars') || style.tags.includes('stars')) return 'stars';
+  if (style.id.includes('sparkles') || style.tags.includes('sparkles')) return 'sparkles';
+  if (style.id.includes('flowers') || style.tags.includes('flowers')) return 'flowers';
+  if (style.id.includes('crown') || style.tags.includes('crown')) return 'crown';
+  return undefined;
+}
+
+const serializedStyles = STYLES.map((style) => ({
+  id: style.id,
+  name: style.name,
+  map: style.map as Record<string, string>,
+  category: style.category,
+  decorator: getDecoratorName(style),
+}));
+
+const homeFaqs = [
+  {
+    q: 'What is a fancy text generator?',
+    a: 'A fancy text generator converts regular letters into Unicode characters that look like different fonts — cursive, bold, gothic, and more. Because these are real Unicode characters (not custom fonts), they display identically on every device and paste directly into any app or website.',
+  },
+  {
+    q: 'Why does the fancy text work on Instagram and TikTok?',
+    a: 'Instagram, TikTok, Twitter, and most other platforms support the full Unicode standard. The "fancy" characters here come from Unicode mathematical and symbol blocks — they are standard characters that every modern device can display, not images or special fonts.',
+  },
+  {
+    q: 'Is Fontoza free to use?',
+    a: 'Yes, Fontoza is completely free. No account, no subscription, and no download is required. Just type your text, pick a style, and copy it.',
+  },
+  {
+    q: 'How many font styles does Fontoza have?',
+    a: 'Fontoza offers 50+ Unicode font styles including cursive, bold, italic, gothic, small caps, vaporwave, zalgo, and many more. Each style is generated in real time as you type.',
+  },
+  {
+    q: 'Do the fancy fonts work on mobile devices?',
+    a: 'Yes. Unicode characters display correctly on all modern smartphones running iOS or Android. You can generate text on your phone, copy it, and paste it directly into your apps.',
+  },
+];
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  ogImage={meta.ogImage}
+  schema={schema}
+>
+  <Header />
+
+  <main id="main-content">
+    <!-- Hero / Tool Section -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-indigo-50/60 to-transparent py-12 dark:from-indigo-950/20 dark:to-transparent">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 text-center">
+          <h1 class="mb-3 text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl lg:text-5xl">
+            Fancy Text Generator —
+            <span class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+              50+ Unicode Font Styles
+            </span>
+          </h1>
+          <p class="mx-auto max-w-2xl text-base text-[var(--color-text-muted)] sm:text-lg">
+            Type anything. Pick a style. Copy it anywhere.
+          </p>
+        </div>
+
+        <!-- FontConverter React component -->
+        <FontConverter client:load styles={serializedStyles} />
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-14">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-10 text-center text-2xl font-bold text-[var(--color-text)]">How It Works</h2>
+        <div class="grid gap-6 sm:grid-cols-3">
+          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
+            <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100 text-2xl dark:bg-indigo-900/40 mx-auto">
+              ✏️
+            </div>
+            <h3 class="mb-1 font-semibold text-[var(--color-text)]">1. Type</h3>
+            <p class="text-sm text-[var(--color-text-muted)]">
+              Enter any text into the box above. Watch all 50+ styles update in real time.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
+            <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 text-2xl dark:bg-purple-900/40 mx-auto">
+              🎨
+            </div>
+            <h3 class="mb-1 font-semibold text-[var(--color-text)]">2. Pick</h3>
+            <p class="text-sm text-[var(--color-text-muted)]">
+              Browse cursive, bold, gothic, vaporwave, zalgo, and many more. Click to copy any style.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
+            <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-pink-100 text-2xl dark:bg-pink-900/40 mx-auto">
+              📋
+            </div>
+            <h3 class="mb-1 font-semibold text-[var(--color-text)]">3. Copy</h3>
+            <p class="text-sm text-[var(--color-text-muted)]">
+              Paste directly into Instagram, TikTok, Discord, Twitter, WhatsApp — anywhere that accepts text.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <AdSlot slot="mid" />
+    </div>
+
+    <!-- Categories -->
+    <section class="py-14 bg-[var(--color-surface)]">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-3 text-center text-2xl font-bold text-[var(--color-text)]">Browse by Category</h2>
+        <p class="mb-8 text-center text-sm text-[var(--color-text-muted)]">
+          Explore curated groups of font styles.
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {CATEGORIES.map((cat) => (
+            <a
+              href={`/category/${cat.id}`}
+              class="group flex items-start gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 transition-all hover:border-indigo-400 hover:shadow-md"
+            >
+              <span class="text-2xl" aria-hidden="true">{cat.icon}</span>
+              <div>
+                <span class="block font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)]">
+                  {cat.name}
+                </span>
+                <span class="mt-0.5 block text-xs text-[var(--color-text-muted)]">
+                  {cat.description}
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Fontoza -->
+    <section class="py-14">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-8 text-center text-2xl font-bold text-[var(--color-text)]">Why Fontoza?</h2>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30">✓</span>
+            <div>
+              <span class="font-semibold text-[var(--color-text)]">No sign-up required.</span>
+              <span class="ml-1 text-sm text-[var(--color-text-muted)]">Open the page and start generating. No email, no account, no registration.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30">✓</span>
+            <div>
+              <span class="font-semibold text-[var(--color-text)]">Works everywhere.</span>
+              <span class="ml-1 text-sm text-[var(--color-text-muted)]">Instagram, TikTok, Discord, Twitter, Facebook, WhatsApp, YouTube — all platforms render Unicode text correctly.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30">✓</span>
+            <div>
+              <span class="font-semibold text-[var(--color-text)]">Mobile-first design.</span>
+              <span class="ml-1 text-sm text-[var(--color-text-muted)]">The entire tool is optimized for touch screens. Generate and copy on your phone in seconds.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30">✓</span>
+            <div>
+              <span class="font-semibold text-[var(--color-text)]">50+ font styles.</span>
+              <span class="ml-1 text-sm text-[var(--color-text-muted)]">Cursive, bold, gothic, italic, vaporwave, zalgo, geometric, transform styles — the widest selection available, all in one place.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <AdSlot slot="bottom" />
+    </div>
+
+    <!-- FAQ -->
+    <section class="py-14 bg-[var(--color-surface)]">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-8 text-center text-2xl font-bold text-[var(--color-text)]">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          {homeFaqs.map((faq) => (
+            <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-[var(--color-text)]">
+                {faq.q}
+                <span class="ml-4 flex-shrink-0 text-[var(--color-text-muted)] transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  ogType?: string;
+  schema?: object;
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = '/og-image.png',
+  ogType = 'website',
+  schema,
+  noIndex = false,
+} = Astro.props;
+
+const safeDesc = description.slice(0, 160);
+---
+
+<!-- Primary meta -->
+<title>{title}</title>
+<meta name="description" content={safeDesc} />
+<link rel="canonical" href={canonical} />
+
+<!-- Robots -->
+{noIndex
+  ? <meta name="robots" content="noindex, nofollow" />
+  : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+}
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={safeDesc} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content="Fontoza" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={safeDesc} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:site" content="@fontoza" />
+
+<!-- JSON-LD schema -->
+{schema && (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

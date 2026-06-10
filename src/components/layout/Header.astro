@@ -1,0 +1,206 @@
+---
+const fontStyleLinks = [
+  { label: 'Cursive Font', href: '/fonts/cursive-font' },
+  { label: 'Bold Text', href: '/fonts/bold-text' },
+  { label: 'Italic Font', href: '/fonts/italic-font' },
+  { label: 'Gothic Font', href: '/fonts/gothic-font' },
+  { label: 'Strikethrough Text', href: '/fonts/strikethrough-text' },
+  { label: 'Small Caps', href: '/fonts/small-caps' },
+  { label: 'Vaporwave Text', href: '/fonts/vaporwave-text' },
+  { label: 'Zalgo Text', href: '/fonts/zalgo-text' },
+];
+
+const pathname = Astro.url.pathname;
+---
+
+<header
+  class="sticky top-0 z-40 w-full border-b border-[var(--color-border)] bg-[var(--color-bg)]/80 backdrop-blur-md"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+    <!-- Logo -->
+    <a
+      href="/"
+      class="flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 rounded-md"
+      aria-label="Fontoza — Home"
+    >
+      <span
+        class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-2xl font-bold tracking-tight text-transparent"
+      >
+        Fontoza
+      </span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav aria-label="Main navigation" class="hidden items-center gap-1 md:flex">
+      <a
+        href="/"
+        class={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] ${pathname === '/' ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-muted)]'}`}
+      >
+        Home
+      </a>
+
+      <!-- Font Styles dropdown -->
+      <div class="relative group">
+        <button
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+        >
+          Font Styles
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="transition-transform group-hover:rotate-180"
+            aria-hidden="true"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+
+        <!-- Dropdown panel -->
+        <div
+          class="invisible absolute left-0 top-full mt-1 w-56 origin-top-left scale-95 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:scale-100 group-hover:opacity-100"
+          role="menu"
+        >
+          {fontStyleLinks.map(link => (
+            <a
+              href={link.href}
+              role="menuitem"
+              class="block rounded-lg px-3 py-2 text-sm text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]"
+            >
+              {link.label}
+            </a>
+          ))}
+          <div class="my-1 border-t border-[var(--color-border)]"></div>
+          <a
+            href="/fonts"
+            role="menuitem"
+            class="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-indigo-500 transition-colors hover:bg-indigo-50 dark:hover:bg-indigo-950/30"
+          >
+            View all styles
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <a
+        href="/tools"
+        class={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] ${pathname.startsWith('/tools') ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-muted)]'}`}
+      >
+        Tools
+      </a>
+
+      <!-- Dark mode toggle -->
+      <button
+        onclick="window.__toggleTheme()"
+        aria-label="Toggle dark mode"
+        class="ml-2 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-colors hover:border-indigo-400 hover:text-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+      >
+        <!-- Sun icon (shown in dark mode) -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="hidden dark:block"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="block dark:hidden"
+          aria-hidden="true"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile: dark mode + hamburger -->
+    <div class="flex items-center gap-2 md:hidden">
+      <button
+        onclick="window.__toggleTheme()"
+        aria-label="Toggle dark mode"
+        class="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-colors hover:border-indigo-400 hover:text-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <!-- Hamburger using details/summary (pure CSS, no JS) -->
+      <details class="relative">
+        <summary
+          aria-label="Open navigation menu"
+          class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-colors hover:border-indigo-400 hover:text-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+        >
+          <!-- Hamburger lines -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </summary>
+
+        <!-- Mobile nav panel -->
+        <nav
+          aria-label="Mobile navigation"
+          class="absolute right-0 top-full mt-2 w-64 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-3 shadow-xl"
+        >
+          <a href="/" class="block rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">Home</a>
+          <a href="/fonts" class="block rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">Font Styles</a>
+          <div class="ml-3 mt-1 space-y-0.5 border-l border-[var(--color-border)] pl-3">
+            {fontStyleLinks.map(link => (
+              <a href={link.href} class="block rounded-md px-2 py-1.5 text-xs text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]">{link.label}</a>
+            ))}
+          </div>
+          <a href="/tools" class="mt-1 block rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">Tools</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

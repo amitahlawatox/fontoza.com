@@ -1,0 +1,54 @@
+---
+interface Props {
+  items: Array<{ label: string; href?: string }>;
+}
+const { items } = Astro.props;
+---
+
+<nav aria-label="breadcrumb" class="mb-4">
+  <ol
+    class="flex flex-wrap items-center gap-1 text-sm text-[var(--color-text-muted)]"
+    itemscope
+    itemtype="https://schema.org/BreadcrumbList"
+  >
+    {items.map((item, index) => {
+      const isLast = index === items.length - 1;
+      const position = index + 1;
+
+      return (
+        <li
+          class="flex items-center gap-1"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          {index > 0 && (
+            <span aria-hidden="true" class="select-none text-[var(--color-border)]">
+              ›
+            </span>
+          )}
+
+          {isLast || !item.href ? (
+            <span
+              aria-current={isLast ? 'page' : undefined}
+              class={isLast ? 'font-medium text-[var(--color-text)]' : 'text-[var(--color-text-muted)]'}
+              itemprop="name"
+            >
+              {item.label}
+            </span>
+          ) : (
+            <a
+              href={item.href}
+              class="transition-colors hover:text-[var(--color-accent)] hover:underline"
+              itemprop="item"
+            >
+              <span itemprop="name">{item.label}</span>
+            </a>
+          )}
+
+          <meta itemprop="position" content={String(position)} />
+        </li>
+      );
+    })}
+  </ol>
+</nav>

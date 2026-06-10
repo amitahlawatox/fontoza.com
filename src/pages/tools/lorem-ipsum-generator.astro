@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import AdSlot from '../../components/ads/AdSlot.astro';
+import LoremIpsum from '../../components/tools/LoremIpsum';
+import { generateToolMeta } from '../../lib/seo/meta';
+import { webApplicationSchema } from '../../lib/seo/schema';
+
+const meta = generateToolMeta({
+  id: 'lorem-ipsum-generator',
+  name: 'Lorem Ipsum Generator',
+  description: 'Generate Lorem Ipsum placeholder text with custom paragraph count, word length, and output format (plain text, HTML, or Markdown).',
+});
+
+const schema = webApplicationSchema({
+  name: 'Lorem Ipsum Generator — Fontoza',
+  description: meta.description,
+  url: meta.canonical,
+});
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  ogImage={meta.ogImage}
+  schema={schema}
+>
+  <Header />
+  <main id="main-content" class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Tools', href: '/tools' }, { label: 'Lorem Ipsum Generator' }]} />
+
+    <h1 class="mb-2 text-3xl font-bold tracking-tight text-[var(--color-text)]">Lorem Ipsum Generator</h1>
+    <p class="mb-8 text-[var(--color-text-muted)]">
+      Generate Lorem Ipsum placeholder text for mockups, design prototypes, and content templates. Choose the number of paragraphs, words per paragraph, and output format.
+    </p>
+
+    <LoremIpsum client:load />
+
+    <AdSlot slot="bottom" />
+
+    <section class="mt-12 space-y-4 text-sm text-[var(--color-text-muted)]">
+      <h2 class="text-xl font-bold text-[var(--color-text)]">What Is Lorem Ipsum?</h2>
+      <p>Lorem Ipsum is standard placeholder text used in print and digital design since the 1500s. It is derived from "De Finibus Bonorum et Malorum" by Cicero, written in 45 BC. The garbled Latin serves as neutral filler that lets designers focus on layout without being distracted by readable content.</p>
+      <p>Modern designers use it in wireframes, mockups, template previews, and anywhere real content is not yet available. Our generator produces standard Lorem Ipsum starting with the classic opening sentence.</p>
+    </section>
+  </main>
+  <Footer />
+</Layout>

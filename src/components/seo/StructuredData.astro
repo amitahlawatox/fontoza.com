@@ -1,0 +1,6 @@
+---
+interface Props {
+  schema: object | object[];
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify(Astro.props.schema)} />

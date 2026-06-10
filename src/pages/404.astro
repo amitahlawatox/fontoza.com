@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+const popularStyles = [
+  { name: 'Cursive Font', href: '/fonts/cursive-font', example: '𝒞𝓊𝓇𝓈𝒾𝓋𝑒' },
+  { name: 'Bold Text', href: '/fonts/bold-text', example: '𝐁𝐨𝐥𝐝' },
+  { name: 'Gothic Font', href: '/fonts/gothic-font', example: '𝔊𝔬𝔱𝔥𝔦𝔠' },
+  { name: 'Vaporwave', href: '/fonts/vaporwave-text', example: 'Ｖａｐｏｒ' },
+  { name: 'Small Caps', href: '/fonts/small-caps', example: 'Sᴍᴀʟʟ Cᴀᴘꜱ' },
+  { name: 'Zalgo Text', href: '/fonts/zalgo-text', example: 'Z̴a̸l̵g̶o̷' },
+];
+---
+
+<Layout
+  title="Page Not Found — Fontoza"
+  description="The page you're looking for doesn't exist. Return to Fontoza's fancy text generator and explore 50+ Unicode font styles."
+  canonical="https://fontoza.com/404"
+  ogImage="https://fontoza.com/og-image.png"
+  noIndex={true}
+>
+  <Header />
+  <main id="main-content" class="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8 text-center">
+    <div class="mb-6 text-8xl font-black bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+      404
+    </div>
+    <h1 class="mb-3 text-2xl font-bold text-[var(--color-text)]">Page Not Found</h1>
+    <p class="mb-8 text-[var(--color-text-muted)]">
+      The page you're looking for doesn't exist or may have moved.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <a
+        href="/"
+        class="rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-700"
+      >
+        Go to Font Generator
+      </a>
+      <a
+        href="/about"
+        class="rounded-xl border border-[var(--color-border)] px-6 py-3 font-semibold text-[var(--color-text)] transition-colors hover:border-indigo-400"
+      >
+        About Fontoza
+      </a>
+    </div>
+
+    <h2 class="mb-4 text-lg font-bold text-[var(--color-text)]">Popular Font Styles</h2>
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {popularStyles.map((style) => (
+        <a
+          href={style.href}
+          class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-left transition-all hover:border-indigo-400 hover:shadow-md"
+        >
+          <div class="mb-1 text-lg">{style.example}</div>
+          <div class="text-sm font-medium text-[var(--color-text)] group-hover:text-[var(--color-accent)]">
+            {style.name}
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>

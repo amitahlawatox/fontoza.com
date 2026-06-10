@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import AdSlot from '../../components/ads/AdSlot.astro';
+import BioGenerator from '../../components/tools/BioGenerator';
+import { generateToolMeta } from '../../lib/seo/meta';
+import { webApplicationSchema } from '../../lib/seo/schema';
+
+const meta = generateToolMeta({
+  id: 'bio-generator',
+  name: 'Bio Generator',
+  description: 'Generate Instagram and TikTok bio templates from your name and keywords. Get 8 ready-to-use bio ideas instantly.',
+});
+
+const schema = webApplicationSchema({
+  name: 'Bio Generator — Fontoza',
+  description: meta.description,
+  url: meta.canonical,
+});
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  ogImage={meta.ogImage}
+  schema={schema}
+>
+  <Header />
+  <main id="main-content" class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Tools', href: '/tools' }, { label: 'Bio Generator' }]} />
+
+    <h1 class="mb-2 text-3xl font-bold tracking-tight text-[var(--color-text)]">Bio Generator</h1>
+    <p class="mb-8 text-[var(--color-text-muted)]">
+      Enter your name and a few keywords about your niche, and get 8 ready-to-copy Instagram or TikTok bio templates. Combine with our <a href="/" class="text-indigo-500 hover:underline">fancy text generator</a> for an even more unique profile.
+    </p>
+
+    <BioGenerator client:load />
+
+    <AdSlot slot="bottom" />
+
+    <section class="mt-12 space-y-4 text-sm text-[var(--color-text-muted)]">
+      <h2 class="text-xl font-bold text-[var(--color-text)]">Tips for a Great Bio</h2>
+      <ul class="space-y-2 list-disc list-inside">
+        <li>Keep it under 150 characters for Instagram and 80 for TikTok.</li>
+        <li>Use your primary keyword in the first line for searchability.</li>
+        <li>Include a clear call to action (link in bio, DM for collabs, etc.).</li>
+        <li>Add emojis sparingly to break up the text and add personality.</li>
+        <li>Use fancy Unicode text from Fontoza to make your name or tagline stand out.</li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Layout>

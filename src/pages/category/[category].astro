@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import AdSlot from '../../components/ads/AdSlot.astro';
+import FontConverter from '../../components/tool/FontConverter';
+import { CATEGORIES } from '../../lib/categories';
+import type { CategoryDefinition } from '../../lib/categories';
+import { STYLES } from '../../lib/registry';
+import type { StyleDefinition } from '../../lib/registry';
+import { generateCategoryMeta } from '../../lib/seo/meta';
+import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+
+export async function getStaticPaths() {
+  return CATEGORIES.map((cat) => ({
+    params: { category: cat.id },
+    props: { category: cat },
+  }));
+}
+
+interface Props {
+  category: CategoryDefinition;
+}
+
+const { category } = Astro.props;
+
+function getDecoratorName(style: StyleDefinition): string | undefined {
+  if (style.id.includes('strikethrough') || style.tags.includes('strikethrough')) return 'strikethrough';
+  if (style.id.includes('double-underline')) return 'doubleUnderline';
+  if (style.id.includes('underline') && !style.id.includes('double')) return 'underline';
+  if (style.id.includes('zalgo-light')) return 'zalgoLight';
+  if (style.id.includes('zalgo-heavy')) return 'zalgoHeavy';
+  if (style.id.includes('zalgo')) return 'zalgoMedium';
+  if (style.id.includes('vaporwave')) return 'vaporwaveSpace';
+  if (style.id.includes('hearts') || style.tags.includes('hearts')) return 'hearts';
+  if (style.id.includes('stars') || style.tags.includes('stars')) return 'stars';
+  if (style.id.includes('sparkles') || style.tags.includes('sparkles')) return 'sparkles';
+  if (style.id.includes('flowers') || style.tags.includes('flowers')) return 'flowers';
+  if (style.id.includes('crown') || style.tags.includes('crown')) return 'crown';
+  return undefined;
+}
+
+const categoryStyles = STYLES.filter((s) => category.styleIds.includes(s.id));
+
+const serializedStyles = categoryStyles.map((style) => ({
+  id: style.id,
+  name: style.name,
+  map: style.map as Record<string, string>,
+  category: style.category,
+  decorator: getDecoratorName(style),
+}));
+
+const meta = generateCategoryMeta(category);
+
+const faqs = [
+  {
+    question: `What are ${category.name.toLowerCase()}?`,
+    answer: `${category.name} are Unicode-based text styles that you can copy and paste anywhere. ${category.description} They work on Instagram, TikTok, Twitter, Discord, and any other platform that supports Unicode text.`,
+  },
+  {
+    question: `How do I use ${category.name.toLowerCase()} on Instagram?`,
+    answer: `Type your text in the box above, then click the copy button next to any style you like. Open Instagram, go to Edit Profile or write a caption, and paste. The styled text will appear exactly as shown — no app or font installation needed.`,
+  },
+  {
+    question: `Are ${category.name.toLowerCase()} free to use?`,
+    answer: `Yes, all styles on Fontoza are completely free. No account, no sign-up, and no payment is required. Generate unlimited text in any style.`,
+  },
+  {
+    question: `Will ${category.name.toLowerCase()} display correctly on all devices?`,
+    answer: `Yes. These are standard Unicode characters, not custom fonts. Every modern device — iPhone, Android, PC, Mac — renders them identically. Very old devices (pre-2010) may not support the full Unicode range, but all modern devices do.`,
+  },
+];
+
+const schemaList = [
+  webApplicationSchema({
+    name: `${category.name} Generator`,
+    description: meta.description,
+    url: meta.canonical,
+  }),
+  faqPageSchema(faqs),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://fontoza.com' },
+    { name: category.name, url: meta.canonical },
+  ]),
+];
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  ogImage={meta.ogImage}
+  schema={schemaList}
+>
+  <Header />
+
+  <main id="main-content" class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: category.name }]} />
+
+    <div class="mb-2 flex items-center gap-3">
+      <span class="text-3xl" aria-hidden="true">{category.icon}</span>
+      <h1 class="text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl">
+        {category.name}
+      </h1>
+    </div>
+
+    <p class="mb-8 max-w-2xl text-base text-[var(--color-text-muted)]">
+      {category.longDescription}
+    </p>
+
+    <!-- FontConverter filtered to this category -->
+    <FontConverter client:load styles={serializedStyles} />
+
+    <div class="mt-10">
+      <AdSlot slot="mid" />
+    </div>
+
+    <!-- Individual style cards -->
+    <section class="mt-12">
+      <h2 class="mb-6 text-xl font-bold text-[var(--color-text)]">All {category.name} Styles</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {categoryStyles.map((style) => (
+          <a
+            href={`/fonts/${style.id}`}
+            class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 transition-all hover:border-indigo-400 hover:shadow-md"
+          >
+            <div class="mb-1 font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)]">
+              {style.name}
+            </div>
+            <div class="mb-2 truncate text-lg text-[var(--color-text-muted)]">
+              {style.example}
+            </div>
+            <div class="text-xs text-[var(--color-text-muted)]">{style.description}</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <div class="mt-10">
+      <AdSlot slot="bottom" />
+    </div>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="mb-6 text-xl font-bold text-[var(--color-text)]">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-[var(--color-text)]">
+              {faq.question}
+              <span class="ml-4 flex-shrink-0 text-[var(--color-text-muted)] transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

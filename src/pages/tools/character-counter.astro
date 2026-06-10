@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import AdSlot from '../../components/ads/AdSlot.astro';
+import CharacterCounter from '../../components/tools/CharacterCounter';
+import { generateToolMeta } from '../../lib/seo/meta';
+import { webApplicationSchema } from '../../lib/seo/schema';
+
+const meta = generateToolMeta({
+  id: 'character-counter',
+  name: 'Character Counter',
+  description: 'Count characters with and without spaces. Check against Instagram, Twitter, and other platform limits.',
+});
+
+const schema = webApplicationSchema({
+  name: 'Character Counter — Fontoza',
+  description: meta.description,
+  url: meta.canonical,
+});
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  ogImage={meta.ogImage}
+  schema={schema}
+>
+  <Header />
+  <main id="main-content" class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Tools', href: '/tools' }, { label: 'Character Counter' }]} />
+
+    <h1 class="mb-2 text-3xl font-bold tracking-tight text-[var(--color-text)]">Character Counter</h1>
+    <p class="mb-8 text-[var(--color-text-muted)]">
+      Count characters, letters, digits, and spaces. Select a platform preset to see how much of the limit you've used.
+    </p>
+
+    <CharacterCounter client:load />
+
+    <AdSlot slot="bottom" />
+
+    <section class="mt-12 space-y-4 text-sm text-[var(--color-text-muted)]">
+      <h2 class="text-xl font-bold text-[var(--color-text)]">Platform Character Limits</h2>
+      <ul class="space-y-2 list-disc list-inside">
+        <li><strong class="text-[var(--color-text)]">Instagram bio:</strong> 150 characters</li>
+        <li><strong class="text-[var(--color-text)]">Twitter / X:</strong> 280 characters (supplementary Unicode counts as 2)</li>
+        <li><strong class="text-[var(--color-text)]">TikTok bio:</strong> 80 characters</li>
+        <li><strong class="text-[var(--color-text)]">YouTube title:</strong> 100 characters (recommended under 60 for SEO)</li>
+        <li><strong class="text-[var(--color-text)]">Facebook post:</strong> 63,206 characters</li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Layout>

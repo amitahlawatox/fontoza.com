@@ -1,0 +1,161 @@
+---
+const fontStyleLinks = [
+  { label: 'Cursive Font', href: '/fonts/cursive-font' },
+  { label: 'Bold Text', href: '/fonts/bold-text' },
+  { label: 'Italic Font', href: '/fonts/italic-font' },
+  { label: 'Gothic Font', href: '/fonts/gothic-font' },
+  { label: 'Strikethrough Text', href: '/fonts/strikethrough-text' },
+  { label: 'Small Caps', href: '/fonts/small-caps' },
+  { label: 'Vaporwave Text', href: '/fonts/vaporwave-text' },
+  { label: 'Zalgo Text', href: '/fonts/zalgo-text' },
+];
+
+const platformLinks = [
+  { label: 'Instagram Fonts', href: '/platforms/instagram' },
+  { label: 'TikTok Fonts', href: '/platforms/tiktok' },
+  { label: 'Discord Fonts', href: '/platforms/discord' },
+  { label: 'Twitter / X Fonts', href: '/platforms/twitter' },
+  { label: 'Facebook Fonts', href: '/platforms/facebook' },
+  { label: 'WhatsApp Fonts', href: '/platforms/whatsapp' },
+  { label: 'YouTube Fonts', href: '/platforms/youtube' },
+];
+
+const toolLinks = [
+  { label: 'Font Generator', href: '/' },
+  { label: 'All Font Styles', href: '/fonts' },
+  { label: 'Font Categories', href: '/categories' },
+  { label: 'Bold Text Generator', href: '/fonts/bold-text' },
+  { label: 'Cursive Generator', href: '/fonts/cursive-font' },
+];
+
+const companyLinks = [
+  { label: 'About', href: '/about' },
+  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Terms of Service', href: '/terms' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] mt-16">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+
+    <!-- Top: logo + tagline + trust badge -->
+    <div class="mb-10 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <a
+          href="/"
+          aria-label="Fontoza home"
+          class="inline-block bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-2xl font-bold text-transparent"
+        >
+          Fontoza
+        </a>
+        <p class="mt-1 text-sm text-[var(--color-text-muted)]">
+          Copy &amp; paste fancy Unicode text in seconds
+        </p>
+      </div>
+
+      <!-- Trust badge -->
+      <div class="flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-1.5 text-xs text-[var(--color-text-muted)]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        No cookies. No tracking. Just fonts.
+      </div>
+    </div>
+
+    <!-- 4-column link grid -->
+    <div class="grid grid-cols-2 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Font Styles -->
+      <div>
+        <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text)]">
+          Font Styles
+        </h3>
+        <ul class="space-y-2">
+          {fontStyleLinks.map(link => (
+            <li>
+              <a
+                href={link.href}
+                class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/fonts" class="text-sm font-medium text-indigo-500 transition-colors hover:text-indigo-400">
+              All styles →
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Platforms -->
+      <div>
+        <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text)]">
+          Platforms
+        </h3>
+        <ul class="space-y-2">
+          {platformLinks.map(link => (
+            <li>
+              <a
+                href={link.href}
+                class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Tools -->
+      <div>
+        <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text)]">
+          Tools
+        </h3>
+        <ul class="space-y-2">
+          {toolLinks.map(link => (
+            <li>
+              <a
+                href={link.href}
+                class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text)]">
+          Company
+        </h3>
+        <ul class="space-y-2">
+          {companyLinks.map(link => (
+            <li>
+              <a
+                href={link.href}
+                class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom copyright bar -->
+    <div class="mt-10 flex flex-col items-center justify-between gap-3 border-t border-[var(--color-border)] pt-6 text-center sm:flex-row sm:text-left">
+      <p class="text-xs text-[var(--color-text-muted)]">
+        &copy; {year} Fontoza. All rights reserved.
+      </p>
+      <p class="text-xs text-[var(--color-text-muted)]">
+        Unicode font generator — works on every platform, no install needed.
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import AdSlot from '../../components/ads/AdSlot.astro';
+import FontConverter from '../../components/tool/FontConverter';
+import { PLATFORMS } from '../../lib/platforms';
+import type { PlatformDefinition } from '../../lib/platforms';
+import { STYLES } from '../../lib/registry';
+import type { StyleDefinition } from '../../lib/registry';
+import { generatePlatformMeta } from '../../lib/seo/meta';
+import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+
+export async function getStaticPaths() {
+  return PLATFORMS.map((p) => ({
+    params: { platform: p.id },
+    props: { platform: p },
+  }));
+}
+
+interface Props {
+  platform: PlatformDefinition;
+}
+
+const { platform } = Astro.props;
+
+function getDecoratorName(style: StyleDefinition): string | undefined {
+  if (style.id.includes('strikethrough') || style.tags.includes('strikethrough')) return 'strikethrough';
+  if (style.id.includes('double-underline')) return 'doubleUnderline';
+  if (style.id.includes('underline') && !style.id.includes('double')) return 'underline';
+  if (style.id.includes('zalgo-light')) return 'zalgoLight';
+  if (style.id.includes('zalgo-heavy')) return 'zalgoHeavy';
+  if (style.id.includes('zalgo')) return 'zalgoMedium';
+  if (style.id.includes('vaporwave')) return 'vaporwaveSpace';
+  if (style.id.includes('hearts') || style.tags.includes('hearts')) return 'hearts';
+  if (style.id.includes('stars') || style.tags.includes('stars')) return 'stars';
+  if (style.id.includes('sparkles') || style.tags.includes('sparkles')) return 'sparkles';
+  if (style.id.includes('flowers') || style.tags.includes('flowers')) return 'flowers';
+  if (style.id.includes('crown') || style.tags.includes('crown')) return 'crown';
+  return undefined;
+}
+
+const platformStyles = STYLES.filter((s) => platform.supportedStyleIds.includes(s.id));
+
+const serializedStyles = platformStyles.map((style) => ({
+  id: style.id,
+  name: style.name,
+  map: style.map as Record<string, string>,
+  category: style.category,
+  decorator: getDecoratorName(style),
+}));
+
+const meta = generatePlatformMeta(platform);
+
+const faqs = [
+  {
+    question: `How do I use fancy fonts on ${platform.platform}?`,
+    answer: `Generate your text on Fontoza, click the copy button, then open ${platform.platform} and paste the text into your bio, caption, or message field. The Unicode characters render correctly without any special settings.`,
+  },
+  {
+    question: `Does fancy Unicode text work in ${platform.platform} usernames?`,
+    answer: `Most platforms allow Unicode in display names but not @handles. Your display name (the name visible on your profile and posts) fully supports Unicode font styles. The @username/handle is usually limited to alphanumeric characters.`,
+  },
+  {
+    question: `Will everyone see the same font on ${platform.platform}?`,
+    answer: `Yes. Because these are Unicode characters — not locally installed fonts — every viewer sees the same styled text regardless of their device, operating system, or font settings. Unicode is a universal standard supported by all modern devices.`,
+  },
+  {
+    question: `Are these fonts free for ${platform.platform}?`,
+    answer: `All fonts on Fontoza are completely free, with no sign-up or payment required. Generate as much text as you want in any style.`,
+  },
+];
+
+const schemaList = [
+  webApplicationSchema({
+    name: platform.name,
+    description: meta.description,
+    url: meta.canonical,
+  }),
+  faqPageSchema(faqs),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://fontoza.com' },
+    { name: platform.name, url: meta.canonical },
+  ]),
+];
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  ogImage={meta.ogImage}
+  schema={schemaList}
+>
+  <Header />
+
+  <main id="main-content" class="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: platform.name }]} />
+
+    <div class="mb-2 flex items-center gap-3">
+      <span class="text-3xl" aria-hidden="true">{platform.icon}</span>
+      <h1 class="text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl">
+        {platform.name}
+      </h1>
+    </div>
+
+    <p class="mb-8 max-w-2xl text-base text-[var(--color-text-muted)]">
+      {platform.longDescription}
+    </p>
+
+    <!-- FontConverter filtered to this platform's styles -->
+    <FontConverter client:load styles={serializedStyles} />
+
+    <div class="mt-10">
+      <AdSlot slot="mid" />
+    </div>
+
+    <!-- Platform Usage Tips -->
+    {platform.usageTips.length > 0 && (
+      <section class="mt-12">
+        <h2 class="mb-4 text-xl font-bold text-[var(--color-text)]">
+          Tips for Using Fonts on {platform.platform.charAt(0).toUpperCase() + platform.platform.slice(1)}
+        </h2>
+        <ul class="space-y-3">
+          {platform.usageTips.map((tip) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 text-xs dark:bg-indigo-900/30">→</span>
+              <span class="text-sm text-[var(--color-text-muted)]">{tip}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <div class="mt-10">
+      <AdSlot slot="bottom" />
+    </div>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="mb-6 text-xl font-bold text-[var(--color-text)]">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-[var(--color-text)]">
+              {faq.question}
+              <span class="ml-4 flex-shrink-0 text-[var(--color-text-muted)] transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

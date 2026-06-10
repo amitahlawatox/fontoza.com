@@ -1,0 +1,37 @@
+---
+interface Props {
+  slot: 'top' | 'mid' | 'bottom';
+  format?: 'horizontal' | 'rectangle' | 'auto';
+}
+
+const { slot: adSlot, format = 'auto' } = Astro.props;
+
+const minHeightMap: Record<string, string> = {
+  horizontal: '90px',
+  rectangle: '250px',
+  auto: '100px',
+};
+
+const minHeight = minHeightMap[format];
+---
+
+{!import.meta.env.DEV && (
+  <aside
+    data-ad-slot={adSlot}
+    data-ad-format={format}
+    class="ad-slot my-4 w-full overflow-hidden rounded-lg"
+    style={`min-height: ${minHeight};`}
+    aria-label="Advertisement"
+  >
+    <!-- Visually hidden label for accessibility -->
+    <span class="sr-only">Advertisement</span>
+
+    <!-- Ad content injected by ad network script -->
+    <div
+      class="flex min-h-[inherit] w-full items-center justify-center bg-[var(--color-surface)] text-xs text-[var(--color-text-muted)]"
+      aria-hidden="true"
+    >
+      <!-- placeholder until ad loads -->
+    </div>
+  </aside>
+)}

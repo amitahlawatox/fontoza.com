@@ -1,0 +1,106 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  schema?: object;
+  noIndex?: boolean;
+}
+const {
+  title,
+  description,
+  canonical,
+  ogImage = '/og-image.png',
+  schema,
+  noIndex,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="theme-color" content="#6366f1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <!-- Generator tag -->
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO meta -->
+    <title>{title}</title>
+    <meta name="description" content={description.slice(0, 160)} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description.slice(0, 160)} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fontoza" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description.slice(0, 160)} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Robots -->
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- JSON-LD schema -->
+    {schema && <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+    <!-- Dark mode: apply .dark BEFORE body renders to prevent flash -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('fontoza-theme');
+          if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+
+        window.__toggleTheme = function () {
+          var isDark = document.documentElement.classList.toggle('dark');
+          try {
+            localStorage.setItem('fontoza-theme', isDark ? 'dark' : 'light');
+          } catch (e) {}
+        };
+      })();
+    </script>
+
+    <slot name="head" />
+  </head>
+
+  <body class="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] antialiased">
+    <!-- Skip to content for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-indigo-600 focus:px-4 focus:py-2 focus:text-white focus:outline-none"
+    >
+      Skip to content
+    </a>
+
+    <slot />
+
+    <!-- Vercel Analytics — production only -->
+    {import.meta.env.PROD && (
+      <script is:inline defer src="/_vercel/insights/script.js"></script>
+    )}
+  </body>
+</html>
