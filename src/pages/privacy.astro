@@ -6,9 +6,10 @@ import Footer from '../components/layout/Footer.astro';
 const meta = {
   title: 'Privacy Policy — Fontoza',
   description: 'Fontoza Privacy Policy. We collect no personal data and set no tracking cookies. Full details on data practices and third-party advertising.',
-  canonical: 'https://fontoza.com/privacy',
+  canonical: 'https://fontoza.com/privacy/',
   ogImage: 'https://fontoza.com/og-image.png',
 };
+const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Privacy Policy', url: 'https://fontoza.com/privacy/', publisher: { '@type': 'Organization', name: 'Fontoza', url: 'https://fontoza.com' } };
 ---
 
 <Layout
@@ -16,6 +17,7 @@ const meta = {
   description={meta.description}
   canonical={meta.canonical}
   ogImage={meta.ogImage}
+  schema={schema}
 >
   <Header />
   <main id="main-content" class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">

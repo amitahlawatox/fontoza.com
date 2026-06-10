@@ -255,7 +255,7 @@ export function generateStyleMeta(style: StyleDefinition): PageMeta {
   return {
     title,
     description,
-    canonical: `${SITE_URL}/fonts/${style.id}`,
+    canonical: `${SITE_URL}/fonts/${style.id}/`,
     ogImage: DEFAULT_OG_IMAGE,
   };
 }
@@ -277,7 +277,7 @@ export function generateCategoryMeta(category: CategoryDefinition): PageMeta {
   return {
     title,
     description,
-    canonical: `${SITE_URL}/category/${category.id}`,
+    canonical: `${SITE_URL}/category/${category.id}/`,
     ogImage: DEFAULT_OG_IMAGE,
   };
 }
@@ -299,7 +299,7 @@ export function generatePlatformMeta(platform: PlatformDefinition): PageMeta {
   return {
     title,
     description,
-    canonical: `${SITE_URL}/platform/${platform.id}`,
+    canonical: `${SITE_URL}/platform/${platform.id}/`,
     ogImage: DEFAULT_OG_IMAGE,
   };
 }
@@ -322,7 +322,7 @@ export function generateToolMeta(tool: {
   return {
     title,
     description,
-    canonical: `${SITE_URL}/tools/${tool.id}`,
+    canonical: `${SITE_URL}/tools/${tool.id}/`,
     ogImage: DEFAULT_OG_IMAGE,
   };
 }
@@ -332,7 +332,7 @@ export function getHomeMeta(): PageMeta {
     title: 'Fontoza — Fancy Text Generator | 50+ Unicode Font Styles',
     description:
       'Generate 50+ fancy Unicode font styles instantly — cursive, bold, gothic, italic, vaporwave, and more. Copy and paste into Instagram, TikTok, Discord, and Twitter. Free.',
-    canonical: SITE_URL,
+    canonical: `${SITE_URL}/`,
     ogImage: DEFAULT_OG_IMAGE,
   };
 }
