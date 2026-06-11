@@ -51,6 +51,7 @@ export default function CopyButton({ text, variant = 'icon', label = 'Copy' }: P
         aria-label={copied ? 'Copied!' : label}
         title={copied ? 'Copied!' : label}
         disabled={!text}
+        data-copy-btn
         className={`relative flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg border text-xs font-bold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-30 disabled:cursor-not-allowed ${
           copied
             ? 'border-green-400 bg-green-50 text-green-600 scale-95 dark:bg-green-900/30 dark:text-green-400'
@@ -76,6 +77,7 @@ export default function CopyButton({ text, variant = 'icon', label = 'Copy' }: P
       onClick={handleCopy}
       aria-label={copied ? 'Copied to clipboard!' : `${label} — ${text.slice(0, 30)}${text.length > 30 ? '…' : ''}`}
       disabled={!text}
+      data-copy-btn
       className={`relative flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold tracking-wide transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed overflow-hidden ${
         copied
           ? 'bg-green-500 text-white scale-95'

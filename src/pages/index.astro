@@ -149,22 +149,22 @@ const platformBadges = [
         <!-- Stats strip -->
         <div class="mb-8 flex flex-wrap justify-center gap-6 text-center animate-fade-up-delay-2">
           <div>
-            <div class="text-2xl font-black text-[var(--color-text)]">50+</div>
+            <div class="text-2xl font-black text-[var(--color-text)] stat-number glow">{STYLES.length}+</div>
             <div class="text-xs text-[var(--color-text-muted)]">Font Styles</div>
           </div>
           <div class="w-px bg-[var(--color-border)]"></div>
           <div>
-            <div class="text-2xl font-black text-[var(--color-text)]">100%</div>
+            <div class="text-2xl font-black text-[var(--color-text)] stat-number">100%</div>
             <div class="text-xs text-[var(--color-text-muted)]">Free Forever</div>
           </div>
           <div class="w-px bg-[var(--color-border)]"></div>
           <div>
-            <div class="text-2xl font-black text-[var(--color-text)]">0</div>
+            <div class="text-2xl font-black text-[var(--color-text)] stat-number">0</div>
             <div class="text-xs text-[var(--color-text-muted)]">Sign-ups Needed</div>
           </div>
           <div class="w-px bg-[var(--color-border)]"></div>
           <div>
-            <div class="text-2xl font-black text-[var(--color-text)]">7</div>
+            <div class="text-2xl font-black text-[var(--color-text)] stat-number">12</div>
             <div class="text-xs text-[var(--color-text-muted)]">Platforms</div>
           </div>
         </div>
@@ -179,6 +179,20 @@ const platformBadges = [
 
       </div>
     </section>
+
+    <!-- ══════════════════════════════════════════════
+         MARQUEE — infinite scrolling font preview
+    ══════════════════════════════════════════════ -->
+    <div class="marquee-section relative overflow-hidden border-y border-[var(--color-border)] bg-[var(--color-surface)] py-4" aria-hidden="true">
+      <!-- Fade edges -->
+      <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[var(--color-surface)] to-transparent"></div>
+      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[var(--color-surface)] to-transparent"></div>
+      <div class="marquee-track flex gap-8 whitespace-nowrap">
+        {['𝒞𝓊𝓇𝓈𝒾𝓋𝑒','𝔊𝔬𝔱𝔥𝔦𝔠','𝐁𝐨𝐥𝐝','𝕯𝖔𝖚𝖇𝖑𝖊','ⓒⓘⓡⓒⓛⓔⓓ','ａｅｓｔｈｅｔｉｃ','𝙼𝚘𝚗𝚘','𝓑𝓸𝓵𝓭 𝓒𝓾𝓻𝓼𝓲𝓿𝓮','ꜱᴍᴀʟʟ ᴄᴀᴘꜱ','🔥 𝐅𝐢𝐫𝐞 🔥','⚡ 𝔹𝕠𝕝𝕕 ⚡','✨ 𝒮𝓅𝒶𝓇𝓀𝓁𝑒𝓈 ✨','♛ 𝕮𝖗𝖔𝖜𝖓 ♛','𝙂𝙤𝙩𝙝𝙞𝙘','🌙 𝓜𝓸𝓸𝓷 🌙','𝒞𝓊𝓇𝓈𝒾𝓋𝑒','𝔊𝔬𝔱𝔥𝔦𝔠','𝐁𝐨𝐥𝐝','𝕯𝖔𝖚𝖇𝖑𝖊','ⓒⓘⓡⓒⓛⓔⓓ','ａｅｓｔｈｅｔｉｃ','𝙼𝚘𝚗𝚘','𝓑𝓸𝓵𝓭 𝓒𝓾𝓻𝓼𝓲𝓿𝓮','ꜱᴍᴀʟʟ ᴄᴀᴘꜱ','🔥 𝐅𝐢𝐫𝐞 🔥','⚡ 𝔹𝕠𝕝𝕕 ⚡','✨ 𝒮𝓅𝒶𝓇𝓀𝓁𝑒𝓈 ✨','♛ 𝕮𝖗𝖔𝖜𝖓 ♛','𝙂𝙤𝙩𝙝𝙞𝙘','🌙 𝓜𝓸𝓸𝓷 🌙'].map(text => (
+          <span class="marquee-item text-lg font-semibold text-[var(--color-text-muted)] opacity-70 select-none">{text}</span>
+        ))}
+      </div>
+    </div>
 
     <!-- ══════════════════════════════════════════════
          HOW IT WORKS — 3 steps with icons

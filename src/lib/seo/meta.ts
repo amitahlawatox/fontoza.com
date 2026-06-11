@@ -354,7 +354,7 @@ export function generateToolMeta(tool: {
 
 export function getHomeMeta(): PageMeta {
   return {
-    title: 'Fontoza — Fancy Text Generator | 50+ Unicode Font Styles',
+    title: 'Fontoza — Fancy Text Generator | 400+ Unicode Font Styles',
     description:
       'Generate 400+ fancy Unicode font styles instantly — cursive, bold, gothic, italic, vaporwave, and more. Copy and paste into Instagram, TikTok, Discord, and Twitter. Free.',
     canonical: `${SITE_URL}/`,

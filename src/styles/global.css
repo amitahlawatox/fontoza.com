@@ -103,6 +103,43 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(12px) scale(0.8); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes sparkle-pop {
+  0%   { transform: scale(0) rotate(0deg);   opacity: 1; }
+  60%  { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+@keyframes cursor-glow-in {
+  from { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  to   { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes ripple {
+  0%   { transform: translate(-50%,-50%) scale(0.3); opacity: 0.6; }
+  100% { transform: translate(-50%,-50%) scale(2.5); opacity: 0; }
+}
+
+@keyframes numberPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.18); color: var(--color-accent); }
+  100% { transform: scale(1); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 0px var(--color-accent); }
+  50%       { text-shadow: 0 0 20px var(--color-accent), 0 0 40px rgba(99,102,241,0.3); }
+}
+
 /* ─── Utility classes ─── */
 @layer utilities {
   .unicode-preview {
@@ -285,5 +322,79 @@ body {
   /* Spin slow */
   .animate-spin-slow {
     animation: spin-slow 8s linear infinite;
+  }
+
+  /* ─── Marquee ────────────────────────────────────────────────────────── */
+  .marquee-track {
+    animation: marquee 28s linear infinite;
+    display: flex;
+    gap: 2.5rem;
+    width: max-content;
+  }
+  .marquee-section:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .marquee-item {
+    flex-shrink: 0;
+    transition: color 0.2s, opacity 0.2s;
+  }
+  .marquee-item:hover {
+    color: var(--color-accent);
+    opacity: 1 !important;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+  }
+
+  /* ─── Cursor glow (desktop only) ─────────────────────────────────────── */
+  #cursor-glow {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,102,241,0.07) 0%, rgba(168,85,247,0.04) 40%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.4s ease;
+    opacity: 0;
+    animation: cursor-glow-in 0.4s ease forwards;
+  }
+
+  /* ─── Sparkle burst (injected by JS on copy) ─────────────────────────── */
+  .sparkle-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    font-size: 1.2rem;
+    animation: sparkle-pop 0.7s ease forwards;
+  }
+
+  /* ─── Animated stat numbers ─────────────────────────────────────────── */
+  .stat-number {
+    display: inline-block;
+    animation: countUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .stat-number.glow {
+    animation: countUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both,
+               glowPulse 2s ease 0.6s 3;
+  }
+
+  /* ─── Ripple click effect ─────────────────────────────────────────────── */
+  .ripple-effect {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(99,102,241,0.35);
+    animation: ripple 0.6s ease-out forwards;
+    pointer-events: none;
+  }
+
+  /* ─── Tilt card (applied by JS) ─────────────────────────────────────── */
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 }
