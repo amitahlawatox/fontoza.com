@@ -22,7 +22,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
   <Header />
   <main id="main-content" class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
     <h1 class="mb-2 text-3xl font-bold tracking-tight text-[var(--color-text)]">Privacy Policy</h1>
-    <p class="mb-8 text-sm text-[var(--color-text-muted)]">Last updated: June 10, 2026</p>
+    <p class="mb-8 text-sm text-[var(--color-text-muted)]">Last updated: June 11, 2026</p>
 
     <div class="space-y-8 text-sm leading-relaxed text-[var(--color-text-muted)]">
 
@@ -58,12 +58,29 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
 
         <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">2.4 Automatically Collected Information</h3>
         <p>
-          Like most websites, our hosting provider (Vercel) may automatically collect standard server log information when you visit our site. This may include your IP address, browser type, operating system, referring URL, and pages visited. This information is used by Vercel for infrastructure purposes and is governed by <a href="https://vercel.com/legal/privacy-policy" class="text-indigo-500 hover:underline" target="_blank" rel="noopener">Vercel's Privacy Policy</a>.
+          Like most websites, our hosting provider (Vercel) may automatically collect standard server log information when you visit our site. This may include your IP address, browser type, operating system, referring URL, and pages visited. This information is used by Vercel for infrastructure purposes and is governed by <a href="https://vercel.com/legal/privacy-policy" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Vercel's Privacy Policy</a>. Vercel retains server logs for up to 30 days.
+        </p>
+
+        <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">2.5 Fonts</h3>
+        <p>
+          Fontoza serves all fonts directly from our own servers. We do not load fonts from Google Fonts, Adobe Fonts, or any other external font CDN. No IP address or browser information is transmitted to third parties for font delivery.
         </p>
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">3. Cookies</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">3. Legal Basis for Processing (GDPR)</h2>
+        <p>
+          For users in the European Economic Area (EEA), United Kingdom, and Switzerland, we process data under the following legal bases as defined in the General Data Protection Regulation (GDPR):
+        </p>
+        <ul class="mt-3 space-y-2 list-disc list-inside">
+          <li><strong class="text-[var(--color-text)]">Legitimate interests (Article 6(1)(f)):</strong> We process server log data (via Vercel) to maintain the security and operation of the website. Our legitimate interest is ensuring the site functions correctly and is protected from abuse.</li>
+          <li><strong class="text-[var(--color-text)]">Legitimate interests:</strong> Vercel Analytics is used to understand aggregate traffic patterns without collecting personal data.</li>
+          <li><strong class="text-[var(--color-text)]">Consent (Article 6(1)(a)):</strong> If Google AdSense advertising is active, it requires your consent to serve personalised advertisements. You may provide or withdraw this consent at any time via the cookie consent notice shown on your first visit, or by visiting <a href="https://www.google.com/settings/ads" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">4. Cookies</h2>
         <h3 class="mb-2 font-semibold text-[var(--color-text)]">3.1 First-Party Cookies</h3>
         <p>
           Fontoza itself does not set any first-party tracking cookies. We use browser <code class="rounded bg-[var(--color-surface)] px-1 font-mono text-xs">localStorage</code> (not cookies) for storing your text and theme preferences, as described in Section 2.
@@ -79,7 +96,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">4. Vercel Analytics</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">5. Vercel Analytics</h2>
         <p>
           Fontoza uses Vercel Analytics, a privacy-first analytics solution. Vercel Analytics does not use cookies, does not track individual users across sessions, and does not collect personally identifiable information. It provides aggregate data about traffic patterns (page views, referrers, device types) without identifying individual visitors.
         </p>
@@ -89,7 +106,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">5. How We Use Information</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">6. How We Use Information</h2>
         <p>We use the limited information we receive to:</p>
         <ul class="mt-2 list-disc list-inside space-y-1">
           <li>Maintain and improve the Fontoza service</li>
@@ -101,51 +118,65 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">6. Third-Party Links</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">7. International Data Transfers</h2>
+        <p>
+          Fontoza is hosted on Vercel, which operates infrastructure globally including in the United States. If you are located in the EEA, UK, or Switzerland, your data (server logs) may be transferred to and processed in the United States. Vercel complies with applicable data transfer mechanisms including the EU-US Data Privacy Framework. For more information, see <a href="https://vercel.com/legal/privacy-policy" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Vercel's Privacy Policy</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">8. Third-Party Links</h2>
         <p>
           Our website may contain links to other websites. We are not responsible for the privacy practices of those sites. We encourage you to review the privacy policies of any third-party sites you visit.
         </p>
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">7. Children's Privacy</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">9. Children's Privacy</h2>
         <p>
           Fontoza is not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <a href="mailto:contact@fontoza.com" class="text-indigo-500 hover:underline">contact@fontoza.com</a>.
         </p>
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">8. Your Rights</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">10. Your Rights</h2>
         <p>
-          Depending on your jurisdiction, you may have the right to:
+          Depending on your jurisdiction, you may have the following rights regarding your personal data:
         </p>
         <ul class="mt-2 list-disc list-inside space-y-1">
-          <li>Access the personal information we hold about you</li>
-          <li>Request deletion of your personal information</li>
-          <li>Opt out of the sale of personal information (we do not sell personal data)</li>
-          <li>Lodge a complaint with your local data protection authority</li>
+          <li><strong class="text-[var(--color-text)]">Right of access:</strong> Request a copy of the personal information we hold about you.</li>
+          <li><strong class="text-[var(--color-text)]">Right to rectification:</strong> Request correction of inaccurate personal data.</li>
+          <li><strong class="text-[var(--color-text)]">Right to erasure:</strong> Request deletion of your personal information ("right to be forgotten").</li>
+          <li><strong class="text-[var(--color-text)]">Right to object:</strong> Object to processing based on legitimate interests.</li>
+          <li><strong class="text-[var(--color-text)]">Right to restrict processing:</strong> Request that we limit how we use your data.</li>
+          <li><strong class="text-[var(--color-text)]">Right to data portability:</strong> Receive your data in a structured, machine-readable format.</li>
+          <li><strong class="text-[var(--color-text)]">Right to withdraw consent:</strong> Withdraw any consent you have given at any time (e.g., for personalised ads).</li>
+          <li><strong class="text-[var(--color-text)]">CCPA — California residents:</strong> You have the right to know what personal information is collected, the right to delete, and the right to opt out of the sale of personal information. We do not sell personal data.</li>
         </ul>
         <p class="mt-3">
           Since we do not collect personal information through the core service, there is typically no personal data to access or delete. For any data-related requests, contact us at <a href="mailto:contact@fontoza.com" class="text-indigo-500 hover:underline">contact@fontoza.com</a>.
         </p>
+        <p class="mt-3">
+          <strong class="text-[var(--color-text)]">Right to lodge a complaint:</strong> If you are located in the EEA or UK, you have the right to lodge a complaint with your local supervisory authority. In the UK, this is the <a href="https://ico.org.uk" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Information Commissioner's Office (ICO)</a>. You can find your national EU supervisory authority at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">edpb.europa.eu</a>.
+        </p>
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">9. Data Security</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">11. Data Security</h2>
         <p>
           Fontoza is served over HTTPS and hosted on Vercel's infrastructure, which implements industry-standard security practices. Since the tool processes all text locally in your browser and does not transmit it to our servers, your input data is not at risk of interception or breach on our end.
         </p>
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">10. Changes to This Policy</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">12. Changes to This Policy</h2>
         <p>
           We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date. We encourage you to review this policy periodically. Continued use of Fontoza after changes are posted constitutes acceptance of the revised policy.
         </p>
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">11. Contact Us</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">13. Contact Us</h2>
         <p>
           If you have any questions or concerns about this Privacy Policy, please contact us at:
         </p>

@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import '@fontsource-variable/inter';
+import CookieBanner from '../components/layout/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -28,16 +30,6 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
 
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
-
-    <!-- Generator tag -->
-    <meta name="generator" content={Astro.generator} />
 
     <!-- SEO meta -->
     <title>{title}</title>
@@ -96,6 +88,8 @@ const {
     </a>
 
     <slot />
+
+    <CookieBanner />
 
     <!-- Vercel Analytics — production only -->
     {import.meta.env.PROD && (

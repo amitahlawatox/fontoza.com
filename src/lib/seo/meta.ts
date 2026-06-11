@@ -121,7 +121,7 @@ const PLATFORM_META_OVERRIDES: Record<string, { title: string; description: stri
   'instagram-font-generator': {
     title: 'Instagram Font Generator — Fancy Bio Fonts | Fontoza',
     description:
-      'Generate fancy Unicode fonts for your Instagram bio, captions, and stories. Cursive, bold, gothic, and 50+ styles — copy and paste in seconds. Free tool.',
+      'Generate fancy Unicode fonts for your Instagram bio, captions, and stories. Cursive, bold, gothic, and 400+ styles — copy and paste in seconds. Free tool.',
   },
   'tiktok-font-generator': {
     title: 'TikTok Font Generator — Fancy Bio Text | Fontoza',
@@ -156,12 +156,12 @@ const PLATFORM_META_OVERRIDES: Record<string, { title: string; description: stri
   'roblox-font-generator': {
     title: 'Roblox Font Generator — Fancy Display Name Text | Fontoza',
     description:
-      'Generate fancy Unicode fonts for your Roblox display name, bio, and group descriptions. Bold, cursive, gothic, and 50+ styles — copy and paste free. No sign-up.',
+      'Generate fancy Unicode fonts for your Roblox display name, bio, and group descriptions. Bold, cursive, gothic, and 400+ styles — copy and paste free. No sign-up.',
   },
   'twitch-font-generator': {
     title: 'Twitch Font Generator — Streamer Bio & Title Fonts | Fontoza',
     description:
-      'Create standout Unicode fonts for your Twitch bio, stream title, and channel panels. Bold, cursive, gothic, and 50+ styles — copy and paste free on Fontoza.',
+      'Create standout Unicode fonts for your Twitch bio, stream title, and channel panels. Bold, cursive, gothic, and 400+ styles — copy and paste free on Fontoza.',
   },
   'linkedin-font-generator': {
     title: 'LinkedIn Font Generator — Bold Headline Text | Fontoza',
@@ -171,12 +171,12 @@ const PLATFORM_META_OVERRIDES: Record<string, { title: string; description: stri
   'telegram-font-generator': {
     title: 'Telegram Font Generator — Channel & Bio Fonts | Fontoza',
     description:
-      'Generate fancy Unicode fonts for your Telegram bio, channel name, and group descriptions. Cursive, bold, gothic, and 50+ styles — copy and paste free. Instant.',
+      'Generate fancy Unicode fonts for your Telegram bio, channel name, and group descriptions. Cursive, bold, gothic, and 400+ styles — copy and paste free. Instant.',
   },
   'snapchat-font-generator': {
     title: 'Snapchat Font Generator — Display Name Fonts | Fontoza',
     description:
-      'Create aesthetic Unicode fonts for your Snapchat display name and bio. Cursive, bold, vaporwave, and 50+ styles — copy and paste into Snapchat free. No sign-up.',
+      'Create aesthetic Unicode fonts for your Snapchat display name and bio. Cursive, bold, vaporwave, and 400+ styles — copy and paste into Snapchat free. No sign-up.',
   },
 };
 
@@ -229,7 +229,7 @@ const TOOL_META: Record<string, { title: string; description: string }> = {
   'font-tester': {
     title: 'Font Tester — Preview Unicode Fonts Side by Side | Fontoza',
     description:
-      'Preview all 50+ Unicode font styles at once. Test how your text looks in every style before copying. Free font comparison tool on Fontoza.',
+      'Preview all 400+ Unicode font styles at once. Test how your text looks in every style before copying. Free font comparison tool on Fontoza.',
   },
   'text-repeater': {
     title: 'Text Repeater — Repeat Text Online Free | Fontoza',
@@ -356,7 +356,7 @@ export function getHomeMeta(): PageMeta {
   return {
     title: 'Fontoza — Fancy Text Generator | 50+ Unicode Font Styles',
     description:
-      'Generate 50+ fancy Unicode font styles instantly — cursive, bold, gothic, italic, vaporwave, and more. Copy and paste into Instagram, TikTok, Discord, and Twitter. Free.',
+      'Generate 400+ fancy Unicode font styles instantly — cursive, bold, gothic, italic, vaporwave, and more. Copy and paste into Instagram, TikTok, Discord, and Twitter. Free.',
     canonical: `${SITE_URL}/`,
     ogImage: DEFAULT_OG_IMAGE,
   };

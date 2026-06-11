@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+const meta = {
+  title: 'Accessibility Statement — Fontoza',
+  description: 'Fontoza accessibility statement. We are committed to WCAG 2.1 AA compliance. Learn about our accessibility features and how to contact us with concerns.',
+  canonical: 'https://fontoza.com/accessibility/',
+  ogImage: 'https://fontoza.com/og-image.png',
+};
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.canonical}
+  ogImage={meta.ogImage}
+  noIndex={false}
+>
+  <Header />
+  <main id="main-content" class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <h1 class="mb-2 text-3xl font-bold tracking-tight text-[var(--color-text)]">Accessibility Statement</h1>
+    <p class="mb-8 text-sm text-[var(--color-text-muted)]">Last updated: June 11, 2026</p>
+
+    <div class="space-y-8 text-sm leading-relaxed text-[var(--color-text-muted)]">
+
+      <section>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">Our Commitment</h2>
+        <p>
+          Fontoza is committed to making our website accessible to all users, including those with disabilities. We aim to conform to the <strong class="text-[var(--color-text)]">Web Content Accessibility Guidelines (WCAG) 2.1, Level AA</strong> published by the World Wide Web Consortium (W3C).
+        </p>
+        <p class="mt-3">
+          We continually evaluate and improve the accessibility of our website to ensure we provide an equal and positive experience for all users.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">Accessibility Features</h2>
+        <p>Fontoza includes the following accessibility features:</p>
+        <ul class="mt-3 space-y-2 list-disc list-inside">
+          <li><strong class="text-[var(--color-text)]">Keyboard navigation:</strong> All interactive elements are reachable and operable via keyboard.</li>
+          <li><strong class="text-[var(--color-text)]">Skip to content link:</strong> A "Skip to content" link is available at the top of every page for screen reader and keyboard users.</li>
+          <li><strong class="text-[var(--color-text)]">Semantic HTML:</strong> Pages use proper heading hierarchy (h1 → h2 → h3) and landmark regions (main, nav, footer).</li>
+          <li><strong class="text-[var(--color-text)]">ARIA labels:</strong> Interactive components include appropriate aria-label and aria-live attributes.</li>
+          <li><strong class="text-[var(--color-text)]">Dark mode:</strong> Full dark mode support respects the user's system preference (prefers-color-scheme) and can be toggled manually.</li>
+          <li><strong class="text-[var(--color-text)]">Colour contrast:</strong> Text and interface elements meet WCAG AA contrast ratios (4.5:1 for normal text, 3:1 for large text).</li>
+          <li><strong class="text-[var(--color-text)]">Decorative content:</strong> Decorative images, icons, and Unicode characters include <code class="rounded bg-[var(--color-surface)] px-1 font-mono text-xs">aria-hidden="true"</code> to avoid noise for screen readers.</li>
+          <li><strong class="text-[var(--color-text)]">Focus indicators:</strong> All interactive elements have visible focus indicators.</li>
+          <li><strong class="text-[var(--color-text)]">Text resizing:</strong> The site is usable when text is resized up to 200% without loss of content or functionality.</li>
+          <li><strong class="text-[var(--color-text)]">Responsive design:</strong> The site is fully usable on mobile, tablet, and desktop screen sizes.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">Known Limitations</h2>
+        <p>
+          We are aware of the following limitations and are working to address them:
+        </p>
+        <ul class="mt-3 space-y-2 list-disc list-inside">
+          <li>Some generated Unicode characters may not be announced meaningfully by screen readers, as they are mathematical symbols rather than standard letters. The copy-to-clipboard button is always accessible regardless of how the preview text renders.</li>
+          <li>Zalgo and effect-heavy text styles inherently create content that screen readers may struggle to parse — this is a property of the Unicode standard, not a site deficiency.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">Standards and Guidelines</h2>
+        <p>
+          We use the following standards as a reference for our accessibility work:
+        </p>
+        <ul class="mt-3 space-y-1 list-disc list-inside">
+          <li>WCAG 2.1 — Web Content Accessibility Guidelines, Level AA</li>
+          <li>WAI-ARIA 1.2 — Accessible Rich Internet Applications specification</li>
+          <li>Section 508 of the US Rehabilitation Act</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">Feedback and Contact</h2>
+        <p>
+          We welcome feedback on the accessibility of Fontoza. If you experience accessibility barriers, please contact us:
+        </p>
+        <ul class="mt-3 space-y-1 list-disc list-inside">
+          <li>Email: <a href="mailto:contact@fontoza.com" class="text-indigo-500 hover:underline">contact@fontoza.com</a></li>
+          <li>Response time: We aim to respond within 5 business days.</li>
+        </ul>
+        <p class="mt-3">
+          Please describe the specific accessibility barrier you encountered and the assistive technology you are using (screen reader, voice control software, etc.) so we can investigate and resolve it as quickly as possible.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">Enforcement</h2>
+        <p>
+          If you are not satisfied with our response, you may contact the relevant accessibility enforcement authority in your jurisdiction:
+        </p>
+        <ul class="mt-3 space-y-1 list-disc list-inside">
+          <li><strong class="text-[var(--color-text)]">US:</strong> US Access Board — <a href="https://www.access-board.gov" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">access-board.gov</a></li>
+          <li><strong class="text-[var(--color-text)]">EU:</strong> Your national accessibility enforcement body (listed by the European Commission)</li>
+          <li><strong class="text-[var(--color-text)]">UK:</strong> Equality and Human Rights Commission — <a href="https://www.equalityhumanrights.com" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">equalityhumanrights.com</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>
