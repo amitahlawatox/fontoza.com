@@ -1,66 +1,88 @@
 ---
 const fontStyleLinks = [
-  { label: 'Cursive Font', href: '/fonts/cursive-font' },
-  { label: 'Bold Text', href: '/fonts/bold-text' },
-  { label: 'Italic Font', href: '/fonts/italic-font' },
-  { label: 'Gothic Font', href: '/fonts/gothic-font' },
-  { label: 'Strikethrough Text', href: '/fonts/strikethrough-text' },
-  { label: 'Small Caps', href: '/fonts/small-caps' },
-  { label: 'Vaporwave Text', href: '/fonts/vaporwave-text' },
-  { label: 'Zalgo Text', href: '/fonts/zalgo-text' },
+  { label: 'Cursive Font', href: '/fonts/cursive-font/' },
+  { label: 'Bold Text', href: '/fonts/bold-text/' },
+  { label: 'Italic Font', href: '/fonts/italic-font/' },
+  { label: 'Gothic Font', href: '/fonts/gothic-font/' },
+  { label: 'Strikethrough Text', href: '/fonts/strikethrough-text/' },
+  { label: 'Small Caps', href: '/fonts/small-caps/' },
+  { label: 'Vaporwave Text', href: '/fonts/vaporwave-text/' },
+  { label: 'Zalgo Text', href: '/fonts/zalgo-text/' },
 ];
 
 const platformLinks = [
-  { label: 'Instagram Fonts', href: '/platforms/instagram' },
-  { label: 'TikTok Fonts', href: '/platforms/tiktok' },
-  { label: 'Discord Fonts', href: '/platforms/discord' },
-  { label: 'Twitter / X Fonts', href: '/platforms/twitter' },
-  { label: 'Facebook Fonts', href: '/platforms/facebook' },
-  { label: 'WhatsApp Fonts', href: '/platforms/whatsapp' },
-  { label: 'YouTube Fonts', href: '/platforms/youtube' },
+  { label: 'Instagram Fonts', href: '/platform/instagram-font-generator/' },
+  { label: 'TikTok Fonts', href: '/platform/tiktok-font-generator/' },
+  { label: 'Discord Fonts', href: '/platform/discord-font-generator/' },
+  { label: 'Twitter / X Fonts', href: '/platform/twitter-font-generator/' },
+  { label: 'Facebook Fonts', href: '/platform/facebook-font-generator/' },
+  { label: 'WhatsApp Fonts', href: '/platform/whatsapp-font-generator/' },
+  { label: 'YouTube Fonts', href: '/platform/youtube-font-generator/' },
 ];
 
 const toolLinks = [
   { label: 'Font Generator', href: '/' },
-  { label: 'All Font Styles', href: '/fonts' },
-  { label: 'Font Categories', href: '/categories' },
-  { label: 'Bold Text Generator', href: '/fonts/bold-text' },
-  { label: 'Cursive Generator', href: '/fonts/cursive-font' },
+  { label: 'All Font Styles', href: '/fonts/' },
+  { label: 'Word Counter', href: '/tools/word-counter/' },
+  { label: 'Character Counter', href: '/tools/character-counter/' },
+  { label: 'Password Generator', href: '/tools/password-generator/' },
+  { label: 'All Tools', href: '/tools/' },
 ];
 
 const companyLinks = [
-  { label: 'About', href: '/about' },
-  { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Terms of Service', href: '/terms' },
+  { label: 'About', href: '/about/' },
+  { label: 'Privacy Policy', href: '/privacy/' },
+  { label: 'Terms of Service', href: '/terms/' },
 ];
 
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] mt-16">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+<footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] mt-16 relative overflow-hidden">
+  <!-- Subtle gradient orbs -->
+  <div class="pointer-events-none absolute -top-32 -right-32 w-64 h-64 rounded-full bg-gradient-to-br from-indigo-500/5 to-purple-500/5 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-gradient-to-br from-pink-500/5 to-indigo-500/5 blur-3xl"></div>
 
-    <!-- Top: logo + tagline + trust badge -->
-    <div class="mb-10 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <div>
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 relative">
+
+    <!-- Top: logo + tagline + trust badges -->
+    <div class="mb-12 flex flex-col items-start gap-4 sm:flex-row sm:items-start sm:justify-between">
+      <div class="max-w-xs">
         <a
           href="/"
           aria-label="Fontoza home"
-          class="inline-block bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-2xl font-bold text-transparent"
+          class="inline-block text-2xl font-black tracking-tight"
         >
-          Fontoza
+          <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Fontoza
+          </span>
         </a>
-        <p class="mt-1 text-sm text-[var(--color-text-muted)]">
-          Copy &amp; paste fancy Unicode text in seconds
+        <p class="mt-2 text-sm text-[var(--color-text-muted)] leading-relaxed">
+          Copy &amp; paste fancy Unicode text in seconds. 50+ styles, zero tracking, always free.
         </p>
+
+        <!-- Trust badges -->
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-green-200/50 bg-green-50/50 px-3 py-1 text-xs font-medium text-green-700 dark:border-green-800/50 dark:bg-green-900/20 dark:text-green-400">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            No cookies
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-indigo-200/50 bg-indigo-50/50 px-3 py-1 text-xs font-medium text-indigo-700 dark:border-indigo-800/50 dark:bg-indigo-900/20 dark:text-indigo-400">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            100% Free
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-purple-200/50 bg-purple-50/50 px-3 py-1 text-xs font-medium text-purple-700 dark:border-purple-800/50 dark:bg-purple-900/20 dark:text-purple-400">
+            ⚡ Instant
+          </span>
+        </div>
       </div>
 
-      <!-- Trust badge -->
-      <div class="flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-1.5 text-xs text-[var(--color-text-muted)]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500" aria-hidden="true">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-        </svg>
-        No cookies. No tracking. Just fonts.
+      <!-- Unicode samples decorative -->
+      <div class="hidden lg:flex items-center gap-4 text-2xl opacity-30 select-none" aria-hidden="true">
+        <span class="animate-float">𝒻</span>
+        <span class="animate-float-delay-1">𝔉</span>
+        <span class="animate-float-delay-2">𝐅</span>
+        <span class="animate-float-delay-3">Ｆ</span>
       </div>
     </div>
 
@@ -68,23 +90,24 @@ const year = new Date().getFullYear();
     <div class="grid grid-cols-2 gap-8 sm:grid-cols-2 lg:grid-cols-4">
       <!-- Font Styles -->
       <div>
-        <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text)]">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--color-text)]">
           Font Styles
         </h3>
-        <ul class="space-y-2">
+        <ul class="space-y-2.5">
           {fontStyleLinks.map(link => (
             <li>
               <a
                 href={link.href}
-                class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]"
+                class="text-sm text-[var(--color-text-muted)] transition-all hover:text-[var(--color-accent)] hover:translate-x-0.5 inline-block"
               >
                 {link.label}
               </a>
             </li>
           ))}
           <li>
-            <a href="/fonts" class="text-sm font-medium text-indigo-500 transition-colors hover:text-indigo-400">
-              All styles →
+            <a href="/fonts/" class="text-sm font-semibold text-indigo-500 transition-colors hover:text-indigo-400 inline-flex items-center gap-1">
+              All 50+ styles
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
           </li>
         </ul>
@@ -92,15 +115,15 @@ const year = new Date().getFullYear();
 
       <!-- Platforms -->
       <div>
-        <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text)]">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--color-text)]">
           Platforms
         </h3>
-        <ul class="space-y-2">
+        <ul class="space-y-2.5">
           {platformLinks.map(link => (
             <li>
               <a
                 href={link.href}
-                class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]"
+                class="text-sm text-[var(--color-text-muted)] transition-all hover:text-[var(--color-accent)] hover:translate-x-0.5 inline-block"
               >
                 {link.label}
               </a>
@@ -111,15 +134,15 @@ const year = new Date().getFullYear();
 
       <!-- Tools -->
       <div>
-        <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text)]">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--color-text)]">
           Tools
         </h3>
-        <ul class="space-y-2">
+        <ul class="space-y-2.5">
           {toolLinks.map(link => (
             <li>
               <a
                 href={link.href}
-                class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]"
+                class="text-sm text-[var(--color-text-muted)] transition-all hover:text-[var(--color-accent)] hover:translate-x-0.5 inline-block"
               >
                 {link.label}
               </a>
@@ -130,31 +153,39 @@ const year = new Date().getFullYear();
 
       <!-- Company -->
       <div>
-        <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text)]">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--color-text)]">
           Company
         </h3>
-        <ul class="space-y-2">
+        <ul class="space-y-2.5">
           {companyLinks.map(link => (
             <li>
               <a
                 href={link.href}
-                class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]"
+                class="text-sm text-[var(--color-text-muted)] transition-all hover:text-[var(--color-accent)] hover:translate-x-0.5 inline-block"
               >
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
+
+        <!-- Contact -->
+        <div class="mt-6">
+          <h3 class="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--color-text)]">Contact</h3>
+          <a href="mailto:contact@fontoza.com" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors break-all">
+            contact@fontoza.com
+          </a>
+        </div>
       </div>
     </div>
 
     <!-- Bottom copyright bar -->
-    <div class="mt-10 flex flex-col items-center justify-between gap-3 border-t border-[var(--color-border)] pt-6 text-center sm:flex-row sm:text-left">
+    <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[var(--color-border)] pt-6 text-center sm:flex-row sm:text-left">
       <p class="text-xs text-[var(--color-text-muted)]">
         &copy; {year} Fontoza. All rights reserved.
       </p>
       <p class="text-xs text-[var(--color-text-muted)]">
-        Unicode font generator — works on every platform, no install needed.
+        Made with ✨ for creators, students, and everyone in between.
       </p>
     </div>
   </div>

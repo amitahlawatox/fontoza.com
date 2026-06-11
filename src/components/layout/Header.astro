@@ -1,31 +1,36 @@
 ---
 const fontStyleLinks = [
-  { label: 'Cursive Font', href: '/fonts/cursive-font' },
-  { label: 'Bold Text', href: '/fonts/bold-text' },
-  { label: 'Italic Font', href: '/fonts/italic-font' },
-  { label: 'Gothic Font', href: '/fonts/gothic-font' },
-  { label: 'Strikethrough Text', href: '/fonts/strikethrough-text' },
-  { label: 'Small Caps', href: '/fonts/small-caps' },
-  { label: 'Vaporwave Text', href: '/fonts/vaporwave-text' },
-  { label: 'Zalgo Text', href: '/fonts/zalgo-text' },
+  { label: '𝒞ursive Font', href: '/fonts/cursive-font/' },
+  { label: '𝐁old Text', href: '/fonts/bold-text/' },
+  { label: '𝐼talic Font', href: '/fonts/italic-font/' },
+  { label: '𝔊othic Font', href: '/fonts/gothic-font/' },
+  { label: 'S̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶', href: '/fonts/strikethrough-text/' },
+  { label: 'ꜱᴍᴀʟʟ Cᴀᴘꜱ', href: '/fonts/small-caps/' },
+  { label: 'Ｖａｐｏｒｗａｖｅ', href: '/fonts/vaporwave-text/' },
+  { label: 'Z̴a̸l̵g̶o̷ Text', href: '/fonts/zalgo-text/' },
 ];
 
 const pathname = Astro.url.pathname;
+const isActive = (path: string) => pathname === path || pathname.startsWith(path + '/');
 ---
 
 <header
-  class="sticky top-0 z-40 w-full border-b border-[var(--color-border)] bg-[var(--color-bg)]/80 backdrop-blur-md"
+  class="sticky top-0 z-40 w-full border-b border-[var(--color-border)] bg-[var(--color-bg)]/80 backdrop-blur-xl"
+  style="box-shadow: 0 1px 0 0 rgba(99,102,241,0.06);"
 >
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-    <!-- Logo -->
+
+    <!-- Logo with animated gradient -->
     <a
       href="/"
-      class="flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 rounded-md"
+      class="group flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 rounded-lg"
       aria-label="Fontoza — Home"
     >
-      <span
-        class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-2xl font-bold tracking-tight text-transparent"
-      >
+      <!-- Animated F icon -->
+      <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white text-sm font-black shadow-md shadow-indigo-500/30 transition-all group-hover:shadow-indigo-500/50 group-hover:scale-110">
+        𝓕
+      </div>
+      <span class="text-xl font-black tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
         Fontoza
       </span>
     </a>
@@ -34,7 +39,7 @@ const pathname = Astro.url.pathname;
     <nav aria-label="Main navigation" class="hidden items-center gap-1 md:flex">
       <a
         href="/"
-        class={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] ${pathname === '/' ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-muted)]'}`}
+        class={`rounded-lg px-3 py-2 text-sm font-semibold transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] ${isActive('/') && pathname === '/' ? 'text-[var(--color-accent)] bg-[var(--color-surface)]' : 'text-[var(--color-text-muted)]'}`}
       >
         Home
       </a>
@@ -44,20 +49,20 @@ const pathname = Astro.url.pathname;
         <button
           aria-haspopup="true"
           aria-expanded="false"
-          class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          class={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${pathname.startsWith('/fonts') || pathname.startsWith('/category') ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-muted)]'}`}
         >
           Font Styles
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
+            width="13"
+            height="13"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
+            stroke-width="2.5"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="transition-transform group-hover:rotate-180"
+            class="transition-transform duration-200 group-hover:rotate-180"
             aria-hidden="true"
           >
             <polyline points="6 9 12 15 18 9"></polyline>
@@ -66,26 +71,27 @@ const pathname = Astro.url.pathname;
 
         <!-- Dropdown panel -->
         <div
-          class="invisible absolute left-0 top-full mt-1 w-56 origin-top-left scale-95 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:scale-100 group-hover:opacity-100"
+          class="invisible absolute left-0 top-full mt-2 w-60 origin-top-left scale-95 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-2 opacity-0 shadow-xl shadow-black/10 transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100 backdrop-blur-xl"
           role="menu"
+          style="box-shadow: 0 20px 60px rgba(99,102,241,0.12), 0 4px 16px rgba(0,0,0,0.08);"
         >
           {fontStyleLinks.map(link => (
             <a
               href={link.href}
               role="menuitem"
-              class="block rounded-lg px-3 py-2 text-sm text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]"
+              class="block rounded-xl px-3 py-2.5 text-sm font-medium text-[var(--color-text-muted)] transition-all hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-[var(--color-accent)] hover:pl-4 dark:hover:from-indigo-900/20 dark:hover:to-purple-900/20"
             >
               {link.label}
             </a>
           ))}
-          <div class="my-1 border-t border-[var(--color-border)]"></div>
+          <div class="my-1.5 border-t border-[var(--color-border)]"></div>
           <a
-            href="/fonts"
+            href="/fonts/"
             role="menuitem"
-            class="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-indigo-500 transition-colors hover:bg-indigo-50 dark:hover:bg-indigo-950/30"
+            class="flex items-center justify-between gap-1 rounded-xl px-3 py-2.5 text-sm font-bold text-indigo-600 transition-all hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-900/30"
           >
-            View all styles
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <span>View all {50}+ styles</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -94,32 +100,27 @@ const pathname = Astro.url.pathname;
       </div>
 
       <a
-        href="/tools"
-        class={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] ${pathname.startsWith('/tools') ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-muted)]'}`}
+        href="/tools/"
+        class={`rounded-lg px-3 py-2 text-sm font-semibold transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] ${pathname.startsWith('/tools') ? 'text-[var(--color-accent)] bg-[var(--color-surface)]' : 'text-[var(--color-text-muted)]'}`}
       >
         Tools
+      </a>
+
+      <a
+        href="/about/"
+        class={`rounded-lg px-3 py-2 text-sm font-semibold transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] ${pathname.startsWith('/about') ? 'text-[var(--color-accent)] bg-[var(--color-surface)]' : 'text-[var(--color-text-muted)]'}`}
+      >
+        About
       </a>
 
       <!-- Dark mode toggle -->
       <button
         onclick="window.__toggleTheme()"
         aria-label="Toggle dark mode"
-        class="ml-2 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-colors hover:border-indigo-400 hover:text-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+        class="ml-2 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-all hover:border-indigo-400 hover:text-indigo-500 hover:bg-indigo-50 hover:scale-110 dark:hover:bg-indigo-900/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
       >
         <!-- Sun icon (shown in dark mode) -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="hidden dark:block"
-          aria-hidden="true"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block" aria-hidden="true">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -131,22 +132,18 @@ const pathname = Astro.url.pathname;
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
         <!-- Moon icon (shown in light mode) -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="block dark:hidden"
-          aria-hidden="true"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden" aria-hidden="true">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
+
+      <!-- CTA button -->
+      <a
+        href="/"
+        class="ml-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-2 text-sm font-bold text-white shadow-md shadow-indigo-500/20 transition-all hover:shadow-indigo-500/40 hover:scale-[1.03] active:scale-95"
+      >
+        Try Now ✨
+      </a>
     </nav>
 
     <!-- Mobile: dark mode + hamburger -->
@@ -154,7 +151,7 @@ const pathname = Astro.url.pathname;
       <button
         onclick="window.__toggleTheme()"
         aria-label="Toggle dark mode"
-        class="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-colors hover:border-indigo-400 hover:text-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+        class="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-all hover:border-indigo-400 hover:text-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block" aria-hidden="true">
           <circle cx="12" cy="12" r="5"></circle>
@@ -176,9 +173,8 @@ const pathname = Astro.url.pathname;
       <details class="relative">
         <summary
           aria-label="Open navigation menu"
-          class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-colors hover:border-indigo-400 hover:text-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-all hover:border-indigo-400 hover:text-indigo-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
         >
-          <!-- Hamburger lines -->
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -189,16 +185,33 @@ const pathname = Astro.url.pathname;
         <!-- Mobile nav panel -->
         <nav
           aria-label="Mobile navigation"
-          class="absolute right-0 top-full mt-2 w-64 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-3 shadow-xl"
+          class="absolute right-0 top-full mt-2 w-72 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-3 shadow-2xl"
+          style="box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(99,102,241,0.1);"
         >
-          <a href="/" class="block rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">Home</a>
-          <a href="/fonts" class="block rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">Font Styles</a>
-          <div class="ml-3 mt-1 space-y-0.5 border-l border-[var(--color-border)] pl-3">
-            {fontStyleLinks.map(link => (
-              <a href={link.href} class="block rounded-md px-2 py-1.5 text-xs text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]">{link.label}</a>
-            ))}
+          <!-- Brand in mobile menu -->
+          <div class="mb-3 flex items-center gap-2 px-2 pb-3 border-b border-[var(--color-border)]">
+            <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 text-white text-xs font-black">𝓕</div>
+            <span class="font-bold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Fontoza</span>
           </div>
-          <a href="/tools" class="mt-1 block rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">Tools</a>
+
+          <a href="/" class="block rounded-xl px-3 py-2.5 text-sm font-semibold text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">🏠 Home</a>
+          <a href="/fonts/" class="block rounded-xl px-3 py-2.5 text-sm font-semibold text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">✨ All Font Styles</a>
+
+          <div class="ml-3 mt-1 space-y-0.5 border-l-2 border-indigo-100 pl-3 dark:border-indigo-900/50">
+            {fontStyleLinks.slice(0, 5).map(link => (
+              <a href={link.href} class="block rounded-lg px-2 py-1.5 text-xs font-medium text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-accent)]">{link.label}</a>
+            ))}
+            <a href="/fonts/" class="block rounded-lg px-2 py-1.5 text-xs font-bold text-indigo-500">View all →</a>
+          </div>
+
+          <a href="/tools/" class="mt-1 block rounded-xl px-3 py-2.5 text-sm font-semibold text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">🛠️ Tools</a>
+          <a href="/about/" class="block rounded-xl px-3 py-2.5 text-sm font-semibold text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">ℹ️ About</a>
+
+          <div class="mt-3 pt-3 border-t border-[var(--color-border)]">
+            <a href="/" class="block w-full rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-2.5 text-center text-sm font-bold text-white shadow-md shadow-indigo-500/20">
+              Try Font Generator ✨
+            </a>
+          </div>
         </nav>
       </details>
     </div>

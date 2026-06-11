@@ -22,18 +22,18 @@ const schema = [
 ];
 
 function getDecoratorName(style: StyleDefinition): string | undefined {
-  if (style.id.includes('strikethrough') || style.tags.includes('strikethrough')) return 'strikethrough';
+  if (style.id.includes('strikethrough') || style.tags?.includes('strikethrough')) return 'strikethrough';
   if (style.id.includes('double-underline')) return 'doubleUnderline';
   if (style.id.includes('underline') && !style.id.includes('double')) return 'underline';
   if (style.id.includes('zalgo-light')) return 'zalgoLight';
   if (style.id.includes('zalgo-heavy')) return 'zalgoHeavy';
   if (style.id.includes('zalgo')) return 'zalgoMedium';
   if (style.id.includes('vaporwave')) return 'vaporwaveSpace';
-  if (style.id.includes('hearts') || style.tags.includes('hearts')) return 'hearts';
-  if (style.id.includes('stars') || style.tags.includes('stars')) return 'stars';
-  if (style.id.includes('sparkles') || style.tags.includes('sparkles')) return 'sparkles';
-  if (style.id.includes('flowers') || style.tags.includes('flowers')) return 'flowers';
-  if (style.id.includes('crown') || style.tags.includes('crown')) return 'crown';
+  if (style.id.includes('hearts') || style.tags?.includes('hearts')) return 'hearts';
+  if (style.id.includes('stars') || style.tags?.includes('stars')) return 'stars';
+  if (style.id.includes('sparkles') || style.tags?.includes('sparkles')) return 'sparkles';
+  if (style.id.includes('flowers') || style.tags?.includes('flowers')) return 'flowers';
+  if (style.id.includes('crown') || style.tags?.includes('crown')) return 'crown';
   return undefined;
 }
 
@@ -67,6 +67,16 @@ const homeFaqs = [
     a: 'Yes. Unicode characters display correctly on all modern smartphones running iOS or Android. You can generate text on your phone, copy it, and paste it directly into your apps.',
   },
 ];
+
+const floatingChars = ['𝒻', '𝔉', '𝐅', 'Ｆ', '𝓕', '𝙁', '𝔽', 'ℱ'];
+const platformBadges = [
+  { name: 'Instagram', color: 'from-pink-500 to-orange-400' },
+  { name: 'TikTok', color: 'from-slate-900 to-slate-700 dark:from-slate-100 dark:to-slate-300' },
+  { name: 'Discord', color: 'from-indigo-500 to-blue-500' },
+  { name: 'Twitter/X', color: 'from-sky-500 to-blue-600' },
+  { name: 'WhatsApp', color: 'from-green-500 to-emerald-600' },
+  { name: 'YouTube', color: 'from-red-500 to-rose-600' },
+];
 ---
 
 <Layout
@@ -79,152 +89,272 @@ const homeFaqs = [
   <Header />
 
   <main id="main-content">
-    <!-- Hero / Tool Section -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-indigo-50/60 to-transparent py-12 dark:from-indigo-950/20 dark:to-transparent">
-      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-8 text-center">
-          <h1 class="mb-3 text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl lg:text-5xl">
-            Fancy Text Generator —
-            <span class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-              50+ Unicode Font Styles
+
+    <!-- ══════════════════════════════════════════════
+         HERO SECTION — full Gen Z energy
+    ══════════════════════════════════════════════ -->
+    <section class="relative overflow-hidden py-14 sm:py-18">
+
+      <!-- Animated background mesh gradient -->
+      <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-indigo-400/15 to-purple-400/10 blur-3xl animate-float"></div>
+        <div class="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-pink-400/10 to-indigo-400/10 blur-3xl animate-float-delay-2"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-pink-500/5 blur-3xl"></div>
+      </div>
+
+      <!-- Floating unicode characters (decorative) -->
+      <div class="pointer-events-none absolute inset-0 overflow-hidden select-none" aria-hidden="true">
+        {floatingChars.map((char, i) => (
+          <span
+            class={`absolute text-3xl font-black opacity-[0.04] dark:opacity-[0.06] animate-float-delay-${i % 4}`}
+            style={`top: ${10 + (i * 11) % 70}%; left: ${5 + (i * 13) % 90}%; animation-duration: ${5 + (i % 3)}s;`}
+          >
+            {char}
+          </span>
+        ))}
+      </div>
+
+      <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+
+        <!-- Platform badges strip -->
+        <div class="mb-8 flex flex-wrap justify-center gap-2 animate-fade-up">
+          {platformBadges.map(badge => (
+            <span class={`inline-flex items-center rounded-full bg-gradient-to-r ${badge.color} px-3 py-1 text-xs font-bold text-white shadow-sm`}>
+              {badge.name}
             </span>
+          ))}
+        </div>
+
+        <!-- Main headline -->
+        <div class="mb-6 text-center animate-fade-up-delay-1">
+          <h1 class="text-4xl font-black tracking-tight text-[var(--color-text)] sm:text-5xl lg:text-6xl leading-tight">
+            Make Your Text
+            <br class="hidden sm:block" />
+            <span class="text-shimmer">Actually Glow ✨</span>
           </h1>
-          <p class="mx-auto max-w-2xl text-base text-[var(--color-text-muted)] sm:text-lg">
-            Type anything. Pick a style. Copy it anywhere.
+          <p class="mt-5 mx-auto max-w-xl text-base text-[var(--color-text-muted)] sm:text-lg leading-relaxed">
+            50+ Unicode font styles that copy & paste into <strong class="text-[var(--color-text)]">Instagram, TikTok, Discord</strong> and everywhere else. No app, no sign-up.
           </p>
         </div>
 
-        <!-- FontConverter React component -->
-        <FontConverter client:load styles={serializedStyles} />
+        <!-- Stats strip -->
+        <div class="mb-8 flex flex-wrap justify-center gap-6 text-center animate-fade-up-delay-2">
+          <div>
+            <div class="text-2xl font-black text-[var(--color-text)]">50+</div>
+            <div class="text-xs text-[var(--color-text-muted)]">Font Styles</div>
+          </div>
+          <div class="w-px bg-[var(--color-border)]"></div>
+          <div>
+            <div class="text-2xl font-black text-[var(--color-text)]">100%</div>
+            <div class="text-xs text-[var(--color-text-muted)]">Free Forever</div>
+          </div>
+          <div class="w-px bg-[var(--color-border)]"></div>
+          <div>
+            <div class="text-2xl font-black text-[var(--color-text)]">0</div>
+            <div class="text-xs text-[var(--color-text-muted)]">Sign-ups Needed</div>
+          </div>
+          <div class="w-px bg-[var(--color-border)]"></div>
+          <div>
+            <div class="text-2xl font-black text-[var(--color-text)]">7</div>
+            <div class="text-xs text-[var(--color-text-muted)]">Platforms</div>
+          </div>
+        </div>
+
+        <!-- THE TOOL — center stage -->
+        <div class="animate-fade-up-delay-3">
+          <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-2xl shadow-indigo-500/5 sm:p-8"
+               style="box-shadow: 0 32px 80px rgba(99,102,241,0.08), 0 4px 16px rgba(0,0,0,0.06);">
+            <FontConverter client:load styles={serializedStyles} />
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="py-14">
+    <!-- ══════════════════════════════════════════════
+         HOW IT WORKS — 3 steps with icons
+    ══════════════════════════════════════════════ -->
+    <section class="py-16 bg-[var(--color-surface)]">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <h2 class="mb-10 text-center text-2xl font-bold text-[var(--color-text)]">How It Works</h2>
-        <div class="grid gap-6 sm:grid-cols-3">
-          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
-            <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100 text-2xl dark:bg-indigo-900/40 mx-auto">
+        <h2 class="mb-12 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">
+          Three steps, zero effort
+        </h2>
+        <div class="stagger-children grid gap-6 sm:grid-cols-3">
+
+          <div class="relative rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 text-center overflow-hidden group hover:border-indigo-300 transition-all">
+            <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" style="background: radial-gradient(ellipse at center top, rgba(99,102,241,0.06) 0%, transparent 60%);" aria-hidden="true"></div>
+            <div class="relative mb-4 mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-100 to-indigo-50 dark:from-indigo-900/60 dark:to-indigo-800/30 text-3xl shadow-sm">
               ✏️
             </div>
-            <h3 class="mb-1 font-semibold text-[var(--color-text)]">1. Type</h3>
-            <p class="text-sm text-[var(--color-text-muted)]">
-              Enter any text into the box above. Watch all 50+ styles update in real time.
+            <div class="absolute top-4 right-4 flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-xs font-black text-indigo-600 dark:text-indigo-400">1</div>
+            <h3 class="mb-2 text-lg font-bold text-[var(--color-text)]">Type</h3>
+            <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
+              Enter any text. All 50+ font styles update <em>instantly</em> as you type.
             </p>
           </div>
-          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
-            <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 text-2xl dark:bg-purple-900/40 mx-auto">
+
+          <div class="relative rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 text-center overflow-hidden group hover:border-purple-300 transition-all">
+            <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" style="background: radial-gradient(ellipse at center top, rgba(168,85,247,0.06) 0%, transparent 60%);" aria-hidden="true"></div>
+            <div class="relative mb-4 mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-purple-50 dark:from-purple-900/60 dark:to-purple-800/30 text-3xl shadow-sm">
               🎨
             </div>
-            <h3 class="mb-1 font-semibold text-[var(--color-text)]">2. Pick</h3>
-            <p class="text-sm text-[var(--color-text-muted)]">
-              Browse cursive, bold, gothic, vaporwave, zalgo, and many more. Click to copy any style.
+            <div class="absolute top-4 right-4 flex h-7 w-7 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/50 text-xs font-black text-purple-600 dark:text-purple-400">2</div>
+            <h3 class="mb-2 text-lg font-bold text-[var(--color-text)]">Pick</h3>
+            <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
+              Scroll through cursive, gothic, vaporwave, zalgo & more. Find your vibe.
             </p>
           </div>
-          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
-            <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-pink-100 text-2xl dark:bg-pink-900/40 mx-auto">
+
+          <div class="relative rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 text-center overflow-hidden group hover:border-pink-300 transition-all">
+            <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" style="background: radial-gradient(ellipse at center top, rgba(236,72,153,0.06) 0%, transparent 60%);" aria-hidden="true"></div>
+            <div class="relative mb-4 mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-100 to-pink-50 dark:from-pink-900/60 dark:to-pink-800/30 text-3xl shadow-sm">
               📋
             </div>
-            <h3 class="mb-1 font-semibold text-[var(--color-text)]">3. Copy</h3>
-            <p class="text-sm text-[var(--color-text-muted)]">
-              Paste directly into Instagram, TikTok, Discord, Twitter, WhatsApp — anywhere that accepts text.
+            <div class="absolute top-4 right-4 flex h-7 w-7 items-center justify-center rounded-full bg-pink-100 dark:bg-pink-900/50 text-xs font-black text-pink-600 dark:text-pink-400">3</div>
+            <h3 class="mb-2 text-lg font-bold text-[var(--color-text)]">Copy & Paste</h3>
+            <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
+              Hit copy. Paste anywhere — Instagram, TikTok, Discord, Twitter, iMessage.
             </p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-4">
       <AdSlot slot="mid" />
     </div>
 
-    <!-- Categories -->
-    <section class="py-14 bg-[var(--color-surface)]">
+    <!-- ══════════════════════════════════════════════
+         BROWSE BY CATEGORY
+    ══════════════════════════════════════════════ -->
+    <section class="py-16">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <h2 class="mb-3 text-center text-2xl font-bold text-[var(--color-text)]">Browse by Category</h2>
-        <p class="mb-8 text-center text-sm text-[var(--color-text-muted)]">
-          Explore curated groups of font styles.
-        </p>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div class="mb-10 text-center">
+          <h2 class="text-2xl font-black text-[var(--color-text)] sm:text-3xl">Browse by Category</h2>
+          <p class="mt-2 text-sm text-[var(--color-text-muted)]">7 curated style families. Find your aesthetic.</p>
+        </div>
+        <div class="stagger-children grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {CATEGORIES.map((cat) => (
             <a
-              href={`/category/${cat.id}`}
-              class="group flex items-start gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 transition-all hover:border-indigo-400 hover:shadow-md"
+              href={`/category/${cat.id}/`}
+              class="card-hover group relative flex items-start gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5 overflow-hidden"
             >
-              <span class="text-2xl" aria-hidden="true">{cat.icon}</span>
-              <div>
-                <span class="block font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)]">
+              <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" style="background: radial-gradient(ellipse at top left, rgba(99,102,241,0.06) 0%, transparent 60%);" aria-hidden="true"></div>
+              <span class="text-2xl flex-shrink-0" aria-hidden="true">{cat.icon}</span>
+              <div class="min-w-0 relative">
+                <span class="block font-bold text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors truncate">
                   {cat.name}
                 </span>
-                <span class="mt-0.5 block text-xs text-[var(--color-text-muted)]">
+                <span class="mt-1 block text-xs text-[var(--color-text-muted)] line-clamp-2 leading-relaxed">
                   {cat.description}
+                </span>
+                <span class="mt-2 block text-xs font-semibold text-indigo-500">
+                  {cat.styleIds.length} styles
                 </span>
               </div>
             </a>
           ))}
         </div>
+        <div class="mt-8 text-center">
+          <a href="/fonts/" class="inline-flex items-center gap-2 rounded-2xl border border-indigo-200 bg-indigo-50 px-6 py-3 text-sm font-bold text-indigo-700 transition-all hover:bg-indigo-100 hover:scale-[1.02] dark:border-indigo-800/50 dark:bg-indigo-900/30 dark:text-indigo-300 dark:hover:bg-indigo-900/50">
+            View all {STYLES.length}+ font styles
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Why Fontoza -->
-    <section class="py-14">
+    <!-- ══════════════════════════════════════════════
+         WHY FONTOZA — trust signals
+    ══════════════════════════════════════════════ -->
+    <section class="py-16 bg-[var(--color-surface)]">
       <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <h2 class="mb-8 text-center text-2xl font-bold text-[var(--color-text)]">Why Fontoza?</h2>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30">✓</span>
-            <div>
-              <span class="font-semibold text-[var(--color-text)]">No sign-up required.</span>
-              <span class="ml-1 text-sm text-[var(--color-text-muted)]">Open the page and start generating. No email, no account, no registration.</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30">✓</span>
-            <div>
-              <span class="font-semibold text-[var(--color-text)]">Works everywhere.</span>
-              <span class="ml-1 text-sm text-[var(--color-text-muted)]">Instagram, TikTok, Discord, Twitter, Facebook, WhatsApp, YouTube — all platforms render Unicode text correctly.</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30">✓</span>
-            <div>
-              <span class="font-semibold text-[var(--color-text)]">Mobile-first design.</span>
-              <span class="ml-1 text-sm text-[var(--color-text-muted)]">The entire tool is optimized for touch screens. Generate and copy on your phone in seconds.</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30">✓</span>
-            <div>
-              <span class="font-semibold text-[var(--color-text)]">50+ font styles.</span>
-              <span class="ml-1 text-sm text-[var(--color-text-muted)]">Cursive, bold, gothic, italic, vaporwave, zalgo, geometric, transform styles — the widest selection available, all in one place.</span>
-            </div>
-          </li>
+        <h2 class="mb-10 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">Why Fontoza?</h2>
+        <ul class="stagger-children space-y-4">
+          {[
+            { icon: '🚀', title: 'No sign-up required.', body: 'Open the page and start generating. No email, no account, no nonsense.' },
+            { icon: '📱', title: 'Works everywhere.', body: 'Instagram, TikTok, Discord, Twitter, Facebook, WhatsApp, YouTube — every platform renders Unicode text.' },
+            { icon: '💅', title: 'Mobile-first design.', body: 'Built for touch screens. Generate and copy on your phone in 3 seconds flat.' },
+            { icon: '✨', title: '50+ font styles.', body: 'Cursive, bold, gothic, italic, vaporwave, zalgo, geometric, transform styles — widest selection, one place.' },
+            { icon: '🔒', title: 'Zero tracking.', body: 'No cookies, no personal data, no ads that follow you. Your text never leaves your device.' },
+          ].map(item => (
+            <li class="flex items-start gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5 transition-all hover:border-indigo-200 dark:hover:border-indigo-800/50">
+              <span class="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 text-xl dark:from-indigo-900/50 dark:to-purple-900/50">
+                {item.icon}
+              </span>
+              <div>
+                <span class="font-bold text-[var(--color-text)]">{item.title}</span>
+                <span class="ml-1 text-sm text-[var(--color-text-muted)]">{item.body}</span>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
 
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <!-- ══════════════════════════════════════════════
+         TOOLS ROW
+    ══════════════════════════════════════════════ -->
+    <section class="py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center">
+          <h2 class="text-2xl font-black text-[var(--color-text)] sm:text-3xl">More Free Tools</h2>
+          <p class="mt-2 text-sm text-[var(--color-text-muted)]">Everything you need, right in your browser.</p>
+        </div>
+        <div class="stagger-children grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { href: '/tools/word-counter/', icon: '📝', name: 'Word Counter', desc: 'Words, chars, sentences' },
+            { href: '/tools/password-generator/', icon: '🔐', name: 'Password Generator', desc: 'Cryptographically secure' },
+            { href: '/tools/bio-generator/', icon: '✨', name: 'Bio Generator', desc: 'Instagram & TikTok bios' },
+            { href: '/tools/hashtag-generator/', icon: '#️⃣', name: 'Hashtag Generator', desc: '30 relevant hashtags' },
+          ].map(tool => (
+            <a href={tool.href} class="card-hover group flex items-start gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 transition-all">
+              <span class="text-2xl flex-shrink-0">{tool.icon}</span>
+              <div class="min-w-0">
+                <span class="block text-sm font-bold text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors">{tool.name}</span>
+                <span class="block text-xs text-[var(--color-text-muted)] mt-0.5">{tool.desc}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+        <div class="mt-6 text-center">
+          <a href="/tools/" class="text-sm font-semibold text-indigo-500 hover:text-indigo-400 transition-colors inline-flex items-center gap-1">
+            See all 7 tools
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-4">
       <AdSlot slot="bottom" />
     </div>
 
-    <!-- FAQ -->
-    <section class="py-14 bg-[var(--color-surface)]">
+    <!-- ══════════════════════════════════════════════
+         FAQ
+    ══════════════════════════════════════════════ -->
+    <section class="py-16 bg-[var(--color-surface)]">
       <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <h2 class="mb-8 text-center text-2xl font-bold text-[var(--color-text)]">Frequently Asked Questions</h2>
-        <div class="space-y-4">
-          {homeFaqs.map((faq) => (
-            <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5">
-              <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-[var(--color-text)]">
-                {faq.q}
-                <span class="ml-4 flex-shrink-0 text-[var(--color-text-muted)] transition-transform group-open:rotate-45">+</span>
+        <h2 class="mb-10 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+          {homeFaqs.map((faq, i) => (
+            <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] transition-all hover:border-indigo-200 dark:hover:border-indigo-800/50 overflow-hidden">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold text-[var(--color-text)] select-none">
+                <span class="text-sm leading-snug">{faq.q}</span>
+                <span class="flex-shrink-0 flex h-6 w-6 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm transition-all group-open:rotate-45 group-open:border-indigo-400 group-open:text-indigo-500">
+                  +
+                </span>
               </summary>
-              <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">{faq.a}</p>
+              <div class="border-t border-[var(--color-border)] px-5 pb-5 pt-4">
+                <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">{faq.a}</p>
+              </div>
             </details>
           ))}
         </div>
       </div>
     </section>
+
   </main>
 
   <Footer />
