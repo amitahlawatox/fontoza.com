@@ -26,6 +26,7 @@ interface Props {
 const { platform } = Astro.props;
 
 function getDecoratorName(style: StyleDefinition): string | undefined {
+  if (style.decoratorName) return style.decoratorName;
   if (style.id.includes('strikethrough') || style.tags.includes('strikethrough')) return 'strikethrough';
   if (style.id.includes('double-underline')) return 'doubleUnderline';
   if (style.id.includes('underline') && !style.id.includes('double')) return 'underline';
@@ -38,6 +39,14 @@ function getDecoratorName(style: StyleDefinition): string | undefined {
   if (style.id.includes('sparkles') || style.tags.includes('sparkles')) return 'sparkles';
   if (style.id.includes('flowers') || style.tags.includes('flowers')) return 'flowers';
   if (style.id.includes('crown') || style.tags.includes('crown')) return 'crown';
+  if (style.id.endsWith('-fire') || style.tags.includes('fire')) return 'fire';
+  if (style.id.endsWith('-moon') || style.tags.includes('moon')) return 'moon';
+  if (style.id.endsWith('-music') || style.tags.includes('music')) return 'music';
+  if (style.id.endsWith('-butterfly') || style.tags.includes('butterfly')) return 'butterfly';
+  if (style.id.endsWith('-lightning') || style.tags.includes('lightning')) return 'lightning';
+  if (style.id.endsWith('-rainbow') || style.tags.includes('rainbow')) return 'rainbow';
+  if (style.id.endsWith('-diamond') || style.tags.includes('diamond')) return 'diamond';
+  if (style.id.endsWith('-rose') || style.tags.includes('rose')) return 'rose';
   return undefined;
 }
 

@@ -153,6 +153,31 @@ const PLATFORM_META_OVERRIDES: Record<string, { title: string; description: stri
     description:
       'Style your YouTube channel name and descriptions with Unicode fonts. Bold, gothic, and script text for comments and bios — copy and paste free on Fontoza.',
   },
+  'roblox-font-generator': {
+    title: 'Roblox Font Generator — Fancy Display Name Text | Fontoza',
+    description:
+      'Generate fancy Unicode fonts for your Roblox display name, bio, and group descriptions. Bold, cursive, gothic, and 50+ styles — copy and paste free. No sign-up.',
+  },
+  'twitch-font-generator': {
+    title: 'Twitch Font Generator — Streamer Bio & Title Fonts | Fontoza',
+    description:
+      'Create standout Unicode fonts for your Twitch bio, stream title, and channel panels. Bold, cursive, gothic, and 50+ styles — copy and paste free on Fontoza.',
+  },
+  'linkedin-font-generator': {
+    title: 'LinkedIn Font Generator — Bold Headline Text | Fontoza',
+    description:
+      'Make your LinkedIn headline and bio stand out with Unicode bold, small caps, and italic text. Copy and paste fancy fonts into LinkedIn for free — instant preview.',
+  },
+  'telegram-font-generator': {
+    title: 'Telegram Font Generator — Channel & Bio Fonts | Fontoza',
+    description:
+      'Generate fancy Unicode fonts for your Telegram bio, channel name, and group descriptions. Cursive, bold, gothic, and 50+ styles — copy and paste free. Instant.',
+  },
+  'snapchat-font-generator': {
+    title: 'Snapchat Font Generator — Display Name Fonts | Fontoza',
+    description:
+      'Create aesthetic Unicode fonts for your Snapchat display name and bio. Cursive, bold, vaporwave, and 50+ styles — copy and paste into Snapchat free. No sign-up.',
+  },
 };
 
 // Per-category overrides
