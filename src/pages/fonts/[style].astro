@@ -128,7 +128,7 @@ const schemaList = [
 
     <!-- Platform support badges -->
     {style.platforms.length > 0 && (
-      <section class="mt-10">
+      <section data-scroll="fade-up" class="mt-10">
         <h2 class="mb-3 text-lg font-semibold text-[var(--color-text)]">Works on These Platforms</h2>
         <div class="flex flex-wrap gap-2">
           {style.platforms.map((p) => (
@@ -150,8 +150,8 @@ const schemaList = [
     <!-- Related Styles -->
     {related.length > 0 && (
       <section class="mt-10">
-        <h2 class="mb-4 text-xl font-bold text-[var(--color-text)]">Related Styles</h2>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <h2 data-scroll="fade-up" class="mb-4 text-xl font-bold text-[var(--color-text)]">Related Styles</h2>
+        <div data-scroll="stagger-up" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((rel) => (
             <a
               href={`/fonts/${rel.id}`}
@@ -179,7 +179,7 @@ const schemaList = [
 
     <!-- Long Description -->
     {longDescription && (
-      <section class="mt-10 prose prose-neutral dark:prose-invert max-w-none">
+      <section data-scroll="fade-up" class="mt-10 prose prose-neutral dark:prose-invert max-w-none">
         <h2 class="text-xl font-bold text-[var(--color-text)] mb-4">About {style.name}</h2>
         {longDescription.split('\n\n').filter(Boolean).map((para) => (
           <p class="mb-4 text-sm leading-relaxed text-[var(--color-text-muted)]">{para}</p>
@@ -190,8 +190,8 @@ const schemaList = [
     <!-- FAQ -->
     {faqs.length > 0 && (
       <section class="mt-10">
-        <h2 class="mb-6 text-xl font-bold text-[var(--color-text)]">Frequently Asked Questions</h2>
-        <div class="space-y-3">
+        <h2 data-scroll="fade-up" class="mb-6 text-xl font-bold text-[var(--color-text)]">Frequently Asked Questions</h2>
+        <div data-scroll="stagger-up" class="space-y-3">
           {faqs.map((faq) => (
             <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
               <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-[var(--color-text)]">

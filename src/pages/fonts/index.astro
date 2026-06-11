@@ -83,11 +83,11 @@ const serializedStyles = STYLES.map((style) => ({
     <!-- Browse by Category -->
     <section class="py-16 bg-[var(--color-surface)]">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 text-center">
+        <div data-scroll="fade-up" class="mb-10 text-center">
           <h2 class="text-2xl font-bold text-[var(--color-text)] sm:text-3xl">Browse by Category</h2>
           <p class="mt-2 text-sm text-[var(--color-text-muted)]">Jump straight to the style family you want.</p>
         </div>
-        <div class="stagger-children grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div data-scroll="stagger-up" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {CATEGORIES.map((cat) => (
             <a
               href={`/category/${cat.id}/`}

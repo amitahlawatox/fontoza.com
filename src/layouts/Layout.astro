@@ -91,6 +91,34 @@ const {
 
     <CookieBanner />
 
+    <!-- Scroll-reveal: IntersectionObserver watches [data-scroll] elements -->
+    <script is:inline>
+      (function () {
+        if (typeof IntersectionObserver === 'undefined') return;
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
+        );
+        function observe() {
+          document.querySelectorAll('[data-scroll]').forEach(function (el) {
+            observer.observe(el);
+          });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', observe);
+        } else {
+          observe();
+        }
+      })();
+    </script>
+
     <!-- Vercel Analytics — production only -->
     {import.meta.env.PROD && (
       <script is:inline defer src="/_vercel/insights/script.js"></script>

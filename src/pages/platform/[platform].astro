@@ -127,7 +127,7 @@ const schemaList = [
 
     <!-- Platform Usage Tips -->
     {platform.usageTips.length > 0 && (
-      <section class="mt-12">
+      <section data-scroll="fade-up" class="mt-12">
         <h2 class="mb-4 text-xl font-bold text-[var(--color-text)]">
           Tips for Using Fonts on {platform.platform.charAt(0).toUpperCase() + platform.platform.slice(1)}
         </h2>
@@ -148,8 +148,8 @@ const schemaList = [
 
     <!-- FAQ -->
     <section class="mt-12">
-      <h2 class="mb-6 text-xl font-bold text-[var(--color-text)]">Frequently Asked Questions</h2>
-      <div class="space-y-3">
+      <h2 data-scroll="fade-up" class="mb-6 text-xl font-bold text-[var(--color-text)]">Frequently Asked Questions</h2>
+      <div data-scroll="stagger-up" class="space-y-3">
         {faqs.map((faq) => (
           <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
             <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-[var(--color-text)]">

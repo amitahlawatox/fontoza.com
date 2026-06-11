@@ -185,10 +185,10 @@ const platformBadges = [
     ══════════════════════════════════════════════ -->
     <section class="py-16 bg-[var(--color-surface)]">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <h2 class="mb-12 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">
+        <h2 data-scroll="fade-up" class="mb-12 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">
           Three steps, zero effort
         </h2>
-        <div class="stagger-children grid gap-6 sm:grid-cols-3">
+        <div data-scroll="stagger-up" class="grid gap-6 sm:grid-cols-3">
 
           <div class="relative rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 text-center overflow-hidden group hover:border-indigo-300 transition-all">
             <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" style="background: radial-gradient(ellipse at center top, rgba(99,102,241,0.06) 0%, transparent 60%);" aria-hidden="true"></div>
@@ -239,11 +239,11 @@ const platformBadges = [
     ══════════════════════════════════════════════ -->
     <section class="py-16">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 text-center">
+        <div data-scroll="fade-up" class="mb-10 text-center">
           <h2 class="text-2xl font-black text-[var(--color-text)] sm:text-3xl">Browse by Category</h2>
           <p class="mt-2 text-sm text-[var(--color-text-muted)]">7 curated style families. Find your aesthetic.</p>
         </div>
-        <div class="stagger-children grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div data-scroll="stagger-up" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {CATEGORIES.map((cat) => (
             <a
               href={`/category/${cat.id}/`}
@@ -265,7 +265,7 @@ const platformBadges = [
             </a>
           ))}
         </div>
-        <div class="mt-8 text-center">
+        <div data-scroll="fade-up" class="mt-8 text-center">
           <a href="/fonts/" class="inline-flex items-center gap-2 rounded-2xl border border-indigo-200 bg-indigo-50 px-6 py-3 text-sm font-bold text-indigo-700 transition-all hover:bg-indigo-100 hover:scale-[1.02] dark:border-indigo-800/50 dark:bg-indigo-900/30 dark:text-indigo-300 dark:hover:bg-indigo-900/50">
             View all {STYLES.length}+ font styles
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -279,8 +279,8 @@ const platformBadges = [
     ══════════════════════════════════════════════ -->
     <section class="py-16 bg-[var(--color-surface)]">
       <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <h2 class="mb-10 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">Why Fontoza?</h2>
-        <ul class="stagger-children space-y-4">
+        <h2 data-scroll="fade-up" class="mb-10 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">Why Fontoza?</h2>
+        <ul data-scroll="stagger-up" class="space-y-4">
           {[
             { icon: '🚀', title: 'No sign-up required.', body: 'Open the page and start generating. No email, no account, no nonsense.' },
             { icon: '📱', title: 'Works everywhere.', body: 'Instagram, TikTok, Discord, Twitter, Facebook, WhatsApp, YouTube — every platform renders Unicode text.' },
@@ -307,11 +307,11 @@ const platformBadges = [
     ══════════════════════════════════════════════ -->
     <section class="py-16">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 text-center">
+        <div data-scroll="fade-up" class="mb-10 text-center">
           <h2 class="text-2xl font-black text-[var(--color-text)] sm:text-3xl">More Free Tools</h2>
           <p class="mt-2 text-sm text-[var(--color-text-muted)]">Everything you need, right in your browser.</p>
         </div>
-        <div class="stagger-children grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div data-scroll="stagger-up" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { href: '/tools/word-counter/', icon: '📝', name: 'Word Counter', desc: 'Words, chars, sentences' },
             { href: '/tools/password-generator/', icon: '🔐', name: 'Password Generator', desc: 'Cryptographically secure' },
@@ -345,8 +345,8 @@ const platformBadges = [
     ══════════════════════════════════════════════ -->
     <section class="py-16 bg-[var(--color-surface)]">
       <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <h2 class="mb-10 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">Frequently Asked Questions</h2>
-        <div class="space-y-3">
+        <h2 data-scroll="fade-up" class="mb-10 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">Frequently Asked Questions</h2>
+        <div data-scroll="stagger-up" class="space-y-3">
           {homeFaqs.map((faq, i) => (
             <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] transition-all hover:border-indigo-200 dark:hover:border-indigo-800/50 overflow-hidden">
               <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold text-[var(--color-text)] select-none">
