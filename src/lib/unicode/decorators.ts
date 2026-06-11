@@ -70,6 +70,16 @@ export const flowers: DecoratorFn = (text: string): string => `✿ ${text} ✿`;
 // Crown decorator
 export const crown: DecoratorFn = (text: string): string => `♛ ${text} ♛`;
 
+// Emoji frame decorators
+export const fire: DecoratorFn = (text: string): string => `🔥 ${text} 🔥`;
+export const moon: DecoratorFn = (text: string): string => `🌙 ${text} 🌙`;
+export const music: DecoratorFn = (text: string): string => `🎵 ${text} 🎵`;
+export const butterfly: DecoratorFn = (text: string): string => `🦋 ${text} 🦋`;
+export const lightning: DecoratorFn = (text: string): string => `⚡ ${text} ⚡`;
+export const rainbow: DecoratorFn = (text: string): string => `🌈 ${text} 🌈`;
+export const diamond: DecoratorFn = (text: string): string => `💎 ${text} 💎`;
+export const rose: DecoratorFn = (text: string): string => `🌹 ${text} 🌹`;
+
 // Bubble wrap: each char surrounded by dots
 export const bubbles: DecoratorFn = (text: string): string =>
   [...text].map(c => (c === ' ' ? '  ' : `·${c}·`)).join('');

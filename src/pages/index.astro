@@ -22,6 +22,7 @@ const schema = [
 ];
 
 function getDecoratorName(style: StyleDefinition): string | undefined {
+  if (style.decoratorName) return style.decoratorName;
   if (style.id.includes('strikethrough') || style.tags?.includes('strikethrough')) return 'strikethrough';
   if (style.id.includes('double-underline')) return 'doubleUnderline';
   if (style.id.includes('underline') && !style.id.includes('double')) return 'underline';
@@ -34,6 +35,14 @@ function getDecoratorName(style: StyleDefinition): string | undefined {
   if (style.id.includes('sparkles') || style.tags?.includes('sparkles')) return 'sparkles';
   if (style.id.includes('flowers') || style.tags?.includes('flowers')) return 'flowers';
   if (style.id.includes('crown') || style.tags?.includes('crown')) return 'crown';
+  if (style.id.endsWith('-fire')) return 'fire';
+  if (style.id.endsWith('-moon')) return 'moon';
+  if (style.id.endsWith('-music')) return 'music';
+  if (style.id.endsWith('-butterfly')) return 'butterfly';
+  if (style.id.endsWith('-lightning')) return 'lightning';
+  if (style.id.endsWith('-rainbow')) return 'rainbow';
+  if (style.id.endsWith('-diamond')) return 'diamond';
+  if (style.id.endsWith('-rose')) return 'rose';
   return undefined;
 }
 

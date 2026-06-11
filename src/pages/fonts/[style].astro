@@ -26,6 +26,9 @@ interface Props {
 const { style } = Astro.props;
 
 function getDecoratorName(s: StyleDefinition): string | undefined {
+  // Generated combination styles have explicit decoratorName set
+  if (s.decoratorName) return s.decoratorName;
+  // Legacy fallback — string matching for hand-written styles
   if (s.id.includes('strikethrough') || s.tags.includes('strikethrough')) return 'strikethrough';
   if (s.id.includes('double-underline')) return 'doubleUnderline';
   if (s.id.includes('underline') && !s.id.includes('double')) return 'underline';
@@ -38,6 +41,14 @@ function getDecoratorName(s: StyleDefinition): string | undefined {
   if (s.id.includes('sparkles') || s.tags.includes('sparkles')) return 'sparkles';
   if (s.id.includes('flowers') || s.tags.includes('flowers')) return 'flowers';
   if (s.id.includes('crown') || s.tags.includes('crown')) return 'crown';
+  if (s.id.endsWith('-fire') || s.tags.includes('fire')) return 'fire';
+  if (s.id.endsWith('-moon') || s.tags.includes('moon')) return 'moon';
+  if (s.id.endsWith('-music') || s.tags.includes('music')) return 'music';
+  if (s.id.endsWith('-butterfly') || s.tags.includes('butterfly')) return 'butterfly';
+  if (s.id.endsWith('-lightning') || s.tags.includes('lightning')) return 'lightning';
+  if (s.id.endsWith('-rainbow') || s.tags.includes('rainbow')) return 'rainbow';
+  if (s.id.endsWith('-diamond') || s.tags.includes('diamond')) return 'diamond';
+  if (s.id.endsWith('-rose') || s.tags.includes('rose')) return 'rose';
   return undefined;
 }
 

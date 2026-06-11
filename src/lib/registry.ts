@@ -1,4 +1,5 @@
 import { transform } from './unicode/transform';
+import { generateCombinationStyles } from './combination-styles';
 import type { CharMap, DecoratorFn } from './unicode/transform';
 import {
   strikethrough,
@@ -65,6 +66,7 @@ export interface StyleDefinition {
   tags: string[];
   map: CharMap;
   decorator?: DecoratorFn;
+  decoratorName?: string;
   example: string;
   platforms: PlatformId[];
   relatedStyles: string[];
@@ -876,6 +878,11 @@ export const STYLES: StyleDefinition[] = [
     searchVolume: 1000,
   },
 ];
+
+// ── Combination styles (programmatically generated) ───────────────────────────
+const _existingIds = new Set(STYLES.map(s => s.id));
+const _combos = generateCombinationStyles(_existingIds);
+STYLES.push(..._combos);
 
 // Convenience lookup by ID
 export const STYLES_BY_ID: Record<string, StyleDefinition> = Object.fromEntries(

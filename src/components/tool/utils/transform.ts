@@ -33,6 +33,14 @@ const DECORATORS: Record<string, (text: string) => string> = {
   sparkles: (text) => `✨ ${text} ✨`,
   flowers: (text) => `✿ ${text} ✿`,
   crown: (text) => `♛ ${text} ♛`,
+  fire: (text) => `🔥 ${text} 🔥`,
+  moon: (text) => `🌙 ${text} 🌙`,
+  music: (text) => `🎵 ${text} 🎵`,
+  butterfly: (text) => `🦋 ${text} 🦋`,
+  lightning: (text) => `⚡ ${text} ⚡`,
+  rainbow: (text) => `🌈 ${text} 🌈`,
+  diamond: (text) => `💎 ${text} 💎`,
+  rose: (text) => `🌹 ${text} 🌹`,
 
   wavy: (text) =>
     [...text].map(c => (c === ' ' ? c : c + '̃')).join(''),
