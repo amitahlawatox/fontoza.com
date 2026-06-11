@@ -20,17 +20,40 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
 >
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
 
-    <!-- Logo with animated gradient -->
+    <!-- Logo -->
     <a
       href="/"
-      class="group flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 rounded-lg"
+      class="group flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 rounded-lg"
       aria-label="Fontoza — Home"
     >
-      <!-- Animated F icon -->
-      <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white text-sm font-black shadow-md shadow-indigo-500/30 transition-all group-hover:shadow-indigo-500/50 group-hover:scale-110">
-        𝓕
-      </div>
-      <span class="text-xl font-black tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+      <!-- SVG icon mark — matches favicon exactly -->
+      <svg
+        width="34" height="34" viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+        class="flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)]"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="hbg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"   stop-color="#6366f1"/>
+            <stop offset="50%"  stop-color="#a855f7"/>
+            <stop offset="100%" stop-color="#ec4899"/>
+          </linearGradient>
+          <linearGradient id="hshine" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.28"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="32" height="32" rx="7" fill="url(#hbg)"/>
+        <rect width="32" height="16" rx="7" fill="url(#hshine)"/>
+        <rect x="8"  y="7"    width="4.5" height="18"  rx="1.2" fill="white"/>
+        <rect x="8"  y="7"    width="14.5" height="4.5" rx="1.2" fill="white"/>
+        <rect x="8"  y="13.5" width="10"  height="4"   rx="1.2" fill="white"/>
+        <path d="M25.5 4.5 L26.2 6.2 L28 6.9 L26.2 7.6 L25.5 9.3 L24.8 7.6 L23 6.9 L24.8 6.2 Z" fill="white" opacity="0.95"/>
+      </svg>
+
+      <!-- Wordmark -->
+      <span class="text-xl font-black tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent transition-all duration-300 group-hover:from-indigo-500 group-hover:to-pink-400">
         Fontoza
       </span>
     </a>
@@ -90,7 +113,7 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
             role="menuitem"
             class="flex items-center justify-between gap-1 rounded-xl px-3 py-2.5 text-sm font-bold text-indigo-600 transition-all hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-900/30"
           >
-            <span>View all {50}+ styles</span>
+            <span>View all 400+ styles</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
@@ -190,7 +213,20 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
         >
           <!-- Brand in mobile menu -->
           <div class="mb-3 flex items-center gap-2 px-2 pb-3 border-b border-[var(--color-border)]">
-            <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 text-white text-xs font-black">𝓕</div>
+            <svg width="26" height="26" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0">
+              <defs>
+                <linearGradient id="mbg" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#6366f1"/>
+                  <stop offset="50%" stop-color="#a855f7"/>
+                  <stop offset="100%" stop-color="#ec4899"/>
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="7" fill="url(#mbg)"/>
+              <rect x="8"  y="7"    width="4.5"  height="18"  rx="1.2" fill="white"/>
+              <rect x="8"  y="7"    width="14.5" height="4.5" rx="1.2" fill="white"/>
+              <rect x="8"  y="13.5" width="10"   height="4"   rx="1.2" fill="white"/>
+              <path d="M25.5 4.5 L26.2 6.2 L28 6.9 L26.2 7.6 L25.5 9.3 L24.8 7.6 L23 6.9 L24.8 6.2 Z" fill="white" opacity="0.9"/>
+            </svg>
             <span class="font-bold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Fontoza</span>
           </div>
 

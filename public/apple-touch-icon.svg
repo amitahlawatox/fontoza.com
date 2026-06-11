@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#6366f1"/>
+      <stop offset="50%"  stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="60%"  stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#6366f1" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background with deep rounded corners (iOS style) -->
+  <rect width="180" height="180" rx="38" fill="url(#bg)" filter="url(#shadow)"/>
+
+  <!-- Glass shine overlay (top half) -->
+  <path d="M0 38 Q0 0 38 0 L142 0 Q180 0 180 38 L180 90 Q90 110 0 90 Z" fill="url(#shine)"/>
+
+  <!-- ── F lettermark ── -->
+  <!-- Vertical stem -->
+  <rect x="42" y="38" width="26" height="104" rx="7" fill="white"/>
+  <!-- Top crossbar -->
+  <rect x="42" y="38" width="84" height="26" rx="7" fill="white"/>
+  <!-- Mid crossbar -->
+  <rect x="42" y="77" width="60" height="23" rx="7" fill="white"/>
+
+  <!-- Sparkle star — top right -->
+  <g filter="url(#glow)">
+    <path d="M148 20 L151.5 29 L161 32.5 L151.5 36 L148 45 L144.5 36 L135 32.5 L144.5 29 Z"
+          fill="white" opacity="0.95"/>
+  </g>
+
+  <!-- Small sparkle — bottom right -->
+  <path d="M148 138 L150 143 L155 145 L150 147 L148 152 L146 147 L141 145 L146 143 Z"
+        fill="white" opacity="0.55"/>
+
+  <!-- Tiny dot cluster -->
+  <circle cx="150" cy="118" r="3.5" fill="white" opacity="0.35"/>
+  <circle cx="159" cy="125" r="2"   fill="white" opacity="0.25"/>
+</svg>

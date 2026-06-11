@@ -53,9 +53,28 @@ const year = new Date().getFullYear();
         <a
           href="/"
           aria-label="Fontoza home"
-          class="inline-block text-2xl font-black tracking-tight"
+          class="inline-flex items-center gap-2.5 group"
         >
-          <span class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+          <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+            <defs>
+              <linearGradient id="fbg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="#6366f1"/>
+                <stop offset="50%"  stop-color="#a855f7"/>
+                <stop offset="100%" stop-color="#ec4899"/>
+              </linearGradient>
+              <linearGradient id="fshine" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.22"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <rect width="32" height="32" rx="7" fill="url(#fbg)"/>
+            <rect width="32" height="16" rx="7" fill="url(#fshine)"/>
+            <rect x="8"  y="7"    width="4.5"  height="18"  rx="1.2" fill="white"/>
+            <rect x="8"  y="7"    width="14.5" height="4.5" rx="1.2" fill="white"/>
+            <rect x="8"  y="13.5" width="10"   height="4"   rx="1.2" fill="white"/>
+            <path d="M25.5 4.5 L26.2 6.2 L28 6.9 L26.2 7.6 L25.5 9.3 L24.8 7.6 L23 6.9 L24.8 6.2 Z" fill="white" opacity="0.9"/>
+          </svg>
+          <span class="text-2xl font-black tracking-tight bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Fontoza
           </span>
         </a>
