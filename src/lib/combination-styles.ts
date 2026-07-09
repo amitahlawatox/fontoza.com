@@ -1,7 +1,9 @@
 /**
- * Programmatic combination style generator.
- * Produces all base-font × decorator combinations not already in STYLES.
- * Adds ~350-400 new styles to reach 400+ total.
+ * Combination style generator (curated).
+ * Originally produced all base-font × decorator combinations (~390 pages)
+ * to inflate the site to "400+ styles" -- retired 2026-07-09 as thin/scaled
+ * content with no ranking or click value. Now only emits the small set of
+ * combinations with demonstrated GSC search demand; see KEPT_COMBINATION_IDS.
  */
 
 import { transform } from './unicode/transform';
@@ -108,6 +110,23 @@ const EFFECTS: Effect[] = [
 ];
 
 // ── Generator ─────────────────────────────────────────────────────────────────
+//
+// 2026-07-09 content consolidation: this generator used to emit every base x
+// effect combination (~390 pages) purely to pad the site to "400+ styles" --
+// see the file docstring above. GSC Coverage data showed Google was declining
+// to index the vast majority of them (451/718 known URLs "Discovered -
+// currently not indexed"), and 28-day performance data showed real, recurring
+// demand (10+ impressions/28d) for only 5 of the ~390 combos. Those 5 are kept
+// below; the rest are 301-redirected to their parent base-style page in
+// vercel.json instead of existing as their own thin page. Do not widen this
+// list without a demand signal (GSC impressions) to back it up.
+const KEPT_COMBINATION_IDS = new Set<string>([
+  'cursive-flowers',
+  'cursive-moon',
+  'bold-gothic-stars',
+  'sans-italic-crown',
+  'subscript-underline',
+]);
 
 export function generateCombinationStyles(existingIds: Set<string>): StyleDefinition[] {
   const generated: StyleDefinition[] = [];
@@ -116,6 +135,7 @@ export function generateCombinationStyles(existingIds: Set<string>): StyleDefini
     for (const effect of EFFECTS) {
       const id = `${base.id}-${effect.id}`;
       if (existingIds.has(id)) continue;
+      if (!KEPT_COMBINATION_IDS.has(id)) continue;
 
       const name = `${base.name} ${effect.name}`;
       const description = `${base.name} text ${effect.desc}. Copy and paste into Instagram, TikTok, Discord, and any platform.`;
