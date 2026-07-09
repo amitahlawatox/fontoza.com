@@ -2,7 +2,7 @@ import type { StyleDefinition } from '../registry';
 import type { CategoryDefinition } from '../categories';
 import type { PlatformDefinition } from '../platforms';
 
-const SITE_URL = 'https://fontoza.com';
+const SITE_URL = 'https://www.fontoza.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export interface PageMeta {

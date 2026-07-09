@@ -1,4 +1,4 @@
-const SITE_URL = 'https://fontoza.com';
+const SITE_URL = 'https://www.fontoza.com';
 const SITE_NAME = 'Fontoza';
 
 export function webApplicationSchema(opts: {

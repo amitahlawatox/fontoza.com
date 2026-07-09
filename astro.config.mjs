@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://fontoza.com',
+  site: 'https://www.fontoza.com',
   integrations: [
     react(),
     sitemap(),

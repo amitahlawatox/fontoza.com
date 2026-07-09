@@ -596,7 +596,7 @@ export const STYLES: StyleDefinition[] = [
     map: FULLWIDTH_MAP,
     decorator: (text: string) => [...text].join(' '),
     example: transform('Hello World', FULLWIDTH_MAP, (t) => [...t].join(' ')),
-    platforms: ['instagram', 'tiktok', 'twitter', 'tumblr' as PlatformId],
+    platforms: ['instagram', 'tiktok', 'twitter'],
     relatedStyles: ['vaporwave-text', 'fullwidth-text', 'small-caps', 'cursive-font', 'italic-font'],
     seoKeywords: ['aesthetic text generator', 'aesthetic font generator', 'soft aesthetic text', 'aesthetic letters'],
     searchVolume: 5000,
