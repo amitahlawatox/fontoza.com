@@ -2,14 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import { SITE_ORIGIN, siteUrl } from '../lib/site';
 
 const meta = {
   title: 'Privacy Policy — Fontoza',
-  description: 'Fontoza Privacy Policy. We collect no personal data and set no tracking cookies. Full details on data practices and third-party advertising.',
-  canonical: 'https://fontoza.com/privacy/',
-  ogImage: 'https://fontoza.com/og-image.png',
+  description: 'Fontoza Privacy Policy. Learn how the browser-based text tools, local preferences, and hosting infrastructure currently process data.',
+  canonical: siteUrl('/privacy/'),
+  ogImage: siteUrl('/og-image.png'),
 };
-const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Privacy Policy', url: 'https://fontoza.com/privacy/', publisher: { '@type': 'Organization', name: 'Fontoza', url: 'https://fontoza.com' } };
+const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Privacy Policy', url: siteUrl('/privacy/'), publisher: { '@type': 'Organization', name: 'Fontoza', url: SITE_ORIGIN } };
 ---
 
 <Layout
@@ -74,8 +75,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
         </p>
         <ul class="mt-3 space-y-2 list-disc list-inside">
           <li><strong class="text-[var(--color-text)]">Legitimate interests (Article 6(1)(f)):</strong> We process server log data (via Vercel) to maintain the security and operation of the website. Our legitimate interest is ensuring the site functions correctly and is protected from abuse.</li>
-          <li><strong class="text-[var(--color-text)]">Legitimate interests:</strong> Vercel Analytics is used to understand aggregate traffic patterns without collecting personal data.</li>
-          <li><strong class="text-[var(--color-text)]">Consent (Article 6(1)(a)):</strong> If Google AdSense advertising is active, it requires your consent to serve personalised advertisements. You may provide or withdraw this consent at any time via the cookie consent notice shown on your first visit, or by visiting <a href="https://www.google.com/settings/ads" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</li>
+          <li><strong class="text-[var(--color-text)]">Future optional services:</strong> Analytics or advertising will not be enabled until their data use, lawful basis, notices, and any required consent controls have been configured and documented.</li>
         </ul>
       </section>
 
@@ -83,12 +83,12 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
         <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">4. Cookies</h2>
         <h3 class="mb-2 font-semibold text-[var(--color-text)]">3.1 First-Party Cookies</h3>
         <p>
-          Fontoza itself does not set any first-party tracking cookies. We use browser <code class="rounded bg-[var(--color-surface)] px-1 font-mono text-xs">localStorage</code> (not cookies) for storing your text and theme preferences, as described in Section 2.
+          The current site code does not set tracking cookies. It uses browser <code class="rounded bg-[var(--color-surface)] px-1 font-mono text-xs">localStorage</code> for local interface preferences such as theme and saved draft text, as described in Section 2.
         </p>
 
-        <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">3.2 Third-Party Cookies — Google AdSense</h3>
+        <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">3.2 Advertising</h3>
         <p>
-          Fontoza may display advertisements served by Google AdSense. Google may use cookies and other tracking technologies to serve ads based on your prior visits to this website and other websites. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our site and/or other sites on the internet.
+          This release does not load Google AdSense or another advertising network. Advertising must remain disabled until the publisher account, required disclosures, certified consent platform, and consent-gated loading have been configured and verified.
         </p>
         <p class="mt-2">
           You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" class="text-indigo-500 hover:underline" target="_blank" rel="noopener">Google Ads Settings</a> or <a href="https://www.aboutads.info/choices/" class="text-indigo-500 hover:underline" target="_blank" rel="noopener">aboutads.info</a>. For more information about how Google uses data when you visit sites that use its advertising products, see <a href="https://policies.google.com/technologies/partner-sites" class="text-indigo-500 hover:underline" target="_blank" rel="noopener">How Google uses data from sites that use our services</a>.
@@ -96,12 +96,12 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
       </section>
 
       <section>
-        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">5. Vercel Analytics</h2>
+        <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">5. Hosting and analytics</h2>
         <p>
-          Fontoza uses Vercel Analytics, a privacy-first analytics solution. Vercel Analytics does not use cookies, does not track individual users across sessions, and does not collect personally identifiable information. It provides aggregate data about traffic patterns (page views, referrers, device types) without identifying individual visitors.
+          This release does not include a configured browser analytics product. The hosting and delivery infrastructure may process routine request, diagnostic, abuse-prevention, and security information according to the hosting provider’s applicable terms and policies.
         </p>
         <p class="mt-2">
-          For more information, see the <a href="https://vercel.com/docs/analytics/privacy-policy" class="text-indigo-500 hover:underline" target="_blank" rel="noopener">Vercel Analytics Privacy documentation</a>.
+          If analytics is introduced later, this policy will be updated before activation to identify the provider, purpose, data involved, and available choices.
         </p>
       </section>
 
@@ -110,8 +110,8 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
         <p>We use the limited information we receive to:</p>
         <ul class="mt-2 list-disc list-inside space-y-1">
           <li>Maintain and improve the Fontoza service</li>
-          <li>Understand general usage patterns (via aggregate analytics only)</li>
-          <li>Display advertisements that help keep the service free</li>
+          <li>Operate, secure, diagnose, and improve the website</li>
+          <li>Evaluate optional services only after their data use and required controls are documented</li>
           <li>Ensure the technical operation and security of the site</li>
         </ul>
         <p class="mt-3">We do not sell, trade, or rent any personal information to third parties.</p>
@@ -182,7 +182,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
         </p>
         <p class="mt-2">
           Email: <a href="mailto:contact@fontoza.com" class="text-indigo-500 hover:underline">contact@fontoza.com</a><br />
-          Website: <a href="https://fontoza.com" class="text-indigo-500 hover:underline">https://fontoza.com</a>
+          Website: <a href={SITE_ORIGIN} class="text-indigo-500 hover:underline">{SITE_ORIGIN}</a>
         </p>
       </section>
 

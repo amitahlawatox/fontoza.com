@@ -11,6 +11,7 @@ import { CATEGORIES_BY_ID } from '../../lib/categories';
 import { STYLE_CONTENT } from '../../lib/content';
 import { generateStyleMeta } from '../../lib/seo/meta';
 import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+import { siteUrl } from '../../lib/site';
 
 export async function getStaticPaths() {
   return STYLES.map((style) => ({
@@ -93,7 +94,7 @@ const schemaList = [
   }),
   ...(faqs.length > 0 ? [faqPageSchema(faqs.map((f) => ({ question: f.question, answer: f.answer })))] : []),
   breadcrumbSchema(
-    breadcrumbItems.map((b) => ({ name: b.label, url: b.href ? `https://fontoza.com${b.href}` : meta.canonical }))
+    breadcrumbItems.map((b) => ({ name: b.label, url: b.href ? siteUrl(b.href) : meta.canonical }))
   ),
 ];
 ---
@@ -133,7 +134,7 @@ const schemaList = [
         <div class="flex flex-wrap gap-2">
           {style.platforms.map((p) => (
             <a
-              href={`/platform/${p}-font-generator`}
+              href={`/platform/${p}-font-generator/`}
               class="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-medium text-[var(--color-text-muted)] transition-colors hover:border-indigo-400 hover:text-[var(--color-accent)]"
             >
               {platformLabels[p] ?? p}
@@ -150,11 +151,14 @@ const schemaList = [
     <!-- Related Styles -->
     {related.length > 0 && (
       <section class="mt-10">
-        <h2 data-scroll="fade-up" class="mb-4 text-xl font-bold text-[var(--color-text)]">Related Styles</h2>
+        <h2 data-scroll="fade-up" class="mb-1 text-xl font-bold text-[var(--color-text)]">Similar fonts you might like</h2>
+        <p class="mb-4 text-sm text-[var(--color-text-muted)]">Try another vibe using the same saved text.</p>
         <div data-scroll="stagger-up" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((rel) => (
             <a
-              href={`/fonts/${rel.id}`}
+              href={`/fonts/${rel.id}/`}
+              target="_blank"
+              rel="noopener noreferrer"
               class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 transition-all hover:border-indigo-400 hover:shadow-md"
             >
               <div class="mb-1 font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)]">

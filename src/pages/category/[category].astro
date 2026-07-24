@@ -6,21 +6,17 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 import AdSlot from '../../components/ads/AdSlot.astro';
 import FontConverter from '../../components/tool/FontConverter';
 import { CATEGORIES } from '../../lib/categories';
-import type { CategoryDefinition } from '../../lib/categories';
 import { STYLES } from '../../lib/registry';
 import type { StyleDefinition } from '../../lib/registry';
 import { generateCategoryMeta } from '../../lib/seo/meta';
 import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+import { siteUrl } from '../../lib/site';
 
 export async function getStaticPaths() {
   return CATEGORIES.map((cat) => ({
     params: { category: cat.id },
     props: { category: cat },
   }));
-}
-
-interface Props {
-  category: CategoryDefinition;
 }
 
 const { category } = Astro.props;
@@ -67,8 +63,8 @@ const faqs = [
     answer: `Yes, all styles on Fontoza are completely free. No account, no sign-up, and no payment is required. Generate unlimited text in any style.`,
   },
   {
-    question: `Will ${category.name.toLowerCase()} display correctly on all devices?`,
-    answer: `Yes. These are standard Unicode characters, not custom fonts. Every modern device — iPhone, Android, PC, Mac — renders them identically. Very old devices (pre-2010) may not support the full Unicode range, but all modern devices do.`,
+    question: `How consistently will ${category.name.toLowerCase()} display?`,
+    answer: `These styles use Unicode characters rather than downloadable fonts. Glyph support and appearance can vary by operating system, installed font, app, language, and assistive technology, so preview important text in its destination before publishing.`,
   },
 ];
 
@@ -80,7 +76,7 @@ const schemaList = [
   }),
   faqPageSchema(faqs),
   breadcrumbSchema([
-    { name: 'Home', url: 'https://fontoza.com' },
+    { name: 'Home', url: siteUrl('/') },
     { name: category.name, url: meta.canonical },
   ]),
 ];

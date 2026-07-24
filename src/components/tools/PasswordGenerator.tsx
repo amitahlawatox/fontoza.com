@@ -65,7 +65,6 @@ export default function PasswordGenerator() {
   const [useLower, setUseLower] = useState(true);
   const [useNumbers, setUseNumbers] = useState(true);
   const [useSymbols, setUseSymbols] = useState(true);
-  const [password, setPassword] = useState('');
   const [copied, setCopied] = useState(false);
   const [count, setCount] = useState(1);
   const [passwords, setPasswords] = useState<string[]>([]);
@@ -75,7 +74,6 @@ export default function PasswordGenerator() {
       generatePassword(length, useUpper, useLower, useNumbers, useSymbols)
     );
     setPasswords(generated);
-    setPassword(generated[0] ?? '');
     setCopied(false);
   }, [length, useUpper, useLower, useNumbers, useSymbols, count]);
 
@@ -87,7 +85,6 @@ export default function PasswordGenerator() {
     } catch { /* ignore */ }
   }
 
-  const strength = getStrength(password);
   const anySelected = useUpper || useLower || useNumbers || useSymbols;
 
   return (

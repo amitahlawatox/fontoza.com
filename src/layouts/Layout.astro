@@ -1,12 +1,11 @@
 ---
 import '../styles/global.css';
-import '@fontsource-variable/inter';
-import CookieBanner from '../components/layout/CookieBanner.astro';
+import '@fontsource-variable/inter/index.css';
 
 interface Props {
   title: string;
   description: string;
-  canonical: string;
+  canonical?: string;
   ogImage?: string;
   schema?: object;
   noIndex?: boolean;
@@ -36,12 +35,12 @@ const {
     <!-- SEO meta -->
     <title>{title}</title>
     <meta name="description" content={description.slice(0, 160)} />
-    <link rel="canonical" href={canonical} />
+    {canonical && <link rel="canonical" href={canonical} />}
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description.slice(0, 160)} />
-    <meta property="og:url" content={canonical} />
+    {canonical && <meta property="og:url" content={canonical} />}
     <meta property="og:image" content={ogImage} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Fontoza" />
@@ -53,7 +52,7 @@ const {
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Robots -->
-    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    {noIndex && <meta name="robots" content="noindex, follow" />}
 
     <!-- JSON-LD schema -->
     {schema && <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />}
@@ -91,7 +90,6 @@ const {
 
     <slot />
 
-    <CookieBanner />
 
     <!-- ✨ Eye-candy: cursor glow + sparkle burst + ripple + card tilt -->
     <div id="cursor-glow" aria-hidden="true"></div>

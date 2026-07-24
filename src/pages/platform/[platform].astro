@@ -6,21 +6,17 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 import AdSlot from '../../components/ads/AdSlot.astro';
 import FontConverter from '../../components/tool/FontConverter';
 import { PLATFORMS } from '../../lib/platforms';
-import type { PlatformDefinition } from '../../lib/platforms';
 import { STYLES } from '../../lib/registry';
 import type { StyleDefinition } from '../../lib/registry';
 import { generatePlatformMeta } from '../../lib/seo/meta';
 import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+import { siteUrl } from '../../lib/site';
 
 export async function getStaticPaths() {
   return PLATFORMS.map((p) => ({
     params: { platform: p.id },
     props: { platform: p },
   }));
-}
-
-interface Props {
-  platform: PlatformDefinition;
 }
 
 const { platform } = Astro.props;
@@ -89,7 +85,7 @@ const schemaList = [
   }),
   faqPageSchema(faqs),
   breadcrumbSchema([
-    { name: 'Home', url: 'https://fontoza.com' },
+    { name: 'Home', url: siteUrl('/') },
     { name: platform.name, url: meta.canonical },
   ]),
 ];

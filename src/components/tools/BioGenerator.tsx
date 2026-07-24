@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const TEMPLATES = [
-  (name: string, keywords: string[], platform: string) =>
+  (name: string, keywords: string[], _platform: string) =>
     `✨ ${name} | ${keywords.slice(0, 2).join(' & ')} enthusiast\n📍 Creating content you'll love\n👇 New post every week`,
 
   (name: string, keywords: string[], platform: string) =>

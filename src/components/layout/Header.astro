@@ -92,10 +92,13 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
       </a>
 
       <!-- Font Styles dropdown -->
-      <div class="relative group">
+      <div class="relative" data-font-menu>
         <button
+          id="font-menu-button"
+          type="button"
           aria-haspopup="true"
           aria-expanded="false"
+          aria-controls="font-menu-panel"
           class={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${pathname.startsWith('/fonts') || pathname.startsWith('/category') ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-muted)]'}`}
         >
           Font Styles
@@ -118,14 +121,14 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
 
         <!-- Dropdown panel -->
         <div
-          class="invisible absolute left-0 top-full mt-2 w-60 origin-top-left scale-95 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-2 opacity-0 shadow-xl shadow-black/10 transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100 backdrop-blur-xl"
-          role="menu"
+          id="font-menu-panel"
+          class="hidden absolute left-0 top-full mt-2 w-60 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-2 shadow-xl shadow-black/10 backdrop-blur-xl"
+          aria-labelledby="font-menu-button"
           style="box-shadow: 0 20px 60px rgba(99,102,241,0.12), 0 4px 16px rgba(0,0,0,0.08);"
         >
           {fontStyleLinks.map(link => (
             <a
               href={link.href}
-              role="menuitem"
               class="block rounded-xl px-3 py-2.5 text-sm font-medium text-[var(--color-text-muted)] transition-all hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-[var(--color-accent)] hover:pl-4 dark:hover:from-indigo-900/20 dark:hover:to-purple-900/20"
             >
               {link.label}
@@ -134,10 +137,9 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
           <div class="my-1.5 border-t border-[var(--color-border)]"></div>
           <a
             href="/fonts/"
-            role="menuitem"
             class="flex items-center justify-between gap-1 rounded-xl px-3 py-2.5 text-sm font-bold text-indigo-600 transition-all hover:bg-indigo-50 dark:text-indigo-400 dark:hover:bg-indigo-900/30"
           >
-            <span>View all 400+ styles</span>
+            <span>View all styles</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
@@ -277,3 +279,47 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
     </div>
   </div>
 </header>
+
+<script>
+  const menu = document.querySelector<HTMLElement>('[data-font-menu]');
+  const button = menu?.querySelector<HTMLButtonElement>('#font-menu-button');
+  const panel = menu?.querySelector<HTMLElement>('#font-menu-panel');
+  const items = panel ? Array.from(panel.querySelectorAll<HTMLElement>('a[href]')) : [];
+
+  function setMenuOpen(open: boolean, focusFirst = false) {
+    if (!button || !panel) return;
+    button.setAttribute('aria-expanded', String(open));
+    panel.classList.toggle('hidden', !open);
+    if (open && focusFirst) items[0]?.focus();
+  }
+
+  button?.addEventListener('click', () => {
+    setMenuOpen(button.getAttribute('aria-expanded') !== 'true');
+  });
+
+  button?.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      setMenuOpen(true, true);
+    }
+  });
+
+  menu?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setMenuOpen(false);
+      button?.focus();
+    }
+  });
+
+  menu?.addEventListener('focusout', (event) => {
+    const next = event.relatedTarget;
+    if (!(next instanceof Node) || !menu.contains(next)) setMenuOpen(false);
+  });
+
+  document.addEventListener('pointerdown', (event) => {
+    if (event.target instanceof Node && menu && !menu.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  });
+</script>

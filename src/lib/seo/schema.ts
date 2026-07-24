@@ -1,4 +1,5 @@
-const SITE_URL = 'https://www.fontoza.com';
+import { SITE_ORIGIN, siteUrl } from '../site';
+
 const SITE_NAME = 'Fontoza';
 
 export function webApplicationSchema(opts: {
@@ -24,7 +25,7 @@ export function webApplicationSchema(opts: {
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,
-      url: SITE_URL,
+      url: SITE_ORIGIN,
     },
   };
 
@@ -72,21 +73,13 @@ export function webSiteSchema(): object {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: SITE_NAME,
-    url: SITE_URL,
+    url: siteUrl('/'),
     description:
       'Free fancy text generator with 50+ Unicode font styles. Copy and paste cursive, bold, gothic, italic, and aesthetic text for Instagram, TikTok, Discord, and more.',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE_URL}/?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,
-      url: SITE_URL,
+      url: SITE_ORIGIN,
     },
   };
 }
@@ -109,17 +102,10 @@ export function softwareAppSchema(opts: {
       price: '0',
       priceCurrency: 'USD',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      ratingCount: '1247',
-      bestRating: '5',
-      worstRating: '1',
-    },
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,
-      url: SITE_URL,
+      url: SITE_ORIGIN,
     },
   };
 }

@@ -9,6 +9,7 @@ import type { StyleDefinition } from '../lib/registry';
 import { CATEGORIES } from '../lib/categories';
 import { getHomeMeta } from '../lib/seo/meta';
 import { webSiteSchema, webApplicationSchema } from '../lib/seo/schema';
+import { siteUrl } from '../lib/site';
 
 const meta = getHomeMeta();
 
@@ -17,7 +18,7 @@ const schema = [
   webApplicationSchema({
     name: 'Fontoza — Fancy Text Generator',
     description: meta.description,
-    url: 'https://fontoza.com',
+    url: siteUrl('/'),
   }),
 ];
 
@@ -57,11 +58,11 @@ const serializedStyles = STYLES.map((style) => ({
 const homeFaqs = [
   {
     q: 'What is a fancy text generator?',
-    a: 'A fancy text generator converts regular letters into Unicode characters that look like different fonts — cursive, bold, gothic, and more. Because these are real Unicode characters (not custom fonts), they display identically on every device and paste directly into any app or website.',
+    a: 'A fancy text generator converts regular letters into Unicode characters that resemble different fonts, such as cursive, bold, and gothic. They can be copied into many apps, although appearance and support can vary by font, device, app, language, and assistive technology.',
   },
   {
     q: 'Why does the fancy text work on Instagram and TikTok?',
-    a: 'Instagram, TikTok, Twitter, and most other platforms support the full Unicode standard. The "fancy" characters here come from Unicode mathematical and symbol blocks — they are standard characters that every modern device can display, not images or special fonts.',
+    a: 'The output uses Unicode mathematical and symbol characters rather than images or downloadable fonts. Many apps accept these characters, but support and appearance can vary, so preview important text in the destination app before publishing.',
   },
   {
     q: 'Is Fontoza free to use?',
@@ -69,11 +70,11 @@ const homeFaqs = [
   },
   {
     q: 'How many font styles does Fontoza have?',
-    a: 'Fontoza offers 400+ Unicode font styles including cursive, bold, italic, gothic, small caps, vaporwave, zalgo, and many more. Each style is generated in real time as you type.',
+    a: `Fontoza offers ${STYLES.length} curated Unicode text styles including cursive, bold, italic, gothic, small caps, vaporwave, and zalgo. Each style is generated in your browser as you type.`,
   },
   {
     q: 'Do the fancy fonts work on mobile devices?',
-    a: 'Yes. Unicode characters display correctly on all modern smartphones running iOS or Android. You can generate text on your phone, copy it, and paste it directly into your apps.',
+    a: 'You can generate and copy the text on mobile devices. Glyph support and appearance vary between operating systems, fonts, apps, languages, and assistive technologies, so check the pasted result before relying on it.',
   },
 ];
 
@@ -142,7 +143,7 @@ const platformBadges = [
             <span class="text-shimmer">Actually Glow ✨</span>
           </h1>
           <p class="mt-5 mx-auto max-w-xl text-base text-[var(--color-text-muted)] sm:text-lg leading-relaxed">
-            400+ Unicode font styles that copy & paste into <strong class="text-[var(--color-text)]">Instagram, TikTok, Discord</strong> and everywhere else. No app, no sign-up.
+            Curated Unicode text styles to preview, copy, and paste into <strong class="text-[var(--color-text)]">Instagram, TikTok, Discord</strong> and other apps. No download or sign-up.
           </p>
         </div>
 
@@ -212,7 +213,7 @@ const platformBadges = [
             <div class="absolute top-4 right-4 flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-xs font-black text-indigo-600 dark:text-indigo-400">1</div>
             <h3 class="mb-2 text-lg font-bold text-[var(--color-text)]">Type</h3>
             <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
-              Enter any text. All 400+ font styles update <em>instantly</em> as you type.
+              Enter any text. Every available style updates <em>instantly</em> as you type.
             </p>
           </div>
 
@@ -299,8 +300,8 @@ const platformBadges = [
             { icon: '🚀', title: 'No sign-up required.', body: 'Open the page and start generating. No email, no account, no nonsense.' },
             { icon: '📱', title: 'Works everywhere.', body: 'Instagram, TikTok, Discord, Twitter, Facebook, WhatsApp, YouTube — every platform renders Unicode text.' },
             { icon: '💅', title: 'Mobile-first design.', body: 'Built for touch screens. Generate and copy on your phone in 3 seconds flat.' },
-            { icon: '✨', title: '400+ font styles.', body: 'Cursive, bold, gothic, italic, vaporwave, zalgo, geometric, transform styles — widest selection, one place.' },
-            { icon: '🔒', title: 'Zero tracking.', body: 'No cookies, no personal data, no ads that follow you. Your text never leaves your device.' },
+            { icon: '✨', title: 'Curated text styles.', body: 'Explore distinct cursive, bold, gothic, italic, vaporwave, zalgo, geometric, and transform styles.' },
+            { icon: '🔒', title: 'Local text conversion.', body: 'The text converter runs in your browser; this release includes no configured analytics or advertising scripts.' },
           ].map(item => (
             <li class="flex items-start gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5 transition-all hover:border-indigo-200 dark:hover:border-indigo-800/50">
               <span class="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 text-xl dark:from-indigo-900/50 dark:to-purple-900/50">
@@ -361,7 +362,7 @@ const platformBadges = [
       <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <h2 data-scroll="fade-up" class="mb-10 text-center text-2xl font-black text-[var(--color-text)] sm:text-3xl">Frequently Asked Questions</h2>
         <div data-scroll="stagger-up" class="space-y-3">
-          {homeFaqs.map((faq, i) => (
+          {homeFaqs.map((faq) => (
             <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] transition-all hover:border-indigo-200 dark:hover:border-indigo-800/50 overflow-hidden">
               <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold text-[var(--color-text)] select-none">
                 <span class="text-sm leading-snug">{faq.q}</span>

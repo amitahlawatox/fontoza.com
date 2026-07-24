@@ -14,6 +14,7 @@ interface StyleDef {
 interface Props {
   styles: StyleDef[];
   inputText: string;
+  previewFontSize?: number;
   showLinks?: boolean;
   basePath?: string;
 }
@@ -21,6 +22,7 @@ interface Props {
 export default function StyleGrid({
   styles,
   inputText,
+  previewFontSize = 20,
   showLinks = false,
   basePath = '/fonts',
 }: Props) {
@@ -35,6 +37,14 @@ export default function StyleGrid({
   return (
     <div className="w-full space-y-4">
       {/* Search filter */}
+      <div className="flex items-center justify-between gap-3">
+        <label htmlFor="font-style-search" className="text-sm font-bold text-[var(--color-text)]">
+          Search fonts
+        </label>
+        <span className="text-xs font-semibold text-[var(--color-text-muted)]" aria-live="polite">
+          {filteredStyles.length} {filteredStyles.length === 1 ? 'match' : 'matches'}
+        </span>
+      </div>
       <div className="relative">
         <Search
           size={16}
@@ -42,6 +52,7 @@ export default function StyleGrid({
           aria-hidden="true"
         />
         <input
+          id="font-style-search"
           type="search"
           value={search}
           onChange={e => setSearch(e.target.value)}
@@ -63,8 +74,9 @@ export default function StyleGrid({
                 styleId={style.id}
                 styleName={style.name}
                 preview={preview}
+                previewFontSize={previewFontSize}
                 showLink={showLinks}
-                href={showLinks ? `${basePath}/${style.id}` : undefined}
+                href={showLinks ? `${basePath}/${style.id}/` : undefined}
               />
             );
           })}

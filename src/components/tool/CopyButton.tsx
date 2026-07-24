@@ -13,16 +13,7 @@ async function copyToClipboard(text: string): Promise<void> {
     await navigator.clipboard.writeText(text);
     return;
   }
-  const el = document.createElement('textarea');
-  el.value = text;
-  el.style.position = 'fixed';
-  el.style.top = '-9999px';
-  el.style.left = '-9999px';
-  document.body.appendChild(el);
-  el.focus();
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
+  throw new Error('Clipboard API is unavailable in this browser.');
 }
 
 export default function CopyButton({ text, variant = 'icon', label = 'Copy' }: Props) {
