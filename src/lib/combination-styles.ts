@@ -10,8 +10,8 @@ import { transform } from './unicode/transform';
 import type { CharMap } from './unicode/transform';
 import {
   strikethrough, underline, doubleUnderline,
-  vaporwaveSpace, hearts, stars, sparkles, flowers, crown, wavy,
-  zalgoLight, zalgoMedium, zalgoHeavy,
+  vaporwaveSpace, hearts, stars, sparkles, flowers, crown,
+  zalgoLight,
   fire, moon, music, butterfly, lightning, rainbow, diamond, rose,
 } from './unicode/decorators';
 import { BOLD_MAP } from './unicode/maps/bold';

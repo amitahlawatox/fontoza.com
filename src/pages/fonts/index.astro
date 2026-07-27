@@ -6,6 +6,7 @@ import FontConverter from '../../components/tool/FontConverter';
 import { STYLES } from '../../lib/registry';
 import type { StyleDefinition } from '../../lib/registry';
 import { CATEGORIES } from '../../lib/categories';
+import { siteUrl } from '../../lib/site';
 
 function getDecoratorName(style: StyleDefinition): string | undefined {
   if (style.decoratorName) return style.decoratorName;
@@ -42,10 +43,10 @@ const serializedStyles = STYLES.map((style) => ({
 ---
 
 <Layout
-  title="All Font Styles — 400+ Fancy Unicode Fonts | Fontoza"
-  description="Browse all 400+ fancy Unicode font styles on Fontoza. Cursive, bold, gothic, italic, vaporwave, zalgo, geometric and more. Copy and paste anywhere."
-  canonical="https://fontoza.com/fonts/"
-  ogImage="https://fontoza.com/og-image.png"
+  title="Unicode Text Styles — Browse and Copy | Fontoza"
+  description={`Browse ${STYLES.length} curated Unicode text styles on Fontoza. Preview cursive, bold, gothic, italic, vaporwave, zalgo, and more before copying.`}
+  canonical={siteUrl('/fonts/')}
+  ogImage={siteUrl('/og-image.png')}
 >
   <Header />
 

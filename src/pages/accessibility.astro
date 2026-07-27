@@ -2,12 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import { siteUrl } from '../lib/site';
 
 const meta = {
   title: 'Accessibility Statement — Fontoza',
   description: 'Fontoza accessibility statement. We are committed to WCAG 2.1 AA compliance. Learn about our accessibility features and how to contact us with concerns.',
-  canonical: 'https://fontoza.com/accessibility/',
-  ogImage: 'https://fontoza.com/og-image.png',
+  canonical: siteUrl('/accessibility/'),
+  ogImage: siteUrl('/og-image.png'),
 };
 ---
 

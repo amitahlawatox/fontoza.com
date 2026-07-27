@@ -1,14 +1,14 @@
 import type { StyleDefinition } from '../registry';
 import type { CategoryDefinition } from '../categories';
 import type { PlatformDefinition } from '../platforms';
+import { siteUrl } from '../site';
 
-const SITE_URL = 'https://www.fontoza.com';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+const DEFAULT_OG_IMAGE = siteUrl('/og-image.png');
 
 export interface PageMeta {
   title: string;       // 50-60 chars, keyword-first
   description: string; // 120-155 chars, includes CTA
-  canonical: string;   // https://fontoza.com/...
+  canonical: string;
   ogImage: string;
 }
 
@@ -121,7 +121,7 @@ const PLATFORM_META_OVERRIDES: Record<string, { title: string; description: stri
   'instagram-font-generator': {
     title: 'Instagram Font Generator — Fancy Bio Fonts | Fontoza',
     description:
-      'Generate fancy Unicode fonts for your Instagram bio, captions, and stories. Cursive, bold, gothic, and 400+ styles — copy and paste in seconds. Free tool.',
+      'Generate Unicode text for an Instagram bio, captions, and stories. Preview cursive, bold, gothic, and other curated styles before copying. Free tool.',
   },
   'tiktok-font-generator': {
     title: 'TikTok Font Generator — Fancy Bio Text | Fontoza',
@@ -156,12 +156,12 @@ const PLATFORM_META_OVERRIDES: Record<string, { title: string; description: stri
   'roblox-font-generator': {
     title: 'Roblox Font Generator — Fancy Display Name Text | Fontoza',
     description:
-      'Generate fancy Unicode fonts for your Roblox display name, bio, and group descriptions. Bold, cursive, gothic, and 400+ styles — copy and paste free. No sign-up.',
+      'Generate Unicode text for Roblox profile fields that accept it. Preview bold, cursive, gothic, and other curated styles before copying. No sign-up.',
   },
   'twitch-font-generator': {
     title: 'Twitch Font Generator — Streamer Bio & Title Fonts | Fontoza',
     description:
-      'Create standout Unicode fonts for your Twitch bio, stream title, and channel panels. Bold, cursive, gothic, and 400+ styles — copy and paste free on Fontoza.',
+      'Preview Unicode text styles for Twitch profile fields. Try bold, cursive, gothic, and other curated options, then copy the result for free.',
   },
   'linkedin-font-generator': {
     title: 'LinkedIn Font Generator — Bold Headline Text | Fontoza',
@@ -171,12 +171,12 @@ const PLATFORM_META_OVERRIDES: Record<string, { title: string; description: stri
   'telegram-font-generator': {
     title: 'Telegram Font Generator — Channel & Bio Fonts | Fontoza',
     description:
-      'Generate fancy Unicode fonts for your Telegram bio, channel name, and group descriptions. Cursive, bold, gothic, and 400+ styles — copy and paste free. Instant.',
+      'Generate Unicode text for Telegram profile fields and messages. Preview cursive, bold, gothic, and other curated styles before copying.',
   },
   'snapchat-font-generator': {
     title: 'Snapchat Font Generator — Display Name Fonts | Fontoza',
     description:
-      'Create aesthetic Unicode fonts for your Snapchat display name and bio. Cursive, bold, vaporwave, and 400+ styles — copy and paste into Snapchat free. No sign-up.',
+      'Preview aesthetic Unicode text for Snapchat fields that accept it. Try cursive, bold, vaporwave, and other curated styles before copying.',
   },
 };
 
@@ -229,7 +229,7 @@ const TOOL_META: Record<string, { title: string; description: string }> = {
   'font-tester': {
     title: 'Font Tester — Preview Unicode Fonts Side by Side | Fontoza',
     description:
-      'Preview all 400+ Unicode font styles at once. Test how your text looks in every style before copying. Free font comparison tool on Fontoza.',
+      'Preview Fontoza’s curated Unicode text styles together. Compare how your text looks in each available style before copying.',
   },
   'text-repeater': {
     title: 'Text Repeater — Repeat Text Online Free | Fontoza',
@@ -280,7 +280,7 @@ export function generateStyleMeta(style: StyleDefinition): PageMeta {
   return {
     title,
     description,
-    canonical: `${SITE_URL}/fonts/${style.id}/`,
+    canonical: siteUrl(`/fonts/${style.id}/`),
     ogImage: DEFAULT_OG_IMAGE,
   };
 }
@@ -302,7 +302,7 @@ export function generateCategoryMeta(category: CategoryDefinition): PageMeta {
   return {
     title,
     description,
-    canonical: `${SITE_URL}/category/${category.id}/`,
+    canonical: siteUrl(`/category/${category.id}/`),
     ogImage: DEFAULT_OG_IMAGE,
   };
 }
@@ -324,7 +324,7 @@ export function generatePlatformMeta(platform: PlatformDefinition): PageMeta {
   return {
     title,
     description,
-    canonical: `${SITE_URL}/platform/${platform.id}/`,
+    canonical: siteUrl(`/platform/${platform.id}/`),
     ogImage: DEFAULT_OG_IMAGE,
   };
 }
@@ -347,17 +347,17 @@ export function generateToolMeta(tool: {
   return {
     title,
     description,
-    canonical: `${SITE_URL}/tools/${tool.id}/`,
+    canonical: siteUrl(`/tools/${tool.id}/`),
     ogImage: DEFAULT_OG_IMAGE,
   };
 }
 
 export function getHomeMeta(): PageMeta {
   return {
-    title: 'Fontoza — Fancy Text Generator | 400+ Unicode Font Styles',
+    title: 'Fontoza — Fancy Text Generator | Unicode Text Styles',
     description:
-      'Generate 400+ fancy Unicode font styles instantly — cursive, bold, gothic, italic, vaporwave, and more. Copy and paste into Instagram, TikTok, Discord, and Twitter. Free.',
-    canonical: `${SITE_URL}/`,
+      'Generate curated Unicode text styles instantly — cursive, bold, gothic, italic, vaporwave, and more. Preview, copy, and paste for free.',
+    canonical: siteUrl('/'),
     ogImage: DEFAULT_OG_IMAGE,
   };
 }

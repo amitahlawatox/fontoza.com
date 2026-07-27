@@ -2,14 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import { SITE_ORIGIN, siteUrl } from '../lib/site';
 
 const meta = {
   title: 'Terms of Service — Fontoza',
   description: 'Fontoza Terms of Service. Free text generator tool — terms covering use of service, intellectual property, and disclaimers.',
-  canonical: 'https://fontoza.com/terms/',
-  ogImage: 'https://fontoza.com/og-image.png',
+  canonical: siteUrl('/terms/'),
+  ogImage: siteUrl('/og-image.png'),
 };
-const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Terms of Service', url: 'https://fontoza.com/terms/', publisher: { '@type': 'Organization', name: 'Fontoza', url: 'https://fontoza.com' } };
+const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Terms of Service', url: siteUrl('/terms/'), publisher: { '@type': 'Organization', name: 'Fontoza', url: SITE_ORIGIN } };
 ---
 
 <Layout
@@ -99,7 +100,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Te
         <ul class="mt-2 list-disc list-inside space-y-1">
           <li>The Service will be uninterrupted, timely, secure, or error-free</li>
           <li>The results obtained from using the Service will be accurate or reliable</li>
-          <li>Unicode characters generated will render identically on all platforms and devices</li>
+          <li>Unicode characters will render identically on every platform, device, font, or assistive technology</li>
           <li>Generated passwords will meet the security requirements of any specific system</li>
         </ul>
       </section>
@@ -117,7 +118,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Te
       <section>
         <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">7. Third-Party Services</h2>
         <p>
-          The Service may display advertisements from Google AdSense and use Vercel for hosting and analytics. These third-party services are governed by their own terms of service and privacy policies. Fontoza is not responsible for the content, accuracy, or practices of these third-party services.
+          The Service is hosted using third-party infrastructure. This release does not include configured analytics or advertising scripts. If those services are introduced later, the relevant notices and consent controls must be updated before activation.
         </p>
       </section>
 

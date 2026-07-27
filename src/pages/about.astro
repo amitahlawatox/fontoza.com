@@ -2,20 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import { SITE_ORIGIN, siteUrl } from '../lib/site';
 
 const meta = {
   title: 'About Fontoza — Free Fancy Text Generator',
-  description: 'Learn about Fontoza, the free Unicode fancy text generator. Zero cookies, zero tracking, no sign-up. Just 400+ font styles that copy and paste anywhere.',
-  canonical: 'https://fontoza.com/about/',
-  ogImage: 'https://fontoza.com/og-image.png',
+  description: 'Learn how Fontoza generates curated Unicode text styles locally in your browser, with no sign-up required.',
+  canonical: siteUrl('/about/'),
+  ogImage: siteUrl('/og-image.png'),
 };
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Fontoza',
-  url: 'https://fontoza.com',
-  description: 'Free fancy text generator with 400+ Unicode font styles.',
+  url: SITE_ORIGIN,
+  description: 'Free browser-based generator for curated Unicode text styles.',
   contactPoint: { '@type': 'ContactPoint', email: 'contact@fontoza.com', contactType: 'customer support' },
 };
 ---
@@ -36,7 +37,7 @@ const schema = {
       <section>
         <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">What Is Fontoza?</h2>
         <p>
-          Fontoza is a free, browser-based fancy text generator that converts your regular text into 400+ Unicode font styles — cursive, bold, gothic, italic, vaporwave, zalgo, geometric, and many more. Every style you see is built from real Unicode characters from the Mathematical Script, Fraktur, Double-Struck, and enclosed alphanumeric blocks.
+          Fontoza is a free, browser-based fancy text generator that converts regular text into a curated set of cursive, bold, gothic, italic, vaporwave, zalgo, geometric, and other styles. The output uses Unicode characters from mathematical, Fraktur, double-struck, enclosed alphanumeric, and related blocks.
         </p>
         <p class="mt-3">
           Because the output is standard Unicode — not images, not custom fonts, not HTML — it pastes perfectly into Instagram bios, TikTok profiles, Discord usernames, Twitter display names, Facebook posts, WhatsApp messages, and virtually any other platform that accepts text.
@@ -53,20 +54,20 @@ const schema = {
       <section>
         <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">Our Privacy Commitment</h2>
         <p>
-          Fontoza collects <strong class="text-[var(--color-text)]">no personal data</strong> and sets <strong class="text-[var(--color-text)]">no tracking cookies</strong>. The tool runs entirely in your browser. The text you type never leaves your device — it is processed locally by JavaScript and never sent to any server.
+          The text converter runs in your browser. Text entered into the converter is processed locally by JavaScript rather than submitted to a Fontoza application server.
         </p>
         <p class="mt-3">
           The only data stored on your device is your last-typed text, saved to <code class="rounded bg-[var(--color-surface)] px-1 font-mono text-xs">localStorage</code> so you do not lose your work if you navigate away. This preference is stored locally and is never transmitted.
         </p>
         <p class="mt-3">
-          Fontoza uses Vercel Analytics (privacy-first, no personal data collected) and may serve Google AdSense advertisements, which uses its own cookie policies as described in our <a href="/privacy" class="text-indigo-500 hover:underline">Privacy Policy</a>.
+          This release does not include configured analytics or advertising scripts. Hosting infrastructure may still process ordinary request and security logs; see the <a href="/privacy/" class="text-indigo-500 hover:underline">Privacy Policy</a> for the current technical description.
         </p>
       </section>
 
       <section>
         <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">Tools We Offer</h2>
         <ul class="space-y-2 list-disc list-inside">
-          <li><a href="/" class="text-indigo-500 hover:underline">Fancy Text Generator</a> — 400+ Unicode font styles with live preview</li>
+          <li><a href="/" class="text-indigo-500 hover:underline">Fancy Text Generator</a> — curated Unicode text styles with live preview</li>
           <li><a href="/tools/word-counter" class="text-indigo-500 hover:underline">Word Counter</a> — Count words, characters, sentences, and paragraphs</li>
           <li><a href="/tools/character-counter" class="text-indigo-500 hover:underline">Character Counter</a> — Track character counts against platform limits</li>
           <li><a href="/tools/text-case-converter" class="text-indigo-500 hover:underline">Text Case Converter</a> — UPPERCASE, lowercase, Title Case, camelCase, and more</li>

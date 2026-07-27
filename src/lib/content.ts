@@ -11,7 +11,7 @@ export const STYLE_CONTENT: StyleContent[] = [
 
   {
     styleId: 'cursive-font',
-    longDescription: `Cursive fonts have long been associated with elegance, creativity, and personal expression. When you use a cursive font generator like Fontoza, you are not installing a new font — you are using real Unicode characters from the Mathematical Script block (U+1D49C and surrounding code points) that look like flowing, handwritten cursive. These characters were originally intended for mathematical typesetting, but because every device and browser supports Unicode, they render as beautiful script text anywhere you paste them.
+    longDescription: `Cursive fonts have long been associated with elegance, creativity, and personal expression. When you use a cursive font generator like Fontoza, you are not installing a new font — you are using real Unicode characters from the Mathematical Script block (U+1D49C and surrounding code points) that look like flowing, handwritten cursive. These characters were originally intended for mathematical typesetting. Their glyph appearance and support can vary by device, installed font, app, language, and assistive technology.
 
 Why does this matter for Instagram, TikTok, and other platforms? Because those platforms do not let you choose a custom font. You type in one font and everyone sees the same thing. But if you paste Unicode cursive characters, every viewer sees the same distinctive script — because it is part of the universal character standard, not a local font setting.
 
@@ -45,7 +45,7 @@ Related styles worth exploring: Bold Cursive gives the same flowing script but w
       },
       {
         question: 'Will everyone see my cursive text the same way?',
-        answer: 'Yes — because these are Unicode characters, not a locally installed font, every device and operating system renders them identically. The only exception is very old devices or systems that do not support the Unicode supplementary plane, which might show empty boxes.',
+        answer: 'Support is common but not universal. These are Unicode characters rather than a locally installed font, and their glyph appearance can vary by operating system, installed font, app, language, and assistive technology. Unsupported characters may appear as empty boxes.',
       },
       {
         question: 'Can I use cursive text in my TikTok username?',
@@ -161,7 +161,7 @@ Accessibility note: most screen readers pronounce italic Unicode characters the 
       },
       {
         question: 'Does italic text work in Instagram captions?',
-        answer: 'Yes. Paste your italic Unicode text anywhere in your caption. It renders identically for all viewers. You can mix italic with regular text in the same caption — just paste each styled portion separately.',
+        answer: 'Many caption fields accept these Unicode characters, and you can mix them with plain text. Rendering, searchability, and accessibility can vary, so preview the result in the destination app.',
       },
       {
         question: 'Can I use italic text in my name on TikTok?',
@@ -216,7 +216,7 @@ Bold italic pairs well with other Unicode styles in the same post or bio. A comm
       },
       {
         question: 'Does bold italic work in Instagram bio?',
-        answer: 'Yes. Paste bold italic Unicode text directly into your Instagram bio field. It renders correctly for all viewers on all devices. You can mix it with regular text in the same bio.',
+        answer: 'Many bio fields accept these Unicode characters, and you can mix them with plain text. Rendering, searchability, and accessibility can vary, so preview the result in the destination app.',
       },
       {
         question: 'Can bold italic be combined with underline or strikethrough?',
@@ -326,7 +326,7 @@ Technical note: because the combining character attaches to individual character
       },
       {
         question: 'Does strikethrough text work on Instagram?',
-        answer: 'Yes. Unicode combining characters render correctly on Instagram in bios, captions, and comments. The strikethrough line appears for all viewers on all devices.',
+        answer: 'Many fields accept Unicode combining characters, but placement of the strikethrough line can vary by font, device, app, and assistive technology. Preview the pasted result before publishing.',
       },
       {
         question: 'Can I combine strikethrough with bold or italic?',
@@ -597,7 +597,7 @@ The digits are not included in the Mathematical Bold Script block and pass throu
       },
       {
         question: 'Does bold cursive work in Instagram bio?',
-        answer: 'Yes — paste directly into your Instagram bio or display name. It works perfectly and renders identically for all viewers.',
+        answer: 'Many profile fields accept these Unicode characters, but support and appearance can vary. Preview the pasted result and keep essential names or information readable in plain text.',
       },
       {
         question: 'What platforms support bold cursive text?',
@@ -982,7 +982,7 @@ The filled circle creates much stronger visual weight than open-circle Circled t
     longDescription: `Stars text frames your content with star symbols (★ text ★). The star border creates a glamorous, attention-grabbing impression that works well for announcements, featured content, and accounts in entertainment, beauty, and performance niches. The black star (★, U+2605) is solid and bold — distinct from outline or five-pointed star variations.`,
     faqs: [
       { question: 'What star symbol is used?', answer: 'This style uses ★ (U+2605, Black Star) on both sides of the text — a solid, filled five-pointed star.' },
-      { question: 'Does stars text work on all platforms?', answer: 'Yes — ★ is a BMP character and renders on all devices and platforms.' },
+      { question: 'Does stars text work on all platforms?', answer: 'The star is a widely supported Unicode character, but appearance and support can still vary by font, device, app, and assistive technology.' },
     ],
   },
 
@@ -996,7 +996,7 @@ The filled circle creates much stronger visual weight than open-circle Circled t
 
   {
     styleId: 'flowers-text',
-    longDescription: `Flowers text surrounds your content with ✿ symbols (U+273F, Black Florette). The floral border creates an elegant, feminine, nature-inspired visual frame. Popular in aesthetic, wellness, nature, and creative content communities. The black florette character is more delicate than emoji flowers but renders reliably across all devices.`,
+    longDescription: `Flowers text surrounds your content with ✿ symbols (U+273F, Black Florette). The floral border creates an elegant, nature-inspired visual frame. The black florette character is more delicate than emoji flowers, but its glyph appearance and support can vary by font, device, app, and assistive technology.`,
     faqs: [
       { question: 'What flower symbol is used?', answer: 'This style uses ✿ (U+273F, Black Florette) on both sides — a stylized decorative flower from the Dingbats Unicode block.' },
     ],

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/layout/Header.astro';
 import Footer from '../../components/layout/Footer.astro';
+import { siteUrl } from '../../lib/site';
 
 const tools = [
   {
@@ -73,8 +74,8 @@ const tools = [
 <Layout
   title="Free Online Tools — Word Counter, Password Generator & More | Fontoza"
   description="Free browser-based tools from Fontoza: Word Counter, Character Counter, Text Case Converter, Password Generator, Bio Generator, Hashtag Generator, and Lorem Ipsum. No sign-up required."
-  canonical="https://fontoza.com/tools/"
-  ogImage="https://fontoza.com/og-image.png"
+  canonical={siteUrl('/tools/')}
+  ogImage={siteUrl('/og-image.png')}
 >
   <Header />
 
