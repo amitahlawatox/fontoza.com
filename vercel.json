@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -61,1922 +62,1922 @@
       "permanent": true
     },
     {
-      "source": "/fonts/bold-butterfly/?",
+      "source": "/fonts/bold-butterfly",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-crown/?",
+      "source": "/fonts/bold-crown",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-butterfly/?",
+      "source": "/fonts/bold-cursive-butterfly",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-crown/?",
+      "source": "/fonts/bold-cursive-crown",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-diamond/?",
+      "source": "/fonts/bold-cursive-diamond",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-double-underline/?",
+      "source": "/fonts/bold-cursive-double-underline",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-fire/?",
+      "source": "/fonts/bold-cursive-fire",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-flowers/?",
+      "source": "/fonts/bold-cursive-flowers",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-hearts/?",
+      "source": "/fonts/bold-cursive-hearts",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-lightning/?",
+      "source": "/fonts/bold-cursive-lightning",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-moon/?",
+      "source": "/fonts/bold-cursive-moon",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-music/?",
+      "source": "/fonts/bold-cursive-music",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-rainbow/?",
+      "source": "/fonts/bold-cursive-rainbow",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-rose/?",
+      "source": "/fonts/bold-cursive-rose",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-sparkles/?",
+      "source": "/fonts/bold-cursive-sparkles",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-stars/?",
+      "source": "/fonts/bold-cursive-stars",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-strikethrough/?",
+      "source": "/fonts/bold-cursive-strikethrough",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-underline/?",
+      "source": "/fonts/bold-cursive-underline",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-vaporwave/?",
+      "source": "/fonts/bold-cursive-vaporwave",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-zalgo/?",
+      "source": "/fonts/bold-cursive-zalgo",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-diamond/?",
+      "source": "/fonts/bold-diamond",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-double-underline/?",
+      "source": "/fonts/bold-double-underline",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-fire/?",
+      "source": "/fonts/bold-fire",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-flowers/?",
+      "source": "/fonts/bold-flowers",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-butterfly/?",
+      "source": "/fonts/bold-gothic-butterfly",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-crown/?",
+      "source": "/fonts/bold-gothic-crown",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-diamond/?",
+      "source": "/fonts/bold-gothic-diamond",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-double-underline/?",
+      "source": "/fonts/bold-gothic-double-underline",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-fire/?",
+      "source": "/fonts/bold-gothic-fire",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-flowers/?",
+      "source": "/fonts/bold-gothic-flowers",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-hearts/?",
+      "source": "/fonts/bold-gothic-hearts",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-lightning/?",
+      "source": "/fonts/bold-gothic-lightning",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-moon/?",
+      "source": "/fonts/bold-gothic-moon",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-music/?",
+      "source": "/fonts/bold-gothic-music",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-rainbow/?",
+      "source": "/fonts/bold-gothic-rainbow",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-rose/?",
+      "source": "/fonts/bold-gothic-rose",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-sparkles/?",
+      "source": "/fonts/bold-gothic-sparkles",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-strikethrough/?",
+      "source": "/fonts/bold-gothic-strikethrough",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-underline/?",
+      "source": "/fonts/bold-gothic-underline",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-vaporwave/?",
+      "source": "/fonts/bold-gothic-vaporwave",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-gothic-zalgo/?",
+      "source": "/fonts/bold-gothic-zalgo",
       "destination": "/fonts/bold-gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-butterfly/?",
+      "source": "/fonts/bold-italic-butterfly",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-crown/?",
+      "source": "/fonts/bold-italic-crown",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-diamond/?",
+      "source": "/fonts/bold-italic-diamond",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-double-underline/?",
+      "source": "/fonts/bold-italic-double-underline",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-fire/?",
+      "source": "/fonts/bold-italic-fire",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-flowers/?",
+      "source": "/fonts/bold-italic-flowers",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-hearts/?",
+      "source": "/fonts/bold-italic-hearts",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-lightning/?",
+      "source": "/fonts/bold-italic-lightning",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-moon/?",
+      "source": "/fonts/bold-italic-moon",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-music/?",
+      "source": "/fonts/bold-italic-music",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-rainbow/?",
+      "source": "/fonts/bold-italic-rainbow",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-rose/?",
+      "source": "/fonts/bold-italic-rose",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-sparkles/?",
+      "source": "/fonts/bold-italic-sparkles",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-stars/?",
+      "source": "/fonts/bold-italic-stars",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-strikethrough/?",
+      "source": "/fonts/bold-italic-strikethrough",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-underline/?",
+      "source": "/fonts/bold-italic-underline",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-vaporwave/?",
+      "source": "/fonts/bold-italic-vaporwave",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-italic-zalgo/?",
+      "source": "/fonts/bold-italic-zalgo",
       "destination": "/fonts/bold-italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-lightning/?",
+      "source": "/fonts/bold-lightning",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-moon/?",
+      "source": "/fonts/bold-moon",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-music/?",
+      "source": "/fonts/bold-music",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-rainbow/?",
+      "source": "/fonts/bold-rainbow",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-rose/?",
+      "source": "/fonts/bold-rose",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-sparkles/?",
+      "source": "/fonts/bold-sparkles",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-stars/?",
+      "source": "/fonts/bold-stars",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-underline/?",
+      "source": "/fonts/bold-underline",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-vaporwave/?",
+      "source": "/fonts/bold-vaporwave",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/bold-zalgo/?",
+      "source": "/fonts/bold-zalgo",
       "destination": "/fonts/bold-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-butterfly/?",
+      "source": "/fonts/circled-butterfly",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-crown/?",
+      "source": "/fonts/circled-crown",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-diamond/?",
+      "source": "/fonts/circled-diamond",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-double-underline/?",
+      "source": "/fonts/circled-double-underline",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-fire/?",
+      "source": "/fonts/circled-fire",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-flowers/?",
+      "source": "/fonts/circled-flowers",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-hearts/?",
+      "source": "/fonts/circled-hearts",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-lightning/?",
+      "source": "/fonts/circled-lightning",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-moon/?",
+      "source": "/fonts/circled-moon",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-music/?",
+      "source": "/fonts/circled-music",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-rainbow/?",
+      "source": "/fonts/circled-rainbow",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-rose/?",
+      "source": "/fonts/circled-rose",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-sparkles/?",
+      "source": "/fonts/circled-sparkles",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-stars/?",
+      "source": "/fonts/circled-stars",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-strikethrough/?",
+      "source": "/fonts/circled-strikethrough",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-underline/?",
+      "source": "/fonts/circled-underline",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-vaporwave/?",
+      "source": "/fonts/circled-vaporwave",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/circled-zalgo/?",
+      "source": "/fonts/circled-zalgo",
       "destination": "/fonts/circled-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-butterfly/?",
+      "source": "/fonts/cursive-butterfly",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-crown/?",
+      "source": "/fonts/cursive-crown",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-diamond/?",
+      "source": "/fonts/cursive-diamond",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-double-underline/?",
+      "source": "/fonts/cursive-double-underline",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-fire/?",
+      "source": "/fonts/cursive-fire",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-hearts/?",
+      "source": "/fonts/cursive-hearts",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-lightning/?",
+      "source": "/fonts/cursive-lightning",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-music/?",
+      "source": "/fonts/cursive-music",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-rainbow/?",
+      "source": "/fonts/cursive-rainbow",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-rose/?",
+      "source": "/fonts/cursive-rose",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-sparkles/?",
+      "source": "/fonts/cursive-sparkles",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-stars/?",
+      "source": "/fonts/cursive-stars",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-strikethrough/?",
+      "source": "/fonts/cursive-strikethrough",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-vaporwave/?",
+      "source": "/fonts/cursive-vaporwave",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-zalgo/?",
+      "source": "/fonts/cursive-zalgo",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-butterfly/?",
+      "source": "/fonts/double-struck-butterfly",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-crown/?",
+      "source": "/fonts/double-struck-crown",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-diamond/?",
+      "source": "/fonts/double-struck-diamond",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-double-underline/?",
+      "source": "/fonts/double-struck-double-underline",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-fire/?",
+      "source": "/fonts/double-struck-fire",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-flowers/?",
+      "source": "/fonts/double-struck-flowers",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-hearts/?",
+      "source": "/fonts/double-struck-hearts",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-lightning/?",
+      "source": "/fonts/double-struck-lightning",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-moon/?",
+      "source": "/fonts/double-struck-moon",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-music/?",
+      "source": "/fonts/double-struck-music",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-rainbow/?",
+      "source": "/fonts/double-struck-rainbow",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-rose/?",
+      "source": "/fonts/double-struck-rose",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-sparkles/?",
+      "source": "/fonts/double-struck-sparkles",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-stars/?",
+      "source": "/fonts/double-struck-stars",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-underline/?",
+      "source": "/fonts/double-struck-underline",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-vaporwave/?",
+      "source": "/fonts/double-struck-vaporwave",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/double-struck-zalgo/?",
+      "source": "/fonts/double-struck-zalgo",
       "destination": "/fonts/double-struck/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-butterfly/?",
+      "source": "/fonts/fullwidth-butterfly",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-crown/?",
+      "source": "/fonts/fullwidth-crown",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-diamond/?",
+      "source": "/fonts/fullwidth-diamond",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-double-underline/?",
+      "source": "/fonts/fullwidth-double-underline",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-fire/?",
+      "source": "/fonts/fullwidth-fire",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-flowers/?",
+      "source": "/fonts/fullwidth-flowers",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-hearts/?",
+      "source": "/fonts/fullwidth-hearts",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-lightning/?",
+      "source": "/fonts/fullwidth-lightning",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-moon/?",
+      "source": "/fonts/fullwidth-moon",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-music/?",
+      "source": "/fonts/fullwidth-music",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-rainbow/?",
+      "source": "/fonts/fullwidth-rainbow",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-rose/?",
+      "source": "/fonts/fullwidth-rose",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-sparkles/?",
+      "source": "/fonts/fullwidth-sparkles",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-stars/?",
+      "source": "/fonts/fullwidth-stars",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-strikethrough/?",
+      "source": "/fonts/fullwidth-strikethrough",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-underline/?",
+      "source": "/fonts/fullwidth-underline",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-vaporwave/?",
+      "source": "/fonts/fullwidth-vaporwave",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/fullwidth-zalgo/?",
+      "source": "/fonts/fullwidth-zalgo",
       "destination": "/fonts/fullwidth-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-butterfly/?",
+      "source": "/fonts/gothic-butterfly",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-crown/?",
+      "source": "/fonts/gothic-crown",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-diamond/?",
+      "source": "/fonts/gothic-diamond",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-double-underline/?",
+      "source": "/fonts/gothic-double-underline",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-fire/?",
+      "source": "/fonts/gothic-fire",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-flowers/?",
+      "source": "/fonts/gothic-flowers",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-hearts/?",
+      "source": "/fonts/gothic-hearts",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-lightning/?",
+      "source": "/fonts/gothic-lightning",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-moon/?",
+      "source": "/fonts/gothic-moon",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-music/?",
+      "source": "/fonts/gothic-music",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-rainbow/?",
+      "source": "/fonts/gothic-rainbow",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-rose/?",
+      "source": "/fonts/gothic-rose",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-sparkles/?",
+      "source": "/fonts/gothic-sparkles",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-stars/?",
+      "source": "/fonts/gothic-stars",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-underline/?",
+      "source": "/fonts/gothic-underline",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-vaporwave/?",
+      "source": "/fonts/gothic-vaporwave",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-zalgo/?",
+      "source": "/fonts/gothic-zalgo",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-butterfly/?",
+      "source": "/fonts/italic-butterfly",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-crown/?",
+      "source": "/fonts/italic-crown",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-diamond/?",
+      "source": "/fonts/italic-diamond",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-double-underline/?",
+      "source": "/fonts/italic-double-underline",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-fire/?",
+      "source": "/fonts/italic-fire",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-flowers/?",
+      "source": "/fonts/italic-flowers",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-hearts/?",
+      "source": "/fonts/italic-hearts",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-lightning/?",
+      "source": "/fonts/italic-lightning",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-moon/?",
+      "source": "/fonts/italic-moon",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-music/?",
+      "source": "/fonts/italic-music",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-rainbow/?",
+      "source": "/fonts/italic-rainbow",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-rose/?",
+      "source": "/fonts/italic-rose",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-sparkles/?",
+      "source": "/fonts/italic-sparkles",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-stars/?",
+      "source": "/fonts/italic-stars",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-underline/?",
+      "source": "/fonts/italic-underline",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-vaporwave/?",
+      "source": "/fonts/italic-vaporwave",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/italic-zalgo/?",
+      "source": "/fonts/italic-zalgo",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-butterfly/?",
+      "source": "/fonts/monospace-butterfly",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-crown/?",
+      "source": "/fonts/monospace-crown",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-diamond/?",
+      "source": "/fonts/monospace-diamond",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-double-underline/?",
+      "source": "/fonts/monospace-double-underline",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-fire/?",
+      "source": "/fonts/monospace-fire",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-flowers/?",
+      "source": "/fonts/monospace-flowers",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-hearts/?",
+      "source": "/fonts/monospace-hearts",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-lightning/?",
+      "source": "/fonts/monospace-lightning",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-moon/?",
+      "source": "/fonts/monospace-moon",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-music/?",
+      "source": "/fonts/monospace-music",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-rainbow/?",
+      "source": "/fonts/monospace-rainbow",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-rose/?",
+      "source": "/fonts/monospace-rose",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-sparkles/?",
+      "source": "/fonts/monospace-sparkles",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-stars/?",
+      "source": "/fonts/monospace-stars",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-strikethrough/?",
+      "source": "/fonts/monospace-strikethrough",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-vaporwave/?",
+      "source": "/fonts/monospace-vaporwave",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/monospace-zalgo/?",
+      "source": "/fonts/monospace-zalgo",
       "destination": "/fonts/monospace-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-butterfly/?",
+      "source": "/fonts/negative-circled-butterfly",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-crown/?",
+      "source": "/fonts/negative-circled-crown",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-diamond/?",
+      "source": "/fonts/negative-circled-diamond",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-double-underline/?",
+      "source": "/fonts/negative-circled-double-underline",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-fire/?",
+      "source": "/fonts/negative-circled-fire",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-flowers/?",
+      "source": "/fonts/negative-circled-flowers",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-hearts/?",
+      "source": "/fonts/negative-circled-hearts",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-lightning/?",
+      "source": "/fonts/negative-circled-lightning",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-moon/?",
+      "source": "/fonts/negative-circled-moon",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-music/?",
+      "source": "/fonts/negative-circled-music",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-rainbow/?",
+      "source": "/fonts/negative-circled-rainbow",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-rose/?",
+      "source": "/fonts/negative-circled-rose",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-sparkles/?",
+      "source": "/fonts/negative-circled-sparkles",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-stars/?",
+      "source": "/fonts/negative-circled-stars",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-strikethrough/?",
+      "source": "/fonts/negative-circled-strikethrough",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-underline/?",
+      "source": "/fonts/negative-circled-underline",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-vaporwave/?",
+      "source": "/fonts/negative-circled-vaporwave",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-circled-zalgo/?",
+      "source": "/fonts/negative-circled-zalgo",
       "destination": "/fonts/negative-circled/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-butterfly/?",
+      "source": "/fonts/negative-squared-butterfly",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-crown/?",
+      "source": "/fonts/negative-squared-crown",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-diamond/?",
+      "source": "/fonts/negative-squared-diamond",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-double-underline/?",
+      "source": "/fonts/negative-squared-double-underline",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-fire/?",
+      "source": "/fonts/negative-squared-fire",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-flowers/?",
+      "source": "/fonts/negative-squared-flowers",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-hearts/?",
+      "source": "/fonts/negative-squared-hearts",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-lightning/?",
+      "source": "/fonts/negative-squared-lightning",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-moon/?",
+      "source": "/fonts/negative-squared-moon",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-music/?",
+      "source": "/fonts/negative-squared-music",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-rainbow/?",
+      "source": "/fonts/negative-squared-rainbow",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-rose/?",
+      "source": "/fonts/negative-squared-rose",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-sparkles/?",
+      "source": "/fonts/negative-squared-sparkles",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-stars/?",
+      "source": "/fonts/negative-squared-stars",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-strikethrough/?",
+      "source": "/fonts/negative-squared-strikethrough",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-underline/?",
+      "source": "/fonts/negative-squared-underline",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-vaporwave/?",
+      "source": "/fonts/negative-squared-vaporwave",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/negative-squared-zalgo/?",
+      "source": "/fonts/negative-squared-zalgo",
       "destination": "/fonts/negative-squared/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-butterfly/?",
+      "source": "/fonts/parenthesized-butterfly",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-crown/?",
+      "source": "/fonts/parenthesized-crown",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-diamond/?",
+      "source": "/fonts/parenthesized-diamond",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-double-underline/?",
+      "source": "/fonts/parenthesized-double-underline",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-fire/?",
+      "source": "/fonts/parenthesized-fire",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-flowers/?",
+      "source": "/fonts/parenthesized-flowers",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-hearts/?",
+      "source": "/fonts/parenthesized-hearts",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-lightning/?",
+      "source": "/fonts/parenthesized-lightning",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-moon/?",
+      "source": "/fonts/parenthesized-moon",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-music/?",
+      "source": "/fonts/parenthesized-music",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-rainbow/?",
+      "source": "/fonts/parenthesized-rainbow",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-rose/?",
+      "source": "/fonts/parenthesized-rose",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-sparkles/?",
+      "source": "/fonts/parenthesized-sparkles",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-stars/?",
+      "source": "/fonts/parenthesized-stars",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-strikethrough/?",
+      "source": "/fonts/parenthesized-strikethrough",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-underline/?",
+      "source": "/fonts/parenthesized-underline",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-vaporwave/?",
+      "source": "/fonts/parenthesized-vaporwave",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/parenthesized-zalgo/?",
+      "source": "/fonts/parenthesized-zalgo",
       "destination": "/fonts/parenthesized-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-butterfly/?",
+      "source": "/fonts/sans-bold-butterfly",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-crown/?",
+      "source": "/fonts/sans-bold-crown",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-diamond/?",
+      "source": "/fonts/sans-bold-diamond",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-double-underline/?",
+      "source": "/fonts/sans-bold-double-underline",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-fire/?",
+      "source": "/fonts/sans-bold-fire",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-flowers/?",
+      "source": "/fonts/sans-bold-flowers",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-hearts/?",
+      "source": "/fonts/sans-bold-hearts",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-butterfly/?",
+      "source": "/fonts/sans-bold-italic-butterfly",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-crown/?",
+      "source": "/fonts/sans-bold-italic-crown",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-diamond/?",
+      "source": "/fonts/sans-bold-italic-diamond",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-double-underline/?",
+      "source": "/fonts/sans-bold-italic-double-underline",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-fire/?",
+      "source": "/fonts/sans-bold-italic-fire",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-flowers/?",
+      "source": "/fonts/sans-bold-italic-flowers",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-hearts/?",
+      "source": "/fonts/sans-bold-italic-hearts",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-lightning/?",
+      "source": "/fonts/sans-bold-italic-lightning",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-moon/?",
+      "source": "/fonts/sans-bold-italic-moon",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-music/?",
+      "source": "/fonts/sans-bold-italic-music",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-rainbow/?",
+      "source": "/fonts/sans-bold-italic-rainbow",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-rose/?",
+      "source": "/fonts/sans-bold-italic-rose",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-sparkles/?",
+      "source": "/fonts/sans-bold-italic-sparkles",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-stars/?",
+      "source": "/fonts/sans-bold-italic-stars",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-strikethrough/?",
+      "source": "/fonts/sans-bold-italic-strikethrough",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-underline/?",
+      "source": "/fonts/sans-bold-italic-underline",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-vaporwave/?",
+      "source": "/fonts/sans-bold-italic-vaporwave",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-italic-zalgo/?",
+      "source": "/fonts/sans-bold-italic-zalgo",
       "destination": "/fonts/sans-bold-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-lightning/?",
+      "source": "/fonts/sans-bold-lightning",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-moon/?",
+      "source": "/fonts/sans-bold-moon",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-music/?",
+      "source": "/fonts/sans-bold-music",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-rainbow/?",
+      "source": "/fonts/sans-bold-rainbow",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-rose/?",
+      "source": "/fonts/sans-bold-rose",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-sparkles/?",
+      "source": "/fonts/sans-bold-sparkles",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-stars/?",
+      "source": "/fonts/sans-bold-stars",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-strikethrough/?",
+      "source": "/fonts/sans-bold-strikethrough",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-underline/?",
+      "source": "/fonts/sans-bold-underline",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-vaporwave/?",
+      "source": "/fonts/sans-bold-vaporwave",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-bold-zalgo/?",
+      "source": "/fonts/sans-bold-zalgo",
       "destination": "/fonts/sans-bold/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-butterfly/?",
+      "source": "/fonts/sans-italic-butterfly",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-diamond/?",
+      "source": "/fonts/sans-italic-diamond",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-double-underline/?",
+      "source": "/fonts/sans-italic-double-underline",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-fire/?",
+      "source": "/fonts/sans-italic-fire",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-flowers/?",
+      "source": "/fonts/sans-italic-flowers",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-hearts/?",
+      "source": "/fonts/sans-italic-hearts",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-lightning/?",
+      "source": "/fonts/sans-italic-lightning",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-moon/?",
+      "source": "/fonts/sans-italic-moon",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-music/?",
+      "source": "/fonts/sans-italic-music",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-rainbow/?",
+      "source": "/fonts/sans-italic-rainbow",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-rose/?",
+      "source": "/fonts/sans-italic-rose",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-sparkles/?",
+      "source": "/fonts/sans-italic-sparkles",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-stars/?",
+      "source": "/fonts/sans-italic-stars",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-strikethrough/?",
+      "source": "/fonts/sans-italic-strikethrough",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-underline/?",
+      "source": "/fonts/sans-italic-underline",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-vaporwave/?",
+      "source": "/fonts/sans-italic-vaporwave",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-italic-zalgo/?",
+      "source": "/fonts/sans-italic-zalgo",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-butterfly/?",
+      "source": "/fonts/sans-serif-butterfly",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-crown/?",
+      "source": "/fonts/sans-serif-crown",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-diamond/?",
+      "source": "/fonts/sans-serif-diamond",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-double-underline/?",
+      "source": "/fonts/sans-serif-double-underline",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-fire/?",
+      "source": "/fonts/sans-serif-fire",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-flowers/?",
+      "source": "/fonts/sans-serif-flowers",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-hearts/?",
+      "source": "/fonts/sans-serif-hearts",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-lightning/?",
+      "source": "/fonts/sans-serif-lightning",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-moon/?",
+      "source": "/fonts/sans-serif-moon",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-music/?",
+      "source": "/fonts/sans-serif-music",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-rainbow/?",
+      "source": "/fonts/sans-serif-rainbow",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-rose/?",
+      "source": "/fonts/sans-serif-rose",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-sparkles/?",
+      "source": "/fonts/sans-serif-sparkles",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-stars/?",
+      "source": "/fonts/sans-serif-stars",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-strikethrough/?",
+      "source": "/fonts/sans-serif-strikethrough",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-underline/?",
+      "source": "/fonts/sans-serif-underline",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-vaporwave/?",
+      "source": "/fonts/sans-serif-vaporwave",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/sans-serif-zalgo/?",
+      "source": "/fonts/sans-serif-zalgo",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-butterfly/?",
+      "source": "/fonts/small-caps-butterfly",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-crown/?",
+      "source": "/fonts/small-caps-crown",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-diamond/?",
+      "source": "/fonts/small-caps-diamond",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-double-underline/?",
+      "source": "/fonts/small-caps-double-underline",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-fire/?",
+      "source": "/fonts/small-caps-fire",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-flowers/?",
+      "source": "/fonts/small-caps-flowers",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-hearts/?",
+      "source": "/fonts/small-caps-hearts",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-lightning/?",
+      "source": "/fonts/small-caps-lightning",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-moon/?",
+      "source": "/fonts/small-caps-moon",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-music/?",
+      "source": "/fonts/small-caps-music",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-rainbow/?",
+      "source": "/fonts/small-caps-rainbow",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-rose/?",
+      "source": "/fonts/small-caps-rose",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-sparkles/?",
+      "source": "/fonts/small-caps-sparkles",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-stars/?",
+      "source": "/fonts/small-caps-stars",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-strikethrough/?",
+      "source": "/fonts/small-caps-strikethrough",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-underline/?",
+      "source": "/fonts/small-caps-underline",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-vaporwave/?",
+      "source": "/fonts/small-caps-vaporwave",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/small-caps-zalgo/?",
+      "source": "/fonts/small-caps-zalgo",
       "destination": "/fonts/small-caps/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-butterfly/?",
+      "source": "/fonts/squared-butterfly",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-crown/?",
+      "source": "/fonts/squared-crown",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-diamond/?",
+      "source": "/fonts/squared-diamond",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-double-underline/?",
+      "source": "/fonts/squared-double-underline",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-fire/?",
+      "source": "/fonts/squared-fire",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-flowers/?",
+      "source": "/fonts/squared-flowers",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-hearts/?",
+      "source": "/fonts/squared-hearts",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-lightning/?",
+      "source": "/fonts/squared-lightning",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-moon/?",
+      "source": "/fonts/squared-moon",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-music/?",
+      "source": "/fonts/squared-music",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-rainbow/?",
+      "source": "/fonts/squared-rainbow",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-rose/?",
+      "source": "/fonts/squared-rose",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-sparkles/?",
+      "source": "/fonts/squared-sparkles",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-stars/?",
+      "source": "/fonts/squared-stars",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-strikethrough/?",
+      "source": "/fonts/squared-strikethrough",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-underline/?",
+      "source": "/fonts/squared-underline",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-vaporwave/?",
+      "source": "/fonts/squared-vaporwave",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/squared-zalgo/?",
+      "source": "/fonts/squared-zalgo",
       "destination": "/fonts/squared-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-butterfly/?",
+      "source": "/fonts/subscript-butterfly",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-crown/?",
+      "source": "/fonts/subscript-crown",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-diamond/?",
+      "source": "/fonts/subscript-diamond",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-double-underline/?",
+      "source": "/fonts/subscript-double-underline",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-fire/?",
+      "source": "/fonts/subscript-fire",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-flowers/?",
+      "source": "/fonts/subscript-flowers",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-hearts/?",
+      "source": "/fonts/subscript-hearts",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-lightning/?",
+      "source": "/fonts/subscript-lightning",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-moon/?",
+      "source": "/fonts/subscript-moon",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-music/?",
+      "source": "/fonts/subscript-music",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-rainbow/?",
+      "source": "/fonts/subscript-rainbow",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-rose/?",
+      "source": "/fonts/subscript-rose",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-sparkles/?",
+      "source": "/fonts/subscript-sparkles",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-stars/?",
+      "source": "/fonts/subscript-stars",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-strikethrough/?",
+      "source": "/fonts/subscript-strikethrough",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-vaporwave/?",
+      "source": "/fonts/subscript-vaporwave",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/subscript-zalgo/?",
+      "source": "/fonts/subscript-zalgo",
       "destination": "/fonts/subscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-butterfly/?",
+      "source": "/fonts/superscript-butterfly",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-crown/?",
+      "source": "/fonts/superscript-crown",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-diamond/?",
+      "source": "/fonts/superscript-diamond",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-double-underline/?",
+      "source": "/fonts/superscript-double-underline",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-fire/?",
+      "source": "/fonts/superscript-fire",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-flowers/?",
+      "source": "/fonts/superscript-flowers",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-hearts/?",
+      "source": "/fonts/superscript-hearts",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-lightning/?",
+      "source": "/fonts/superscript-lightning",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-moon/?",
+      "source": "/fonts/superscript-moon",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-music/?",
+      "source": "/fonts/superscript-music",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-rainbow/?",
+      "source": "/fonts/superscript-rainbow",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-rose/?",
+      "source": "/fonts/superscript-rose",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-sparkles/?",
+      "source": "/fonts/superscript-sparkles",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-stars/?",
+      "source": "/fonts/superscript-stars",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-strikethrough/?",
+      "source": "/fonts/superscript-strikethrough",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-underline/?",
+      "source": "/fonts/superscript-underline",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-vaporwave/?",
+      "source": "/fonts/superscript-vaporwave",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     },
     {
-      "source": "/fonts/superscript-zalgo/?",
+      "source": "/fonts/superscript-zalgo",
       "destination": "/fonts/superscript-text/",
       "permanent": true
     }
