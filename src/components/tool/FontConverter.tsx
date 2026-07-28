@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import TextInput from './TextInput';
 import StyleGrid from './StyleGrid';
 import TextControls from './TextControls';
+import CreatorStudio from './CreatorStudio';
 
 interface StyleDef {
   id: string;
@@ -9,30 +10,24 @@ interface StyleDef {
   map: Record<string, string>;
   decorator?: string;
   category: string;
+  description?: string;
+  tags?: string[];
+  platforms?: string[];
 }
 
 interface Props {
   styles: StyleDef[];
+  showCreatorStudio?: boolean;
 }
 
 const STORAGE_KEY = 'fontoza_input';
 const DEFAULT_TEXT = 'Hello World';
 
-export default function FontConverter({ styles }: Props) {
+export default function FontConverter({ styles, showCreatorStudio = false }: Props) {
   const [fontSize, setFontSize] = useState(20);
-  const [inputText, setInputText] = useState<string>(() => {
-    // Try to read persisted value synchronously on first render
-    if (typeof window !== 'undefined') {
-      try {
-        return localStorage.getItem(STORAGE_KEY) || DEFAULT_TEXT;
-      } catch {
-        return DEFAULT_TEXT;
-      }
-    }
-    return DEFAULT_TEXT;
-  });
+  const [inputText, setInputText] = useState(DEFAULT_TEXT);
 
-  // Ensure localStorage is read after hydration if SSR didn't run the initializer
+  // Restore saved text after hydration so the server and first client render match.
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -65,7 +60,7 @@ export default function FontConverter({ styles }: Props) {
         </label>
         <TextInput
           value={inputText}
-          onChange={setInputText}
+          onChange={updateInputText}
           placeholder="Type or paste text to see all font styles…"
         />
       </div>
@@ -77,6 +72,14 @@ export default function FontConverter({ styles }: Props) {
         fontSize={fontSize}
         onFontSizeChange={setFontSize}
       />
+
+      {showCreatorStudio && (
+        <CreatorStudio
+          styles={styles}
+          inputText={inputText}
+          onTextChange={updateInputText}
+        />
+      )}
 
       <StyleGrid
         styles={styles}

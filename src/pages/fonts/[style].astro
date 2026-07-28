@@ -121,6 +121,7 @@ const schemaList = [
     <!-- Main converter -->
     <SingleStyleConverter
       client:load
+      styleId={style.id}
       styleName={style.name}
       map={style.map as Record<string, string>}
       decorator={decoratorName}

@@ -5,6 +5,7 @@ import TextControls from './TextControls';
 import { applyStyle } from './utils/transform';
 
 interface Props {
+  styleId: string;
   styleName: string;
   map: Record<string, string>;
   decorator?: string;
@@ -12,21 +13,13 @@ interface Props {
 }
 
 const STORAGE_KEY = 'fontoza_input';
+const RECENT_KEY = 'fontoza_recent_styles';
 
-export default function SingleStyleConverter({ styleName, map, decorator, example }: Props) {
+export default function SingleStyleConverter({ styleId, styleName, map, decorator, example }: Props) {
   const [fontSize, setFontSize] = useState(30);
-  const [inputText, setInputText] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        return localStorage.getItem(STORAGE_KEY) || example;
-      } catch {
-        return example;
-      }
-    }
-    return example;
-  });
+  const [inputText, setInputText] = useState(example);
 
-  // Hydration sync
+  // Restore saved text after hydration so the server and first client render match.
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -54,6 +47,19 @@ export default function SingleStyleConverter({ styleName, map, decorator, exampl
 
   const outputCharCount = [...outputText].length;
 
+  const recordRecentStyle = () => {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]');
+      const current = Array.isArray(parsed)
+        ? parsed.filter((item): item is string => typeof item === 'string')
+        : [];
+      const next = [styleId, ...current.filter((item) => item !== styleId)].slice(0, 12);
+      localStorage.setItem(RECENT_KEY, JSON.stringify(next));
+    } catch {
+      // Storage may be disabled.
+    }
+  };
+
   return (
     <div className="w-full space-y-6">
       {/* Input */}
@@ -63,7 +69,7 @@ export default function SingleStyleConverter({ styleName, map, decorator, exampl
         </label>
         <TextInput
           value={inputText}
-          onChange={setInputText}
+          onChange={updateInputText}
           placeholder={`Type your text to convert to ${styleName}…`}
         />
       </div>
@@ -107,6 +113,7 @@ export default function SingleStyleConverter({ styleName, map, decorator, exampl
           text={outputText}
           variant="full"
           label={`Copy ${styleName}`}
+          onCopied={recordRecentStyle}
         />
       </div>
     </div>
