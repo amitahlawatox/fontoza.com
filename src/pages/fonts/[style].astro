@@ -9,6 +9,7 @@ import { STYLES, getRelatedStyles } from '../../lib/registry';
 import type { StyleDefinition } from '../../lib/registry';
 import { CATEGORIES_BY_ID } from '../../lib/categories';
 import { STYLE_CONTENT } from '../../lib/content';
+import { transform } from '../../lib/unicode/transform';
 import { generateStyleMeta } from '../../lib/seo/meta';
 import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
 import { siteUrl } from '../../lib/site';
@@ -20,11 +21,13 @@ export async function getStaticPaths() {
   }));
 }
 
-interface Props {
-  style: StyleDefinition;
-}
-
 const { style } = Astro.props;
+
+function getGeneratorHeading(name: string): string {
+  if (/\bgenerator$/i.test(name)) return name;
+  if (/\b(text|font)$/i.test(name)) return `${name} Generator`;
+  return `${name} Text Generator`;
+}
 
 function getDecoratorName(s: StyleDefinition): string | undefined {
   // Generated combination styles have explicit decoratorName set
@@ -54,11 +57,20 @@ function getDecoratorName(s: StyleDefinition): string | undefined {
 }
 
 const decoratorName = getDecoratorName(style);
-const meta = generateStyleMeta(style);
-const related = getRelatedStyles(style.id).slice(0, 6);
 const content = STYLE_CONTENT.find((c) => c.styleId === style.id);
+const generatedMeta = generateStyleMeta(style);
+const meta = {
+  ...generatedMeta,
+  title: content?.metaTitle ?? generatedMeta.title,
+  description: content?.metaDescription ?? generatedMeta.description,
+};
+const heading = content?.heading ?? getGeneratorHeading(style.name);
+const intro = content?.intro
+  ?? `Copy and paste ${style.name.toLowerCase()} Unicode text for Instagram, TikTok, Discord, and other supported apps.`;
+const related = getRelatedStyles(style.id).slice(0, 6);
 const faqs = content?.faqs ?? [];
 const longDescription = content?.longDescription ?? '';
+const examples = content?.examples ?? [];
 
 const category = CATEGORIES_BY_ID[
   style.category === 'script' ? 'script-fonts'
@@ -112,10 +124,10 @@ const schemaList = [
     <Breadcrumbs items={breadcrumbItems} />
 
     <h1 class="mb-2 text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl">
-      {style.name} Text Generator
+      {heading}
     </h1>
     <p class="mb-8 text-base text-[var(--color-text-muted)]">
-      Copy &amp; paste {style.name.toLowerCase()} Unicode text — works on Instagram, TikTok, Discord
+      {intro}
     </p>
 
     <!-- Main converter -->
@@ -127,6 +139,26 @@ const schemaList = [
       decorator={decoratorName}
       example={style.example}
     />
+
+    {examples.length > 0 && (
+      <section data-scroll="fade-up" class="mt-10">
+        <h2 class="mb-1 text-xl font-bold text-[var(--color-text)]">Examples to try</h2>
+        <p class="mb-4 text-sm text-[var(--color-text-muted)]">
+          Start with one of these ideas, then replace it with your own words in the generator above.
+        </p>
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {examples.map((example) => (
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+              <h3 class="text-sm font-semibold text-[var(--color-text)]">{example.label}</h3>
+              <p class="mt-2 break-words text-lg text-[var(--color-text)]">
+                {transform(example.text, style.map, style.decorator)}
+              </p>
+              <p class="mt-2 text-xs leading-relaxed text-[var(--color-text-muted)]">{example.useCase}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
 
     <!-- Platform support badges -->
     {style.platforms.length > 0 && (
