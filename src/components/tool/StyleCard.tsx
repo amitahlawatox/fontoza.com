@@ -1,3 +1,4 @@
+import { Heart } from 'lucide-react';
 import CopyButton from './CopyButton';
 
 interface Props {
@@ -7,6 +8,9 @@ interface Props {
   previewFontSize?: number;
   showLink?: boolean;
   href?: string;
+  isFavourite?: boolean;
+  onToggleFavourite?: () => void;
+  onCopied?: () => void;
 }
 
 export default function StyleCard({
@@ -16,6 +20,9 @@ export default function StyleCard({
   previewFontSize = 20,
   showLink = false,
   href,
+  isFavourite = false,
+  onToggleFavourite,
+  onCopied,
 }: Props) {
   return (
     <article
@@ -42,9 +49,30 @@ export default function StyleCard({
         <h3 className="min-w-0 flex-1 truncate text-sm font-semibold leading-tight text-[var(--color-text)]">
           {styleName}
         </h3>
-        <span className="pointer-events-auto">
-          <CopyButton text={preview} variant="icon" label={`Copy ${styleName}`} />
-        </span>
+        <div className="pointer-events-auto flex items-center gap-2">
+          {onToggleFavourite && (
+            <button
+              type="button"
+              onClick={onToggleFavourite}
+              aria-label={isFavourite ? `Remove ${styleName} from favourites` : `Add ${styleName} to favourites`}
+              aria-pressed={isFavourite}
+              title={isFavourite ? 'Remove from favourites' : 'Save to favourites'}
+              className={`flex h-8 w-8 items-center justify-center rounded-lg border transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 ${
+                isFavourite
+                  ? 'border-pink-300 bg-pink-50 text-pink-600 dark:border-pink-800 dark:bg-pink-950/40 dark:text-pink-400'
+                  : 'border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text-muted)] hover:border-pink-300 hover:bg-pink-50 hover:text-pink-600 dark:hover:bg-pink-950/30'
+              }`}
+            >
+              <Heart size={15} fill={isFavourite ? 'currentColor' : 'none'} aria-hidden="true" />
+            </button>
+          )}
+          <CopyButton
+            text={preview}
+            variant="icon"
+            label={`Copy ${styleName}`}
+            onCopied={onCopied}
+          />
+        </div>
       </div>
 
       <div

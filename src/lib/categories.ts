@@ -146,7 +146,6 @@ export const CATEGORIES: CategoryDefinition[] = [
       'bold-hearts',
       'upside-down-bold',
       'fullwidth-bold',
-      'bold-sans-italic',
       'monospace-bold',
       'small-caps-bold',
     ],

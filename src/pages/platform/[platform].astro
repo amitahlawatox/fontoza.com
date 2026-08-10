@@ -53,6 +53,9 @@ const serializedStyles = platformStyles.map((style) => ({
   name: style.name,
   map: style.map as Record<string, string>,
   category: style.category,
+  description: style.description,
+  tags: style.tags,
+  platforms: style.platforms,
   decorator: getDecoratorName(style),
 }));
 

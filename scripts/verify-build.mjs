@@ -5,6 +5,13 @@ import { fileURLToPath } from 'node:url';
 const DIST = fileURLToPath(new URL('../dist/', import.meta.url));
 const ORIGIN = 'https://www.fontoza.com';
 const failures = [];
+const requiredRedirects = new Map([
+  ['/fonts/bold/', '/fonts/bold-text/'],
+  ['/fonts/cursive/', '/fonts/cursive-font/'],
+  ['/fonts/bold-sans-italic/', '/fonts/sans-bold-italic/'],
+  ['/fonts/bold-underline/', '/fonts/bold-underline-text/'],
+  ['/fonts/gothic-underline/', '/fonts/gothic-bold-underline/'],
+]);
 
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -60,9 +67,47 @@ for (const url of sitemapUrls) {
 }
 
 const vercel = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
+const redirectSources = new Set();
+const redirectsBySource = new Map();
+
 for (const redirect of vercel.redirects ?? []) {
+  const { source, destination, permanent } = redirect;
+
+  if (typeof source !== 'string' || !source.startsWith('/') || source.startsWith('//') || /[?#]/.test(source)) {
+    failures.push(`redirect source is not a safe local path: ${source}`);
+    continue;
+  }
+  if (
+    typeof destination !== 'string' ||
+    !destination.startsWith('/') ||
+    destination.startsWith('//') ||
+    /[?#]/.test(destination)
+  ) {
+    failures.push(`redirect target is not a safe local path: ${destination}`);
+    continue;
+  }
+  if (redirectSources.has(source)) failures.push(`duplicate redirect source: ${source}`);
+  redirectSources.add(source);
+  redirectsBySource.set(source, redirect);
+
+  if (permanent !== true) failures.push(`redirect must be permanent: ${source}`);
+  if (source === destination) failures.push(`redirect source and target are identical: ${source}`);
   if (redirect.destination !== '/' && !redirect.destination.endsWith('/')) {
     failures.push(`redirect target is not canonical: ${redirect.destination}`);
+  }
+  if (canonicalUrls.has(`${ORIGIN}${source}`)) {
+    failures.push(`redirect source conflicts with a canonical page: ${source}`);
+  }
+  if (!canonicalUrls.has(`${ORIGIN}${destination}`)) {
+    failures.push(`redirect target has no matching canonical page: ${destination}`);
+  }
+}
+
+for (const [source, destination] of requiredRedirects) {
+  const redirect = redirectsBySource.get(source);
+  if (!redirect) failures.push(`required redirect is missing: ${source} -> ${destination}`);
+  else if (redirect.destination !== destination) {
+    failures.push(`required redirect has the wrong target: ${source} -> ${redirect.destination} (expected ${destination})`);
   }
 }
 

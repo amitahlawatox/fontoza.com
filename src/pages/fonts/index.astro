@@ -38,6 +38,9 @@ const serializedStyles = STYLES.map((style) => ({
   name: style.name,
   map: style.map as Record<string, string>,
   category: style.category,
+  description: style.description,
+  tags: style.tags,
+  platforms: style.platforms,
   decorator: getDecoratorName(style),
 }));
 ---
@@ -76,7 +79,7 @@ const serializedStyles = STYLES.map((style) => ({
 
         <!-- Font Converter -->
         <div class="animate-fade-up-delay-2">
-          <FontConverter client:load styles={serializedStyles} />
+          <FontConverter client:load styles={serializedStyles} showCreatorStudio={true} />
         </div>
       </div>
     </section>

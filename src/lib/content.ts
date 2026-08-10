@@ -1,5 +1,10 @@
 export interface StyleContent {
   styleId: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  heading?: string;
+  intro?: string;
+  examples?: Array<{ label: string; text: string; useCase: string }>;
   longDescription: string;
   faqs: Array<{ question: string; answer: string }>;
 }
@@ -871,10 +876,23 @@ The filled circle creates much stronger visual weight than open-circle Circled t
 
   {
     styleId: 'sans-bold',
-    longDescription: `Sans-Serif Bold uses the Mathematical Sans-Serif Bold block (U+1D5D4–U+1D607) to produce heavy-weight, geometric letters without serifs. Bold sans-serif digits (𝟬–𝟵) are included. The clean, thick letterforms have a modern, contemporary feel — closer to a heavy-weight web font than the more traditional Mathematical Bold style. Excellent for bios and posts that want modern weight without the serif warmth of standard bold.`,
+    metaTitle: 'Math Sans Bold Font Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Generate mathematical sans-serif bold Unicode letters and numbers. Preview clean, heavy text, then copy it for bios, names, captions, and posts.',
+    heading: 'Mathematical Sans-Serif Bold Generator',
+    intro: 'Turn ordinary words into clean mathematical sans-serif bold Unicode for modern display names, bio labels, and short social captions.',
+    examples: [
+      { label: 'Profile label', text: 'Digital Creator', useCase: 'A compact profession or niche label for a social profile.' },
+      { label: 'Announcement', text: 'NEW DROP 08', useCase: 'Bold letters and supported bold digits for a short launch line.' },
+      { label: 'Call to action', text: 'WATCH NOW', useCase: 'A high-contrast phrase for a caption or channel description.' },
+    ],
+    longDescription: `Mathematical sans-serif bold text uses the Unicode Mathematical Sans-Serif Bold alphabet. Its letterforms are heavier and more geometric than regular Mathematical Bold, so the result feels closer to a modern sports, gaming, or creator-brand headline. The generator maps A-Z, a-z, and 0-9 while leaving punctuation and emoji unchanged.
+
+Use this style for short pieces of display text such as a name, role, section label, or call to action. Long paragraphs become harder to scan and may be announced character by character by some assistive technology. Keep important contact information, keywords, and instructions in normal text as well, because styled Unicode is not equivalent to semantic HTML bold and is not reliably treated as ordinary letters by search systems.`,
     faqs: [
-      { question: 'How is sans bold different from regular bold?', answer: 'Regular bold (Mathematical Bold) has slightly serif characteristics. Sans bold (Mathematical Sans-Serif Bold) is fully geometric without serifs — cleaner and more modern.' },
-      { question: 'Are numbers included?', answer: 'Yes — digits 𝟬–𝟵 are included from the Mathematical Sans-Serif Bold Digits block.' },
+      { question: 'What is a mathematical sans-serif bold generator?', answer: 'It replaces ordinary letters with corresponding Unicode Mathematical Sans-Serif Bold characters. The result is copyable text, not an image or an installed font.' },
+      { question: 'How is sans bold different from regular bold?', answer: 'Mathematical Bold has more traditional letter shapes, while Mathematical Sans-Serif Bold is clean and geometric. Both are Unicode character sets rather than formatting.' },
+      { question: 'Does math sans bold include numbers?', answer: 'Yes. The Unicode set includes mathematical sans-serif bold digits 0-9, so dates and short number strings can use the same weight.' },
+      { question: 'Should I use it for an entire bio?', answer: 'A short name or label is usually clearer. Keep essential information in ordinary text so it remains easy to read, search, and announce with assistive technology.' },
     ],
   },
 
@@ -889,10 +907,23 @@ The filled circle creates much stronger visual weight than open-circle Circled t
 
   {
     styleId: 'sans-bold-italic',
-    longDescription: `Sans-Serif Bold Italic (U+1D63C–U+1D66F) is the maximum-weight, maximum-lean variant of the sans-serif mathematical family. Heavy strokes combined with dynamic slant create the most kinetic of the Unicode mathematical styles. Used for maximum emphasis in a contemporary, geometric aesthetic. This is the go-to style when you need text that looks like a sports brand headline.`,
+    metaTitle: 'Math Sans Bold Italic Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create mathematical sans-serif bold italic Unicode text. Preview dynamic slanted letters, then copy them for gamer tags, bios, captions, and headlines.',
+    heading: 'Mathematical Sans-Serif Bold Italic Generator',
+    intro: 'Generate heavy, slanted mathematical sans-serif letters for energetic names, sports-style headings, and short creator-brand statements.',
+    examples: [
+      { label: 'Gamer tag', text: 'Night Runner', useCase: 'A dynamic display name that combines weight with forward motion.' },
+      { label: 'Sports headline', text: 'Game Day', useCase: 'A compact headline for a match post or team bio.' },
+      { label: 'Creator signature', text: 'Made by Ava', useCase: 'A strong slanted credit line at the end of a caption.' },
+    ],
+    longDescription: `Mathematical sans-serif bold italic text combines thick strokes with a forward slant. Unicode provides uppercase and lowercase letters in this family, so the generated result can be copied into many profile, caption, chat, and description fields without carrying CSS or rich-text formatting.
+
+This is a better fit for short energetic phrases than for body copy. Digits do not have a dedicated sans-serif bold italic set, so numbers remain unchanged; that contrast is expected rather than a generator error. Glyph shapes can also vary between devices and apps. Test the final phrase where you plan to post it, and keep critical instructions or searchable terms in regular characters.`,
     faqs: [
-      { question: 'Is this the same as bold italic?', answer: 'No — Bold Italic uses the serif Mathematical Bold Italic block. Sans Bold Italic is fully geometric without serifs, giving it a more modern, aggressive feel.' },
-      { question: 'Are numbers included?', answer: 'No — sans bold italic does not have digit variants. Numbers pass through.' },
+      { question: 'Is mathematical sans-serif bold italic the same as bold italic?', answer: 'No. Mathematical Bold Italic uses more traditional letterforms; this style uses the cleaner sans-serif bold italic alphabet.' },
+      { question: 'Why do the numbers stay normal?', answer: 'Unicode does not provide a separate Mathematical Sans-Serif Bold Italic digit set. Numbers and most punctuation therefore pass through unchanged.' },
+      { question: 'Can I paste this into Instagram or TikTok?', answer: 'Usually yes in fields that accept Unicode text, including many display names, bios, and captions. Platform rules can change, so preview the pasted result before saving.' },
+      { question: 'Is this page different from bold sans italic?', answer: 'No separate page is needed. “Bold sans italic” and “sans bold italic” describe the same transformation, which is consolidated here.' },
     ],
   },
 
@@ -925,10 +956,23 @@ The filled circle creates much stronger visual weight than open-circle Circled t
 
   {
     styleId: 'double-underline-text',
-    longDescription: `Double underline uses Unicode combining character U+0333 (Combining Double Low Line) after each letter, drawing two parallel underlines beneath each character. The double line creates stronger visual emphasis than a single underline — it reads as a heavier accent mark, useful for the most critical elements of a caption or bio. Works well in combination with bold text for headings or key terms.`,
+    metaTitle: 'Double Underline Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Add two Unicode lines beneath letters with a double underline generator. Preview and copy underlined names, labels, captions, or emphasized words.',
+    heading: 'Double Underline Text Generator',
+    intro: 'Add a copyable Unicode double underline beneath each non-space character for strong emphasis in short names, labels, and messages.',
+    examples: [
+      { label: 'Section label', text: 'Important', useCase: 'A strong visual divider for a short profile or message section.' },
+      { label: 'Deadline', text: 'Friday 8 PM', useCase: 'Emphasize a short date or deadline while keeping spaces intact.' },
+      { label: 'Display name', text: 'Nova', useCase: 'Give a compact name two persistent underline strokes.' },
+    ],
+    longDescription: `Double underline text is created by placing Unicode U+0333, Combining Double Low Line, after each visible character. Unlike a word-processor underline, the effect travels with the copied text because the underline marks are characters. Spaces are left undecorated so phrases remain readable.
+
+Combining marks depend on the receiving app and font, so line position and continuity can vary. Some fields may normalize or remove the marks, and very long decorated phrases can be difficult for screen readers or text editing. Use the effect for a short phrase, verify it in the target app, and retain a plain-text version of essential information.`,
     faqs: [
       { question: 'How is double underline different from single underline?', answer: 'Double underline uses U+0333 which draws two parallel lines beneath each character. Single underline uses U+0332 which draws one line. Double underline is visually heavier and communicates stronger emphasis.' },
-      { question: 'Does double underline work on Instagram?', answer: 'Yes — combining character U+0333 renders in Instagram bios and captions on all modern devices.' },
+      { question: 'Why can the two lines look uneven?', answer: 'The underline is rendered by the receiving font and app. Combining-mark placement can differ by device, and adjacent lines may not join perfectly.' },
+      { question: 'Does double underline work on Instagram?', answer: 'It commonly works in Instagram fields that preserve combining Unicode marks, but rendering can change by app version and device. Paste a short test before updating a profile.' },
+      { question: 'Can I underline spaces?', answer: 'This generator leaves spaces undecorated. That keeps multiple words legible and avoids broken-looking marks between words.' },
     ],
   },
 
@@ -1004,9 +1048,23 @@ The filled circle creates much stronger visual weight than open-circle Circled t
 
   {
     styleId: 'crown-text',
-    longDescription: `Crown text frames content with ♛ (U+265B, Black Chess Queen) symbols, creating a regal, royal aesthetic. The chess queen is visually similar to a crown and immediately communicates authority and status. Popular for "queen" aesthetic content, royalty-themed branding, and any creator who wants their content to exude authority and distinction.`,
+    metaTitle: 'Crown Symbol Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Frame names and phrases with a copyable queen crown symbol. Preview royal text for bios, usernames, captions, and gaming profiles, then copy it free.',
+    heading: 'Crown Symbol Text Generator',
+    intro: 'Place a copyable black chess queen crown on both sides of your text for royal names, queen-themed bios, team labels, and gaming profiles.',
+    examples: [
+      { label: 'Queen display name', text: 'Queen Maya', useCase: 'A royal profile name framed by matching crown-like symbols.' },
+      { label: 'Gaming title', text: 'Ranked Royalty', useCase: 'A compact title for a clan bio, role, or status line.' },
+      { label: 'Celebration', text: 'Birthday Queen', useCase: 'A crown-framed phrase for a birthday caption or message.' },
+    ],
+    longDescription: `This crown text style frames the original phrase with ♛, Unicode U+265B Black Chess Queen. It is a chess symbol rather than a custom font, but its ornate silhouette is widely read as a queen crown. The letters inside remain unchanged, making the phrase more readable than styles that replace every character.
+
+Use crown text when the symbol itself carries the meaning: queen or king themes, birthday captions, gaming ranks, fan names, or a short royalty-inspired bio. The exact shape may vary with the receiving platform's font. If you also want cursive letters inside the frame, use Cursive Crown; if you want plain crown symbols around normal text, this is the clearer option.`,
     faqs: [
       { question: 'What symbol is used for the crown?', answer: 'This style uses ♛ (U+265B, Black Chess Queen), which visually resembles a crown with its ornate top.' },
+      { question: 'Is the crown an emoji?', answer: 'It is a Unicode chess symbol, not a color emoji. Most apps display it as a monochrome text glyph whose exact shape follows the app or device font.' },
+      { question: 'What is the difference between Crown Text and Cursive Crown?', answer: 'Crown Text keeps your letters unchanged and adds ♛ at both ends. Cursive Crown also converts supported letters to Mathematical Script before adding the crown symbols.' },
+      { question: 'Can I use the crown symbol in a username?', answer: 'Only if that platform allows the ♛ character in that field. Display names and bios are generally more permissive than @handles, so test the target field before relying on it.' },
     ],
   },
 
@@ -1028,14 +1086,6 @@ The filled circle creates much stronger visual weight than open-circle Circled t
   },
 
   {
-    styleId: 'bold-sans-italic',
-    longDescription: `Bold Sans Italic is the same as Sans-Serif Bold Italic — a heavy-weight slanted sans-serif style from the Mathematical Sans-Serif Bold Italic block. See the Sans-Serif Bold Italic entry for full details. This alias exists because many users search for "bold sans italic" as a term, and it provides the exact same transformation as the primary Sans-Serif Bold Italic style.`,
-    faqs: [
-      { question: 'Is bold sans italic the same as sans bold italic?', answer: 'Yes — both names refer to the same Mathematical Sans-Serif Bold Italic Unicode block and produce identical results.' },
-    ],
-  },
-
-  {
     styleId: 'bold-underline-text',
     longDescription: `Bold underline combines Mathematical Bold characters with the combining underline diacritic (U+0332). Each character is first converted to its bold equivalent, then the underline combining character is applied. The result is bold text with a persistent underline — maximum emphasis for section headers, CTAs, and key terms in long captions.`,
     faqs: [
@@ -1053,25 +1103,193 @@ The filled circle creates much stronger visual weight than open-circle Circled t
 
   {
     styleId: 'bold-strikethrough',
-    longDescription: `Bold strikethrough applies the strikethrough combining character to Mathematical Bold letters. The combination of heavy strokes and a crossing line creates an assertive "cancelled" look — useful for showing revised positions, crossed-out prices, and editorial corrections in a strong visual register.`,
+    metaTitle: 'Bold Strikethrough Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Make bold Unicode text with a line through every letter. Preview and copy crossed-out prices, corrections, jokes, and status updates for social apps.',
+    heading: 'Bold Strikethrough Text Generator',
+    intro: 'Combine mathematical bold letters with a copyable Unicode strike line for revised prices, corrections, before-and-after captions, and jokes.',
+    examples: [
+      { label: 'Price change', text: '£40', useCase: 'Show an old price as crossed out beside a plain-text replacement.' },
+      { label: 'Plan revision', text: 'Sleep Early', useCase: 'Create an obvious crossed-out first plan for a humorous update.' },
+      { label: 'Correction', text: 'Coming Monday', useCase: 'Mark a short statement as replaced while keeping it visible.' },
+    ],
+    longDescription: `Bold strikethrough first maps supported letters and digits to Unicode Mathematical Bold, then adds U+0336 Combining Long Stroke Overlay to each non-space character. Both parts remain in the copied text, so the heavy letters and strike line can survive in plain-text fields that do not support rich formatting.
+
+This style is useful when the crossed-out version still matters: an old price, a corrected date, a changed opinion, or a visual before-and-after joke. It is not a substitute for accessible editing or semantic deletion markup on a webpage. Combining marks can sit differently across fonts, and a long crossed-out sentence is hard to read, so keep the effect short and include the replacement in ordinary text.`,
     faqs: [
       { question: 'What is bold strikethrough used for?', answer: 'Bold strikethrough is used for crossed-out prices, revised statements, and editorial corrections where the original bold text is deliberately cancelled.' },
+      { question: 'Why does the line move on different devices?', answer: 'U+0336 is positioned by the app and font. The line can be slightly higher, lower, or less continuous depending on the receiving environment.' },
+      { question: 'Are spaces crossed out?', answer: 'No. The generator leaves spaces unchanged so separate words remain easy to identify.' },
+      { question: 'Will a screen reader know the text was deleted?', answer: 'Not reliably. This is a visual Unicode effect, not semantic deletion markup. Explain important corrections in normal text as well.' },
     ],
   },
 
   {
     styleId: 'cursive-underline',
-    longDescription: `Cursive underline combines the flowing Mathematical Script characters with a combining underline. The script letterforms with an underline create an elegant, handwriting-with-underline aesthetic — as if written and underlined in one fluid motion. Popular for emphasis in aesthetic and lifestyle content where the combination of elegance and structure is desired.`,
+    metaTitle: 'Cursive Underline Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create underlined cursive Unicode text for names, signatures, bios, and captions. Type a phrase, preview the script underline, and copy it instantly.',
+    heading: 'Cursive Underline Text Generator',
+    intro: 'Convert letters to mathematical cursive and add a Unicode underline for signature-style names, romantic phrases, and short aesthetic labels.',
+    examples: [
+      { label: 'Signature name', text: 'Amelia Rose', useCase: 'A flowing underlined name for a profile display field.' },
+      { label: 'Short motto', text: 'Choose Joy', useCase: 'An elegant phrase that still reads clearly at a glance.' },
+      { label: 'Creative credit', text: 'Written by Noor', useCase: 'A signature-like credit for a caption or description.' },
+    ],
+    longDescription: `Cursive underline combines two Unicode techniques. Supported letters are first mapped to Mathematical Script characters, then U+0332 Combining Low Line is added beneath each non-space character. The result can be copied as text and gives a short phrase the appearance of an underlined handwritten signature.
+
+Because script letters and combining marks are rendered by the receiving font, their appearance and underline alignment can vary. Numbers remain ordinary because Mathematical Script has no dedicated digit set. Use this style for a name, motto, or short credit rather than a paragraph, and keep important account information in regular text for accessibility and search.`,
     faqs: [
-      { question: 'Does cursive underline work in Instagram?', answer: 'Yes — script characters and combining underline both render correctly in Instagram bios and captions.' },
+      { question: 'How is cursive underline created?', answer: 'The generator maps supported letters to Mathematical Script Unicode characters and adds U+0332 Combining Low Line after each non-space character.' },
+      { question: 'Does cursive underline work in Instagram?', answer: 'It commonly works in Instagram fields that preserve Unicode script characters and combining marks. Paste a short test because glyph and underline rendering can vary by device.' },
+      { question: 'Why are the numbers not cursive?', answer: 'Unicode Mathematical Script provides letters but no matching digit set, so numbers pass through as ordinary characters while still receiving the underline.' },
+      { question: 'Is this searchable as normal cursive text?', answer: 'Styled Unicode letters are distinct code points, so search systems may not treat them as the plain letters they resemble. Keep searchable names or keywords in normal text too.' },
     ],
   },
 
   {
     styleId: 'gothic-bold-underline',
-    longDescription: `Gothic underline combines Mathematical Fraktur (Gothic) letters with the combining underline diacritic. The medieval letterforms with an underline create a dramatic, annotated-manuscript aesthetic — as if a monk has underlined a passage of importance. Strong visual choice for Gothic aesthetic, dark fantasy, and historical content creators.`,
+    metaTitle: 'Gothic Underline Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Generate underlined Gothic Fraktur Unicode text for dark names, fantasy roles, metal titles, and Discord profiles. Preview, copy, and paste free.',
+    heading: 'Gothic Underline Text Generator',
+    intro: 'Turn a short phrase into Gothic Fraktur letters with a persistent Unicode underline for dark fantasy names, roles, titles, and bios.',
+    examples: [
+      { label: 'Dark display name', text: 'Night Raven', useCase: 'A dramatic underlined name for a Gothic or fantasy profile.' },
+      { label: 'Server role', text: 'Guild Master', useCase: 'A medieval-style Discord role or channel label.' },
+      { label: 'Music title', text: 'Midnight Ritual', useCase: 'An atmospheric title for a metal, tattoo, or dark-art post.' },
+    ],
+    longDescription: `Gothic underline maps supported letters to Unicode Mathematical Fraktur and adds U+0332 Combining Low Line beneath each non-space character. The page name uses the common search term “Gothic underline”; the generated alphabet is specifically Fraktur-style Unicode rather than a downloadable blackletter typeface.
+
+This combination fits short dark-fantasy names, gaming roles, metal captions, and historical or tattoo-inspired labels. Some Fraktur letters use special Unicode code points, and the underline is positioned by the receiving font, so test the final result in the exact app. Avoid using it for essential instructions or long passages because ornate characters and combining marks can reduce readability.`,
     faqs: [
-      { question: 'What is gothic underline good for?', answer: 'Gothic underline works well in medieval, dark fantasy, Gothic, and historical aesthetics where drama and visual weight are desired.' },
+      { question: 'Is Gothic underline the same as a blackletter font?', answer: 'It has a related Fraktur appearance, but it is a set of Unicode characters plus an underline mark, not a font file installed on the viewer’s device.' },
+      { question: 'What is Gothic underline good for?', answer: 'It works best for short medieval, dark-fantasy, metal, gaming, or historical labels where the ornate style is part of the message.' },
+      { question: 'Why is the underline not perfectly continuous?', answer: 'The line is a combining Unicode mark applied character by character. Font metrics and app rendering determine whether neighboring segments join evenly.' },
+      { question: 'Does it work in Discord?', answer: 'Discord generally accepts these Unicode characters in messages and many naming fields, but individual server rules and field limits still apply.' },
+    ],
+  },
+
+  {
+    styleId: 'cursive-moon',
+    metaTitle: 'Moon in Cursive Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Write names and phrases in cursive framed by moon symbols. Preview copyable Unicode text for night bios, captions, usernames, and status messages.',
+    heading: 'Moon in Cursive Text Generator',
+    intro: 'Create flowing mathematical cursive text framed by moon symbols for dreamy display names, night-themed bios, and celestial captions.',
+    examples: [
+      { label: 'Celestial name', text: 'Luna Skye', useCase: 'A moon-framed cursive display name for a social profile.' },
+      { label: 'Night caption', text: 'Meet Me at Midnight', useCase: 'A short dreamy line for a night photo or story caption.' },
+      { label: 'Calm status', text: 'Moon Mood', useCase: 'A compact status for an aesthetic or sleep-themed profile.' },
+    ],
+    longDescription: `Moon in Cursive combines Mathematical Script letters with moon symbols on both sides. The words change to copyable Unicode script while the moon characters act as a visual frame, giving the result a celestial theme without placing emoji between every letter.
+
+The style works best for short names, night-photo captions, astronomy communities, and dreamy profile labels. Mathematical Script does not provide matching digits, so numbers remain ordinary. Moon appearance can vary between color emoji and monochrome glyphs depending on the app, while script-letter shapes depend on the available font. Preview the pasted result before saving it.`,
+    faqs: [
+      { question: 'How does the moon in cursive generator work?', answer: 'It converts supported letters to Mathematical Script Unicode and then places moon symbols at the beginning and end of the phrase.' },
+      { question: 'Why does the moon look different after pasting?', answer: 'The receiving app chooses its emoji or text glyph. The moon may change color, size, or alignment while remaining the same Unicode character.' },
+      { question: 'Can I use moon cursive in a username?', answer: 'Only if the target field allows script Unicode and moon symbols. Display names and bios are usually more flexible than @handles.' },
+    ],
+  },
+
+  {
+    styleId: 'cursive-flowers',
+    metaTitle: 'Cursive Flower Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create cursive Unicode text framed by flower symbols. Preview floral names, wedding phrases, bios, and captions, then copy and paste instantly.',
+    heading: 'Cursive Flower Text Generator',
+    intro: 'Frame mathematical cursive letters with floral symbols for soft profile names, wedding phrases, garden captions, and creative signatures.',
+    examples: [
+      { label: 'Floral name', text: 'Daisy Bloom', useCase: 'A soft cursive display name with a simple flower frame.' },
+      { label: 'Wedding phrase', text: 'Mia and Leo', useCase: 'A decorative short name pairing for a wedding caption.' },
+      { label: 'Garden caption', text: 'Growing Gently', useCase: 'A nature-themed line for plant, craft, or lifestyle content.' },
+    ],
+    longDescription: `Cursive Flowers converts supported letters to Mathematical Script and surrounds the result with Unicode flower symbols. It is a two-part transformation: the script changes the letterforms, while the floral frame supplies the theme. Spaces and punctuation remain readable inside the decorated phrase.
+
+Use it for short names, wedding or friendship captions, garden accounts, craft profiles, and gentle aesthetic labels. The flower is a text symbol rather than a sticker, so its shape follows the receiving font and may look more minimal than a color flower emoji. For accessibility, keep dates, contact details, and essential instructions in ordinary characters.`,
+    faqs: [
+      { question: 'Is cursive flower text a downloadable font?', answer: 'No. It uses copyable Unicode Mathematical Script characters and flower symbols, so there is no font file to install.' },
+      { question: 'Why is the flower sometimes black and white?', answer: 'This style uses a Unicode flower text symbol. Apps can render it with different glyph designs, and it is not guaranteed to appear as a color emoji.' },
+      { question: 'What is the difference between Flowers Text and Cursive Flowers?', answer: 'Flowers Text keeps the original letters and adds a floral frame. Cursive Flowers also changes supported letters to Mathematical Script.' },
+    ],
+  },
+
+  {
+    styleId: 'bold-gothic-stars',
+    metaTitle: 'Gothic Star Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Make bold Gothic Unicode names framed by star symbols. Preview copyable blackletter text for gamer tags, Discord roles, bios, and dark captions.',
+    heading: 'Bold Gothic Star Text Generator',
+    intro: 'Combine heavy Fraktur-style Unicode letters with star symbols for dark gamer tags, fantasy roles, band names, and dramatic profile text.',
+    examples: [
+      { label: 'Gamer tag', text: 'Void Hunter', useCase: 'A star-framed blackletter name for gaming or Discord.' },
+      { label: 'Fantasy role', text: 'Shadow Knight', useCase: 'A dramatic role name for a guild, server, or story profile.' },
+      { label: 'Band title', text: 'Black Horizon', useCase: 'A heavy display line for metal, tattoo, or dark-art content.' },
+    ],
+    longDescription: `Bold Gothic Stars maps supported letters to Unicode Mathematical Bold Fraktur and frames the finished phrase with star symbols. The heavy blackletter shapes provide the dark, medieval tone; the stars create a clear beginning and ending without interrupting the words.
+
+This style is intended for short display text such as a gamer tag, fantasy role, band title, or dramatic bio label. It is not an image and will inherit the glyph design available in the receiving app. Ornate characters can be difficult to scan or announce, so pair important names and instructions with a plain-text version when clarity matters.`,
+    faqs: [
+      { question: 'What does bold Gothic stars generate?', answer: 'It converts supported letters to Unicode Mathematical Bold Fraktur and places star symbols around the complete phrase.' },
+      { question: 'Is Gothic star text suitable for Discord?', answer: 'It commonly pastes into Discord messages and many profile or server fields, subject to the field’s character rules and server policies.' },
+      { question: 'Why do some Gothic letters look unusual?', answer: 'Fraktur uses historical letter shapes, and a few characters come from separate Unicode letterlike-symbol code points. Their exact glyphs can vary by font.' },
+    ],
+  },
+
+  {
+    styleId: 'italic-hearts',
+    metaTitle: 'Italic Hearts Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create italic Unicode text framed by heart symbols. Preview romantic names, anniversary lines, friendship bios, and captions, then copy them free.',
+    heading: 'Italic Hearts Text Generator',
+    intro: 'Turn a short phrase into mathematical italic letters framed by hearts for romantic captions, friendship names, and affectionate profile text.',
+    examples: [
+      { label: 'Couple names', text: 'Ava and Sam', useCase: 'A heart-framed name pairing for a profile or anniversary caption.' },
+      { label: 'Affectionate note', text: 'Always You', useCase: 'A short romantic line that remains easy to recognize.' },
+      { label: 'Friendship bio', text: 'Best Friends', useCase: 'A warm shared label for a bio, status, or message.' },
+    ],
+    longDescription: `Italic Hearts uses the Unicode Mathematical Italic alphabet and places heart symbols at both ends of the converted phrase. Unlike a heart effect inserted after every character, the two-symbol frame keeps names and short sentences relatively easy to read while still making the romantic intent obvious.
+
+Use it for couple names, anniversaries, friendship bios, affectionate notes, or a short lyric-like phrase of your own. Digits remain ordinary because this italic alphabet has no matching digit set. The hearts and slanted letters can render differently across devices, so check the pasted result and keep important dates or contact details in plain text.`,
+    faqs: [
+      { question: 'How is italic hearts different from regular Hearts Text?', answer: 'Italic Hearts converts supported letters to Mathematical Italic before adding the heart frame. Hearts Text leaves the original letters unchanged.' },
+      { question: 'Can I use italic hearts for an anniversary date?', answer: 'Yes, but the digits remain ordinary because Unicode Mathematical Italic has no dedicated number set. Keeping the date plain can also improve clarity.' },
+      { question: 'Does italic hearts work in Instagram bios?', answer: 'It commonly works in bio and caption fields that accept Unicode, but display-name and handle rules differ. Test the intended field before saving.' },
+    ],
+  },
+
+  {
+    styleId: 'cursive-crown',
+    metaTitle: 'Cursive Crown Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Make cursive Unicode names framed by queen crown symbols. Preview royal display names, birthday captions, gamer tags, and bios, then copy free.',
+    heading: 'Cursive Crown Text Generator',
+    intro: 'Combine mathematical cursive letters with queen crown symbols for royal display names, birthday captions, creator signatures, and gaming profiles.',
+    examples: [
+      { label: 'Royal name', text: 'Queen Aria', useCase: 'A cursive crown display name for a social profile.' },
+      { label: 'Birthday caption', text: 'Birthday Royalty', useCase: 'A celebratory royal phrase framed by crown-like symbols.' },
+      { label: 'Gaming identity', text: 'Crown Chaser', useCase: 'A distinct short gamer tag or clan-profile label.' },
+    ],
+    longDescription: `Cursive Crown converts supported letters to Unicode Mathematical Script and adds ♛, the Black Chess Queen symbol, at both ends. Searchers often describe ♛ as a queen crown because of its ornate top. The combination is distinct from plain Crown Text: here the letters themselves also become flowing script.
+
+This page is best for royal or queen-themed names, birthday posts, beauty and lifestyle profiles, and short gaming identities. The crown is normally a monochrome text symbol rather than a color emoji, and script glyphs can vary by font. Use the plain Crown Text page when letter readability matters more than the cursive effect.`,
+    faqs: [
+      { question: 'What crown symbol does cursive crown use?', answer: 'It uses ♛, Unicode U+265B Black Chess Queen, on both sides of the Mathematical Script text.' },
+      { question: 'How is Cursive Crown different from Crown Text?', answer: 'Cursive Crown changes supported letters to Mathematical Script and adds crowns. Crown Text keeps the original letters and only adds the crown frame.' },
+      { question: 'Can I paste cursive crown into a username?', answer: 'Only if the platform accepts both script Unicode and ♛ in that field. A display name or bio is usually more likely to accept them than an @handle.' },
+    ],
+  },
+
+  {
+    styleId: 'sans-italic-sparkles',
+    metaTitle: 'Sans Italic Sparkles Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create clean sans-serif italic Unicode text framed by sparkles. Preview aesthetic names, captions, and bios, then copy and paste instantly.',
+    heading: 'Sans-Serif Italic Sparkles Generator',
+    intro: 'Combine clean mathematical sans-serif italic letters with sparkle symbols for aesthetic names, launch captions, and polished profile text.',
+    examples: [
+      { label: 'Aesthetic name', text: 'Mila Creates', useCase: 'A clean slanted display name framed with sparkle symbols.' },
+      { label: 'Launch caption', text: 'New Era', useCase: 'A short announcement with a polished celebratory frame.' },
+      { label: 'Beauty label', text: 'Soft Glow', useCase: 'A light profile or caption phrase for beauty and lifestyle content.' },
+    ],
+    longDescription: `Sans-Serif Italic Sparkles maps supported letters to the Unicode Mathematical Sans-Serif Italic alphabet, then frames the converted phrase with sparkle symbols. The letters provide a clean editorial slant while the two-symbol frame adds a celebratory or polished aesthetic without separating every character.
+
+Use it for creator names, beauty or fashion labels, launch captions, milestone posts, and short profile statements. Mathematical Sans-Serif Italic has no matching digit set, so numbers remain ordinary. Sparkle glyphs and italic letter shapes can vary across apps, and important keywords or instructions should also appear in plain text for clarity and search.`,
+    faqs: [
+      { question: 'How is Sans Italic Sparkles different from Sparkles Text?', answer: 'Sans Italic Sparkles converts supported letters to Mathematical Sans-Serif Italic before adding the sparkle frame. Sparkles Text keeps the original letters.' },
+      { question: 'Why do numbers stay normal?', answer: 'Unicode does not provide Mathematical Sans-Serif Italic digits, so numbers and most punctuation pass through unchanged.' },
+      { question: 'Can I paste this into an Instagram bio?', answer: 'It commonly works in fields that accept Unicode text, but the final glyph appearance and field rules vary. Test the phrase before saving the profile.' },
     ],
   },
 

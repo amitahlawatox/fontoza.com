@@ -126,7 +126,59 @@ const KEPT_COMBINATION_IDS = new Set<string>([
   'bold-gothic-stars',
   'sans-italic-crown',
   'subscript-underline',
+  // 2026-08-10 pilot: each has distinct first-page GSC demand.
+  'italic-hearts',
+  'cursive-crown',
+  'sans-italic-sparkles',
 ]);
+
+const BASE_STYLE_IDS: Record<string, string> = {
+  cursive: 'cursive-font',
+  'bold-cursive': 'bold-cursive-font',
+  italic: 'italic-font',
+  bold: 'bold-text',
+  'bold-italic': 'bold-italic-font',
+  gothic: 'gothic-font',
+  'bold-gothic': 'bold-gothic-font',
+  'double-struck': 'double-struck',
+  monospace: 'monospace-font',
+  'sans-serif': 'sans-serif-font',
+  'sans-bold': 'sans-bold',
+  'sans-italic': 'sans-italic',
+  'sans-bold-italic': 'sans-bold-italic',
+  circled: 'circled-text',
+  'negative-circled': 'negative-circled',
+  squared: 'squared-text',
+  'negative-squared': 'negative-squared',
+  parenthesized: 'parenthesized-text',
+  fullwidth: 'fullwidth-text',
+  'small-caps': 'small-caps',
+  superscript: 'superscript-text',
+  subscript: 'subscript-text',
+};
+
+const EFFECT_STYLE_IDS: Record<string, string> = {
+  strikethrough: 'strikethrough-text',
+  underline: 'underline-text',
+  'double-underline': 'double-underline-text',
+  hearts: 'hearts-text',
+  stars: 'stars-text',
+  sparkles: 'sparkles-text',
+  flowers: 'flowers-text',
+  crown: 'crown-text',
+  vaporwave: 'vaporwave-text',
+};
+
+const RELATED_STYLE_IDS: Record<string, string[]> = {
+  'cursive-flowers': ['cursive-font', 'flowers-text', 'cursive-moon', 'cursive-crown', 'sparkles-text', 'hearts-text'],
+  'cursive-moon': ['cursive-font', 'cursive-flowers', 'cursive-crown', 'stars-text', 'sparkles-text', 'italic-font'],
+  'bold-gothic-stars': ['bold-gothic-font', 'gothic-font', 'stars-text', 'crown-text', 'bold-text', 'cursive-flowers'],
+  'sans-italic-crown': ['sans-italic', 'crown-text', 'cursive-crown', 'sans-italic-sparkles', 'italic-font', 'sans-serif-font'],
+  'subscript-underline': ['subscript-text', 'underline-text', 'superscript-text', 'double-underline-text', 'small-caps', 'monospace-underline'],
+  'italic-hearts': ['italic-font', 'hearts-text', 'cursive-font', 'bold-italic-font', 'sans-italic', 'cursive-flowers'],
+  'cursive-crown': ['cursive-font', 'crown-text', 'cursive-moon', 'cursive-flowers', 'stars-text', 'bold-cursive-font'],
+  'sans-italic-sparkles': ['sans-italic', 'sparkles-text', 'sans-serif-font', 'italic-font', 'sans-italic-crown', 'cursive-flowers'],
+};
 
 export function generateCombinationStyles(existingIds: Set<string>): StyleDefinition[] {
   const generated: StyleDefinition[] = [];
@@ -138,7 +190,7 @@ export function generateCombinationStyles(existingIds: Set<string>): StyleDefini
       if (!KEPT_COMBINATION_IDS.has(id)) continue;
 
       const name = `${base.name} ${effect.name}`;
-      const description = `${base.name} text ${effect.desc}. Copy and paste into Instagram, TikTok, Discord, and any platform.`;
+      const description = `${base.name} text ${effect.desc}. Copyable Unicode for supported profile, caption, and chat fields; preview it in the destination app.`;
 
       generated.push({
         id,
@@ -151,10 +203,10 @@ export function generateCombinationStyles(existingIds: Set<string>): StyleDefini
         decoratorName: effect.decoratorName,
         example: transform(`Hello World`, base.map, effect.fn),
         platforms: base.platforms,
-        relatedStyles: [
-          `${base.id}-font`.replace('-font-font', '-font') in existingIds ? `${base.id}-font` : base.id,
-          `${effect.id}-text`,
-        ].filter(rid => existingIds.has(rid) || generated.some(s => s.id === rid)),
+        relatedStyles: (RELATED_STYLE_IDS[id] ?? [
+          BASE_STYLE_IDS[base.id],
+          EFFECT_STYLE_IDS[effect.id],
+        ]).filter((rid): rid is string => Boolean(rid) && (existingIds.has(rid) || KEPT_COMBINATION_IDS.has(rid))),
         seoKeywords: [
           `${base.kw} ${effect.name.toLowerCase()} font`,
           `${base.kw} ${effect.name.toLowerCase()} text generator`,

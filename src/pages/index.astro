@@ -52,6 +52,9 @@ const serializedStyles = STYLES.map((style) => ({
   name: style.name,
   map: style.map as Record<string, string>,
   category: style.category,
+  description: style.description,
+  tags: style.tags,
+  platforms: style.platforms,
   decorator: getDecoratorName(style),
 }));
 
@@ -174,7 +177,7 @@ const platformBadges = [
         <div class="animate-fade-up-delay-3">
           <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-2xl shadow-indigo-500/5 sm:p-8"
                style="box-shadow: 0 32px 80px rgba(99,102,241,0.08), 0 4px 16px rgba(0,0,0,0.06);">
-            <FontConverter client:load styles={serializedStyles} />
+            <FontConverter client:load styles={serializedStyles} showCreatorStudio={true} />
           </div>
         </div>
 

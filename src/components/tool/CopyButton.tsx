@@ -4,6 +4,7 @@ interface Props {
   text: string;
   variant?: 'icon' | 'full';
   label?: string;
+  onCopied?: () => void;
 }
 
 const FEEDBACK_DURATION = 1600;
@@ -16,7 +17,12 @@ async function copyToClipboard(text: string): Promise<void> {
   throw new Error('Clipboard API is unavailable in this browser.');
 }
 
-export default function CopyButton({ text, variant = 'icon', label = 'Copy' }: Props) {
+export default function CopyButton({
+  text,
+  variant = 'icon',
+  label = 'Copy',
+  onCopied,
+}: Props) {
   const [copied, setCopied] = useState(false);
   const cooldownRef = useRef(false);
 
@@ -26,6 +32,7 @@ export default function CopyButton({ text, variant = 'icon', label = 'Copy' }: P
     try {
       await copyToClipboard(text);
       setCopied(true);
+      onCopied?.();
       setTimeout(() => {
         setCopied(false);
         cooldownRef.current = false;
@@ -33,7 +40,7 @@ export default function CopyButton({ text, variant = 'icon', label = 'Copy' }: P
     } catch {
       cooldownRef.current = false;
     }
-  }, [text]);
+  }, [text, onCopied]);
 
   if (variant === 'icon') {
     return (

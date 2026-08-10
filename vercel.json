@@ -62,6 +62,21 @@
       "permanent": true
     },
     {
+      "source": "/fonts/bold/",
+      "destination": "/fonts/bold-text/",
+      "permanent": true
+    },
+    {
+      "source": "/fonts/cursive/",
+      "destination": "/fonts/cursive-font/",
+      "permanent": true
+    },
+    {
+      "source": "/fonts/bold-sans-italic/",
+      "destination": "/fonts/sans-bold-italic/",
+      "permanent": true
+    },
+    {
       "source": "/fonts/bold-butterfly/",
       "destination": "/fonts/bold-text/",
       "permanent": true
@@ -393,7 +408,7 @@
     },
     {
       "source": "/fonts/bold-underline/",
-      "destination": "/fonts/bold-text/",
+      "destination": "/fonts/bold-underline-text/",
       "permanent": true
     },
     {
@@ -498,11 +513,6 @@
     },
     {
       "source": "/fonts/cursive-butterfly/",
-      "destination": "/fonts/cursive-font/",
-      "permanent": true
-    },
-    {
-      "source": "/fonts/cursive-crown/",
       "destination": "/fonts/cursive-font/",
       "permanent": true
     },
@@ -818,7 +828,7 @@
     },
     {
       "source": "/fonts/gothic-underline/",
-      "destination": "/fonts/gothic-font/",
+      "destination": "/fonts/gothic-bold-underline/",
       "permanent": true
     },
     {
@@ -858,11 +868,6 @@
     },
     {
       "source": "/fonts/italic-flowers/",
-      "destination": "/fonts/italic-font/",
-      "permanent": true
-    },
-    {
-      "source": "/fonts/italic-hearts/",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
@@ -1503,11 +1508,6 @@
     },
     {
       "source": "/fonts/sans-italic-rose/",
-      "destination": "/fonts/sans-italic/",
-      "permanent": true
-    },
-    {
-      "source": "/fonts/sans-italic-sparkles/",
       "destination": "/fonts/sans-italic/",
       "permanent": true
     },
