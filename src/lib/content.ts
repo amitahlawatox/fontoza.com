@@ -77,6 +77,15 @@ Related styles worth exploring: Bold Cursive gives the same flowing script but w
 
   {
     styleId: 'bold-text',
+    metaTitle: 'Bold Text Generator - Copy & Paste Unicode | Fontoza',
+    metaDescription: 'Turn normal letters and numbers into copyable Unicode bold text. Preview bold names, bios, captions and headings, then copy them free.',
+    heading: 'Bold Text Generator',
+    intro: 'Convert ordinary letters and digits to copyable Mathematical Bold Unicode for names, profile labels, captions and short headings.',
+    examples: [
+      { label: 'Profile heading', text: 'Content Creator', useCase: 'Give a short role or niche label stronger visual hierarchy.' },
+      { label: 'Announcement', text: 'NEW VIDEO 2026', useCase: 'Create a high-contrast launch line with supported bold digits.' },
+      { label: 'Call to action', text: 'FOLLOW FOR MORE', useCase: 'Emphasize a compact action phrase without uploading an image.' },
+    ],
     longDescription: `Bold text is one of the most universally understood signals in typography: it means "this is important." But on platforms like Instagram, Twitter, TikTok, and most messaging apps, you cannot apply bold formatting through the interface — there is no bold button, no Ctrl+B shortcut. That is where Unicode Mathematical Bold characters come in.
 
 The Unicode Mathematical Bold block (starting at U+1D400) contains dedicated bold versions of every letter A through Z and a through z, plus digits 0 through 9. These are distinct Unicode characters that inherently look bold — they are not styled bold by CSS or HTML, they are visually heavy characters in their own right. This means they appear bold everywhere: in bios, captions, comments, tweets, messages, and any other text field that accepts Unicode.
@@ -136,6 +145,15 @@ One thing to keep in mind: Unicode bold characters are not the same as semantic 
 
   {
     styleId: 'italic-font',
+    metaTitle: 'Italic Font Generator - Copy & Paste Text | Fontoza',
+    metaDescription: 'Create copyable Unicode italic letters for names, bios, captions and quotes. Type your text, preview the slanted style and copy it free.',
+    heading: 'Italic Font Generator',
+    intro: 'Turn ordinary letters into copyable Mathematical Italic Unicode for elegant names, quotes, captions and profile text.',
+    examples: [
+      { label: 'Profile tagline', text: 'Creating every day', useCase: 'Add a restrained slant to a short personal statement.' },
+      { label: 'Quote line', text: 'Stay curious', useCase: 'Set a short quotation apart from surrounding plain text.' },
+      { label: 'Creator credit', text: 'Made by Maya', useCase: 'Use an editorial-looking signature at the end of a caption.' },
+    ],
     longDescription: `Italic text in typography traditionally signals emphasis, titles, foreign words, or a shift in voice. In the world of social media and messaging, where you cannot apply HTML or CSS formatting, Unicode Mathematical Italic characters offer the only way to achieve true italic text that survives copy-paste.
 
 The Mathematical Italic block (U+1D434 and surrounding) contains slanted versions of every letter. These are characters used in mathematical notation to represent variables and formulas — the italic style we use for social media is a side effect of mathematics needing a visually distinct letter style. One special case: the lowercase letter h uses the Unicode character ℎ (U+210E, Planck Constant), which is the conventional mathematical italic lowercase h.
@@ -413,6 +431,15 @@ One practical note: because the small caps characters come from phonetic and lin
 
   {
     styleId: 'double-struck',
+    metaTitle: 'Double-Struck Text Generator - Blackboard Bold | Fontoza',
+    metaDescription: 'Make copyable double-struck or blackboard bold Unicode letters and numbers. Preview math-inspired names and text, then copy instantly.',
+    heading: 'Double-Struck Text Generator',
+    intro: 'Convert letters and digits to copyable blackboard bold Unicode for STEM profiles, math labels, usernames and distinctive display text.',
+    examples: [
+      { label: 'STEM profile', text: 'Data Scientist', useCase: 'Give a technical role a recognizable mathematical look.' },
+      { label: 'Number set', text: 'Real Numbers R', useCase: 'Try the style associated with blackboard mathematics.' },
+      { label: 'Gaming name', text: 'Quantum 24', useCase: 'Combine distinctive letters with supported double-struck digits.' },
+    ],
     longDescription: `Double-struck letters — also called blackboard bold — are characters with double vertical strokes, visually resembling the way mathematicians write capital letters on blackboards to distinguish them from regular variables. These characters come from the Mathematical Double-Struck block (U+1D538 and surrounding, with several in the Basic Multilingual Plane: ℂ, ℍ, ℕ, ℙ, ℚ, ℝ, and ℤ).
 
 In mathematics, blackboard bold conventionally denotes number sets: ℝ for real numbers, ℤ for integers, ℕ for natural numbers, ℂ for complex numbers. This mathematical heritage gives double-struck text an intellectual, academic quality that other Unicode styles do not carry. For accounts in science, mathematics, philosophy, data, and technology niches, double-struck text signals content domain instantly.
@@ -691,6 +718,15 @@ Discord servers use circled text for role names (Ⓜ𝗼𝗱𝗲𝗿𝗮𝘁𝗼
 
   {
     styleId: 'bold-gothic-font',
+    metaTitle: 'Bold Gothic Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create heavy Gothic Fraktur Unicode text for dark names, gamer tags and bios. Preview bold blackletter characters and copy them free.',
+    heading: 'Bold Gothic Text Generator',
+    intro: 'Convert letters to heavy Mathematical Bold Fraktur Unicode for dark display names, clan labels, bios and short dramatic headings.',
+    examples: [
+      { label: 'Gamer tag', text: 'Night King', useCase: 'Create a compact dark-fantasy display name.' },
+      { label: 'Music profile', text: 'Black Metal', useCase: 'Give a short genre or band label a blackletter identity.' },
+      { label: 'Clan title', text: 'Shadow Order', useCase: 'Style a team or server name with heavier Fraktur forms.' },
+    ],
     longDescription: `Bold Gothic (Mathematical Bold Fraktur) takes the dramatic, medieval Fraktur letterforms and renders them with heavier strokes, making the blackletter aesthetic even more striking and readable. The characters come from the Mathematical Bold Fraktur block (U+1D56C through U+1D59F).
 
 The increased stroke weight compared to regular Gothic addresses one of the main criticisms of Fraktur text: that it can be hard to read at small sizes. Bold Gothic retains the medieval drama while being more legible in thumbnail-size text, making it better suited for social media contexts where text may appear very small on some devices.
@@ -722,6 +758,15 @@ TikTok accounts in alternative aesthetics, dark fantasy content, and historical 
 
   {
     styleId: 'fullwidth-text',
+    metaTitle: 'Fullwidth Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Convert letters, numbers and punctuation into wide fullwidth Unicode text. Preview aesthetic names and captions, then copy and paste free.',
+    heading: 'Fullwidth Text Generator',
+    intro: 'Create wide, copyable fullwidth Unicode characters for aesthetic profiles, vaporwave-inspired captions and spaced display names.',
+    examples: [
+      { label: 'Aesthetic name', text: 'TOKYO NIGHTS', useCase: 'Create an East Asian-inspired wide display line.' },
+      { label: 'Gaming label', text: 'LEVEL 09', useCase: 'Use supported wide letters and digits in a compact status.' },
+      { label: 'Creator title', text: 'DIGITAL ART', useCase: 'Give a short category label consistent square spacing.' },
+    ],
     longDescription: `Fullwidth text replaces standard Latin characters with their Unicode fullwidth equivalents from the Halfwidth and Fullwidth Forms block (U+FF01–U+FF60). Each fullwidth character is designed to occupy the same width as a Chinese or Japanese character — approximately twice the width of a normal Latin letter.
 
 The resulting text has a unique visual quality: it is recognizably Latin but spaced out and square. This creates the characteristic look of Japanese or Korean brands writing their name in Latin letters, as well as the vaporwave and aesthetic internet culture visual language.
@@ -778,6 +823,15 @@ Combining underline with other styles creates a range of useful effects: bold un
 
   {
     styleId: 'sans-serif-font',
+    metaTitle: 'Mathematical Sans-Serif Generator - Copy Text | Fontoza',
+    metaDescription: 'Generate clean mathematical sans-serif Unicode letters and numbers. Preview modern names, bios and captions, then copy the text instantly.',
+    heading: 'Mathematical Sans-Serif Generator',
+    intro: 'Convert ordinary text to clean Mathematical Sans-Serif Unicode for modern profile names, labels, captions and short display text.',
+    examples: [
+      { label: 'Professional label', text: 'Product Designer', useCase: 'Create a clean modern role line for a profile.' },
+      { label: 'Channel name', text: 'Studio 26', useCase: 'Combine sans-serif letters with supported mathematical digits.' },
+      { label: 'Caption header', text: 'WEEKLY UPDATE', useCase: 'Separate a compact heading from ordinary caption text.' },
+    ],
     longDescription: `Mathematical Sans-Serif text (U+1D5A0 through U+1D5D3) provides clean, geometric letterforms without serifs. The result is a modern, contemporary text style that reads like a sans-serif web font but works anywhere Unicode is supported.
 
 Sans-serif text has a minimalist quality that suits professional, tech, and modern aesthetic profiles. It is less ornate than script styles and less dramatic than Gothic, making it a versatile middle ground for profiles that want to look polished without being flashy.
@@ -876,8 +930,8 @@ The filled circle creates much stronger visual weight than open-circle Circled t
 
   {
     styleId: 'sans-bold',
-    metaTitle: 'Math Sans Bold Font Generator - Copy & Paste | Fontoza',
-    metaDescription: 'Generate mathematical sans-serif bold Unicode letters and numbers. Preview clean, heavy text, then copy it for bios, names, captions, and posts.',
+    metaTitle: 'Mathematical Sans Bold Generator - Copy Text | Fontoza',
+    metaDescription: 'Generate mathematical sans-serif bold Unicode letters and numbers. Preview clean heavy names, headings and captions, then copy the text free.',
     heading: 'Mathematical Sans-Serif Bold Generator',
     intro: 'Turn ordinary words into clean mathematical sans-serif bold Unicode for modern display names, bio labels, and short social captions.',
     examples: [
@@ -929,10 +983,23 @@ This is a better fit for short energetic phrases than for body copy. Digits do n
 
   {
     styleId: 'squared-text',
-    longDescription: `Squared text places each letter inside a square box using the Enclosed Alphanumeric Supplement (U+1F130–U+1F149 for 🄰–🅉). Both upper and lowercase input maps to the same squared characters (the block only has uppercase forms). The boxed appearance creates a structured, label-like visual that works well for category tags, role identifiers, and lists where visual compartmentalization adds clarity.`,
+    metaTitle: 'Squared Text Generator - Boxed Letters | Fontoza',
+    metaDescription: 'Put letters inside copyable Unicode square boxes. Preview squared labels, initials and profile text, then copy the boxed characters instantly.',
+    heading: 'Squared Text Generator',
+    intro: 'Convert letters to copyable outlined square Unicode characters for labels, initials, role names and short geometric display text.',
+    examples: [
+      { label: 'Category label', text: 'GAMING', useCase: 'Create a structured all-caps tag with one box per letter.' },
+      { label: 'Initials', text: 'MVP', useCase: 'Turn a compact abbreviation into a row of outlined tiles.' },
+      { label: 'Server role', text: 'MOD TEAM', useCase: 'Give a short community role a clear geometric style.' },
+    ],
+    longDescription: `Squared text maps Latin letters to the outlined characters in the Enclosed Alphanumeric Supplement. The Unicode set provides squared uppercase A-Z, so lowercase input is deliberately converted to the same uppercase-looking boxes. This is a character substitution, not a border applied by CSS, which means the boxes remain when the result is copied into a supported app.
+
+Use squared text for short labels, initials, category markers and role names where each character should look like a separate tile. It is less suitable for sentences because every letter has strong visual weight. The squared alphabet has no matching lowercase or digit series, so numbers and unsupported punctuation stay ordinary. Glyph shape and spacing can vary between devices; preview the final result in the field where you plan to use it.`,
     faqs: [
       { question: 'Are lowercase letters available?', answer: 'The Squared Letters Unicode block only has uppercase forms. Both uppercase and lowercase input map to the squared uppercase characters.' },
       { question: 'Does squared text include numbers?', answer: 'The squared letters block does not include digit variants. Numbers pass through as regular characters.' },
+      { question: 'Why does squared text copy and paste?', answer: 'Each box is part of the Unicode character itself. It is not an image or a visual border added by this website.' },
+      { question: 'Where should I use boxed letters?', answer: 'They work best for short initials, headings, category tags and display names. Plain text is clearer for essential or searchable information.' },
     ],
   },
 
@@ -947,10 +1014,23 @@ This is a better fit for short energetic phrases than for body copy. Digits do n
 
   {
     styleId: 'parenthesized-text',
-    longDescription: `Parenthesized letters (⒜–⒵, U+249C–U+24B5) and digits (⑴–⑼, U+2474–U+247C) enclose each character in round brackets. Both uppercase and lowercase input maps to the same parenthesized forms (the block uses lowercase letterforms). Parenthesized text has a quirky, organized feel — it looks like ordered list notation but for entire phrases. Good for playful list-style bios and creative numbered content.`,
+    metaTitle: 'Parenthesized Text Generator - Enclosed Letters | Fontoza',
+    metaDescription: 'Create copyable parenthesized Unicode letters and supported numbers. Preview enclosed labels, lists and playful names, then copy instantly.',
+    heading: 'Parenthesized Text Generator',
+    intro: 'Turn letters and supported digits into copyable parenthesized Unicode characters for lists, labels and playful short display text.',
+    examples: [
+      { label: 'List label', text: 'IDEAS 123', useCase: 'Try letters with the available parenthesized number characters.' },
+      { label: 'Profile name', text: 'MAYA', useCase: 'Create a compact row of individually enclosed letters.' },
+      { label: 'Section marker', text: 'PART TWO', useCase: 'Give a short heading an organized list-like appearance.' },
+    ],
+    longDescription: `Parenthesized text uses characters from the Unicode Enclosed Alphanumerics block. The alphabet contains parenthesized lowercase letterforms, so both uppercase and lowercase input maps to the same visual series. Supported digits begin at 1; there is no matching parenthesized zero, and unsupported characters remain unchanged.
+
+Because the parentheses are built into each character, the result stays enclosed when copied into many modern profile, caption and chat fields. It works best for short list labels, initials and playful headings. A full sentence becomes visually busy and may be difficult for assistive technology to announce. Keep important names, links and instructions in ordinary text too, and test the result in the destination app because fonts can space enclosed characters differently.`,
     faqs: [
       { question: 'Is there a digit zero in parenthesized?', answer: 'The parenthesized digit block starts at ⑴ (1). There is no parenthesized zero — input 0 passes through.' },
       { question: 'What is parenthesized text good for?', answer: 'Parenthesized text works well for ordered lists, quirky bios, and any content where numbered or lettered enumeration adds visual structure.' },
+      { question: 'Why do uppercase letters look lowercase?', answer: 'Unicode provides one parenthesized Latin alphabet using lowercase-shaped glyphs, so both input cases map to that same set.' },
+      { question: 'Is the effect an image?', answer: 'No. Each enclosed letter is a real Unicode character, so it remains text when you copy and paste it into a compatible field.' },
     ],
   },
 
@@ -996,10 +1076,23 @@ Combining marks depend on the receiving app and font, so line position and conti
 
   {
     styleId: 'zalgo-light',
-    longDescription: `Zalgo Light applies just 2 combining diacritics above and below each character — enough to create a subtle eerie quality without overwhelming the base text. Light zalgo is the most practical version for social media use: it hints at the corrupted aesthetic while remaining readable. Good for Halloween content, horror writers, and profiles that want a touch of the uncanny without full chaos.`,
+    metaTitle: 'Light Zalgo Text Generator - Subtle Glitch Text | Fontoza',
+    metaDescription: 'Add a light layer of copyable Zalgo marks to ordinary text. Preview readable glitch names and horror captions, then copy them instantly.',
+    heading: 'Light Zalgo Text Generator',
+    intro: 'Add a restrained set of Unicode combining marks for subtle glitch text that stays more readable than medium or heavy Zalgo.',
+    examples: [
+      { label: 'Horror title', text: 'Do Not Enter', useCase: 'Add a controlled corrupted effect to a short warning.' },
+      { label: 'Gaming name', text: 'Ghost Mode', useCase: 'Create a readable glitch-style display name.' },
+      { label: 'Halloween caption', text: 'Midnight Calls', useCase: 'Give a brief seasonal line an eerie texture.' },
+    ],
+    longDescription: `Light Zalgo adds a small number of Unicode combining marks above and below each non-space character. The base letters stay intact, so the result looks glitched without the extreme vertical overflow produced by heavier Zalgo styles. The marks are characters rather than an image filter and usually remain attached when copied into fields that preserve combining Unicode.
+
+Use this lighter setting for short horror titles, gamer names and seasonal captions where readability still matters. Rendering is controlled by the receiving font and app: marks may shift, overlap nearby lines or be normalized away. Avoid using Zalgo for essential instructions, account handles or long paragraphs, and keep a plain-text version available for accessibility. If an app clips the marks, reduce the phrase length or use ordinary text instead.`,
     faqs: [
       { question: 'How many diacritics does light zalgo add?', answer: 'Light zalgo adds approximately 2 random combining characters above and 2 below each letter — subtle enough to remain readable while visually distorting the text.' },
       { question: 'Is light zalgo better for Instagram than heavy zalgo?', answer: 'Yes — light zalgo is more readable and less likely to cause rendering issues in Instagram bios and captions.' },
+      { question: 'Why does the output change when I type again?', answer: 'The generator selects combining marks from a small pool, so repeated conversions can produce a slightly different glitch pattern.' },
+      { question: 'Can Zalgo text affect line spacing?', answer: 'Yes. Combining marks extend above and below the base letters, and some apps increase or clip line height to accommodate them.' },
     ],
   },
 
@@ -1048,8 +1141,8 @@ Combining marks depend on the receiving app and font, so line position and conti
 
   {
     styleId: 'crown-text',
-    metaTitle: 'Crown Symbol Text Generator - Copy & Paste | Fontoza',
-    metaDescription: 'Frame names and phrases with a copyable queen crown symbol. Preview royal text for bios, usernames, captions, and gaming profiles, then copy it free.',
+    metaTitle: 'Crown Text Generator - Copy Crown Symbols | Fontoza',
+    metaDescription: 'Frame names and phrases with copyable crown-like queen symbols. Preview royal text for bios, captions and gaming profiles, then copy it free.',
     heading: 'Crown Symbol Text Generator',
     intro: 'Place a copyable black chess queen crown on both sides of your text for royal names, queen-themed bios, team labels, and gaming profiles.',
     examples: [
@@ -1231,6 +1324,54 @@ This style is intended for short display text such as a gamer tag, fantasy role,
   },
 
   {
+    styleId: 'italic-underline',
+    metaTitle: 'Italic Underline Generator - Copy & Paste Text | Fontoza',
+    metaDescription: 'Create copyable italic Unicode letters with an underline. Preview elegant emphasized names, quotes and captions, then copy the result free.',
+    heading: 'Italic Underline Text Generator',
+    intro: 'Combine Mathematical Italic Unicode letters with a copyable underline for short names, quotes, credits and profile text.',
+    examples: [
+      { label: 'Creator credit', text: 'Made by Aria', useCase: 'Add editorial emphasis to a short signature or credit line.' },
+      { label: 'Profile quote', text: 'Keep Moving', useCase: 'Give a compact quote both slant and a visible underline.' },
+      { label: 'Book title', text: 'Midnight Pages', useCase: 'Style a short title for a reading profile or caption.' },
+    ],
+    longDescription: `Italic Underline first maps supported Latin letters to the Unicode Mathematical Italic alphabet, then places U+0332 Combining Low Line after each non-space character. Both parts travel with the copied result: the slanted letter is a Unicode character and the line is a combining mark attached to it. Numbers stay ordinary because Mathematical Italic has no dedicated digit set, but they can still receive the underline.
+
+The combination is useful when italic alone feels too subtle. Try it for a creator credit, short quotation, title, display name or an emphasized phrase inside a caption. It is better for a few words than for a full paragraph: repeated combining marks can make editing awkward and can be announced inconsistently by assistive technology.
+
+Underline position and continuity depend on the font and app receiving the text. A line may sit lower, join unevenly between letters or be removed by a field that normalizes combining characters. Preview the exact phrase in the destination app before publishing and keep important instructions, account details and searchable terms in plain text too.`,
+    faqs: [
+      { question: 'How does italic underline text work?', answer: 'The generator converts supported letters to Mathematical Italic Unicode and adds U+0332 Combining Low Line after every non-space character.' },
+      { question: 'Why do numbers stay upright?', answer: 'Unicode has no Mathematical Italic digit alphabet, so digits remain in their ordinary shape while still receiving the underline mark.' },
+      { question: 'Can I copy italic underline into Instagram or Discord?', answer: 'Many fields in those apps preserve the Unicode letters and combining lines, but rendering and field rules vary. Test a short phrase before saving it.' },
+      { question: 'Why can the underline look broken?', answer: 'Each line belongs to one character. The receiving font controls its width and position, so neighboring segments do not always join perfectly.' },
+    ],
+  },
+
+  {
+    styleId: 'gothic-crown',
+    metaTitle: 'Gothic Crown Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create Gothic Fraktur Unicode text framed by crown-like queen symbols. Preview royal gamer tags, fantasy names and bios, then copy free.',
+    heading: 'Gothic Crown Text Generator',
+    intro: 'Combine Mathematical Fraktur letters with crown-like queen symbols for royal gamer tags, fantasy roles, band names and dark profile text.',
+    examples: [
+      { label: 'Royal gamer tag', text: 'Night Prince', useCase: 'Create a crown-framed dark display name for gaming.' },
+      { label: 'Fantasy role', text: 'Shadow Queen', useCase: 'Style a guild, roleplay or server identity with Fraktur letters.' },
+      { label: 'Band name', text: 'Dark Throne', useCase: 'Give a short music or art label a dramatic royal frame.' },
+    ],
+    longDescription: `Gothic Crown converts supported letters to Unicode Mathematical Fraktur and places ♛, U+265B Black Chess Queen, at both ends of the phrase. The symbol is technically a chess piece rather than a color crown emoji, but its ornate silhouette is commonly used as a copyable crown-like frame. The letters and symbols remain text rather than becoming an image.
+
+This combination suits short royal gamer tags, dark fantasy roles, guild names, metal or tattoo profiles and dramatic creator labels. Regular Gothic is lighter than Bold Gothic, so this version keeps more open detail in the letterforms while the two crown symbols supply the visual emphasis. Use plain Crown Text if easy letter recognition matters more than the blackletter mood.
+
+Fraktur characters can be harder to read at small sizes, and their exact shapes depend on the device font. Numbers and most punctuation remain ordinary because the Mathematical Fraktur alphabet does not include matching digits. Test the finished text in the intended app, avoid it for URLs or essential instructions, and include a plain-text form of important names where accessibility or searchability matters.`,
+    faqs: [
+      { question: 'What symbols does Gothic Crown use?', answer: 'It uses Mathematical Fraktur letters framed by ♛, the Unicode Black Chess Queen character, at both ends.' },
+      { question: 'How is Gothic Crown different from Crown Text?', answer: 'Gothic Crown changes supported letters to Fraktur before adding the symbols. Crown Text keeps the original letters unchanged.' },
+      { question: 'Why are the numbers not Gothic?', answer: 'Unicode does not provide a Mathematical Fraktur digit set, so numbers and most punctuation pass through in their ordinary forms.' },
+      { question: 'Can I use it as a username?', answer: 'Only if the platform allows Fraktur Unicode and ♛ in that field. Display names and bios are generally more permissive than @handles.' },
+    ],
+  },
+
+  {
     styleId: 'italic-hearts',
     metaTitle: 'Italic Hearts Text Generator - Copy & Paste | Fontoza',
     metaDescription: 'Create italic Unicode text framed by heart symbols. Preview romantic names, anniversary lines, friendship bios, and captions, then copy them free.',
@@ -1253,8 +1394,8 @@ Use it for couple names, anniversaries, friendship bios, affectionate notes, or 
 
   {
     styleId: 'cursive-crown',
-    metaTitle: 'Cursive Crown Generator - Copy & Paste | Fontoza',
-    metaDescription: 'Make cursive Unicode names framed by queen crown symbols. Preview royal display names, birthday captions, gamer tags, and bios, then copy free.',
+    metaTitle: 'Cursive Crown Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Make cursive Unicode names framed by crown-like queen symbols. Preview royal display names, birthday captions and gamer tags, then copy free.',
     heading: 'Cursive Crown Text Generator',
     intro: 'Combine mathematical cursive letters with queen crown symbols for royal display names, birthday captions, creator signatures, and gaming profiles.',
     examples: [
@@ -1303,9 +1444,22 @@ Use it for creator names, beauty or fashion labels, launch captions, milestone p
 
   {
     styleId: 'small-caps-bold',
-    longDescription: `Small Caps Bold is a conceptual combination — small caps characters rendered via the same Unicode phonetic characters as Small Caps but with the intent of bold emphasis. Since true bold small caps Unicode is not available, this style uses the standard small caps characters and is listed here for thematic grouping with bold variants.`,
+    metaTitle: 'Bold Small Caps Generator - Copy & Paste Text | Fontoza',
+    metaDescription: 'Create compact bold-style small capital text for names, labels and bios. Preview the available Unicode small caps and copy the result instantly.',
+    heading: 'Bold Small Caps Text Generator',
+    intro: 'Create compact small-cap Unicode text for authoritative names and labels, with honest previewing of the characters Unicode actually supports.',
+    examples: [
+      { label: 'Profile title', text: 'TEAM CAPTAIN', useCase: 'Create a compact authority-style label for a profile.' },
+      { label: 'Brand line', text: 'NORTH STUDIO', useCase: 'Give a short brand or channel name an editorial feel.' },
+      { label: 'Section heading', text: 'LATEST POSTS', useCase: 'Separate a short bio or caption section from ordinary text.' },
+    ],
+    longDescription: `Unicode does not provide a complete bold small-caps alphabet. This generator uses the available phonetic small-cap characters and uppercase handling to create the closest copyable text equivalent without falsely claiming that a separate bold weight exists. The result is real Unicode text, not a custom typeface or image.
+
+Use it for short role labels, brand names and profile headings where compact capitals communicate structure. Some letters have no true small-cap counterpart and may use the nearest readable form, while glyph weight depends on the receiving app's font. For genuine typographic bold small caps on a website or in a design, use a font that supplies that feature. For copy-and-paste social text, preview this output in the exact field before saving it.`,
     faqs: [
       { question: 'Is small caps bold actually bolder than small caps?', answer: 'The Unicode small caps characters do not have bold variants, so both styles use the same characters. The distinction is semantic rather than visual.' },
+      { question: 'Why do some letters look different?', answer: 'Small caps are assembled from Unicode phonetic characters rather than one complete alphabet, so the shapes and weight can vary by letter and device.' },
+      { question: 'When should I use this style?', answer: 'It is best for short names, labels and headings. Use ordinary text for important instructions, URLs and searchable profile information.' },
     ],
   },
 

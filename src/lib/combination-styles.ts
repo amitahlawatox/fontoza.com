@@ -130,6 +130,9 @@ const KEPT_COMBINATION_IDS = new Set<string>([
   'italic-hearts',
   'cursive-crown',
   'sans-italic-sparkles',
+  // 2026-08-24 pilots: recurring GSC demand previously hidden behind redirects.
+  'italic-underline',
+  'gothic-crown',
 ]);
 
 const BASE_STYLE_IDS: Record<string, string> = {
@@ -178,6 +181,8 @@ const RELATED_STYLE_IDS: Record<string, string[]> = {
   'italic-hearts': ['italic-font', 'hearts-text', 'cursive-font', 'bold-italic-font', 'sans-italic', 'cursive-flowers'],
   'cursive-crown': ['cursive-font', 'crown-text', 'cursive-moon', 'cursive-flowers', 'stars-text', 'bold-cursive-font'],
   'sans-italic-sparkles': ['sans-italic', 'sparkles-text', 'sans-serif-font', 'italic-font', 'sans-italic-crown', 'cursive-flowers'],
+  'italic-underline': ['italic-font', 'underline-text', 'bold-italic-font', 'cursive-underline', 'double-underline-text', 'sans-italic'],
+  'gothic-crown': ['gothic-font', 'crown-text', 'bold-gothic-font', 'cursive-crown', 'bold-gothic-stars', 'stars-text'],
 };
 
 export function generateCombinationStyles(existingIds: Set<string>): StyleDefinition[] {

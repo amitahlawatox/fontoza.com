@@ -762,11 +762,6 @@
       "permanent": true
     },
     {
-      "source": "/fonts/gothic-crown/",
-      "destination": "/fonts/gothic-font/",
-      "permanent": true
-    },
-    {
       "source": "/fonts/gothic-diamond/",
       "destination": "/fonts/gothic-font/",
       "permanent": true
@@ -903,11 +898,6 @@
     },
     {
       "source": "/fonts/italic-stars/",
-      "destination": "/fonts/italic-font/",
-      "permanent": true
-    },
-    {
-      "source": "/fonts/italic-underline/",
       "destination": "/fonts/italic-font/",
       "permanent": true
     },
