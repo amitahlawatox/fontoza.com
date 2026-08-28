@@ -142,11 +142,6 @@
       "permanent": true
     },
     {
-      "source": "/fonts/bold-cursive-rose/",
-      "destination": "/fonts/bold-cursive-font/",
-      "permanent": true
-    },
-    {
       "source": "/fonts/bold-cursive-sparkles/",
       "destination": "/fonts/bold-cursive-font/",
       "permanent": true
@@ -527,11 +522,6 @@
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-fire/",
-      "destination": "/fonts/cursive-font/",
-      "permanent": true
-    },
-    {
       "source": "/fonts/cursive-hearts/",
       "destination": "/fonts/cursive-font/",
       "permanent": true
@@ -547,18 +537,8 @@
       "permanent": true
     },
     {
-      "source": "/fonts/cursive-rainbow/",
-      "destination": "/fonts/cursive-font/",
-      "permanent": true
-    },
-    {
       "source": "/fonts/cursive-rose/",
-      "destination": "/fonts/cursive-font/",
-      "permanent": true
-    },
-    {
-      "source": "/fonts/cursive-sparkles/",
-      "destination": "/fonts/cursive-font/",
+      "destination": "/fonts/bold-cursive-rose/",
       "permanent": true
     },
     {

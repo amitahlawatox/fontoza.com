@@ -133,6 +133,11 @@ const KEPT_COMBINATION_IDS = new Set<string>([
   // 2026-08-24 pilots: recurring GSC demand previously hidden behind redirects.
   'italic-underline',
   'gothic-crown',
+  // 2026-08-28 demand-backed pages: all have page-one GSC visibility.
+  'cursive-fire',
+  'cursive-rainbow',
+  'cursive-sparkles',
+  'bold-cursive-rose',
 ]);
 
 const BASE_STYLE_IDS: Record<string, string> = {
@@ -173,16 +178,20 @@ const EFFECT_STYLE_IDS: Record<string, string> = {
 };
 
 const RELATED_STYLE_IDS: Record<string, string[]> = {
-  'cursive-flowers': ['cursive-font', 'flowers-text', 'cursive-moon', 'cursive-crown', 'sparkles-text', 'hearts-text'],
-  'cursive-moon': ['cursive-font', 'cursive-flowers', 'cursive-crown', 'stars-text', 'sparkles-text', 'italic-font'],
+  'cursive-flowers': ['cursive-font', 'cursive-fire', 'cursive-rainbow', 'cursive-moon', 'cursive-crown', 'flowers-text'],
+  'cursive-moon': ['cursive-font', 'cursive-fire', 'cursive-rainbow', 'cursive-flowers', 'cursive-crown', 'stars-text'],
   'bold-gothic-stars': ['bold-gothic-font', 'gothic-font', 'stars-text', 'crown-text', 'bold-text', 'cursive-flowers'],
   'sans-italic-crown': ['sans-italic', 'crown-text', 'cursive-crown', 'sans-italic-sparkles', 'italic-font', 'sans-serif-font'],
   'subscript-underline': ['subscript-text', 'underline-text', 'superscript-text', 'double-underline-text', 'small-caps', 'monospace-underline'],
   'italic-hearts': ['italic-font', 'hearts-text', 'cursive-font', 'bold-italic-font', 'sans-italic', 'cursive-flowers'],
-  'cursive-crown': ['cursive-font', 'crown-text', 'cursive-moon', 'cursive-flowers', 'stars-text', 'bold-cursive-font'],
+  'cursive-crown': ['cursive-font', 'crown-text', 'cursive-fire', 'cursive-rainbow', 'cursive-moon', 'cursive-flowers'],
   'sans-italic-sparkles': ['sans-italic', 'sparkles-text', 'sans-serif-font', 'italic-font', 'sans-italic-crown', 'cursive-flowers'],
   'italic-underline': ['italic-font', 'underline-text', 'bold-italic-font', 'cursive-underline', 'double-underline-text', 'sans-italic'],
   'gothic-crown': ['gothic-font', 'crown-text', 'bold-gothic-font', 'cursive-crown', 'bold-gothic-stars', 'stars-text'],
+  'cursive-fire': ['cursive-font', 'cursive-rainbow', 'cursive-sparkles', 'cursive-flowers', 'cursive-moon', 'bold-cursive-rose'],
+  'cursive-rainbow': ['cursive-font', 'cursive-fire', 'cursive-sparkles', 'cursive-flowers', 'cursive-moon', 'cursive-crown'],
+  'cursive-sparkles': ['cursive-font', 'cursive-rainbow', 'cursive-fire', 'cursive-flowers', 'sans-italic-sparkles', 'sparkles-text'],
+  'bold-cursive-rose': ['bold-cursive-font', 'cursive-font', 'cursive-flowers', 'cursive-fire', 'cursive-rainbow', 'hearts-text'],
 };
 
 export function generateCombinationStyles(existingIds: Set<string>): StyleDefinition[] {

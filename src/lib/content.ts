@@ -852,6 +852,14 @@ Digits have sans-serif equivalents (𝟢–𝟫 from the Mathematical Sans-Serif
         question: 'How is this different from sans-bold or sans-italic?',
         answer: 'Sans-serif (this style) has regular weight and upright letterforms. Sans-Bold adds weight. Sans-Italic adds slant. Sans-Bold-Italic combines both.',
       },
+      {
+        question: 'What do “math sans” and “mathsans” mean?',
+        answer: 'They are common short names for the Unicode Mathematical Sans-Serif alphabet generated on this page. The words refer to the same upright, regular-weight character set.',
+      },
+      {
+        question: 'Which mathematical sans-serif generator should I use?',
+        answer: 'Use this page for regular upright math sans. Choose Sans Bold for heavier text, Sans Italic for slanted text, or Sans Bold Italic when you want both weight and slant.',
+      },
     ],
   },
 
@@ -946,6 +954,8 @@ Use this style for short pieces of display text such as a name, role, section la
       { question: 'What is a mathematical sans-serif bold generator?', answer: 'It replaces ordinary letters with corresponding Unicode Mathematical Sans-Serif Bold characters. The result is copyable text, not an image or an installed font.' },
       { question: 'How is sans bold different from regular bold?', answer: 'Mathematical Bold has more traditional letter shapes, while Mathematical Sans-Serif Bold is clean and geometric. Both are Unicode character sets rather than formatting.' },
       { question: 'Does math sans bold include numbers?', answer: 'Yes. The Unicode set includes mathematical sans-serif bold digits 0-9, so dates and short number strings can use the same weight.' },
+      { question: 'Is math sans bold the same as mathematical sans-serif bold?', answer: 'Yes. “Math sans bold” is a shorter search phrase for the Unicode Mathematical Sans-Serif Bold alphabet used by this generator.' },
+      { question: 'Is this the regular math sans generator?', answer: 'This page creates the bold set. Use the Mathematical Sans-Serif page when you want regular upright weight without bold strokes.' },
       { question: 'Should I use it for an entire bio?', answer: 'A short name or label is usually clearer. Keep essential information in ordinary text so it remains easy to read, search, and announce with assistive technology.' },
     ],
   },
@@ -975,6 +985,8 @@ Use this style for short pieces of display text such as a name, role, section la
 This is a better fit for short energetic phrases than for body copy. Digits do not have a dedicated sans-serif bold italic set, so numbers remain unchanged; that contrast is expected rather than a generator error. Glyph shapes can also vary between devices and apps. Test the final phrase where you plan to post it, and keep critical instructions or searchable terms in regular characters.`,
     faqs: [
       { question: 'Is mathematical sans-serif bold italic the same as bold italic?', answer: 'No. Mathematical Bold Italic uses more traditional letterforms; this style uses the cleaner sans-serif bold italic alphabet.' },
+      { question: 'What is a math sans bold italic font generator?', answer: 'It replaces supported letters with Unicode Mathematical Sans-Serif Bold Italic characters. The result is copyable text rather than a font file or image.' },
+      { question: 'Can I download math sans bold italic as a font?', answer: 'This tool does not provide a downloadable font. It generates Unicode characters for copy and paste; use a licensed typeface when you need an installable design font.' },
       { question: 'Why do the numbers stay normal?', answer: 'Unicode does not provide a separate Mathematical Sans-Serif Bold Italic digit set. Numbers and most punctuation therefore pass through unchanged.' },
       { question: 'Can I paste this into Instagram or TikTok?', answer: 'Usually yes in fields that accept Unicode text, including many display names, bios, and captions. Platform rules can change, so preview the pasted result before saving.' },
       { question: 'Is this page different from bold sans italic?', answer: 'No separate page is needed. “Bold sans italic” and “sans bold italic” describe the same transformation, which is consolidated here.' },
@@ -1157,6 +1169,8 @@ Use crown text when the symbol itself carries the meaning: queen or king themes,
       { question: 'What symbol is used for the crown?', answer: 'This style uses ♛ (U+265B, Black Chess Queen), which visually resembles a crown with its ornate top.' },
       { question: 'Is the crown an emoji?', answer: 'It is a Unicode chess symbol, not a color emoji. Most apps display it as a monochrome text glyph whose exact shape follows the app or device font.' },
       { question: 'What is the difference between Crown Text and Cursive Crown?', answer: 'Crown Text keeps your letters unchanged and adds ♛ at both ends. Cursive Crown also converts supported letters to Mathematical Script before adding the crown symbols.' },
+      { question: 'How do I copy and paste queen crown symbol text?', answer: 'Type the name or phrase above, use the copy button, then paste the framed result into a compatible bio, caption, message or display-name field.' },
+      { question: 'Is this a crown symbol text font?', answer: 'It is a Unicode crown-symbol text generator, not an installed font. Your original letters stay readable while ♛ is added at both ends.' },
       { question: 'Can I use the crown symbol in a username?', answer: 'Only if that platform allows the ♛ character in that field. Display names and bios are generally more permissive than @handles, so test the target field before relying on it.' },
     ],
   },
@@ -1263,9 +1277,9 @@ This combination fits short dark-fantasy names, gaming roles, metal captions, an
   {
     styleId: 'cursive-moon',
     metaTitle: 'Moon in Cursive Generator - Copy & Paste | Fontoza',
-    metaDescription: 'Write names and phrases in cursive framed by moon symbols. Preview copyable Unicode text for night bios, captions, usernames, and status messages.',
+    metaDescription: 'Create moon in cursive text with copyable script letters and moon symbols. Preview dreamy names, night captions and bios, then copy instantly.',
     heading: 'Moon in Cursive Text Generator',
-    intro: 'Create flowing mathematical cursive text framed by moon symbols for dreamy display names, night-themed bios, and celestial captions.',
+    intro: 'Write a moon-themed name or phrase in flowing Mathematical Script, framed by moon symbols for dreamy bios, captions and display text.',
     examples: [
       { label: 'Celestial name', text: 'Luna Skye', useCase: 'A moon-framed cursive display name for a social profile.' },
       { label: 'Night caption', text: 'Meet Me at Midnight', useCase: 'A short dreamy line for a night photo or story caption.' },
@@ -1278,6 +1292,7 @@ The style works best for short names, night-photo captions, astronomy communitie
       { question: 'How does the moon in cursive generator work?', answer: 'It converts supported letters to Mathematical Script Unicode and then places moon symbols at the beginning and end of the phrase.' },
       { question: 'Why does the moon look different after pasting?', answer: 'The receiving app chooses its emoji or text glyph. The moon may change color, size, or alignment while remaining the same Unicode character.' },
       { question: 'Can I use moon cursive in a username?', answer: 'Only if the target field allows script Unicode and moon symbols. Display names and bios are usually more flexible than @handles.' },
+      { question: 'Can I copy and paste moon in cursive writing?', answer: 'Yes. The script letters and moon symbols are Unicode characters, so the result can be copied into many compatible profile, caption and message fields.' },
     ],
   },
 
@@ -1299,6 +1314,7 @@ Use it for short names, wedding or friendship captions, garden accounts, craft p
       { question: 'Is cursive flower text a downloadable font?', answer: 'No. It uses copyable Unicode Mathematical Script characters and flower symbols, so there is no font file to install.' },
       { question: 'Why is the flower sometimes black and white?', answer: 'This style uses a Unicode flower text symbol. Apps can render it with different glyph designs, and it is not guaranteed to appear as a color emoji.' },
       { question: 'What is the difference between Flowers Text and Cursive Flowers?', answer: 'Flowers Text keeps the original letters and adds a floral frame. Cursive Flowers also changes supported letters to Mathematical Script.' },
+      { question: 'How do I make a flower cursive font for copy and paste?', answer: 'Type your phrase above. The generator converts supported letters to Mathematical Script, adds flower symbols around the result, and keeps it as copyable Unicode text.' },
     ],
   },
 
@@ -1320,6 +1336,102 @@ This style is intended for short display text such as a gamer tag, fantasy role,
       { question: 'What does bold Gothic stars generate?', answer: 'It converts supported letters to Unicode Mathematical Bold Fraktur and places star symbols around the complete phrase.' },
       { question: 'Is Gothic star text suitable for Discord?', answer: 'It commonly pastes into Discord messages and many profile or server fields, subject to the field’s character rules and server policies.' },
       { question: 'Why do some Gothic letters look unusual?', answer: 'Fraktur uses historical letter shapes, and a few characters come from separate Unicode letterlike-symbol code points. Their exact glyphs can vary by font.' },
+    ],
+  },
+
+  {
+    styleId: 'cursive-fire',
+    metaTitle: 'Fire in Cursive Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Write names and phrases in copyable cursive Unicode framed by fire emoji. Preview fiery display names, bios and captions, then copy free.',
+    heading: 'Fire in Cursive Text Generator',
+    intro: 'Write any short phrase in Mathematical Script Unicode and frame it with fire emoji for energetic names, captions and profile text.',
+    examples: [
+      { label: 'Fiery display name', text: 'Maya on Fire', useCase: 'Create an energetic profile or gaming name with a clear emoji frame.' },
+      { label: 'Launch caption', text: 'New Drop', useCase: 'Give a short product, music or creator announcement extra heat.' },
+      { label: 'Motivation line', text: 'Keep the Fire', useCase: 'Style a compact motivational phrase without turning it into an image.' },
+    ],
+    longDescription: `Fire in Cursive converts supported Latin letters to Unicode Mathematical Script and places a fire emoji at both ends of the finished phrase. The transformation stays as copyable text: the flowing letters are Unicode characters and the fire symbols are emoji, not a picture generated by the page.
+
+Use this style for a short display name, launch caption, gaming status, music label or motivational line. The two-emoji frame keeps the words easier to read than inserting fire after every letter. Numbers and most punctuation remain ordinary because the Mathematical Script alphabet does not include matching digit forms.
+
+Emoji design and script glyphs vary by app, device and installed font. A fire symbol may look larger or more colorful after pasting, and some profile fields restrict decorative Unicode. Test the finished phrase in its destination before saving it. Keep account handles, contact information and other essential details in ordinary characters for accessibility and search.`,
+    faqs: [
+      { question: 'How do I write fire in cursive?', answer: 'Type a phrase above. The generator changes supported letters to Mathematical Script Unicode and adds a fire emoji at each end.' },
+      { question: 'Is fire in cursive a downloadable font?', answer: 'No. It produces copyable Unicode text, so there is no font file to install and the output can be pasted into many supported text fields.' },
+      { question: 'Why do the fire emoji look different after pasting?', answer: 'The receiving app or device chooses its own emoji artwork, color and alignment while preserving the same Unicode fire character.' },
+      { question: 'Can I use cursive fire in an Instagram or TikTok name?', answer: 'Many display-name and bio fields accept it, but @handle rules are stricter. Test the exact field before relying on the decorated version.' },
+    ],
+  },
+
+  {
+    styleId: 'cursive-rainbow',
+    metaTitle: 'Rainbow in Cursive Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create copyable cursive Unicode text framed by rainbow emoji. Preview colorful names, pride captions and positive bios, then copy instantly.',
+    heading: 'Rainbow in Cursive Text Generator',
+    intro: 'Combine flowing Mathematical Script letters with rainbow emoji for colorful names, pride captions, positive messages and profile text.',
+    examples: [
+      { label: 'Colorful name', text: 'Rainbow Maya', useCase: 'Frame a short display name with matching rainbow emoji.' },
+      { label: 'Positive caption', text: 'Brighter Days', useCase: 'Style an optimistic phrase for a caption, status or message.' },
+      { label: 'Pride message', text: 'Proud Together', useCase: 'Create a short celebratory line while keeping the wording readable.' },
+    ],
+    longDescription: `Rainbow in Cursive maps supported letters to the Unicode Mathematical Script alphabet and frames the complete phrase with rainbow emoji. It is different from applying a colorful visual font: the letters remain monochrome Unicode glyphs, while the emoji provide the color and theme.
+
+This combination works best for short display names, pride messages, positive captions and celebratory profile text. Framing the complete phrase uses fewer emoji and is easier to scan than placing one between every character. Mathematical Script has no matching number set, so digits and most punctuation pass through unchanged.
+
+The appearance of both the script letters and rainbow emoji can vary across phones, browsers and apps. Some fields may reject decorative Unicode even when captions or bios allow it. Preview the pasted result before publishing, and repeat important information in plain text where readability, accessibility or search matters.`,
+    faqs: [
+      { question: 'How do I make rainbow text in cursive?', answer: 'Enter your words above. Supported letters are converted to Mathematical Script and the finished phrase is framed by rainbow emoji.' },
+      { question: 'Are the cursive letters actually colorful?', answer: 'No. The letters use the receiving app’s text color. The rainbow emoji provide the colorful part of the result.' },
+      { question: 'Can I copy and paste rainbow cursive text?', answer: 'Yes. The result is Unicode text and emoji, so it can be copied into many fields that accept those characters.' },
+      { question: 'Why do numbers stay normal?', answer: 'Unicode does not provide Mathematical Script digits. Numbers and most punctuation therefore remain ordinary for clarity.' },
+    ],
+  },
+
+  {
+    styleId: 'cursive-sparkles',
+    metaTitle: 'Cursive Sparkles Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Make copyable cursive Unicode text framed by sparkle emoji. Preview aesthetic names, launch captions and bios, then copy and paste free.',
+    heading: 'Cursive Sparkles Text Generator',
+    intro: 'Frame Mathematical Script Unicode with sparkle emoji for polished names, beauty captions, launch messages and aesthetic profile text.',
+    examples: [
+      { label: 'Aesthetic name', text: 'Luna Creates', useCase: 'Give a creator or display name a light sparkling frame.' },
+      { label: 'Launch message', text: 'New Era', useCase: 'Create a compact celebratory announcement for a caption.' },
+      { label: 'Beauty label', text: 'Soft Glow', useCase: 'Style a short beauty, fashion or lifestyle phrase.' },
+    ],
+    longDescription: `Cursive Sparkles converts supported Latin letters to Unicode Mathematical Script and places sparkle emoji around the finished phrase. The script supplies a flowing handwritten look while the two-symbol frame adds a polished, celebratory tone without interrupting each word.
+
+Try it for creator names, beauty or fashion labels, milestone posts, launch captions and short positive messages. This is copyable Unicode rather than an installed font or image. Numbers remain ordinary because Mathematical Script does not include a digit alphabet, which also helps dates and quantities stay recognizable.
+
+Sparkle emoji and script glyphs can change shape or spacing across apps and devices. Test the exact phrase in the destination field, especially for display names with strict character rules. Avoid replacing essential instructions or searchable profile terms entirely with styled characters; a plain-text version is more accessible.`,
+    faqs: [
+      { question: 'What does the cursive sparkles generator create?', answer: 'It converts supported letters to Mathematical Script Unicode and places sparkle emoji at both ends of the complete phrase.' },
+      { question: 'How is Cursive Sparkles different from Sparkles Text?', answer: 'Cursive Sparkles changes the letters to script before adding the emoji. Sparkles Text leaves the original letters unchanged.' },
+      { question: 'Can I paste cursive sparkles into a bio?', answer: 'Many bio and display-name fields accept Unicode script and emoji, but rules vary. Preview the result before saving it.' },
+      { question: 'Is this the same as Sans Italic Sparkles?', answer: 'No. Cursive Sparkles uses flowing Mathematical Script; Sans Italic Sparkles uses cleaner slanted sans-serif letterforms.' },
+    ],
+  },
+
+  {
+    styleId: 'bold-cursive-rose',
+    metaTitle: 'Rose in Cursive Generator - Bold Script | Fontoza',
+    metaDescription: 'Write names and phrases in bold cursive Unicode framed by rose emoji. Preview romantic names and floral captions, then copy and paste free.',
+    heading: 'Rose in Cursive Text Generator',
+    intro: 'Create bold Mathematical Script text framed by rose emoji for romantic names, floral captions, wedding phrases and profile text.',
+    examples: [
+      { label: 'Romantic name', text: 'Rose and Leo', useCase: 'Frame a name pairing for an anniversary or couple profile.' },
+      { label: 'Floral caption', text: 'Bloom Boldly', useCase: 'Give a short garden, beauty or lifestyle line heavier script.' },
+      { label: 'Wedding phrase', text: 'Always Together', useCase: 'Style a compact celebratory message with roses at both ends.' },
+    ],
+    longDescription: `Rose in Cursive uses Unicode Mathematical Bold Script for supported letters and frames the phrase with rose emoji. The heavier script distinguishes this page from regular Cursive Flowers: it creates a stronger handwritten shape and uses a recognizable color rose rather than a monochrome floral text symbol.
+
+Use it for romantic names, anniversary captions, wedding phrases, garden accounts and beauty or lifestyle labels. The complete phrase is framed instead of decorating every character, which keeps names easier to read. Digits and most punctuation remain ordinary because Unicode has no matching bold-script number set.
+
+The rose artwork and letterforms depend on the receiving device and app. Some platforms allow these characters in bios but not in @handles. Check the final pasted version, keep important dates and contact details in plain text, and use the lighter Cursive Flowers page when you want a more delicate floral style.`,
+    faqs: [
+      { question: 'How do I write rose in cursive?', answer: 'Type a phrase above. The page converts supported letters to bold Mathematical Script and frames the result with rose emoji.' },
+      { question: 'Why is this cursive text bold?', answer: 'The historical page uses the Unicode Mathematical Bold Script alphabet, giving the letters heavier strokes while preserving a flowing cursive shape.' },
+      { question: 'How is Rose in Cursive different from Cursive Flowers?', answer: 'This page uses bold script and color rose emoji. Cursive Flowers uses lighter Mathematical Script with monochrome flower symbols.' },
+      { question: 'Can I copy and paste the rose cursive result?', answer: 'Yes. It is Unicode text plus emoji, so it can be copied into many compatible bios, captions, messages and display-name fields.' },
     ],
   },
 

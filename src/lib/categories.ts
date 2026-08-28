@@ -17,6 +17,10 @@ export const CATEGORIES: CategoryDefinition[] = [
     styleIds: [
       'cursive-font',
       'bold-cursive-font',
+      'cursive-fire',
+      'cursive-rainbow',
+      'cursive-sparkles',
+      'bold-cursive-rose',
       'italic-font',
       'italic-underline',
       'bold-italic-font',
@@ -143,6 +147,7 @@ export const CATEGORIES: CategoryDefinition[] = [
       'sans-bold',
       'sans-bold-italic',
       'bold-cursive-font',
+      'bold-cursive-rose',
       'bold-gothic-font',
       'bold-underline-text',
       'bold-strikethrough',
