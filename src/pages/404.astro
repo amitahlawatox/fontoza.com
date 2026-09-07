@@ -38,7 +38,7 @@ const popularStyles = [
         Go to Font Generator
       </a>
       <a
-        href="/about"
+        href="/about/"
         class="rounded-xl border border-[var(--color-border)] px-6 py-3 font-semibold text-[var(--color-text)] transition-colors hover:border-indigo-400"
       >
         About Fontoza
@@ -49,7 +49,7 @@ const popularStyles = [
     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {popularStyles.map((style) => (
         <a
-          href={style.href}
+          href={`${style.href}/`}
           class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-left transition-all hover:border-indigo-400 hover:shadow-md"
         >
           <div class="mb-1 text-lg">{style.example}</div>

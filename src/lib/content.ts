@@ -798,6 +798,15 @@ This style is extremely popular in East Asian internet culture, K-pop fan commun
 
   {
     styleId: 'underline-text',
+    metaTitle: 'Underline Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Type any text and add a copyable Unicode underline instantly. Preview underlined names, bios and captions, then paste them into supported apps.',
+    heading: 'Underline Text Generator',
+    intro: 'Type ordinary text to add a copyable Unicode underline for names, bios, captions, labels, and messages without uploading an image.',
+    examples: [
+      { label: 'Profile heading', text: 'About Me', useCase: 'Underline a compact section label in a social profile.' },
+      { label: 'Caption emphasis', text: 'Read This', useCase: 'Draw attention to a short phrase where native underline is unavailable.' },
+      { label: 'Server label', text: 'Announcements', useCase: 'Create a visible category label for a message or community post.' },
+    ],
     longDescription: `Underline text uses Unicode combining character U+0332 (Combining Low Line) placed after each letter to draw an underline. Like the strikethrough combining character, this works anywhere Unicode renders — producing underlined text in platforms that have no native underline formatting option.
 
 Instagram, TikTok, and Twitter have no built-in underline support for regular text fields. Unicode combining underline fills this gap. It is particularly useful for highlighting URLs that cannot be made into actual hyperlinks (Instagram bios), emphasizing key terms in captions, or creating visual structure in longer posts.
@@ -938,8 +947,8 @@ The filled circle creates much stronger visual weight than open-circle Circled t
 
   {
     styleId: 'sans-bold',
-    metaTitle: 'Mathematical Sans Bold Generator - Copy Text | Fontoza',
-    metaDescription: 'Generate mathematical sans-serif bold Unicode letters and numbers. Preview clean heavy names, headings and captions, then copy the text free.',
+    metaTitle: 'Mathematical Sans-Serif Bold Generator | Fontoza',
+    metaDescription: 'Type text to create mathematical sans-serif bold Unicode letters and numbers. Preview clean names and headings, then copy and paste instantly.',
     heading: 'Mathematical Sans-Serif Bold Generator',
     intro: 'Turn ordinary words into clean mathematical sans-serif bold Unicode for modern display names, bio labels, and short social captions.',
     examples: [
@@ -962,17 +971,30 @@ Use this style for short pieces of display text such as a name, role, section la
 
   {
     styleId: 'sans-italic',
-    longDescription: `Sans-Serif Italic (U+1D608–U+1D63B) provides slanted versions of clean, sans-serif letterforms. The effect is contemporary and editorial — like the italic style of a modern web font applied to any text field. It is subtler than script italic and more modern than mathematical italic. Good for social media profiles that want a contemporary aesthetic with subtle visual distinction from regular text.`,
+    metaTitle: 'Mathematical Sans-Serif Italic Generator | Fontoza',
+    metaDescription: 'Create copyable mathematical sans-serif italic Unicode letters. Preview clean slanted names, bios and captions, then copy and paste instantly.',
+    heading: 'Mathematical Sans-Serif Italic Generator',
+    intro: 'Convert ordinary letters into clean Mathematical Sans-Serif Italic Unicode for modern names, profile lines, captions, and short editorial text.',
+    examples: [
+      { label: 'Creator name', text: 'Maya Studio', useCase: 'Give a short display name a clean editorial slant.' },
+      { label: 'Profile line', text: 'Designing Daily', useCase: 'Style a restrained creator or professional tagline.' },
+      { label: 'Caption credit', text: 'Made by Alex', useCase: 'Add a modern italic signature to a short caption.' },
+    ],
+    longDescription: `Mathematical Sans-Serif Italic (U+1D608–U+1D63B) provides slanted versions of clean, sans-serif letterforms. The effect is contemporary and editorial, like the italic style of a modern web font applied to a plain-text field. It is distinct from Mathematical Italic, which has serifed letter shapes, and from Script text, which looks more handwritten.
+
+Use the generator for short names, profile lines, caption credits, and labels where you want a modern slant without a decorative script. The output is Unicode text rather than an installed font or an image, so supported letters remain copyable. The block does not include dedicated italic digits, and punctuation stays in its ordinary form. Rendering can vary by app or device, so preview the finished phrase where you plan to use it and keep essential information in regular text for accessibility.`,
     faqs: [
+      { question: 'What is a mathematical sans-serif italic generator?', answer: 'It replaces supported letters with characters from the Unicode Mathematical Sans-Serif Italic alphabet. The result is copyable text, not CSS formatting, an image, or a downloadable font.' },
       { question: 'Does sans italic include digits?', answer: 'The Mathematical Sans-Serif Italic block does not include digit variants. Numbers pass through as regular characters.' },
       { question: 'What is sans italic best for?', answer: 'Sans italic works well for modern, editorial, and minimalist aesthetics — profiles in business, design, journalism, and similar contemporary niches.' },
+      { question: 'How is sans italic different from mathematical italic?', answer: 'Sans italic uses clean letterforms without serifs. Mathematical Italic uses more traditional serifed shapes, while Script text has a flowing handwritten appearance.' },
     ],
   },
 
   {
     styleId: 'sans-bold-italic',
-    metaTitle: 'Math Sans Bold Italic Generator - Copy & Paste | Fontoza',
-    metaDescription: 'Create mathematical sans-serif bold italic Unicode text. Preview dynamic slanted letters, then copy them for gamer tags, bios, captions, and headlines.',
+    metaTitle: 'Mathematical Sans-Serif Bold Italic Generator | Fontoza',
+    metaDescription: 'Create mathematical sans-serif bold italic Unicode letters. Preview energetic names and headings, then copy and paste the text instantly.',
     heading: 'Mathematical Sans-Serif Bold Italic Generator',
     intro: 'Generate heavy, slanted mathematical sans-serif letters for energetic names, sports-style headings, and short creator-brand statements.',
     examples: [
@@ -1320,8 +1342,8 @@ Use it for short names, wedding or friendship captions, garden accounts, craft p
 
   {
     styleId: 'bold-gothic-stars',
-    metaTitle: 'Gothic Star Text Generator - Copy & Paste | Fontoza',
-    metaDescription: 'Make bold Gothic Unicode names framed by star symbols. Preview copyable blackletter text for gamer tags, Discord roles, bios, and dark captions.',
+    metaTitle: 'Gothic Star Copy & Paste Generator | Fontoza',
+    metaDescription: 'Type a name to create bold Gothic Unicode framed by stars. Preview blackletter gamer tags, Discord roles and bios, then copy the result instantly.',
     heading: 'Bold Gothic Star Text Generator',
     intro: 'Combine heavy Fraktur-style Unicode letters with star symbols for dark gamer tags, fantasy roles, band names, and dramatic profile text.',
     examples: [
