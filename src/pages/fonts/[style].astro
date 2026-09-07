@@ -94,7 +94,7 @@ const platformLabels: Record<string, string> = {
 
 const breadcrumbItems = [
   { label: 'Home', href: '/' },
-  ...(category ? [{ label: category.name, href: `/category/${category.id}` }] : []),
+  ...(category ? [{ label: category.name, href: `/category/${category.id}/` }] : []),
   { label: style.name },
 ];
 
