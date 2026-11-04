@@ -1,0 +1,42 @@
+---
+const measurementId = 'G-X8VZTX5Y8T';
+---
+
+<!-- Google tag (gtag.js) with analytics consent denied by default. -->
+<script is:inline define:vars={{ measurementId }}>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+  window.gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500,
+  });
+
+  window.gtag('set', 'ads_data_redaction', true);
+
+  window.__fontozaSetAnalyticsConsent = function (granted) {
+    window.gtag('consent', 'update', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: granted ? 'granted' : 'denied',
+    });
+  };
+
+  try {
+    if (localStorage.getItem('fontoza-cookie-consent') === 'accepted') {
+      window.__fontozaSetAnalyticsConsent(true);
+    }
+  } catch (error) {}
+</script>
+<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+<script is:inline define:vars={{ measurementId }}>
+  window.gtag('js', new Date());
+  window.gtag('config', measurementId, {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  });
+</script>

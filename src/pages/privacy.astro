@@ -23,7 +23,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
   <Header />
   <main id="main-content" class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
     <h1 class="mb-2 text-3xl font-bold tracking-tight text-[var(--color-text)]">Privacy Policy</h1>
-    <p class="mb-8 text-sm text-[var(--color-text-muted)]">Last updated: June 11, 2026</p>
+    <p class="mb-8 text-sm text-[var(--color-text-muted)]">Last updated: November 4, 2026</p>
 
     <div class="space-y-8 text-sm leading-relaxed text-[var(--color-text-muted)]">
 
@@ -62,7 +62,15 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
           Like most websites, our hosting provider (Vercel) may automatically collect standard server log information when you visit our site. This may include your IP address, browser type, operating system, referring URL, and pages visited. This information is used by Vercel for infrastructure purposes and is governed by <a href="https://vercel.com/legal/privacy-policy" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Vercel's Privacy Policy</a>. Vercel retains server logs for up to 30 days.
         </p>
 
-        <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">2.5 Fonts</h3>
+        <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">2.5 Google Analytics</h3>
+        <p>
+          We use Google Analytics 4 with measurement ID G-X8VZTX5Y8T to understand aggregate site usage, such as pages viewed, referral source, approximate location, device and browser information, and engagement events. We do not send text entered into Fontoza's tools to Google Analytics, and we have disabled Google signals and advertising-personalisation signals in the site configuration.
+        </p>
+        <p class="mt-2">
+          Analytics storage is denied by default and is enabled only after you select "Accept analytics" in the consent notice. You can change your choice at any time using "Cookie settings" in the footer. Google may process analytics information according to <a href="https://policies.google.com/privacy" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> and its explanation of <a href="https://policies.google.com/technologies/partner-sites" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">data from sites that use Google services</a>.
+        </p>
+
+        <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">2.6 Fonts</h3>
         <p>
           Fontoza serves all fonts directly from our own servers. We do not load fonts from Google Fonts, Adobe Fonts, or any other external font CDN. No IP address or browser information is transmitted to third parties for font delivery.
         </p>
@@ -75,18 +83,24 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
         </p>
         <ul class="mt-3 space-y-2 list-disc list-inside">
           <li><strong class="text-[var(--color-text)]">Legitimate interests (Article 6(1)(f)):</strong> We process server log data (via Vercel) to maintain the security and operation of the website. Our legitimate interest is ensuring the site functions correctly and is protected from abuse.</li>
-          <li><strong class="text-[var(--color-text)]">Future optional services:</strong> Analytics or advertising will not be enabled until their data use, lawful basis, notices, and any required consent controls have been configured and documented.</li>
+          <li><strong class="text-[var(--color-text)]">Consent (Article 6(1)(a)):</strong> Optional Google Analytics storage is enabled only after you accept analytics. You may withdraw that consent at any time through the footer's Cookie settings control.</li>
+          <li><strong class="text-[var(--color-text)]">Future advertising:</strong> Advertising will not be enabled until its data use, lawful basis, notices, and any required certified consent controls have been configured and documented.</li>
         </ul>
       </section>
 
       <section>
         <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">4. Cookies</h2>
-        <h3 class="mb-2 font-semibold text-[var(--color-text)]">3.1 First-Party Cookies</h3>
+        <h3 class="mb-2 font-semibold text-[var(--color-text)]">4.1 Local preferences</h3>
         <p>
-          The current site code does not set tracking cookies. It uses browser <code class="rounded bg-[var(--color-surface)] px-1 font-mono text-xs">localStorage</code> for local interface preferences such as theme and saved draft text, as described in Section 2.
+          The site uses browser <code class="rounded bg-[var(--color-surface)] px-1 font-mono text-xs">localStorage</code> for local interface preferences such as theme, saved draft text, and your analytics-consent choice, as described in Section 2.
         </p>
 
-        <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">3.2 Advertising</h3>
+        <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">4.2 Analytics cookies</h3>
+        <p>
+          If you accept analytics, Google Analytics may set first-party identifiers such as the <code class="rounded bg-[var(--color-surface)] px-1 font-mono text-xs">_ga</code> cookie to distinguish sessions and understand aggregate usage. If you reject analytics, analytics storage remains denied. Use the Cookie settings control in the footer to review or change your choice.
+        </p>
+
+        <h3 class="mt-4 mb-2 font-semibold text-[var(--color-text)]">4.3 Advertising</h3>
         <p>
           This release does not load Google AdSense or another advertising network. Advertising must remain disabled until the publisher account, required disclosures, certified consent platform, and consent-gated loading have been configured and verified.
         </p>
@@ -98,10 +112,10 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
       <section>
         <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">5. Hosting and analytics</h2>
         <p>
-          This release does not include a configured browser analytics product. The hosting and delivery infrastructure may process routine request, diagnostic, abuse-prevention, and security information according to the hosting provider’s applicable terms and policies.
+          Fontoza is hosted by Vercel and uses consent-aware Google Analytics 4 for aggregate usage measurement. The hosting and delivery infrastructure may process routine request, diagnostic, abuse-prevention, and security information according to the hosting provider's applicable terms and policies.
         </p>
         <p class="mt-2">
-          If analytics is introduced later, this policy will be updated before activation to identify the provider, purpose, data involved, and available choices.
+          Google Analytics is configured without Google signals or advertising-personalisation signals. Fontoza does not send the text you type into its generators or tools as analytics event content.
         </p>
       </section>
 
@@ -111,7 +125,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
         <ul class="mt-2 list-disc list-inside space-y-1">
           <li>Maintain and improve the Fontoza service</li>
           <li>Operate, secure, diagnose, and improve the website</li>
-          <li>Evaluate optional services only after their data use and required controls are documented</li>
+          <li>Measure aggregate traffic and engagement after analytics consent</li>
           <li>Ensure the technical operation and security of the site</li>
         </ul>
         <p class="mt-3">We do not sell, trade, or rent any personal information to third parties.</p>
@@ -120,7 +134,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Pr
       <section>
         <h2 class="mb-3 text-xl font-bold text-[var(--color-text)]">7. International Data Transfers</h2>
         <p>
-          Fontoza is hosted on Vercel, which operates infrastructure globally including in the United States. If you are located in the EEA, UK, or Switzerland, your data (server logs) may be transferred to and processed in the United States. Vercel complies with applicable data transfer mechanisms including the EU-US Data Privacy Framework. For more information, see <a href="https://vercel.com/legal/privacy-policy" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Vercel's Privacy Policy</a>.
+          Fontoza uses Vercel hosting and Google Analytics, whose infrastructure may process information outside your country, including in the United States. If you are located in the EEA, UK, or Switzerland, applicable contractual and legal transfer mechanisms may be used. For more information, see <a href="https://vercel.com/legal/privacy-policy" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Vercel's Privacy Policy</a> and <a href="https://policies.google.com/privacy" class="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
         </p>
       </section>
 

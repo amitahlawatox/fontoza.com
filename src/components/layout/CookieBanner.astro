@@ -1,6 +1,6 @@
 ---
-// Cookie consent banner — required for GDPR/ePrivacy compliance.
-// Shown once per browser session until the user accepts or dismisses.
+// Optional analytics consent banner.
+// Shown until the user accepts or rejects analytics storage.
 // Consent state is stored in localStorage under 'fontoza-cookie-consent'.
 ---
 
@@ -14,22 +14,22 @@
   <div class="mx-auto max-w-5xl px-4 py-4 sm:px-6 lg:px-8">
     <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
       <p class="text-sm text-[var(--color-text-muted)] leading-relaxed max-w-2xl">
-        We use privacy-first analytics (no personal data) and may display Google ads which use cookies.
+        We use optional Google Analytics to understand aggregate site usage. Analytics storage stays disabled unless you accept.
         Your text is <strong class="text-[var(--color-text)]">never sent to our servers</strong> — all processing happens in your browser.
         <a href="/privacy/" class="text-indigo-500 hover:underline ml-1">Privacy Policy</a>
       </p>
       <div class="flex flex-shrink-0 items-center gap-3">
         <button
-          id="cookie-dismiss"
+          id="cookie-reject"
           class="rounded-lg px-4 py-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors border border-[var(--color-border)] hover:border-[var(--color-accent)]"
         >
-          Dismiss
+          Reject analytics
         </button>
         <button
           id="cookie-accept"
           class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500 transition-colors"
         >
-          Accept
+          Accept analytics
         </button>
       </div>
     </div>
@@ -50,14 +50,24 @@
       banner.classList.remove('hidden');
     }
 
-    function hideBanner(value) {
+    function saveChoice(value) {
       banner.classList.add('hidden');
       try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+      if (typeof window.__fontozaSetAnalyticsConsent === 'function') {
+        window.__fontozaSetAnalyticsConsent(value === 'accepted');
+      }
     }
 
     var acceptBtn = document.getElementById('cookie-accept');
-    var dismissBtn = document.getElementById('cookie-dismiss');
-    if (acceptBtn) acceptBtn.addEventListener('click', function () { hideBanner('accepted'); });
-    if (dismissBtn) dismissBtn.addEventListener('click', function () { hideBanner('dismissed'); });
+    var rejectBtn = document.getElementById('cookie-reject');
+    if (acceptBtn) acceptBtn.addEventListener('click', function () { saveChoice('accepted'); });
+    if (rejectBtn) rejectBtn.addEventListener('click', function () { saveChoice('rejected'); });
+
+    document.querySelectorAll('[data-cookie-settings]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        banner.classList.remove('hidden');
+        if (acceptBtn) acceptBtn.focus();
+      });
+    });
   })();
 </script>
