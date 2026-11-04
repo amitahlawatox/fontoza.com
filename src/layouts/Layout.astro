@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import '@fontsource-variable/inter/index.css';
+import GoogleAnalytics from '../components/analytics/GoogleAnalytics.astro';
+import CookieBanner from '../components/layout/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -30,6 +32,8 @@ const {
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
     <meta name="msapplication-TileColor" content="#6366f1" />
+
+    <GoogleAnalytics />
 
 
     <!-- SEO meta -->
@@ -89,6 +93,8 @@ const {
     </a>
 
     <slot />
+
+    <CookieBanner />
 
 
     <!-- ✨ Eye-candy: cursor glow + sparkle burst + ripple + card tilt -->
