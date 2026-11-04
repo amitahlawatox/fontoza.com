@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import SymbolExplorer from '../../components/symbols/SymbolExplorer';
+import { starSymbols } from '../../lib/symbols';
+import { siteUrl } from '../../lib/site';
+
+const title = 'Star Symbols Copy and Paste - Stars & Sparkles | Fontoza';
+const description = 'Copy and paste star symbols, sparkles, outlines and celestial marks. Search the collection and copy any star in one tap.';
+const canonical = siteUrl('/symbols/star-symbols/');
+const faqs = [
+  { question: 'How do I copy a star symbol?', answer: 'Choose a star and press its Copy button. The character is saved to your clipboard so you can paste it into another app.' },
+  { question: 'Can I use star symbols for ratings?', answer: 'Yes. Solid and outline stars can create simple text ratings such as ★★★★☆, but include a written rating too when clarity and accessibility matter.' },
+  { question: 'Why does a sparkle look different in another app?', answer: 'Text symbols use the app or device font, and emoji use platform-specific artwork. Their visual shape can therefore vary while the underlying character remains the same.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'CollectionPage', name: 'Star Symbols Copy and Paste', description, url: canonical, isPartOf: { '@type': 'WebSite', name: 'Fontoza', url: siteUrl('/') } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl('/') },
+      { '@type': 'ListItem', position: 2, name: 'Symbols', item: siteUrl('/symbols/') },
+      { '@type': 'ListItem', position: 3, name: 'Star Symbols', item: canonical },
+    ] },
+    { '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} ogImage={siteUrl('/og-image.png')} schema={schema}>
+  <Header />
+  <main id="main-content">
+    <section class="bg-gradient-to-b from-amber-50/90 via-yellow-50/40 to-transparent py-12 dark:from-amber-950/20 dark:via-yellow-950/10 dark:to-transparent sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Symbols', href: '/symbols/' }, { label: 'Star Symbols' }]} />
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="text-5xl" aria-hidden="true">★ ☆ ✨</div>
+          <h1 class="mt-4 text-4xl font-black tracking-tight text-[var(--color-text)] sm:text-5xl">Star Symbols to Copy and Paste</h1>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">Search solid stars, outlines, sparkles and celestial marks. Copy one in a tap for ratings, bios, captions, dividers and display names.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <SymbolExplorer items={starSymbols} searchPlaceholder="Search outline, sparkle, sun, moon..." client:load />
+
+      <section class="mx-auto mt-14 max-w-4xl space-y-10 text-[var(--color-text-muted)]">
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Popular kinds of star symbols</h2>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Solid and outline stars: ★ ☆</h3><p class="mt-2 text-sm leading-relaxed">The most familiar pair is useful for favourites, lists and simple ratings. Mix them to show a score, such as ★★★★☆, and add a written value when the score needs to be unambiguous.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Four-point stars: ✦ ✧</h3><p class="mt-2 text-sm leading-relaxed">These compact shapes feel more like light glints than rating stars. They work well as decorative bullets, small dividers and accents around short phrases.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Sparkles and asterisks: ✨ ✵ ✹</h3><p class="mt-2 text-sm leading-relaxed">Sparkle characters add energy and celebration. Use them sparingly around the important words so the text remains easy to scan and copy.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Celestial marks: ☀ ☾ ☄</h3><p class="mt-2 text-sm leading-relaxed">Sun, moon and comet symbols suit night-sky themes, journal headings and astronomy-inspired display names. They are grouped here because people often pair them with stars.</p></article>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Star symbol ideas</h2>
+          <p class="mt-3 leading-relaxed">A star can mark a favourite item, separate two parts of a display name or frame a short caption. Try <strong class="text-[var(--color-text)]">✦ new post ✦</strong>, <strong class="text-[var(--color-text)]">☾ night thoughts ☆</strong> or <strong class="text-[var(--color-text)]">★ top pick</strong>. For lists and ratings, keep the order consistent so the symbols are easy to understand.</p>
+          <p class="mt-3 leading-relaxed">To convert a whole word into decorative characters, use the <a href="/fonts/stars-text/" class="font-semibold text-amber-600 underline decoration-amber-300 underline-offset-2 hover:text-amber-500">stars text generator</a>. This collection is better when you need one specific star or sparkle character.</p>
+        </div>
+
+        <div class="rounded-3xl border border-indigo-200 bg-indigo-50/70 p-6 dark:border-indigo-900/50 dark:bg-indigo-950/20">
+          <h2 class="text-xl font-black text-[var(--color-text)]">Make ratings accessible</h2>
+          <p class="mt-2 leading-relaxed">A row of stars is visual shorthand, but a screen reader may announce each character separately. When a rating is important, add plain language such as “4 out of 5”. Also remember that similar stars can have slightly different shapes in different fonts.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Star symbol questions</h2>
+          <div class="mt-4 space-y-3">
+            {faqs.map(faq => (
+              <details class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+                <summary class="cursor-pointer font-bold text-[var(--color-text)]">{faq.question}</summary>
+                <p class="mt-3 text-sm leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-gradient-to-r from-rose-600 to-pink-600 p-7 text-white">
+          <h2 class="text-2xl font-black">Want heart symbols?</h2>
+          <p class="mt-2 text-rose-100">Browse classic, coloured, sparkling and gesture hearts in the heart collection.</p>
+          <a href="/symbols/heart-symbols/" class="mt-4 inline-flex min-h-11 items-center rounded-xl bg-white px-5 py-2 font-bold text-rose-700">Explore heart symbols →</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

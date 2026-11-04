@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import SymbolExplorer from '../../components/symbols/SymbolExplorer';
+import { featuredSymbols } from '../../lib/symbols';
+import { siteUrl } from '../../lib/site';
+
+const title = 'Copy and Paste Symbols - Hearts, Stars & More | Fontoza';
+const description = 'Search and copy heart, star, sparkle and decorative symbols in one tap. Free, mobile-friendly symbol finder with no sign-up required.';
+const canonical = siteUrl('/symbols/');
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      name: 'Copy and Paste Symbols',
+      description,
+      url: canonical,
+      isPartOf: { '@type': 'WebSite', name: 'Fontoza', url: siteUrl('/') },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl('/') },
+        { '@type': 'ListItem', position: 2, name: 'Symbols', item: canonical },
+      ],
+    },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} ogImage={siteUrl('/og-image.png')} schema={schema}>
+  <Header />
+  <main id="main-content">
+    <section class="relative overflow-hidden bg-gradient-to-b from-indigo-50/80 via-purple-50/40 to-transparent py-12 dark:from-indigo-950/20 dark:via-purple-950/10 dark:to-transparent sm:py-16">
+      <div class="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-pink-400/10 blur-3xl" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Symbols' }]} />
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="inline-flex rounded-full bg-indigo-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Free symbol finder</span>
+          <h1 class="mt-4 text-4xl font-black tracking-tight text-[var(--color-text)] sm:text-5xl">
+            Copy and Paste <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">Symbols</span>
+          </h1>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">
+            Find a symbol by name or style, then copy it in one tap. Use these Unicode characters in bios, captions, messages, usernames and notes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <SymbolExplorer items={featuredSymbols} searchPlaceholder="Search featured hearts, stars, and sparkles" client:load />
+
+      <section class="mt-14" aria-labelledby="symbol-categories">
+        <div class="text-center">
+          <h2 id="symbol-categories" class="text-2xl font-black text-[var(--color-text)] sm:text-3xl">Browse symbol collections</h2>
+          <p class="mx-auto mt-2 max-w-2xl text-[var(--color-text-muted)]">Each collection includes search, useful categories and clear names so you can find the right character quickly.</p>
+        </div>
+        <div class="mt-7 grid gap-5 md:grid-cols-2">
+          <a href="/symbols/heart-symbols/" class="card-hover group rounded-3xl border border-rose-200 bg-gradient-to-br from-rose-50 to-pink-50 p-7 transition dark:border-rose-900/50 dark:from-rose-950/20 dark:to-pink-950/20">
+            <div class="text-4xl" aria-hidden="true">♡ ♥ 💖</div>
+            <h3 class="mt-4 text-2xl font-black text-[var(--color-text)] group-hover:text-rose-600">Heart Symbols</h3>
+            <p class="mt-2 leading-relaxed text-[var(--color-text-muted)]">Classic, coloured, sparkling and gesture hearts for affectionate messages, profile bios and decorative text.</p>
+            <span class="mt-5 inline-flex min-h-11 items-center font-bold text-rose-600">Explore heart symbols <span aria-hidden="true" class="ml-2 transition group-hover:translate-x-1">→</span></span>
+          </a>
+          <a href="/symbols/star-symbols/" class="card-hover group rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 to-yellow-50 p-7 transition dark:border-amber-900/50 dark:from-amber-950/20 dark:to-yellow-950/20">
+            <div class="text-4xl" aria-hidden="true">★ ☆ ✨</div>
+            <h3 class="mt-4 text-2xl font-black text-[var(--color-text)] group-hover:text-amber-600">Star Symbols</h3>
+            <p class="mt-2 leading-relaxed text-[var(--color-text-muted)]">Solid stars, outlines, sparkles and celestial marks for ratings, dividers, captions and display names.</p>
+            <span class="mt-5 inline-flex min-h-11 items-center font-bold text-amber-600">Explore star symbols <span aria-hidden="true" class="ml-2 transition group-hover:translate-x-1">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="mx-auto mt-14 max-w-4xl space-y-8 text-[var(--color-text-muted)]">
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">How to copy and paste a symbol</h2>
+          <ol class="mt-4 grid gap-4 sm:grid-cols-3">
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><strong class="block text-[var(--color-text)]">1. Find it</strong><span class="mt-1 block text-sm leading-relaxed">Search by a word such as “pink”, “outline” or “sparkle”, or use a category filter.</span></li>
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><strong class="block text-[var(--color-text)]">2. Copy it</strong><span class="mt-1 block text-sm leading-relaxed">Press the copy button beside your chosen symbol. It is saved to your device clipboard.</span></li>
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><strong class="block text-[var(--color-text)]">3. Paste it</strong><span class="mt-1 block text-sm leading-relaxed">Paste into a caption, bio, message, document or any app that accepts normal text.</span></li>
+          </ol>
+        </div>
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Symbols are text, not downloadable fonts</h2>
+          <p class="mt-3 leading-relaxed">Most items here are Unicode characters or emoji. That means you can copy them like ordinary text without installing a font or an app. Their exact shape and colour can vary between phones, browsers and platforms. If a character appears as an empty box, the device or app may not support it yet.</p>
+          <p class="mt-3 leading-relaxed">Want to transform a full word or sentence instead? Try the <a href="/" class="font-semibold text-indigo-600 underline decoration-indigo-300 underline-offset-2 hover:text-indigo-500">fancy text generator</a> or browse <a href="/fonts/" class="font-semibold text-indigo-600 underline decoration-indigo-300 underline-offset-2 hover:text-indigo-500">all font styles</a>.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

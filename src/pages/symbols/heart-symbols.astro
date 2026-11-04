@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import SymbolExplorer from '../../components/symbols/SymbolExplorer';
+import { heartSymbols } from '../../lib/symbols';
+import { siteUrl } from '../../lib/site';
+
+const title = 'Heart Symbols Copy and Paste - Search & Copy | Fontoza';
+const description = 'Copy and paste heart symbols, including outline, coloured, sparkling and cute hearts. Search the collection and copy any heart in one tap.';
+const canonical = siteUrl('/symbols/heart-symbols/');
+const faqs = [
+  { question: 'How do I copy a heart symbol?', answer: 'Find the heart you want and press its Copy button. Then paste it into any app or field that accepts text.' },
+  { question: 'What is the difference between a heart symbol and a heart emoji?', answer: 'Characters such as ♥ and ♡ are text symbols that usually appear in one colour. Emoji hearts such as ❤️ and 💜 may be colourful and can look different across platforms.' },
+  { question: 'Why does a heart look different on another phone?', answer: 'Devices, operating systems and apps use different fonts and emoji artwork. The underlying character is the same, but its visual design can vary.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'CollectionPage', name: 'Heart Symbols Copy and Paste', description, url: canonical, isPartOf: { '@type': 'WebSite', name: 'Fontoza', url: siteUrl('/') } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl('/') },
+      { '@type': 'ListItem', position: 2, name: 'Symbols', item: siteUrl('/symbols/') },
+      { '@type': 'ListItem', position: 3, name: 'Heart Symbols', item: canonical },
+    ] },
+    { '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} ogImage={siteUrl('/og-image.png')} schema={schema}>
+  <Header />
+  <main id="main-content">
+    <section class="bg-gradient-to-b from-rose-50/90 via-pink-50/40 to-transparent py-12 dark:from-rose-950/20 dark:via-pink-950/10 dark:to-transparent sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Symbols', href: '/symbols/' }, { label: 'Heart Symbols' }]} />
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="text-5xl" aria-hidden="true">♡ ♥ 💖</div>
+          <h1 class="mt-4 text-4xl font-black tracking-tight text-[var(--color-text)] sm:text-5xl">Heart Symbols to Copy and Paste</h1>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">Search classic, outline, coloured and sparkling hearts. Copy the one you like, then paste it into a bio, caption, message or display name.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <SymbolExplorer items={heartSymbols} searchPlaceholder="Search red, pink, outline, sparkle..." client:load />
+
+      <section class="mx-auto mt-14 max-w-4xl space-y-10 text-[var(--color-text-muted)]">
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Which heart symbol should you use?</h2>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Classic hearts: ♥ ♡ ❤</h3><p class="mt-2 text-sm leading-relaxed">These simple text characters work well in names, headings, compact dividers and monochrome designs. The outline heart ♡ feels lighter, while ♥ and ❤ have more visual weight.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Colour hearts: ❤️ 🩷 💜</h3><p class="mt-2 text-sm leading-relaxed">Coloured emoji hearts are expressive in messages and captions. Meanings are personal and context matters, so choose the colour that fits your message rather than treating a colour code as a fixed rule.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Sparkling hearts: 💖 💕 💞</h3><p class="mt-2 text-sm leading-relaxed">These are useful when you want an energetic or celebratory tone. They stand out in short captions, friendship posts, invitations and affectionate messages.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Heart gestures: 🫶 💌 💋</h3><p class="mt-2 text-sm leading-relaxed">Gesture and object emoji add context: support, a love note or a kiss. They are more specific than a single heart and work best when that meaning matches the sentence.</p></article>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Heart symbol ideas for bios and captions</h2>
+          <p class="mt-3 leading-relaxed">Use one or two hearts to frame a short phrase without making it difficult to read. Examples include <strong class="text-[var(--color-text)]">♡ be kind ♡</strong>, <strong class="text-[var(--color-text)]">♥ music lover</strong> and <strong class="text-[var(--color-text)]">good vibes 💖</strong>. On social platforms, keep the important words in ordinary text so people using screen readers can understand the message.</p>
+          <p class="mt-3 leading-relaxed">For a full stylised phrase, open the <a href="/fonts/hearts-text/" class="font-semibold text-rose-600 underline decoration-rose-300 underline-offset-2 hover:text-rose-500">hearts text generator</a>. It applies a consistent decorative style to what you type, while this page is designed for finding and copying individual heart characters.</p>
+        </div>
+
+        <div class="rounded-3xl border border-amber-200 bg-amber-50/70 p-6 dark:border-amber-900/50 dark:bg-amber-950/20">
+          <h2 class="text-xl font-black text-[var(--color-text)]">Compatibility and accessibility</h2>
+          <p class="mt-2 leading-relaxed">Newer emoji such as 🩷, 🩵 and 🩶 may not display on older software. If your audience uses a wide range of devices, classic symbols like ♥ and ♡ are safer choices. Do not use a string of decorative hearts as the only way to communicate important information.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Heart symbol questions</h2>
+          <div class="mt-4 space-y-3">
+            {faqs.map(faq => (
+              <details class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+                <summary class="cursor-pointer font-bold text-[var(--color-text)]">{faq.question}</summary>
+                <p class="mt-3 text-sm leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-gradient-to-r from-indigo-600 to-purple-600 p-7 text-white">
+          <h2 class="text-2xl font-black">Looking for stars too?</h2>
+          <p class="mt-2 text-indigo-100">Browse solid, outline, sparkle and celestial characters in the star collection.</p>
+          <a href="/symbols/star-symbols/" class="mt-4 inline-flex min-h-11 items-center rounded-xl bg-white px-5 py-2 font-bold text-indigo-700">Explore star symbols →</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
