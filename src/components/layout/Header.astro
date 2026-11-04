@@ -149,6 +149,13 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
       </div>
 
       <a
+        href="/symbols/"
+        class={`rounded-lg px-3 py-2 text-sm font-semibold transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] ${pathname.startsWith('/symbols') ? 'text-[var(--color-accent)] bg-[var(--color-surface)]' : 'text-[var(--color-text-muted)]'}`}
+      >
+        Symbols
+      </a>
+
+      <a
         href="/tools/"
         class={`rounded-lg px-3 py-2 text-sm font-semibold transition-all hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] ${pathname.startsWith('/tools') ? 'text-[var(--color-accent)] bg-[var(--color-surface)]' : 'text-[var(--color-text-muted)]'}`}
       >
@@ -256,6 +263,7 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
             <span class="font-bold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Fontoza</span>
           </div>
 
+          <a href="/symbols/" class="block rounded-xl px-3 py-2.5 text-sm font-semibold text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">✦ Symbols</a>
           <a href="/" class="block rounded-xl px-3 py-2.5 text-sm font-semibold text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">🏠 Home</a>
           <a href="/fonts/" class="block rounded-xl px-3 py-2.5 text-sm font-semibold text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]">✨ All Font Styles</a>
 
