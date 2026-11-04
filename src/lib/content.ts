@@ -145,10 +145,10 @@ One thing to keep in mind: Unicode bold characters are not the same as semantic 
 
   {
     styleId: 'italic-font',
-    metaTitle: 'Italic Font Generator - Copy & Paste Text | Fontoza',
-    metaDescription: 'Create copyable Unicode italic letters for names, bios, captions and quotes. Type your text, preview the slanted style and copy it free.',
-    heading: 'Italic Font Generator',
-    intro: 'Turn ordinary letters into copyable Mathematical Italic Unicode for elegant names, quotes, captions and profile text.',
+    metaTitle: 'Mathematical Italic Font Generator | Fontoza',
+    metaDescription: 'Create Mathematical Italic Unicode letters for copy and paste. Preview serif italic names, formulas, bios and captions, then copy the text instantly.',
+    heading: 'Mathematical Italic Font Generator',
+    intro: 'Convert ordinary letters into copyable Mathematical Italic Unicode - the serif italic alphabet used for variables, elegant names, formulas, and short display text.',
     examples: [
       { label: 'Profile tagline', text: 'Creating every day', useCase: 'Add a restrained slant to a short personal statement.' },
       { label: 'Quote line', text: 'Stay curious', useCase: 'Set a short quotation apart from surrounding plain text.' },
@@ -203,6 +203,10 @@ Accessibility note: most screen readers pronounce italic Unicode characters the 
         answer: 'Yes. WhatsApp has its own italic formatting (single underscores around text), but Unicode italic characters work differently — they are actual characters, not formatting codes. Both methods produce italic-looking text, but Unicode italic survives being copied out of WhatsApp.',
       },
       {
+        question: 'How is Mathematical Italic different from sans-serif italic?',
+        answer: 'Mathematical Italic has traditional serif details and is commonly associated with variables and formulas. Sans-serif italic has cleaner strokes and a more modern appearance. Both are copyable Unicode alphabets, but they use different characters.',
+      },
+      {
         question: 'Does italic text affect SEO?',
         answer: 'Not positively. Search engines do not recognize Unicode italic letters as equivalent to their regular counterparts. For any content you want to rank in search, use HTML semantic tags like <em> instead of Unicode italic. For social media, Unicode italic is ideal.',
       },
@@ -211,6 +215,15 @@ Accessibility note: most screen readers pronounce italic Unicode characters the 
 
   {
     styleId: 'bold-italic-font',
+    metaTitle: 'Mathematical Bold Italic Generator | Fontoza',
+    metaDescription: 'Create Mathematical Bold Italic Unicode letters for copy and paste. Preview strong serif names, headings and captions, then copy instantly.',
+    heading: 'Mathematical Bold Italic Generator',
+    intro: 'Convert ordinary letters to the serif Mathematical Bold Italic alphabet for strong slanted names, headings, captions, formulas, and emphasis.',
+    examples: [
+      { label: 'Emphasized heading', text: 'Important Update', useCase: 'Give a short heading the combined weight and slant of bold italic.' },
+      { label: 'Creator statement', text: 'Made with Purpose', useCase: 'Create a confident signature or profile statement.' },
+      { label: 'Gamer name', text: 'Shadow Runner', useCase: 'Style a compact display name without turning it into an image.' },
+    ],
     longDescription: `Bold italic is the typographic combination that signals maximum emphasis — when you need something to be both important and expressive. In print and digital publishing, bold italic is used for book titles in running text, critical warnings, and emotional peaks in narrative writing. In the Unicode standard, Mathematical Bold Italic characters (beginning at U+1D468) bring this combined style to any platform that accepts Unicode.
 
 What makes bold italic distinctively useful for social media is its expressiveness. Where plain bold text commands authority and plain italic text suggests elegance, bold italic does both at once. It reads as urgent, emotional, and carefully chosen. Content creators who write long-form captions find that a single phrase in bold italic acts like a highlighter — it is the thing the reader will remember when they scroll past.
@@ -256,6 +269,10 @@ Bold italic pairs well with other Unicode styles in the same post or bio. A comm
       {
         question: 'Does bold italic work in Facebook posts?',
         answer: 'Yes. Facebook renders Unicode bold italic characters correctly in posts, comments, and bios. It works well for Facebook page taglines and post headlines where you want emphasis without using all-caps.',
+      },
+      {
+        question: 'Is Mathematical Bold Italic the same as sans-serif bold italic?',
+        answer: 'No. Mathematical Bold Italic uses serif letterforms, while Mathematical Sans-Serif Bold Italic uses clean strokes without serifs. They look similar in weight and slant but are separate Unicode alphabets.',
       },
       {
         question: 'Why is bold italic so popular on social media?',
@@ -1070,10 +1087,10 @@ Because the parentheses are built into each character, the result stays enclosed
 
   {
     styleId: 'double-underline-text',
-    metaTitle: 'Double Underline Text Generator - Copy & Paste | Fontoza',
-    metaDescription: 'Add two Unicode lines beneath letters with a double underline generator. Preview and copy underlined names, labels, captions, or emphasized words.',
-    heading: 'Double Underline Text Generator',
-    intro: 'Add a copyable Unicode double underline beneath each non-space character for strong emphasis in short names, labels, and messages.',
+    metaTitle: 'Double Underline Generator - Copy & Paste Text | Fontoza',
+    metaDescription: 'Type any words to add a copyable double underline. Preview two Unicode lines beneath names, labels and captions, then copy the result instantly.',
+    heading: 'Double Underline Generator',
+    intro: 'Type any word or short phrase to add a copyable Unicode double underline beneath every visible character.',
     examples: [
       { label: 'Section label', text: 'Important', useCase: 'A strong visual divider for a short profile or message section.' },
       { label: 'Deadline', text: 'Friday 8 PM', useCase: 'Emphasize a short date or deadline while keeping spaces intact.' },
@@ -1087,6 +1104,7 @@ Combining marks depend on the receiving app and font, so line position and conti
       { question: 'Why can the two lines look uneven?', answer: 'The underline is rendered by the receiving font and app. Combining-mark placement can differ by device, and adjacent lines may not join perfectly.' },
       { question: 'Does double underline work on Instagram?', answer: 'It commonly works in Instagram fields that preserve combining Unicode marks, but rendering can change by app version and device. Paste a short test before updating a profile.' },
       { question: 'Can I underline spaces?', answer: 'This generator leaves spaces undecorated. That keeps multiple words legible and avoids broken-looking marks between words.' },
+      { question: 'Can I copy and paste double underline text?', answer: 'Yes. The generator adds the Unicode Combining Double Low Line after each visible character, so the underline normally travels with the text when copied into a compatible field.' },
     ],
   },
 
@@ -1320,10 +1338,10 @@ The style works best for short names, night-photo captions, astronomy communitie
 
   {
     styleId: 'cursive-flowers',
-    metaTitle: 'Cursive Flower Text Generator - Copy & Paste | Fontoza',
-    metaDescription: 'Create cursive Unicode text framed by flower symbols. Preview floral names, wedding phrases, bios, and captions, then copy and paste instantly.',
-    heading: 'Cursive Flower Text Generator',
-    intro: 'Frame mathematical cursive letters with floral symbols for soft profile names, wedding phrases, garden captions, and creative signatures.',
+    metaTitle: 'Flower in Cursive Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Write any flower, name or phrase in copyable cursive Unicode framed by floral symbols. Preview the result, then copy and paste it instantly.',
+    heading: 'Flower in Cursive Text Generator',
+    intro: 'Write a flower, name, or short phrase in Mathematical Script Unicode and frame it with floral symbols for soft profile text, captions, and signatures.',
     examples: [
       { label: 'Floral name', text: 'Daisy Bloom', useCase: 'A soft cursive display name with a simple flower frame.' },
       { label: 'Wedding phrase', text: 'Mia and Leo', useCase: 'A decorative short name pairing for a wedding caption.' },
@@ -1337,6 +1355,7 @@ Use it for short names, wedding or friendship captions, garden accounts, craft p
       { question: 'Why is the flower sometimes black and white?', answer: 'This style uses a Unicode flower text symbol. Apps can render it with different glyph designs, and it is not guaranteed to appear as a color emoji.' },
       { question: 'What is the difference between Flowers Text and Cursive Flowers?', answer: 'Flowers Text keeps the original letters and adds a floral frame. Cursive Flowers also changes supported letters to Mathematical Script.' },
       { question: 'How do I make a flower cursive font for copy and paste?', answer: 'Type your phrase above. The generator converts supported letters to Mathematical Script, adds flower symbols around the result, and keeps it as copyable Unicode text.' },
+      { question: 'How do I write flower in cursive?', answer: 'Type the word flower in the box above. The generator converts supported letters to copyable Mathematical Script and frames the finished word with flower symbols.' },
     ],
   },
 
