@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import SymbolExplorer from '../../components/symbols/SymbolExplorer';
+import { flowerSymbols } from '../../lib/symbols';
+import { siteUrl } from '../../lib/site';
+
+const title = 'Flower Symbols Copy and Paste - Floral Characters | Fontoza';
+const description = 'Copy flower symbols, blossoms, roses, leaves and floral emoji. Search by flower or style and copy any character in one tap.';
+const canonical = siteUrl('/symbols/flower-symbols/');
+const faqs = [
+  { question: 'How do I copy a flower symbol?', answer: 'Search or browse the collection, then press the Copy button beside the flower you want. Paste it into any text field that supports the character.' },
+  { question: 'What is the difference between ✿ and 🌸?', answer: '✿ is a monochrome Unicode text symbol whose shape follows the current font. 🌸 is an emoji that normally appears as a coloured cherry blossom illustration.' },
+  { question: 'Why does a flower appear as a box?', answer: 'The receiving device, operating system or app may not support that character yet. Try a simpler text flower such as ✿ or ❀ for broader compatibility.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'CollectionPage', name: 'Flower Symbols Copy and Paste', description, url: canonical, isPartOf: { '@type': 'WebSite', name: 'Fontoza', url: siteUrl('/') } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl('/') },
+      { '@type': 'ListItem', position: 2, name: 'Symbols', item: siteUrl('/symbols/') },
+      { '@type': 'ListItem', position: 3, name: 'Flower Symbols', item: canonical },
+    ] },
+    { '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} ogImage={siteUrl('/og-image.png')} schema={schema}>
+  <Header />
+  <main id="main-content">
+    <section class="bg-gradient-to-b from-emerald-50/90 via-pink-50/40 to-transparent py-12 dark:from-emerald-950/20 dark:via-pink-950/10 dark:to-transparent sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Symbols', href: '/symbols/' }, { label: 'Flower Symbols' }]} />
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="text-5xl" aria-hidden="true">✿ ❀ 🌸</div>
+          <h1 class="mt-4 text-4xl font-black tracking-tight text-[var(--color-text)] sm:text-5xl">Flower Symbols to Copy and Paste</h1>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">Find text flowers, colourful blossoms, leaves and plant symbols. Copy one in a tap for bios, captions, messages, names and gentle dividers.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <SymbolExplorer items={flowerSymbols} searchPlaceholder="Search rose, blossom, leaf, outline..." client:load />
+
+      <section class="mx-auto mt-14 max-w-4xl space-y-10 text-[var(--color-text-muted)]">
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Choose the right floral character</h2>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Text flowers: ✿ ❀ ❁</h3><p class="mt-2 text-sm leading-relaxed">These monochrome characters are compact and usually follow the colour of nearby text. They work well in display names, quiet dividers and short decorative headings.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Flower emoji: 🌸 🌹 🌻</h3><p class="mt-2 text-sm leading-relaxed">Emoji flowers add colour and a more specific visual meaning. A rose, sunflower and cherry blossom can create very different moods, so match the flower to the message.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Leaves and plants: 🌿 🍀 🌱</h3><p class="mt-2 text-sm leading-relaxed">Plant characters suit nature, gardening, wellness and growth themes. They can also separate short phrases without making a caption feel crowded.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Bouquets and rosettes: 💐 🏵️</h3><p class="mt-2 text-sm leading-relaxed">Use these for celebrations, thanks, congratulations or invitations. They are more visually detailed than text flowers and may render differently across platforms.</p></article>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Flower symbol ideas for bios and captions</h2>
+          <p class="mt-3 leading-relaxed">Try a simple frame such as <strong class="text-[var(--color-text)]">✿ slow mornings ✿</strong>, a nature line such as <strong class="text-[var(--color-text)]">growing gently 🌱</strong>, or a compact divider like <strong class="text-[var(--color-text)]">❀ • ❀</strong>. A small number of well-placed symbols is easier to read than a long decorative chain.</p>
+          <p class="mt-3 leading-relaxed">Want flowers added around a complete phrase? Use the <a href="/fonts/flowers-text/" class="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2 hover:text-emerald-500">flowers text generator</a>. It keeps your words together and applies matching floral marks to both ends.</p>
+        </div>
+
+        <div class="rounded-3xl border border-amber-200 bg-amber-50/70 p-6 dark:border-amber-900/50 dark:bg-amber-950/20">
+          <h2 class="text-xl font-black text-[var(--color-text)]">Compatibility and accessibility</h2>
+          <p class="mt-2 leading-relaxed">Newer emoji such as 🪻 and 🪷 may not display on older software. For important text, do not rely on a flower alone to communicate meaning. Keep names, instructions and calls to action in plain words so they remain clear to screen-reader users.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Flower symbol questions</h2>
+          <div class="mt-4 space-y-3">
+            {faqs.map(faq => (
+              <details class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><summary class="cursor-pointer font-bold text-[var(--color-text)]">{faq.question}</summary><p class="mt-3 text-sm leading-relaxed">{faq.answer}</p></details>
+            ))}
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <a href="/symbols/heart-symbols/" class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 font-bold text-rose-600 transition hover:border-rose-300">Browse heart symbols →</a>
+          <a href="/symbols/crown-symbols/" class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 font-bold text-amber-600 transition hover:border-amber-300">Browse crown symbols →</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

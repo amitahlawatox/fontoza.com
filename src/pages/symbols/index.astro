@@ -8,7 +8,7 @@ import { featuredSymbols } from '../../lib/symbols';
 import { siteUrl } from '../../lib/site';
 
 const title = 'Copy and Paste Symbols - Hearts, Stars & More | Fontoza';
-const description = 'Search and copy heart, star, sparkle and decorative symbols in one tap. Free, mobile-friendly symbol finder with no sign-up required.';
+const description = 'Search and copy heart, star, flower, crown and decorative symbols in one tap. Free, mobile-friendly symbol finder with no sign-up required.';
 const canonical = siteUrl('/symbols/');
 const schema = {
   '@context': 'https://schema.org',
@@ -51,7 +51,7 @@ const schema = {
     </section>
 
     <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
-      <SymbolExplorer items={featuredSymbols} searchPlaceholder="Search featured hearts, stars, and sparkles" client:load />
+      <SymbolExplorer items={featuredSymbols} searchPlaceholder="Search featured hearts, stars, flowers, and crowns" client:load />
 
       <section class="mt-14" aria-labelledby="symbol-categories">
         <div class="text-center">
@@ -70,6 +70,18 @@ const schema = {
             <h3 class="mt-4 text-2xl font-black text-[var(--color-text)] group-hover:text-amber-600">Star Symbols</h3>
             <p class="mt-2 leading-relaxed text-[var(--color-text-muted)]">Solid stars, outlines, sparkles and celestial marks for ratings, dividers, captions and display names.</p>
             <span class="mt-5 inline-flex min-h-11 items-center font-bold text-amber-600">Explore star symbols <span aria-hidden="true" class="ml-2 transition group-hover:translate-x-1">→</span></span>
+          </a>
+          <a href="/symbols/flower-symbols/" class="card-hover group rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-pink-50 p-7 transition dark:border-emerald-900/50 dark:from-emerald-950/20 dark:to-pink-950/20">
+            <div class="text-4xl" aria-hidden="true">✿ ❀ 🌸</div>
+            <h3 class="mt-4 text-2xl font-black text-[var(--color-text)] group-hover:text-emerald-600">Flower Symbols</h3>
+            <p class="mt-2 leading-relaxed text-[var(--color-text-muted)]">Text flowers, colourful blossoms, leaves and plant symbols for nature themes, captions and decorative dividers.</p>
+            <span class="mt-5 inline-flex min-h-11 items-center font-bold text-emerald-600">Explore flower symbols <span aria-hidden="true" class="ml-2 transition group-hover:translate-x-1">→</span></span>
+          </a>
+          <a href="/symbols/crown-symbols/" class="card-hover group rounded-3xl border border-purple-200 bg-gradient-to-br from-amber-50 to-purple-50 p-7 transition dark:border-purple-900/50 dark:from-amber-950/20 dark:to-purple-950/20">
+            <div class="text-4xl" aria-hidden="true">♛ ♕ 👑</div>
+            <h3 class="mt-4 text-2xl font-black text-[var(--color-text)] group-hover:text-purple-600">Crown Symbols</h3>
+            <p class="mt-2 leading-relaxed text-[var(--color-text-muted)]">King and queen chess crowns, royal emoji, heraldic accents and decorative frames for names and profiles.</p>
+            <span class="mt-5 inline-flex min-h-11 items-center font-bold text-purple-600">Explore crown symbols <span aria-hidden="true" class="ml-2 transition group-hover:translate-x-1">→</span></span>
           </a>
         </div>
       </section>

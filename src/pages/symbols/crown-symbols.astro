@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import SymbolExplorer from '../../components/symbols/SymbolExplorer';
+import { crownSymbols } from '../../lib/symbols';
+import { siteUrl } from '../../lib/site';
+
+const title = 'Crown Symbols Copy and Paste - King & Queen | Fontoza';
+const description = 'Copy crown symbols, chess king and queen characters, royal emoji and decorative crown frames. Search and copy any design in one tap.';
+const canonical = siteUrl('/symbols/crown-symbols/');
+const faqs = [
+  { question: 'How do I copy a crown symbol?', answer: 'Find a crown or royal symbol and press its Copy button. Paste the copied character into a compatible bio, caption, message or display-name field.' },
+  { question: 'Are ♛ and ♕ crown emoji?', answer: 'No. They are Unicode chess queen symbols rendered as monochrome text glyphs. 👑 is the coloured crown emoji.' },
+  { question: 'Can I use a crown in a username?', answer: 'Some platforms allow crown characters in display names but not in account handles. Test the exact field before depending on the symbol.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'CollectionPage', name: 'Crown Symbols Copy and Paste', description, url: canonical, isPartOf: { '@type': 'WebSite', name: 'Fontoza', url: siteUrl('/') } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl('/') },
+      { '@type': 'ListItem', position: 2, name: 'Symbols', item: siteUrl('/symbols/') },
+      { '@type': 'ListItem', position: 3, name: 'Crown Symbols', item: canonical },
+    ] },
+    { '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} ogImage={siteUrl('/og-image.png')} schema={schema}>
+  <Header />
+  <main id="main-content">
+    <section class="bg-gradient-to-b from-amber-50/90 via-purple-50/40 to-transparent py-12 dark:from-amber-950/20 dark:via-purple-950/10 dark:to-transparent sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Symbols', href: '/symbols/' }, { label: 'Crown Symbols' }]} />
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="text-5xl" aria-hidden="true">♛ ♕ 👑</div>
+          <h1 class="mt-4 text-4xl font-black tracking-tight text-[var(--color-text)] sm:text-5xl">Crown Symbols to Copy and Paste</h1>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">Browse chess crowns, royal emoji, decorative frames and heraldic accents. Copy one in a tap for display names, gaming profiles, bios and celebration posts.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <SymbolExplorer items={crownSymbols} searchPlaceholder="Search king, queen, crown, royal..." client:load />
+
+      <section class="mx-auto mt-14 max-w-4xl space-y-10 text-[var(--color-text-muted)]">
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Crown and royal symbol types</h2>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Chess crowns: ♔ ♕ ♚ ♛</h3><p class="mt-2 text-sm leading-relaxed">Chess king and queen characters resemble compact crowns and usually display in one colour. They are useful when you want a text-style royal mark rather than an illustrated emoji.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Crown emoji: 👑</h3><p class="mt-2 text-sm leading-relaxed">The familiar gold crown is the clearest choice for royalty, winners and “king” or “queen” captions. Its artwork varies between operating systems and apps.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Royal people: 🤴 👸 🫅</h3><p class="mt-2 text-sm leading-relaxed">These emoji communicate a person or role, not just a crown. Use them when the caption is specifically about a prince, princess or crowned person.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Royal accents: ⚜ 💎 🔱</h3><p class="mt-2 text-sm leading-relaxed">Heraldic and jewel-like symbols complement crown themes in gaming labels, event titles and decorative dividers. Their meaning depends on the words around them.</p></article>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Crown symbol ideas for names and captions</h2>
+          <p class="mt-3 leading-relaxed">Frame a short title as <strong class="text-[var(--color-text)]">♛ Maya ♛</strong>, mark an achievement with <strong class="text-[var(--color-text)]">champion 👑</strong>, or use <strong class="text-[var(--color-text)]">⚜ Royal Crew ⚜</strong> for a team label. Keep the name itself readable and use the crown as an accent rather than replacing letters.</p>
+          <p class="mt-3 leading-relaxed">To place matching crown-like symbols around a complete phrase automatically, open the <a href="/fonts/crown-text/" class="font-semibold text-amber-600 underline decoration-amber-300 underline-offset-2 hover:text-amber-500">crown text generator</a>. It previews the finished phrase and lets you copy it as one piece.</p>
+        </div>
+
+        <div class="rounded-3xl border border-indigo-200 bg-indigo-50/70 p-6 dark:border-indigo-900/50 dark:bg-indigo-950/20">
+          <h2 class="text-xl font-black text-[var(--color-text)]">Crown symbols are not installed fonts</h2>
+          <p class="mt-2 leading-relaxed">These are Unicode characters and emoji. Their exact shape follows the font or emoji artwork on the receiving device. A platform may also reject special characters in restricted fields, so confirm the pasted result before saving a username or profile.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Crown symbol questions</h2>
+          <div class="mt-4 space-y-3">
+            {faqs.map(faq => (
+              <details class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><summary class="cursor-pointer font-bold text-[var(--color-text)]">{faq.question}</summary><p class="mt-3 text-sm leading-relaxed">{faq.answer}</p></details>
+            ))}
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <a href="/symbols/star-symbols/" class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 font-bold text-amber-600 transition hover:border-amber-300">Browse star symbols →</a>
+          <a href="/symbols/flower-symbols/" class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 font-bold text-emerald-600 transition hover:border-emerald-300">Browse flower symbols →</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
