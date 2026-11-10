@@ -71,6 +71,12 @@ const related = getRelatedStyles(style.id).slice(0, 6);
 const faqs = content?.faqs ?? [];
 const longDescription = content?.longDescription ?? '';
 const examples = content?.examples ?? [];
+const symbolCollection = {
+  'hearts-text': { href: '/symbols/heart-symbols/', label: 'heart symbols', preview: '♡ ♥ 💖' },
+  'stars-text': { href: '/symbols/star-symbols/', label: 'star symbols', preview: '★ ☆ ✨' },
+  'flowers-text': { href: '/symbols/flower-symbols/', label: 'flower symbols', preview: '✿ ❀ 🌸' },
+  'crown-text': { href: '/symbols/crown-symbols/', label: 'crown symbols', preview: '♛ ♕ 👑' },
+}[style.id as 'hearts-text' | 'stars-text' | 'flowers-text' | 'crown-text'];
 
 const category = CATEGORIES_BY_ID[
   style.category === 'script' ? 'script-fonts'
@@ -139,6 +145,18 @@ const schemaList = [
       decorator={decoratorName}
       example="Hello World"
     />
+
+    {symbolCollection && (
+      <aside class="mt-6 flex flex-col gap-3 rounded-2xl border border-indigo-200 bg-indigo-50/70 p-5 dark:border-indigo-900/50 dark:bg-indigo-950/20 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="text-lg" aria-hidden="true">{symbolCollection.preview}</p>
+          <p class="mt-1 text-sm text-[var(--color-text-muted)]">Looking for individual characters instead of a framed phrase?</p>
+        </div>
+        <a href={symbolCollection.href} class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-indigo-600 px-5 py-2 text-sm font-bold text-white transition hover:bg-indigo-500">
+          Browse {symbolCollection.label} →
+        </a>
+      </aside>
+    )}
 
     {examples.length > 0 && (
       <section data-scroll="fade-up" class="mt-10">
