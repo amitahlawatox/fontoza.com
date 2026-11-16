@@ -76,7 +76,8 @@ const symbolCollection = {
   'stars-text': { href: '/symbols/star-symbols/', label: 'star symbols', preview: '★ ☆ ✨' },
   'flowers-text': { href: '/symbols/flower-symbols/', label: 'flower symbols', preview: '✿ ❀ 🌸' },
   'crown-text': { href: '/symbols/crown-symbols/', label: 'crown symbols', preview: '♛ ♕ 👑' },
-}[style.id as 'hearts-text' | 'stars-text' | 'flowers-text' | 'crown-text'];
+  'aesthetic-text': { href: '/symbols/aesthetic-symbols/', label: 'aesthetic symbols', preview: '✧ ♡ ✦' },
+}[style.id as 'hearts-text' | 'stars-text' | 'flowers-text' | 'crown-text' | 'aesthetic-text'];
 
 const category = CATEGORIES_BY_ID[
   style.category === 'script' ? 'script-fonts'

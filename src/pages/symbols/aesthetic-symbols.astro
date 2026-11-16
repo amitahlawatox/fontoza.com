@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import SymbolExplorer from '../../components/symbols/SymbolExplorer';
+import { aestheticSymbols } from '../../lib/symbols';
+import { siteUrl } from '../../lib/site';
+
+const title = 'Aesthetic Symbols Copy and Paste - Cute & Decorative | Fontoza';
+const description = 'Search and copy aesthetic symbols, sparkles, hearts, flowers, brackets and text dividers. Create readable bios, captions and display names in one tap.';
+const canonical = siteUrl('/symbols/aesthetic-symbols/');
+const faqs = [
+  { question: 'What are aesthetic symbols?', answer: 'Aesthetic symbols are Unicode characters and short text arrangements used to decorate names, bios, captions and messages. They are text, so you can copy and paste them without installing a font.' },
+  { question: 'Can I use aesthetic symbols in an Instagram or TikTok bio?', answer: 'Most common Unicode symbols work in Instagram and TikTok bios. Display can vary by device, and very long decorative strings may use valuable character space.' },
+  { question: 'Why does an aesthetic symbol appear as a box?', answer: 'The receiving device or app may not include a font for that character. Try a simpler symbol such as a heart, star, dot or standard bracket.' },
+  { question: 'Are aesthetic dividers accessible?', answer: 'Screen readers may announce each character separately. Use dividers as decoration only, keep important information in ordinary text and avoid long symbol strings around essential links or instructions.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'CollectionPage', name: 'Aesthetic Symbols Copy and Paste', description, url: canonical, isPartOf: { '@type': 'WebSite', name: 'Fontoza', url: siteUrl('/') } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl('/') },
+      { '@type': 'ListItem', position: 2, name: 'Symbols', item: siteUrl('/symbols/') },
+      { '@type': 'ListItem', position: 3, name: 'Aesthetic Symbols', item: canonical },
+    ] },
+    { '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} ogImage={siteUrl('/og-image.png')} schema={schema}>
+  <Header />
+  <main id="main-content">
+    <section class="bg-gradient-to-b from-fuchsia-50/90 via-violet-50/50 to-transparent py-12 dark:from-fuchsia-950/20 dark:via-violet-950/10 dark:to-transparent sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Symbols', href: '/symbols/' }, { label: 'Aesthetic Symbols' }]} />
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="text-5xl" aria-hidden="true">✧ ♡ ✦</div>
+          <h1 class="mt-4 text-4xl font-black tracking-tight text-[var(--color-text)] sm:text-5xl">Aesthetic Symbols to Copy and Paste</h1>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">Find sparkles, hearts, flowers, brackets, dots and ready-made dividers. Search by style and copy a character or complete decoration in one tap.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <SymbolExplorer items={aestheticSymbols} collection="aesthetic" searchPlaceholder="Search sparkle, heart, flower, bracket, divider..." client:load />
+
+      <section class="mx-auto mt-14 max-w-4xl space-y-10 text-[var(--color-text-muted)]">
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Choose a decoration that stays readable</h2>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Sparkles and stars: ✧ ⋆ ✦</h3><p class="mt-2 text-sm leading-relaxed">Use one sparkle before or after a name to add emphasis without overwhelming the words. Outline symbols usually feel lighter than solid stars.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Hearts and flowers: ♡ ✿ ꕤ</h3><p class="mt-2 text-sm leading-relaxed">These suit soft, romantic, friendship and nature themes. Keep dates, contact details and calls to action in normal text.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Dots and marks: · ◦ ∼</h3><p class="mt-2 text-sm leading-relaxed">Small marks separate short phrases without taking much space. They are useful in compact profile descriptions and simple display names.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Brackets and dividers</h3><p class="mt-2 text-sm leading-relaxed">Brackets frame a short name, while dividers separate sections in notes or captions. Preview the result in the destination app before publishing.</p></article>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Aesthetic symbol ideas</h2>
+          <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="block text-[var(--color-text)]">Soft profile name</strong><span class="mt-1 block text-sm">✧ Maya ✧</span></li>
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="block text-[var(--color-text)]">Short bio separator</strong><span class="mt-1 block text-sm">art · music · travel</span></li>
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="block text-[var(--color-text)]">Framed display name</strong><span class="mt-1 block text-sm">〈 Luna 〉</span></li>
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="block text-[var(--color-text)]">Caption divider</strong><span class="mt-1 block text-sm">── ✦ ──</span></li>
+          </ul>
+          <p class="mt-4 leading-relaxed">Want to transform every letter as well? Try the <a href="/fonts/aesthetic-text/" class="font-semibold text-fuchsia-600 underline decoration-fuchsia-300 underline-offset-2 hover:text-fuchsia-500">aesthetic text generator</a>. Use this page when you need individual decorative characters or dividers.</p>
+        </div>
+
+        <div class="rounded-3xl border border-amber-200 bg-amber-50/70 p-6 dark:border-amber-900/50 dark:bg-amber-950/20">
+          <h2 class="text-xl font-black text-[var(--color-text)]">Compatibility and accessibility</h2>
+          <p class="mt-2 leading-relaxed">Unicode appearance depends on the receiving font and operating system. A symbol can be wider, thinner or missing on another device. Use decoration sparingly, and never rely on symbols alone to explain an action or important message.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Aesthetic symbol questions</h2>
+          <div class="mt-4 space-y-3">
+            {faqs.map(faq => (
+              <details class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+                <summary class="cursor-pointer font-bold text-[var(--color-text)]">{faq.question}</summary>
+                <p class="mt-3 text-sm leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <a href="/symbols/star-symbols/" class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 font-bold text-amber-600 transition hover:border-amber-300">Browse star symbols <span aria-hidden="true">→</span></a>
+          <a href="/symbols/flower-symbols/" class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 font-bold text-emerald-600 transition hover:border-emerald-300">Browse flower symbols <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

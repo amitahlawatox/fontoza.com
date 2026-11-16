@@ -1,18 +1,36 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import CopyButton from '../tool/CopyButton';
 import type { SymbolItem } from '../../lib/symbols';
 
 interface Props {
   items: SymbolItem[];
+  collection?: string;
   searchPlaceholder?: string;
+}
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+function sendAnalyticsEvent(name: string, parameters: Record<string, string>) {
+  try {
+    if (localStorage.getItem('fontoza-cookie-consent') !== 'accepted') return;
+    window.gtag?.('event', name, parameters);
+  } catch {
+    // Analytics is optional and must never interrupt the symbol tool.
+  }
 }
 
 export default function SymbolExplorer({
   items,
+  collection = 'symbols',
   searchPlaceholder = 'Search by name, colour, or style',
 }: Props) {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
+  const searchTrackedRef = useRef(false);
   const categories = useMemo(() => ['All', ...new Set(items.map(item => item.category))], [items]);
 
   const filtered = useMemo(() => {
@@ -48,7 +66,14 @@ export default function SymbolExplorer({
           <input
             type="search"
             value={query}
-            onChange={event => setQuery(event.target.value)}
+            onChange={event => {
+              const nextQuery = event.target.value;
+              setQuery(nextQuery);
+              if (!searchTrackedRef.current && nextQuery.trim().length >= 2) {
+                searchTrackedRef.current = true;
+                sendAnalyticsEvent('symbol_search', { symbol_collection: collection });
+              }
+            }}
             placeholder={searchPlaceholder}
             className="min-h-12 w-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] py-3 pl-11 pr-4 text-base text-[var(--color-text)] outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
           />
@@ -60,7 +85,10 @@ export default function SymbolExplorer({
           <button
             type="button"
             key={value}
-            onClick={() => setCategory(value)}
+            onClick={() => {
+              setCategory(value);
+              sendAnalyticsEvent('symbol_filter', { symbol_collection: collection, symbol_category: value });
+            }}
             aria-pressed={category === value}
             className={`min-h-11 shrink-0 rounded-full px-4 py-2 text-sm font-bold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
               category === value
@@ -82,7 +110,15 @@ export default function SymbolExplorer({
                 <h3 className="mt-2 line-clamp-2 text-xs font-semibold leading-snug text-[var(--color-text-muted)]">{item.name}</h3>
               </div>
               <div className="mt-3 flex items-center gap-2">
-                <CopyButton text={item.symbol} label={`Copy ${item.name}`} />
+                <CopyButton
+                  text={item.symbol}
+                  label={`Copy ${item.name}`}
+                  onCopied={() => sendAnalyticsEvent('symbol_copy', {
+                    symbol_collection: collection,
+                    symbol_name: item.name,
+                    symbol_category: item.category,
+                  })}
+                />
                 <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">Copy</span>
               </div>
             </article>

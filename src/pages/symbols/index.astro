@@ -7,8 +7,8 @@ import SymbolExplorer from '../../components/symbols/SymbolExplorer';
 import { featuredSymbols } from '../../lib/symbols';
 import { siteUrl } from '../../lib/site';
 
-const title = 'Copy and Paste Symbols - Hearts, Stars & More | Fontoza';
-const description = 'Search and copy heart, star, flower, crown and decorative symbols in one tap. Free, mobile-friendly symbol finder with no sign-up required.';
+const title = 'Copy and Paste Symbols - Hearts, Arrows & More | Fontoza';
+const description = 'Search and copy heart, star, flower, crown, aesthetic and arrow symbols in one tap. Free, mobile-friendly Unicode symbol finder.';
 const canonical = siteUrl('/symbols/');
 const schema = {
   '@context': 'https://schema.org',
@@ -51,7 +51,7 @@ const schema = {
     </section>
 
     <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
-      <SymbolExplorer items={featuredSymbols} searchPlaceholder="Search featured hearts, stars, flowers, and crowns" client:load />
+      <SymbolExplorer items={featuredSymbols} collection="featured" searchPlaceholder="Search featured hearts, stars, flowers, crowns, aesthetic symbols and arrows" client:load />
 
       <section class="mt-14" aria-labelledby="symbol-categories">
         <div class="text-center">
@@ -82,6 +82,18 @@ const schema = {
             <h3 class="mt-4 text-2xl font-black text-[var(--color-text)] group-hover:text-purple-600">Crown Symbols</h3>
             <p class="mt-2 leading-relaxed text-[var(--color-text-muted)]">King and queen chess crowns, royal emoji, heraldic accents and decorative frames for names and profiles.</p>
             <span class="mt-5 inline-flex min-h-11 items-center font-bold text-purple-600">Explore crown symbols <span aria-hidden="true" class="ml-2 transition group-hover:translate-x-1">→</span></span>
+          </a>
+          <a href="/symbols/aesthetic-symbols/" class="card-hover group rounded-3xl border border-fuchsia-200 bg-gradient-to-br from-fuchsia-50 to-violet-50 p-7 transition dark:border-fuchsia-900/50 dark:from-fuchsia-950/20 dark:to-violet-950/20">
+            <div class="text-4xl" aria-hidden="true">✧ ♡ ✦</div>
+            <h3 class="mt-4 text-2xl font-black text-[var(--color-text)] group-hover:text-fuchsia-600">Aesthetic Symbols</h3>
+            <p class="mt-2 leading-relaxed text-[var(--color-text-muted)]">Sparkles, hearts, flowers, brackets, dots and ready-made dividers for readable bios, captions and display names.</p>
+            <span class="mt-5 inline-flex min-h-11 items-center font-bold text-fuchsia-600">Explore aesthetic symbols <span aria-hidden="true" class="ml-2 transition group-hover:translate-x-1">→</span></span>
+          </a>
+          <a href="/symbols/arrow-symbols/" class="card-hover group rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-cyan-50 p-7 transition dark:border-sky-900/50 dark:from-sky-950/20 dark:to-cyan-950/20">
+            <div class="text-4xl" aria-hidden="true">← ↑ →</div>
+            <h3 class="mt-4 text-2xl font-black text-[var(--color-text)] group-hover:text-sky-600">Arrow Symbols</h3>
+            <p class="mt-2 leading-relaxed text-[var(--color-text-muted)]">Left, right, up, down, diagonal, double, long and curved arrows for directions, labels and decorative text.</p>
+            <span class="mt-5 inline-flex min-h-11 items-center font-bold text-sky-600">Explore arrow symbols <span aria-hidden="true" class="ml-2 transition group-hover:translate-x-1">→</span></span>
           </a>
         </div>
       </section>
