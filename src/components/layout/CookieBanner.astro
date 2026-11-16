@@ -56,6 +56,9 @@
       if (typeof window.__fontozaSetAnalyticsConsent === 'function') {
         window.__fontozaSetAnalyticsConsent(value === 'accepted');
       }
+      if (value === 'accepted' && typeof window.gtag === 'function') {
+        window.gtag('event', 'consent_accept', { consent_method: 'cookie_banner' });
+      }
     }
 
     var acceptBtn = document.getElementById('cookie-accept');

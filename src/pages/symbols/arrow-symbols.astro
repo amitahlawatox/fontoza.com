@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+import SymbolExplorer from '../../components/symbols/SymbolExplorer';
+import { arrowSymbols } from '../../lib/symbols';
+import { siteUrl } from '../../lib/site';
+
+const title = 'Arrow Symbols Copy and Paste - Left, Right, Up & Down | Fontoza';
+const description = 'Search and copy arrow symbols for left, right, up, down, diagonal, double, long and curved directions. Find the Unicode arrow you need in one tap.';
+const canonical = siteUrl('/symbols/arrow-symbols/');
+const faqs = [
+  { question: 'How do I copy an arrow symbol?', answer: 'Find the direction and style you need, then press its Copy button. Paste the arrow into any app or field that accepts Unicode text.' },
+  { question: 'What is the difference between an arrow symbol and an arrow emoji?', answer: 'Text arrows such as → and ⇒ usually follow the surrounding font and often appear in one colour. Arrow emoji may use colourful artwork that varies more between platforms.' },
+  { question: 'Which arrow should I use for a link or instruction?', answer: 'A simple arrow such as →, ←, ↑ or ↓ is usually easiest to recognise. Include a written label as well when the direction is important.' },
+  { question: 'Do arrow symbols work on phones?', answer: 'Common Unicode arrows work on modern phones, browsers and social platforms. Decorative and very long arrows may look different depending on the device font.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'CollectionPage', name: 'Arrow Symbols Copy and Paste', description, url: canonical, isPartOf: { '@type': 'WebSite', name: 'Fontoza', url: siteUrl('/') } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl('/') },
+      { '@type': 'ListItem', position: 2, name: 'Symbols', item: siteUrl('/symbols/') },
+      { '@type': 'ListItem', position: 3, name: 'Arrow Symbols', item: canonical },
+    ] },
+    { '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} ogImage={siteUrl('/og-image.png')} schema={schema}>
+  <Header />
+  <main id="main-content">
+    <section class="bg-gradient-to-b from-sky-50/90 via-cyan-50/40 to-transparent py-12 dark:from-sky-950/20 dark:via-cyan-950/10 dark:to-transparent sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Symbols', href: '/symbols/' }, { label: 'Arrow Symbols' }]} />
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="text-5xl" aria-hidden="true">← ↑ →</div>
+          <h1 class="mt-4 text-4xl font-black tracking-tight text-[var(--color-text)] sm:text-5xl">Arrow Symbols to Copy and Paste</h1>
+          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">Browse left, right, up, down, diagonal, double, long and curved arrows. Search by direction or style, then copy your choice in one tap.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <SymbolExplorer items={arrowSymbols} collection="arrow" searchPlaceholder="Search left, right, up, down, curved, double..." client:load />
+
+      <section class="mx-auto mt-14 max-w-4xl space-y-10 text-[var(--color-text-muted)]">
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Arrow symbol types</h2>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Basic arrows: ← ↑ → ↓</h3><p class="mt-2 text-sm leading-relaxed">These familiar arrows work well for simple directions, previous and next labels, or indicating content above and below.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Double arrows: ⇐ ⇒ ⇔</h3><p class="mt-2 text-sm leading-relaxed">Double-line arrows are common in mathematics and logic. In decorative text they add more visual weight than a basic arrow.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Long arrows: ⟵ ⟶ ⟷</h3><p class="mt-2 text-sm leading-relaxed">Long arrows create extra separation between two short labels. Their width can vary with the receiving font.</p></article>
+            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"><h3 class="font-bold text-[var(--color-text)]">Curved arrows: ↩ ↪ ↻</h3><p class="mt-2 text-sm leading-relaxed">Hook and circular arrows can suggest return, reply, undo, redo or rotation. Add words when the exact action matters.</p></article>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Useful arrow examples</h2>
+          <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="block text-[var(--color-text)]">Continue or next</strong><span class="mt-1 block text-sm">Read more →</span></li>
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="block text-[var(--color-text)]">Return or previous</strong><span class="mt-1 block text-sm">← Back to the guide</span></li>
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="block text-[var(--color-text)]">Point upward</strong><span class="mt-1 block text-sm">↑ See the example above</span></li>
+            <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="block text-[var(--color-text)]">Show a two-way relationship</strong><span class="mt-1 block text-sm">draft ↔ review</span></li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-amber-200 bg-amber-50/70 p-6 dark:border-amber-900/50 dark:bg-amber-950/20">
+          <h2 class="text-xl font-black text-[var(--color-text)]">Use a text label with important arrows</h2>
+          <p class="mt-2 leading-relaxed">An arrow alone may be ambiguous to screen-reader users or people unfamiliar with the layout. For navigation and instructions, pair it with a clear label such as “Next”, “Back” or “Scroll down”. Decorative arrows should not be the only cue.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-[var(--color-text)]">Arrow symbol questions</h2>
+          <div class="mt-4 space-y-3">
+            {faqs.map(faq => (
+              <details class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+                <summary class="cursor-pointer font-bold text-[var(--color-text)]">{faq.question}</summary>
+                <p class="mt-3 text-sm leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <a href="/symbols/aesthetic-symbols/" class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 font-bold text-fuchsia-600 transition hover:border-fuchsia-300">Browse aesthetic symbols <span aria-hidden="true">→</span></a>
+          <a href="/symbols/" class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 font-bold text-indigo-600 transition hover:border-indigo-300">Browse every symbol collection <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
