@@ -47,6 +47,7 @@ function getDecoratorName(style: StyleDefinition): string | undefined {
 }
 
 const platformStyles = STYLES.filter((s) => platform.supportedStyleIds.includes(s.id));
+const otherPlatforms = PLATFORMS.filter((item) => item.id !== platform.id);
 
 const serializedStyles = platformStyles.map((style) => ({
   id: style.id,
@@ -140,6 +141,26 @@ const schemaList = [
         </ul>
       </section>
     )}
+
+    <section class="mt-12">
+      <h2 class="mb-2 text-xl font-bold text-[var(--color-text)]">Font tools for other platforms</h2>
+      <p class="mb-5 text-sm leading-relaxed text-[var(--color-text-muted)]">
+        Each app has different profile fields and limits. Open the matching guide before you paste your text.
+      </p>
+      <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {otherPlatforms.map((item) => (
+          <li>
+            <a
+              href={`/platform/${item.id}/`}
+              class="group flex min-h-16 items-center gap-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 transition-all hover:border-indigo-400 hover:shadow-sm"
+            >
+              <span class="text-xl" aria-hidden="true">{item.icon}</span>
+              <span class="text-sm font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)]">{item.name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
 
     <div class="mt-10">
       <AdSlot slot="bottom" />
