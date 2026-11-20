@@ -6,7 +6,8 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 import AdSlot from '../../components/ads/AdSlot.astro';
 import TextCaseConverter from '../../components/tools/TextCaseConverter';
 import { generateToolMeta } from '../../lib/seo/meta';
-import { webApplicationSchema } from '../../lib/seo/schema';
+import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+import { siteUrl } from '../../lib/site';
 
 const meta = generateToolMeta({
   id: 'text-case-converter',
@@ -14,11 +15,38 @@ const meta = generateToolMeta({
   description: 'Convert text to uppercase, lowercase, title case, sentence case, alternating case, camelCase, and snake_case instantly.',
 });
 
-const schema = webApplicationSchema({
-  name: 'Text Case Converter — Fontoza',
-  description: meta.description,
-  url: meta.canonical,
-});
+const faqs = [
+  {
+    question: 'Does the case converter upload or save my text?',
+    answer: 'No. All seven conversions run in your browser, and the text you enter is not sent to Fontoza or added to analytics.',
+  },
+  {
+    question: 'What is the difference between Title Case and Sentence case?',
+    answer: 'Title Case capitalizes the first letter of each word. Sentence case capitalizes the start of a sentence while leaving most other words lowercase.',
+  },
+  {
+    question: 'When should I use camelCase or snake_case?',
+    answer: 'camelCase is common for identifiers in JavaScript and many APIs. snake_case is common in Python, database fields, and filenames. Always follow the convention required by your project.',
+  },
+  {
+    question: 'Will case conversion change punctuation or emoji?',
+    answer: 'Uppercase, lowercase, Title Case, Sentence case, and alternating case preserve punctuation and emoji. camelCase and snake_case intentionally remove or replace separators to produce identifier-style text.',
+  },
+];
+
+const schema = [
+  webApplicationSchema({
+    name: 'Text Case Converter - Fontoza',
+    description: meta.description,
+    url: meta.canonical,
+  }),
+  faqPageSchema(faqs),
+  breadcrumbSchema([
+    { name: 'Home', url: siteUrl('/') },
+    { name: 'Tools', url: siteUrl('/tools/') },
+    { name: 'Text Case Converter', url: meta.canonical },
+  ]),
+];
 ---
 
 <Layout
@@ -41,18 +69,43 @@ const schema = webApplicationSchema({
 
     <AdSlot slot="bottom" />
 
-    <section class="mt-12 space-y-4 text-sm text-[var(--color-text-muted)]">
+    <section class="mt-12 space-y-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
       <h2 class="text-xl font-bold text-[var(--color-text)]">When to Use Each Case</h2>
-      <ul class="space-y-2 list-disc list-inside">
-        <li><strong class="text-[var(--color-text)]">UPPERCASE:</strong> Headlines, emphasis, acronyms, shouting on the internet</li>
-        <li><strong class="text-[var(--color-text)]">lowercase:</strong> Casual writing, social media captions, modern minimalist style</li>
-        <li><strong class="text-[var(--color-text)]">Title Case:</strong> Titles, headings, product names, proper formatting</li>
-        <li><strong class="text-[var(--color-text)]">Sentence case:</strong> Standard prose, emails, articles, most body text</li>
-        <li><strong class="text-[var(--color-text)]">aLtErNaTiNg:</strong> Sarcastic tone, memes, ironic commentary</li>
-        <li><strong class="text-[var(--color-text)]">camelCase:</strong> JavaScript variables, API keys, function names</li>
-        <li><strong class="text-[var(--color-text)]">snake_case:</strong> Python variables, database columns, file names</li>
+      <ul class="grid gap-3 sm:grid-cols-2">
+        <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="text-[var(--color-text)]">UPPERCASE:</strong> Short labels, acronyms, and deliberate emphasis. Long uppercase passages are harder to scan.</li>
+        <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="text-[var(--color-text)]">lowercase:</strong> Casual captions, minimalist display text, or normalizing text copied from an all-caps source.</li>
+        <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="text-[var(--color-text)]">Title Case:</strong> A quick starting point for headings, titles, and product names. Review small words against your chosen style guide.</li>
+        <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="text-[var(--color-text)]">Sentence case:</strong> Emails, articles, descriptions, and most body text where only sentence openings need capitals.</li>
+        <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="text-[var(--color-text)]">aLtErNaTiNg:</strong> Memes and playful commentary. Avoid it for essential instructions or accessibility-sensitive text.</li>
+        <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="text-[var(--color-text)]">camelCase:</strong> Code identifiers such as JavaScript variables and function names; spaces and separators are removed.</li>
+        <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"><strong class="text-[var(--color-text)]">snake_case:</strong> Python variables, database columns, and filenames where words are separated by underscores.</li>
       </ul>
+      <p class="pt-2">The converter gives you a quick mechanical result. Names, acronyms, brand capitalization, and editorial style rules may need a final manual review.</p>
     </section>
+
+    <section class="mt-12">
+      <h2 class="mb-5 text-xl font-bold text-[var(--color-text)]">Frequently asked questions</h2>
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <details class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-[var(--color-text)]">
+              {faq.question}
+              <span class="ml-4 text-[var(--color-text-muted)] transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <nav class="mt-12 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5" aria-label="Related text tools">
+      <h2 class="text-lg font-bold text-[var(--color-text)]">More useful text tools</h2>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href="/tools/word-counter/" class="rounded-xl border border-[var(--color-border)] px-4 py-2 text-sm font-semibold text-[var(--color-text)] hover:border-indigo-400 hover:text-[var(--color-accent)]">Word Counter</a>
+        <a href="/tools/character-counter/" class="rounded-xl border border-[var(--color-border)] px-4 py-2 text-sm font-semibold text-[var(--color-text)] hover:border-indigo-400 hover:text-[var(--color-accent)]">Character Counter</a>
+        <a href="/fonts/" class="rounded-xl border border-[var(--color-border)] px-4 py-2 text-sm font-semibold text-[var(--color-text)] hover:border-indigo-400 hover:text-[var(--color-accent)]">Browse Font Styles</a>
+      </div>
+    </nav>
   </main>
   <Footer />
 </Layout>

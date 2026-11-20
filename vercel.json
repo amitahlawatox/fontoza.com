@@ -36,7 +36,16 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400"
+          "value": "public, max-age=0, s-maxage=3600"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap-0.xml",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=3600"
         }
       ]
     },
