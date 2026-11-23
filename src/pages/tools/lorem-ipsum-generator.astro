@@ -6,7 +6,7 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 import AdSlot from '../../components/ads/AdSlot.astro';
 import LoremIpsum from '../../components/tools/LoremIpsum';
 import { generateToolMeta } from '../../lib/seo/meta';
-import { webApplicationSchema } from '../../lib/seo/schema';
+import { webPageSchema } from '../../lib/seo/schema';
 
 const meta = generateToolMeta({
   id: 'lorem-ipsum-generator',
@@ -14,7 +14,7 @@ const meta = generateToolMeta({
   description: 'Generate Lorem Ipsum placeholder text with custom paragraph count, word length, and output format (plain text, HTML, or Markdown).',
 });
 
-const schema = webApplicationSchema({
+const schema = webPageSchema({
   name: 'Lorem Ipsum Generator — Fontoza',
   description: meta.description,
   url: meta.canonical,
@@ -37,7 +37,7 @@ const schema = webApplicationSchema({
       Generate Lorem Ipsum placeholder text for mockups, design prototypes, and content templates. Choose the number of paragraphs, words per paragraph, and output format.
     </p>
 
-    <LoremIpsum client:load />
+    <LoremIpsum client:idle />
 
     <AdSlot slot="bottom" />
 

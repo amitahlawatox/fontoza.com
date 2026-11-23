@@ -9,7 +9,7 @@ import { PLATFORMS } from '../../lib/platforms';
 import { STYLES } from '../../lib/registry';
 import type { StyleDefinition } from '../../lib/registry';
 import { generatePlatformMeta } from '../../lib/seo/meta';
-import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+import { webPageSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
 import { siteUrl } from '../../lib/site';
 
 export async function getStaticPaths() {
@@ -82,7 +82,7 @@ const faqs = [
 ];
 
 const schemaList = [
-  webApplicationSchema({
+  webPageSchema({
     name: platform.name,
     description: meta.description,
     url: meta.canonical,
@@ -119,7 +119,7 @@ const schemaList = [
     </p>
 
     <!-- FontConverter filtered to this platform's styles -->
-    <FontConverter client:load styles={serializedStyles} />
+    <FontConverter client:idle styles={serializedStyles} />
 
     <div class="mt-10">
       <AdSlot slot="mid" />

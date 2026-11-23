@@ -11,7 +11,7 @@ import { CATEGORIES_BY_ID } from '../../lib/categories';
 import { STYLE_CONTENT } from '../../lib/content';
 import { transform } from '../../lib/unicode/transform';
 import { generateStyleMeta } from '../../lib/seo/meta';
-import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+import { webPageSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
 import { siteUrl } from '../../lib/site';
 
 export async function getStaticPaths() {
@@ -106,7 +106,7 @@ const breadcrumbItems = [
 ];
 
 const schemaList = [
-  webApplicationSchema({
+  webPageSchema({
     name: `${style.name} Generator`,
     description: meta.description,
     url: meta.canonical,
@@ -139,7 +139,7 @@ const schemaList = [
 
     <!-- Main converter -->
     <SingleStyleConverter
-      client:load
+      client:idle
       styleId={style.id}
       styleName={style.name}
       map={style.map as Record<string, string>}

@@ -35,8 +35,8 @@ type SmartFilter =
 
 const FAVOURITES_KEY = 'fontoza_favourite_styles';
 const RECENT_KEY = 'fontoza_recent_styles';
-const INITIAL_VISIBLE = 24;
-const LOAD_MORE_COUNT = 24;
+const INITIAL_VISIBLE = 12;
+const LOAD_MORE_COUNT = 12;
 
 const SMART_FILTERS: Array<{ id: SmartFilter; label: string; icon: string }> = [
   { id: 'all', label: 'All', icon: '✦' },
