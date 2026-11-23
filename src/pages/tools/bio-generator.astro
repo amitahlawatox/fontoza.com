@@ -6,7 +6,7 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 import AdSlot from '../../components/ads/AdSlot.astro';
 import BioGenerator from '../../components/tools/BioGenerator';
 import { generateToolMeta } from '../../lib/seo/meta';
-import { webApplicationSchema } from '../../lib/seo/schema';
+import { webPageSchema } from '../../lib/seo/schema';
 
 const meta = generateToolMeta({
   id: 'bio-generator',
@@ -14,7 +14,7 @@ const meta = generateToolMeta({
   description: 'Generate Instagram and TikTok bio templates from your name and keywords. Get 8 ready-to-use bio ideas instantly.',
 });
 
-const schema = webApplicationSchema({
+const schema = webPageSchema({
   name: 'Bio Generator — Fontoza',
   description: meta.description,
   url: meta.canonical,
@@ -37,7 +37,7 @@ const schema = webApplicationSchema({
       Enter your name and a few keywords about your niche, and get 8 ready-to-copy Instagram or TikTok bio templates. Combine with our <a href="/" class="text-indigo-500 hover:underline">fancy text generator</a> for an even more unique profile.
     </p>
 
-    <BioGenerator client:load />
+    <BioGenerator client:idle />
 
     <AdSlot slot="bottom" />
 

@@ -81,7 +81,7 @@ const styleDirectory = [...STYLES].sort((a, b) => a.name.localeCompare(b.name));
 
         <!-- Font Converter -->
         <div class="animate-fade-up-delay-2">
-          <FontConverter client:load styles={serializedStyles} showCreatorStudio={true} />
+          <FontConverter client:idle styles={serializedStyles} showCreatorStudio={true} />
         </div>
       </div>
     </section>

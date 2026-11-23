@@ -6,7 +6,7 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 import AdSlot from '../../components/ads/AdSlot.astro';
 import TextCaseConverter from '../../components/tools/TextCaseConverter';
 import { generateToolMeta } from '../../lib/seo/meta';
-import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+import { webPageSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
 import { siteUrl } from '../../lib/site';
 
 const meta = generateToolMeta({
@@ -35,7 +35,7 @@ const faqs = [
 ];
 
 const schema = [
-  webApplicationSchema({
+  webPageSchema({
     name: 'Text Case Converter - Fontoza',
     description: meta.description,
     url: meta.canonical,
@@ -65,7 +65,7 @@ const schema = [
       Instantly convert your text to UPPERCASE, lowercase, Title Case, Sentence case, aLtErNaTiNg, camelCase, or snake_case.
     </p>
 
-    <TextCaseConverter client:load />
+    <TextCaseConverter client:idle />
 
     <AdSlot slot="bottom" />
 

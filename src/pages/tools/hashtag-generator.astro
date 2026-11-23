@@ -6,7 +6,7 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 import AdSlot from '../../components/ads/AdSlot.astro';
 import HashtagGenerator from '../../components/tools/HashtagGenerator';
 import { generateToolMeta } from '../../lib/seo/meta';
-import { webApplicationSchema } from '../../lib/seo/schema';
+import { webPageSchema } from '../../lib/seo/schema';
 
 const meta = generateToolMeta({
   id: 'hashtag-generator',
@@ -14,7 +14,7 @@ const meta = generateToolMeta({
   description: 'Input a topic and get 30 relevant hashtags grouped by reach size: mega, macro, and micro.',
 });
 
-const schema = webApplicationSchema({
+const schema = webPageSchema({
   name: 'Hashtag Generator — Fontoza',
   description: meta.description,
   url: meta.canonical,
@@ -37,7 +37,7 @@ const schema = webApplicationSchema({
       Enter your topic or niche to get 30 relevant hashtags, organized by reach (mega, macro, and micro). A balanced mix of all three gives the best visibility on Instagram and TikTok.
     </p>
 
-    <HashtagGenerator client:load />
+    <HashtagGenerator client:idle />
 
     <AdSlot slot="bottom" />
 

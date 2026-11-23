@@ -6,7 +6,7 @@ import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
 import AdSlot from '../../components/ads/AdSlot.astro';
 import WordCounter from '../../components/tools/WordCounter';
 import { generateToolMeta } from '../../lib/seo/meta';
-import { webApplicationSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
+import { webPageSchema, faqPageSchema, breadcrumbSchema } from '../../lib/seo/schema';
 import { siteUrl } from '../../lib/site';
 
 const meta = generateToolMeta({
@@ -35,7 +35,7 @@ const faqs = [
 ];
 
 const schema = [
-  webApplicationSchema({
+  webPageSchema({
     name: 'Word Counter - Fontoza',
     description: meta.description,
     url: meta.canonical,
@@ -65,7 +65,7 @@ const schema = [
       Paste or type your text to instantly count words, characters (with and without spaces), sentences, paragraphs, and estimated reading time.
     </p>
 
-    <WordCounter client:load />
+    <WordCounter client:idle />
 
     <AdSlot slot="bottom" />
 

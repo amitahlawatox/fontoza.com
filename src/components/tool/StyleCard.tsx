@@ -42,7 +42,9 @@ export default function StyleCard({
           rel="noopener noreferrer"
           className="absolute inset-0 z-10 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500"
           aria-label={`Open ${styleName} generator in a new tab`}
-        />
+        >
+          <span className="sr-only">Open {styleName} generator</span>
+        </a>
       )}
 
       <div className="pointer-events-none relative z-20 flex items-center justify-between gap-2">

@@ -2,25 +2,21 @@ import { SITE_ORIGIN, siteUrl } from '../site';
 
 const SITE_NAME = 'Fontoza';
 
-export function webApplicationSchema(opts: {
+export function webPageSchema(opts: {
   name: string;
   description: string;
   url: string;
-  screenshot?: string;
 }): object {
-  const schema: Record<string, unknown> = {
+  return {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': 'WebPage',
     name: opts.name,
     description: opts.description,
     url: opts.url,
-    applicationCategory: 'UtilitiesApplication',
-    operatingSystem: 'Any',
-    browserRequirements: 'Requires JavaScript',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: siteUrl('/'),
     },
     publisher: {
       '@type': 'Organization',
@@ -28,14 +24,7 @@ export function webApplicationSchema(opts: {
       url: SITE_ORIGIN,
     },
   };
-
-  if (opts.screenshot) {
-    schema.screenshot = opts.screenshot;
-  }
-
-  return schema;
 }
-
 export function faqPageSchema(
   faqs: Array<{ question: string; answer: string }>
 ): object {
@@ -76,32 +65,6 @@ export function webSiteSchema(): object {
     url: siteUrl('/'),
     description:
       'Free fancy text generator with 50+ Unicode font styles. Copy and paste cursive, bold, gothic, italic, and aesthetic text for Instagram, TikTok, Discord, and more.',
-    publisher: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      url: SITE_ORIGIN,
-    },
-  };
-}
-
-export function softwareAppSchema(opts: {
-  name: string;
-  description: string;
-  url: string;
-}): object {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: opts.name,
-    description: opts.description,
-    url: opts.url,
-    applicationCategory: 'UtilitiesApplication',
-    operatingSystem: 'Any',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,

@@ -2,10 +2,11 @@
 const measurementId = 'G-X8VZTX5Y8T';
 ---
 
-<!-- Google tag (gtag.js) with analytics consent denied by default. -->
+<!-- Load Google Analytics only after explicit consent. -->
 <script is:inline define:vars={{ measurementId }}>
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  var analyticsLoaded = false;
 
   window.gtag('consent', 'default', {
     ad_storage: 'denied',
@@ -17,6 +18,22 @@ const measurementId = 'G-X8VZTX5Y8T';
 
   window.gtag('set', 'ads_data_redaction', true);
 
+  function loadAnalytics() {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+    document.head.appendChild(script);
+
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+    });
+  }
+
   window.__fontozaSetAnalyticsConsent = function (granted) {
     window.gtag('consent', 'update', {
       ad_storage: 'denied',
@@ -24,6 +41,7 @@ const measurementId = 'G-X8VZTX5Y8T';
       ad_personalization: 'denied',
       analytics_storage: granted ? 'granted' : 'denied',
     });
+    if (granted) loadAnalytics();
   };
 
   try {
@@ -31,12 +49,4 @@ const measurementId = 'G-X8VZTX5Y8T';
       window.__fontozaSetAnalyticsConsent(true);
     }
   } catch (error) {}
-</script>
-<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-<script is:inline define:vars={{ measurementId }}>
-  window.gtag('js', new Date());
-  window.gtag('config', measurementId, {
-    allow_google_signals: false,
-    allow_ad_personalization_signals: false,
-  });
 </script>

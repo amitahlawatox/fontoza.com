@@ -8,14 +8,14 @@ import { STYLES } from '../lib/registry';
 import type { StyleDefinition } from '../lib/registry';
 import { CATEGORIES } from '../lib/categories';
 import { getHomeMeta } from '../lib/seo/meta';
-import { webSiteSchema, webApplicationSchema } from '../lib/seo/schema';
+import { webSiteSchema, webPageSchema } from '../lib/seo/schema';
 import { siteUrl } from '../lib/site';
 
 const meta = getHomeMeta();
 
 const schema = [
   webSiteSchema(),
-  webApplicationSchema({
+  webPageSchema({
     name: 'Fontoza — Fancy Text Generator',
     description: meta.description,
     url: siteUrl('/'),
@@ -177,7 +177,7 @@ const platformBadges = [
         <div class="animate-fade-up-delay-3">
           <div class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-2xl shadow-indigo-500/5 sm:p-8"
                style="box-shadow: 0 32px 80px rgba(99,102,241,0.08), 0 4px 16px rgba(0,0,0,0.06);">
-            <FontConverter client:load styles={serializedStyles} showCreatorStudio={true} />
+            <FontConverter client:idle styles={serializedStyles} showCreatorStudio={true} />
           </div>
         </div>
 
