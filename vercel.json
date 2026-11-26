@@ -61,6 +61,11 @@
   ],
   "redirects": [
     {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -767,11 +772,6 @@
     },
     {
       "source": "/fonts/gothic-flowers/",
-      "destination": "/fonts/gothic-font/",
-      "permanent": true
-    },
-    {
-      "source": "/fonts/gothic-hearts/",
       "destination": "/fonts/gothic-font/",
       "permanent": true
     },
@@ -1582,16 +1582,6 @@
     },
     {
       "source": "/fonts/sans-serif-stars/",
-      "destination": "/fonts/sans-serif-font/",
-      "permanent": true
-    },
-    {
-      "source": "/fonts/sans-serif-strikethrough/",
-      "destination": "/fonts/sans-serif-font/",
-      "permanent": true
-    },
-    {
-      "source": "/fonts/sans-serif-underline/",
       "destination": "/fonts/sans-serif-font/",
       "permanent": true
     },

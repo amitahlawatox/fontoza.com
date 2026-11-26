@@ -138,6 +138,11 @@ const KEPT_COMBINATION_IDS = new Set<string>([
   'cursive-rainbow',
   'cursive-sparkles',
   'bold-cursive-rose',
+  // 2026-11-26: restored only the three retired combinations with the
+  // strongest verified 16-month GSC demand and distinct user intent.
+  'sans-serif-underline',
+  'sans-serif-strikethrough',
+  'gothic-hearts',
 ]);
 
 const BASE_STYLE_IDS: Record<string, string> = {
@@ -192,6 +197,9 @@ const RELATED_STYLE_IDS: Record<string, string[]> = {
   'cursive-rainbow': ['cursive-font', 'cursive-fire', 'cursive-sparkles', 'cursive-flowers', 'cursive-moon', 'cursive-crown'],
   'cursive-sparkles': ['cursive-font', 'cursive-rainbow', 'cursive-fire', 'cursive-flowers', 'sans-italic-sparkles', 'sparkles-text'],
   'bold-cursive-rose': ['bold-cursive-font', 'cursive-font', 'cursive-flowers', 'cursive-fire', 'cursive-rainbow', 'hearts-text'],
+  'sans-serif-underline': ['sans-serif-font', 'underline-text', 'sans-bold', 'sans-italic', 'double-underline-text', 'bold-underline-text'],
+  'sans-serif-strikethrough': ['sans-serif-font', 'strikethrough-text', 'sans-bold', 'sans-italic', 'bold-strikethrough', 'italic-strikethrough'],
+  'gothic-hearts': ['gothic-font', 'hearts-text', 'gothic-crown', 'bold-gothic-font', 'italic-hearts', 'cursive-flowers'],
 };
 
 export function generateCombinationStyles(existingIds: Set<string>): StyleDefinition[] {

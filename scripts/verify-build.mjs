@@ -6,6 +6,7 @@ const DIST = fileURLToPath(new URL('../dist/', import.meta.url));
 const ORIGIN = 'https://www.fontoza.com';
 const failures = [];
 const requiredRedirects = new Map([
+  ['/sitemap.xml', '/sitemap-index.xml'],
   ['/fonts/bold/', '/fonts/bold-text/'],
   ['/fonts/cursive/', '/fonts/cursive-font/'],
   ['/fonts/bold-sans-italic/', '/fonts/sans-bold-italic/'],
@@ -92,13 +93,16 @@ for (const redirect of vercel.redirects ?? []) {
 
   if (permanent !== true) failures.push(`redirect must be permanent: ${source}`);
   if (source === destination) failures.push(`redirect source and target are identical: ${source}`);
-  if (redirect.destination !== '/' && !redirect.destination.endsWith('/')) {
+  const isXmlTarget = redirect.destination.endsWith('.xml');
+  if (!isXmlTarget && redirect.destination !== '/' && !redirect.destination.endsWith('/')) {
     failures.push(`redirect target is not canonical: ${redirect.destination}`);
   }
   if (canonicalUrls.has(`${ORIGIN}${source}`)) {
     failures.push(`redirect source conflicts with a canonical page: ${source}`);
   }
-  if (!canonicalUrls.has(`${ORIGIN}${destination}`)) {
+  if (isXmlTarget && !files.includes(join(DIST, destination.slice(1)))) {
+    failures.push(`redirect target has no matching XML file: ${destination}`);
+  } else if (!isXmlTarget && !canonicalUrls.has(`${ORIGIN}${destination}`)) {
     failures.push(`redirect target has no matching canonical page: ${destination}`);
   }
 }

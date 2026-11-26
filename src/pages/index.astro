@@ -58,6 +58,18 @@ const serializedStyles = STYLES.map((style) => ({
   decorator: getDecoratorName(style),
 }));
 
+const popularStyleIds = [
+  'sans-bold-italic',
+  'sans-bold',
+  'bold-underline-text',
+  'cursive-flowers',
+  'sans-italic',
+  'bold-strikethrough',
+];
+const popularStyles = popularStyleIds
+  .map((id) => STYLES.find((style) => style.id === id))
+  .filter((style): style is StyleDefinition => Boolean(style));
+
 const homeFaqs = [
   {
     q: 'What is a fancy text generator?',
@@ -141,9 +153,8 @@ const platformBadges = [
         <!-- Main headline -->
         <div class="mb-6 text-center animate-fade-up-delay-1">
           <h1 class="text-4xl font-black tracking-tight text-[var(--color-text)] sm:text-5xl lg:text-6xl leading-tight">
-            Make Your Text
-            <br class="hidden sm:block" />
-            <span class="text-shimmer">Actually Glow ✨</span>
+            Fancy Text Generator
+            <span class="block text-shimmer">Copy &amp; Paste Unicode Fonts</span>
           </h1>
           <p class="mt-5 mx-auto max-w-xl text-base text-[var(--color-text-muted)] sm:text-lg leading-relaxed">
             Curated Unicode text styles to preview, copy, and paste into <strong class="text-[var(--color-text)]">Instagram, TikTok, Discord</strong> and other apps. No download or sign-up.
@@ -181,6 +192,27 @@ const platformBadges = [
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <section class="border-y border-[var(--color-border)] bg-[var(--color-surface)] py-12" aria-labelledby="popular-styles-heading">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-7 text-center">
+          <h2 id="popular-styles-heading" class="text-2xl font-black text-[var(--color-text)] sm:text-3xl">Popular text styles</h2>
+          <p class="mt-2 text-sm text-[var(--color-text-muted)]">Open a focused generator, type your own text, and copy the result.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {popularStyles.map((style) => (
+            <a
+              href={`/fonts/${style.id}/`}
+              class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5 transition-all hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            >
+              <span class="block text-lg font-bold text-[var(--color-text)] transition-colors group-hover:text-[var(--color-accent)]">{style.name}</span>
+              <span class="mt-2 block truncate text-xl text-[var(--color-text-muted)]" aria-hidden="true">{style.example}</span>
+              <span class="mt-2 block text-sm leading-relaxed text-[var(--color-text-muted)]">{style.description}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
 

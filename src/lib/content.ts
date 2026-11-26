@@ -145,10 +145,10 @@ One thing to keep in mind: Unicode bold characters are not the same as semantic 
 
   {
     styleId: 'italic-font',
-    metaTitle: 'Mathematical Italic Font Generator | Fontoza',
-    metaDescription: 'Create Mathematical Italic Unicode letters for copy and paste. Preview serif italic names, formulas, bios and captions, then copy the text instantly.',
-    heading: 'Mathematical Italic Font Generator',
-    intro: 'Convert ordinary letters into copyable Mathematical Italic Unicode - the serif italic alphabet used for variables, elegant names, formulas, and short display text.',
+    metaTitle: 'Italic Text Generator - Copy & Paste Unicode | Fontoza',
+    metaDescription: 'Create copyable italic Unicode text for names, bios, captions and short quotes. Type once, preview the slanted letters and copy the result instantly.',
+    heading: 'Italic Text Generator',
+    intro: 'Turn ordinary letters into copyable italic Unicode for names, bios, captions, short quotes, and mathematical-style display text.',
     examples: [
       { label: 'Profile tagline', text: 'Creating every day', useCase: 'Add a restrained slant to a short personal statement.' },
       { label: 'Quote line', text: 'Stay curious', useCase: 'Set a short quotation apart from surrounding plain text.' },
@@ -215,10 +215,10 @@ Accessibility note: most screen readers pronounce italic Unicode characters the 
 
   {
     styleId: 'bold-italic-font',
-    metaTitle: 'Mathematical Bold Italic Generator | Fontoza',
-    metaDescription: 'Create Mathematical Bold Italic Unicode letters for copy and paste. Preview strong serif names, headings and captions, then copy instantly.',
-    heading: 'Mathematical Bold Italic Generator',
-    intro: 'Convert ordinary letters to the serif Mathematical Bold Italic alphabet for strong slanted names, headings, captions, formulas, and emphasis.',
+    metaTitle: 'Bold Italic Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Make copyable bold italic Unicode text for headings, names, bios and captions. Preview the strong slanted letters, then copy the result instantly.',
+    heading: 'Bold Italic Text Generator',
+    intro: 'Convert ordinary letters to copyable bold italic Unicode for strong headings, display names, captions, formulas, and short emphasis.',
     examples: [
       { label: 'Emphasized heading', text: 'Important Update', useCase: 'Give a short heading the combined weight and slant of bold italic.' },
       { label: 'Creator statement', text: 'Made with Purpose', useCase: 'Create a confident signature or profile statement.' },
@@ -1234,17 +1234,45 @@ Use crown text when the symbol itself carries the meaning: queen or king themes,
 
   {
     styleId: 'bold-underline-text',
-    longDescription: `Bold underline combines Mathematical Bold characters with the combining underline diacritic (U+0332). Each character is first converted to its bold equivalent, then the underline combining character is applied. The result is bold text with a persistent underline — maximum emphasis for section headers, CTAs, and key terms in long captions.`,
+    metaTitle: 'Bold Underline Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Make bold underlined Unicode text for short headings, revised prices and profile labels. Preview the result and copy it into supported apps.',
+    heading: 'Bold Underline Text Generator',
+    intro: 'Combine bold Unicode letters with a copyable underline for short headings, profile labels, prices, and emphasized phrases.',
+    examples: [
+      { label: 'Short heading', text: 'New Collection', useCase: 'Create a compact heading that stands apart from nearby plain text.' },
+      { label: 'Profile label', text: 'Now Playing', useCase: 'Emphasize a short status or category in a profile.' },
+      { label: 'Price label', text: 'Special Offer', useCase: 'Draw attention to a brief offer while keeping the wording readable.' },
+    ],
+    longDescription: `Bold underline combines two Unicode techniques. Supported letters and digits are first mapped to Mathematical Bold characters, then U+0332 Combining Low Line is attached to each non-space character. The copied result contains the bold letters and underline marks, so it can appear in plain-text fields that do not provide rich-text controls.
+
+Use this effect for a short heading, status, price label, or important phrase. Long underlined passages are difficult to scan, and combining marks may sit differently in different apps and fonts. Paste a short test into the destination app before publishing. For accessibility, keep essential instructions, contact details, and searchable wording in ordinary text as well.`,
     faqs: [
-      { question: 'Does bold underline work on Instagram?', answer: 'Yes — both bold Unicode characters and combining underline diacritics render correctly in Instagram bios and captions.' },
+      { question: 'How does bold underline text work?', answer: 'The generator maps supported characters to Mathematical Bold Unicode and adds U+0332 Combining Low Line after each non-space character.' },
+      { question: 'Does bold underline work on Instagram?', answer: 'Many Instagram fields preserve the bold characters and underline marks, but alignment can vary by device and app version. Test the pasted result before relying on it.' },
+      { question: 'Why can the underline look uneven?', answer: 'The receiving font decides where combining marks sit. Some fonts draw a continuous line, while others leave small gaps or place it slightly lower.' },
+      { question: 'Is this the same as HTML bold and underline?', answer: 'No. This is a visual Unicode transformation for copy and paste. It does not add semantic bold or underline formatting to a webpage.' },
     ],
   },
 
   {
     styleId: 'italic-strikethrough',
-    longDescription: `Italic strikethrough applies the strikethrough combining character (U+0336) to Mathematical Italic letters. The resulting text slants while being crossed out — an editorial combination that reads as "the italicized thing I\'m correcting" or "the nuanced point that didn\'t survive the draft." Widely used in ironic commentary and writerly social media content.`,
+    metaTitle: 'Italic Strikethrough Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create italic crossed-out Unicode text for corrections, old plans and jokes. Preview the slanted strike line and copy it into supported apps.',
+    heading: 'Italic Strikethrough Text Generator',
+    intro: 'Make copyable italic text with a strike line for corrections, changed plans, old wording, and short editorial jokes.',
+    examples: [
+      { label: 'Changed plan', text: 'Early Night', useCase: 'Show the original plan before adding the replacement in plain text.' },
+      { label: 'Draft edit', text: 'Final Version', useCase: 'Create a playful crossed-out first draft for a caption.' },
+      { label: 'Old date', text: 'Friday', useCase: 'Mark a short date or label as replaced while leaving it visible.' },
+    ],
+    longDescription: `Italic strikethrough converts supported letters to Mathematical Italic and then adds U+0336 Combining Long Stroke Overlay to each non-space character. The slanted letters and strike line are part of the copied Unicode sequence, so the effect can survive in plain-text fields.
+
+This style works best when the crossed-out wording still matters: a revised plan, corrected date, old title, or before-and-after joke. Keep it short because a strike line reduces readability. The exact line height and continuity depend on the app and font, and assistive technology may not announce that the text is crossed out. State important corrections in ordinary text too.`,
     faqs: [
       { question: 'How is italic strikethrough made?', answer: 'Mathematical Italic characters are generated first, then U+0336 (combining long stroke overlay) is applied after each character to create the strikethrough line.' },
+      { question: 'Why does the line move between apps?', answer: 'Each app and font positions combining marks differently, so the strike may be slightly higher, lower, or less continuous after pasting.' },
+      { question: 'Are spaces crossed out?', answer: 'No. Spaces remain unchanged so separate words stay easier to recognize.' },
+      { question: 'Will a screen reader announce the strikethrough?', answer: 'Not reliably. This is a visual Unicode effect rather than semantic deletion markup, so explain meaningful corrections in plain text.' },
     ],
   },
 
@@ -1618,9 +1646,89 @@ Use it for short role labels, brand names and profile headings where compact cap
 
   {
     styleId: 'monospace-underline',
-    longDescription: `Monospace underline combines Mathematical Monospace characters with the combining underline diacritic. Fixed-width letters with underlines look like old terminal output with emphasis — perfect for retro-tech, cyberpunk, and programmer aesthetics where underline formatting historically signaled hyperlinks or important commands.`,
+    metaTitle: 'Monospace Underline Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create copyable monospace underlined Unicode for short tech labels, commands and retro profile text. Preview the result, then copy it instantly.',
+    heading: 'Monospace Underline Text Generator',
+    intro: 'Combine fixed-width Mathematical Monospace letters with a copyable underline for short commands, tech labels, and retro profile text.',
+    examples: [
+      { label: 'Command label', text: 'SYSTEM READY', useCase: 'Create a short terminal-style status without using an image.' },
+      { label: 'Tech profile', text: 'Build and Learn', useCase: 'Give a developer or maker tagline a fixed-width look.' },
+      { label: 'Retro heading', text: 'NEXT LEVEL', useCase: 'Style a compact game or cyberpunk heading.' },
+    ],
+    longDescription: `Monospace underline first converts supported letters and digits to Mathematical Monospace Unicode, then attaches U+0332 Combining Low Line to every non-space character. The fixed-width shapes create a terminal-like rhythm, while the underline adds emphasis that can travel with the copied text.
+
+Use it for short commands, status labels, gamer headings, or a retro-tech profile phrase. It is not programming syntax and does not create a real hyperlink. Combining underlines can render with gaps or uneven spacing, especially around punctuation, so preview the result where it will be used. Keep important instructions, code, and URLs in ordinary characters for clarity and accessibility.`,
     faqs: [
       { question: 'What is monospace underline used for?', answer: 'It creates a terminal or code-with-emphasis aesthetic — useful for tech, retro-computing, and cyberpunk content.' },
+      { question: 'How is monospace underline created?', answer: 'The generator maps supported characters to Mathematical Monospace Unicode and adds U+0332 Combining Low Line after each non-space character.' },
+      { question: 'Does it create a real link?', answer: 'No. The underline is a visual combining mark only. It does not add a URL or clickable-link behavior.' },
+      { question: 'Why do some underlines have gaps?', answer: 'The receiving font controls the width and placement of each combining underline, so small gaps can appear between characters.' },
+    ],
+  },
+
+  {
+    styleId: 'sans-serif-underline',
+    metaTitle: 'Sans-Serif Underline Text Generator | Fontoza',
+    metaDescription: 'Create clean sans-serif Unicode text with a copyable underline. Preview short headings, labels and profile text, then copy the result instantly.',
+    heading: 'Sans-Serif Underline Text Generator',
+    intro: 'Turn ordinary letters into clean Mathematical Sans-Serif Unicode with a copyable underline for short headings, labels, and profile text.',
+    examples: [
+      { label: 'Profile label', text: 'Digital Creator', useCase: 'Create a clean underlined role or category label.' },
+      { label: 'Short heading', text: 'New This Week', useCase: 'Give a brief update a modern emphasized look.' },
+      { label: 'Highlight', text: 'Read More', useCase: 'Draw attention to a short phrase without making it an actual link.' },
+    ],
+    longDescription: `Sans-serif underline maps supported letters and digits to the Unicode Mathematical Sans-Serif alphabet, then adds U+0332 Combining Low Line after each non-space character. The result is copyable text rather than a downloadable font or an image.
+
+The clean letter shapes make this version less ornate than cursive underline and less heavy than bold underline. It works best for short headings, profile labels, status lines, and compact emphasis. The underline is visual only and does not make text clickable. Its alignment can vary by app and font, so test the pasted result and keep essential information in ordinary text.`,
+    faqs: [
+      { question: 'How is sans-serif underline made?', answer: 'The generator converts supported characters to Mathematical Sans-Serif Unicode and attaches U+0332 Combining Low Line to each non-space character.' },
+      { question: 'Is this a downloadable sans-serif font?', answer: 'No. It produces Unicode characters and combining marks that you can copy and paste; no font file is installed.' },
+      { question: 'Does the underline create a link?', answer: 'No. It is only a visual text effect and does not add a URL or link behavior.' },
+      { question: 'Why does the underline look different after pasting?', answer: 'The receiving app and font control combining-mark placement, so the line may sit differently or contain small gaps.' },
+    ],
+  },
+
+  {
+    styleId: 'sans-serif-strikethrough',
+    metaTitle: 'Sans-Serif Strikethrough Generator | Fontoza',
+    metaDescription: 'Make clean sans-serif Unicode with a copyable strike line for old prices, changed plans and corrections. Preview and copy the result instantly.',
+    heading: 'Sans-Serif Strikethrough Text Generator',
+    intro: 'Combine clean Mathematical Sans-Serif letters with a copyable strike line for corrections, changed plans, and before-and-after text.',
+    examples: [
+      { label: 'Old price', text: '£29', useCase: 'Show the previous price before adding a replacement in plain text.' },
+      { label: 'Changed plan', text: 'Meeting at Five', useCase: 'Keep the original wording visible while marking it as changed.' },
+      { label: 'Draft edit', text: 'First Idea', useCase: 'Create a compact before-and-after caption.' },
+    ],
+    longDescription: `Sans-serif strikethrough first maps supported characters to Mathematical Sans-Serif Unicode and then attaches U+0336 Combining Long Stroke Overlay to each non-space character. The clean, upright letters keep the crossed-out phrase relatively easy to recognize.
+
+Use it for an old price, changed date, revised plan, or short joke where the original wording still matters. A long struck-out paragraph is difficult to read, and assistive technology may not announce the strike line. State meaningful corrections in ordinary text and preview the result because line placement varies between apps and fonts.`,
+    faqs: [
+      { question: 'How does sans-serif strikethrough work?', answer: 'It converts supported characters to Mathematical Sans-Serif Unicode and adds U+0336 Combining Long Stroke Overlay after each non-space character.' },
+      { question: 'Are spaces crossed out?', answer: 'No. Spaces remain unchanged so separate words stay recognizable.' },
+      { question: 'Will every app show the same strike line?', answer: 'Not exactly. The receiving font controls the height and continuity of the combining line.' },
+      { question: 'Is this semantic deleted text?', answer: 'No. It is a visual Unicode effect. Use proper deletion markup on webpages and explain important corrections in ordinary text.' },
+    ],
+  },
+
+  {
+    styleId: 'gothic-hearts',
+    metaTitle: 'Gothic Heart Text Generator - Copy & Paste | Fontoza',
+    metaDescription: 'Create Gothic Unicode text framed by heart symbols for short names, bios and dark romantic captions. Preview your text, then copy it instantly.',
+    heading: 'Gothic Heart Text Generator',
+    intro: 'Turn a short name or phrase into Gothic Fraktur Unicode framed by heart symbols for dark romantic profiles, captions, and display text.',
+    examples: [
+      { label: 'Dark romance', text: 'Forever Yours', useCase: 'Create a short dramatic phrase with a heart frame.' },
+      { label: 'Profile name', text: 'Luna Black', useCase: 'Style a compact display name for a Gothic aesthetic.' },
+      { label: 'Music caption', text: 'Love in Shadows', useCase: 'Add a dark romantic tone to a band or playlist caption.' },
+    ],
+    longDescription: `Gothic hearts maps supported letters to Unicode Mathematical Fraktur, then places heart symbols around the completed phrase. The transformation changes the letter shapes and adds a simple frame while leaving spaces and most punctuation readable.
+
+This combination suits short display names, dark romantic captions, fantasy roles, and music-related profile text. Fraktur letterforms can be harder to scan at small sizes, and heart glyphs vary between apps. Keep the phrase brief, preview it on the destination platform, and repeat important names or instructions in ordinary text when clarity matters.`,
+    faqs: [
+      { question: 'What does the Gothic heart generator create?', answer: 'It converts supported letters to Unicode Mathematical Fraktur and adds heart symbols around the complete phrase.' },
+      { question: 'Is Gothic heart text an image?', answer: 'No. The output is copyable Unicode text, so it can be pasted into supported profile, caption, and chat fields.' },
+      { question: 'Why do some Gothic letters look unusual?', answer: 'Fraktur uses historical letter shapes, and the exact glyph design depends on the font available in the receiving app.' },
+      { question: 'Is it suitable for long text?', answer: 'It is best for a short name or phrase. Long ornate text is harder to read and less accessible.' },
     ],
   },
 
